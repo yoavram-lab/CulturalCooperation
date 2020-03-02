@@ -1,0 +1,270 @@
+\documentclass{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage[displaymath, mathlines]{lineno}
+\usepackage{graphicx}
+\usepackage[numbers]{natbib}
+
+ \bibliographystyle{ieeetr}
+
+%\renewcommand\linenumberfont{\normalfont\small\sffamily}
+%\linenumbers
+\modulolinenumbers[2]
+\geometry{a4paper, total={170mm,252mm},left=20mm,top=20mm,headheight=12pt}
+\linespread{1.5}
+
+\title{Research Proposal:\\  Can Cultural Transmission Explain The Evolution of Cooperative Behavior}
+\author{Dor Cohen \\ cohensdor@gmail.com \and Yoav Ram \\ yoav@yoavram.com}
+\date{School of Computer Science, IDC Herzliya\\ \today}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+Cooperative behavior is interesting in evolutionary view. The theory of evolution is based on the the struggle of the individual to survive and reproduce. Natural selection favours those with the highest fitness and therefore, their reproduction will be the most successful. However, cooperative behavior can many times harm the individual's fitness and increase the fitness of its competitor \cite{axelrod1981evolution}. Yet cooperative behavior is a widespread phenomenon and occurs in other animals besides humans \cite{dugatkin1997cooperation}, for example in rats \cite{rice1962altruism} and birds \cite{krams2008experimental}.
+Therefore, the evolution of cooperative behavior is still an interesting important open question.
+\\Cultural evolution is an evolutionary theory of social change. Culture has significant impact on the behavior of animals \cite{bonner2018evolution} and humans \cite{ihara2004cultural,jeong2018bronze}. Individual can acquire new behavior from another individual in its social group  through learning or other modes of cultural transmission \cite{richerson2008not}.
+\textbf{The goal of this research} is to determine to what extent cultural transmission can explain the evolution of cooperative behavior.
+\subsection*{Theories for Evolution of Cooperation}
+Three major theories have been proposed to explain the evolution of cooperative behavior.
+\\\textbf{Kin selection}, proposing that natural selection can favour cooperative behaviour between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by Hamilton \cite{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the genetic relatedness $r$ of a recipient to an actor multiplied by the benefit $b$ to the recipient is greater than the reproductive cost $c$ to the actor. This is also known as Hamilton's Rule:
+\begin{equation} \label{hamiltonrule}
+c<rb
+\end{equation}
+There is an ongoing debate about to what extent kin selection explains evolution of cooperation and altruism.
+It has been suggested that kin selection to explain the cooperative behaviour of eusocial insects like the honey bee.
+The most significant argument against kin selection is that cooperation can evolve with zero relatedness \cite{wilson2005kin}. This makes Hamilton's rule incomplete according to Wilson \cite{wilson2005kin}. Foster et al. \cite{foster2006kin} reject this claim. They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
+Wilson also criticises kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, Foster et al. \cite{foster2006kin} argue that kin selection does not ignore ecology. Hamilton’s rule shows
+that environmental factors causing a high benefit: cost ratio will favour cooperation. \\\\\textbf{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. In \textit{direct reciprocity} there are a repeated encounters between the same two individuals. In every encounter, each player has a choice between cooperation and defection. If I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
+This game-theoretic framework is known as the repeated Prisoner's Dilemma. 
+%A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
+Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit. 
+\begin{equation} \label{reciprocity}
+c<bw
+\end{equation}
+Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions. In humans, such interactions happen often, for example humans often donate money. 
+\textit{Indirect reciprocity} has been suggested to explain this behavior. 
+Nowak \cite{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of money. The money that "fuels the engines" of indirect reciprocity is reputation. 
+\\However, Reciprocity assume repeating interactions and therefore, has difficulty explaining evolution of cooperation if the no repeating interactions occurs. 
+\\\\\textbf{Group Selection} theory posits that cooperation is favoured because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each groups there are cooperators, which help to other group members and defectors which do not help. 
+Individuals reproduce proportional to their fitness. Offspring are added to the same group.
+If a group reaches a certain size it can split to two groups. A group that grow faster will split more often. Groups of cooperators are growing faster than group of defectors.
+Therefore, cooperation can evolve in this model when the ratio between benefit b and cost c is more than one plus the ratio between the maximum group size n and the number of groups m:
+\begin{equation} \label{groupselection}
+\frac{b}{c}>1+\frac{n}{m}
+\end{equation}
+The group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. Eldar et al. \cite{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
+\\\\All three theories mentioned above assume that cooperation is genetically determined. This raise the question, is it possible that cooperation is determined by environmental or social influences. Recent work by Lewin-Epstein at el.\cite{lewin2017microbes} may answer this question. 
+Lewin-Epstein at el. \cite{lewin2017microbes} have proposed a different model that can explain the evolution of  cooperative behavior. They have hypothesized that microbes that manipulate their hosts to act altruistically could be favoured by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioural changes in their hosts\cite{poulin2010parasite}\cite{dobson1988population}. Therefore, natural selection on microbes may favour manipulation of the host so that it cooperates with others. Microbes can be transmitted \textbf{horizontally} from one host to another during host interactions. Following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donating host, even when the two hosts are unrelated \cite{lewin2017microbes}. Microbes can also transfer vertically, from parent to
+offspring. As a result, a microbe that induces its host to help another host, increases the other host survival or reproduction, thus increasing the vertical transmission (v) of the microbes of the receiving individual. Kin selection among microbes could therefore favour microbes that induce cooperative behaviour in their hosts, thereby increasing the transmission of their microbial kin.
+\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible \cite{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behaviour of their hosts.
+
+\subsection*{A Theory of Cultural Evolution of Cooperation}
+From Lewin-Epstein at el. \cite{lewin2017microbes} we learn that \textbf{non-vertical} transmission could explain the evolution of cooperative behavior. 
+Non-vertical transmission could be either a horizontal or oblique. Horizontal transmission is a transmission between individuals from the same generation. Oblique transmission is a transmission from an adult to a child. 
+Evolution under either of these transmission models is expected to be more rapid than under pure vertical transmission \cite{ram2018evolution}.   
+Here we suggest a model in which behavior changes are caused by cultural and social transmissions. In our model the social transmission that affects individual behavior can be learned during social interactions. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. Surprisingly, much of the analysis made by Lewin-Epstein at el. \cite{lewin2017microbes} can be applied to cultural transmission, because learning can be modeled as infectious agent that transmits the cooperative behavior \cite{cavalli1981cultural}.
+
+We \textbf{hypothesize} that non-vertical transmission can explain the evolution of cooperation. To test this hypothesis we are going to use cultural evolution models that include non-vertical transmission mechanism. We will use both mathematical analysis to investigate the models, and run simulations for more complex scenarios. 
+
+
+
+\section*{Research Proposal}
+The research schedule can be found in appendix B. 
+\subsection*{Aim 1} Our first aim is to determine to what extent non-vertical transmission can explain the evolution of cooperation in fully mixed population with prisoner's dilemma payoff.
+We will develop a cultural evolution model and determine under which conditions cooperative behavior could prosper. The model assumes fully mixed population and individuals that interact in pairs with prisoner's dilemma payoff. The payoff matrix is shown in figure \ref{fig:payoff}. 
+\\In our model We consider a population of asexual individuals. We assume that cooperative behavior is a dichotomous cultural trait with phenotypes A and B.  Individuals of type A will always act altruistically and individuals of type B will not cooperate. An individual who cooperates will pay a cost $0<c<1$ and the recipient gains a benefit $b$ where $b>c$.
+After each interaction, each individual will try to learn from its interaction partner with probability $\alpha$, and with probability $1-\alpha$ it will try to learn from random individual within the population as shown in table \ref{fig:payoff}. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{payoff.pdf}
+  \caption{Payoff Matrix}
+  \label{fig:payoff}
+\end{figure}
+
+The transmission from type A will be successful with probability $T_a$ and from type B with probability $T_b$.
+In the model, in each generation each individual is having n interactions and then a reproduction is occurring according to each individual fitness and phenotypes A and B are vertically transmitted from parent to offspring. In general the vertical transition can be imperfect which means that with probability $v$ offspring inherits its parent’s phenotype and with probability $1-v$ it inherits a phenotype from its parent population. After reproduction the offspring replace the parent generation.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=1]{figure.pdf}
+  \caption{Horizontal Transmission}
+  \label{fig:figure}
+\end{figure}
+
+
+We define $p$ to be the frequency of newborn with phenotype A and $q=1-p$ to be the frequency of newborn with phenotype B. In addition, we define $\hat{p},\hat{q}$ to be the frequency of phenotypes A and B before reproduction and after interaction.
+
+\begin{equation} \label{d}
+\hat{p} = p^2\left[1-\left(1-\alpha\right)qT_B\right] + pq\alpha T_A + pq\alpha(1-T_B) + pq(1-\alpha)[pT_A+q(1-T_B)]
+\end{equation}
+
+The mean fitness of the population in each generation is:
+\begin{equation} \label{d}
+\overline{\omega} = 1 + p(b-c)
+\end{equation}
+As shown in eq. \eqref{vt} the probability to get a offspring with phenotype B given that its parent is of phenotype A is equal probability of imperfect vertical transmission times the proportion of A in the population. 
+\begin{equation} \label{vt}
+(1-v)\hat{q}
+\end{equation}
+
+Given p the frequency of phenotype A at the current generation, we are interested in frequency of A in the next generation. We have three possible interaction types A interacts with A, A interacts with B and B interacts with B.
+
+
+We focus on the frequency of phenotype A. We define $x_{AA}$ to be the frequency of offspring that their parent was of phenotype A and interacted with another individual of type A. Similarly we define $x_{AB}, \, x_{BA}, \, x_{BB}$.
+
+\begin{equation} 
+\begin{split}\label{aim1model0}
+ x_{AA} &= \frac{1}{\overline{\omega}}p^2(1+b-c)[(1-(1-\alpha)T_Bq)(1-(1-v)\hat{q})+(1-\alpha)T_Bq(1-v)\hat{p}]\\
+ x_{AB} &= \frac{1}{\overline{\omega}}pq(1-c)[(1-(1-\alpha)T_Bq-\alpha T_B)(1-(1-v)\hat{q}) \\ &+ (\alpha T_B+(1-\alpha)T_Bq)(1-v)\hat{p}]\\
+ x_{BA} &= \frac{1}{\overline{\omega}}pq(1+b)[(1-(1-\alpha)T_Ap-\alpha T_A)((1-v)\hat{p})\\ & +(\alpha T_A+(1-\alpha)T_A p)(1-(1-v)\hat{q})] \\
+ x_{BB} &= \frac{1}{\overline{\omega}}q^2[(1-(1-\alpha)T_Ap)(1-v)\hat{p})+(1-\alpha)T_Ap(1-(1-v)\hat{q})]
+\end{split}
+\end{equation}
+We define p' to be the frequency of individuals of phenotype A in the next generation.
+\begin{equation} 
+\begin{split}\label{aim1model}
+& p' = x_{AA} + x_{AB} + x_{BA} + x_{BB}
+\end{split}
+\end{equation}
+
+The question we are interested in is under what conditions the cooperative behavior represented by phenotype A will not become extinct. In order to do that we will investigate when $p' > p$.
+We can make a simplify assumption that vertical transmission is perfect, $v=1$ and then we will be able to solve the inequation more easily. Under this assumption equations \eqref{aim1model0},\eqref{aim1model} become
+
+\begin{equation} 
+\begin{split}\label{modeleq}
+p' =& \frac{1}{\overline{\omega}} \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
+&+ pq(1+b)[\alpha T_A+(1-\alpha)T_Ap)] + q^2(1-\alpha)T_Ap\}.
+\end{split}
+\end{equation}
+However, we are also interested when this assumption does not apply, meaning that $v<1$. In this, We will to run numerical simulation in order to better understand under what conditions cooperative behavior will take over the population. 
+\\\textbf{\underline{Preliminary Results}}
+We have preliminary result only when $v=1$.
+\\We get that $p'>p$ when (see appendix A):
+\begin{equation} 
+\begin{split} \label{result0}
+ c(1-T_B) < & \,  bqT_B(1-\alpha) - bqT_A(1-\alpha) + (T_A-T_B) + b(T_A - T_B) + \alpha bT_B
+\end{split}
+\end{equation}
+We want to investigate few special cases:
+\\\underline{Special case 1 - $T_A = T_B = T$:} then, eq. \eqref{result0} becomes:
+\begin{equation}
+\begin{split} \label{result}
+ \frac{1-T}{\alpha T}< \frac{b}{c}
+\end{split}
+\end{equation}
+Therefore, cooperative behavior will take over the population when eq. \eqref{result} is satisfied.  
+\\\underline{Special case 2 - $\alpha =1$:} in this case, horizontal transmission can only occur as a result of interaction.
+\\Eq. \eqref{result0} becomes:
+\begin{equation} 
+\begin{split} \label{result3}
+c(1-T_B)  < & \, T_A -T_B +b(T_A-T_B)
+\end{split}
+\end{equation}
+Therefore, cooperative behavior will take over the population when eq. \eqref{result3} is satisfied. 
+This result is in accordance with the result presented by Lewin-Epstein at el. \cite{Ohad}. 
+\\\underline{Special case 3 - $\alpha = 0$:} in this case horizontal transmission can not occur as a result of interaction.  
+Then, eq. \eqref{result0} becomes:
+\begin{equation} 
+\begin{split} \label{result4}
+0 < & \,  - bq(1-T_B)- bT_B-c(1-T_B)-T_B
+\end {split}
+\end{equation}
+Which is always false because all of the elements are negative. Therefore, cooperation will eventually disappear from population.
+\\Those are the results we have so far. However, there is a still work need to be done. \\
+We will analyze the equilibrium points in this model. We know that $p=1$ is an equilibrium point because if the all individuals in the population are cooperators then in next generation all individual will be cooperator as well. Same for $p=0$. We will check if there are any more equilibrium points. For each equilibrium point we will determine whether it is stable equilibrium or not. 
+\\So far, we assumed that $v=1$. We believe it will be interesting to test the effect of oblique transmission ($v\neq 1$) since oblique transmission is common in cultural evolution models. Therefore, we are planning to simulations to investigate the case when $v\neq 1$. 
+
+\subsection*{Aim 2}
+Prisoner's dilemma is widely studied and most of the models developed in order to learn about evolution of cooperation is using it as the model of interaction's result. However, often the reality is different. For example, interaction could be between than two individuals. 
+In the first aim we hypothesize that non-vertical transmission can explain the evolution of cooperation in fully mixed population with prisoner's dilemma payoff. Here, we hypothesize that non-vertical transmission can also explain the evolution of cooperation in fully mixed population with other games. The second aim is to determine to what extent our hypothesize could explain the evolution of cooperation. We will develop and investigate a cultural evolution model like we did in the first aim but with different games. 
+In the first scenario we can use n-player prisoner's dilemma a.k.a unscrupulous diner's dilemma or just diner's dilemma. The diner's dilemma is the main game we will investigate. In the diner's dilemma we assume that n players are eating in a restaurant. There are two dishes in the restaurant: dish1 with cost $c_1$ and benefit $b_1$ and dish2 with cost $c_2$ and benefit $b_2$. We also know that $b_2>c_2>b_1>c_1$. We presume that one would prefer to order the expensive meal given others will help defray the cost,
+\begin{equation} 
+\begin{split} \label{diner}
+b_2-\frac{1}{n}c_2 >\, & b_1 - \frac{1}{n}c_1.
+\end {split}
+\end{equation}
+Cooperative individual is an individual who choose to take the cheap dish. Choosing the cheap dish increases the fitness of the competitors. 
+In the second scenario we can use public common goods as our game. Public common goods is a multiplayer game in which each player can secretly choose how much he want to contribute. The contributions from all players is collected and the sum is multiplied by a factor (greater or equal to one) and the result is the "public good". The public good is evenly divided among the players. A player will be considered as a cooperator if decide to contribute. 
+In the third scenario, we want to use a general two player game. Prisoner dilemma is an example of a two player game with a payoff matrix shown in figure \ref{fig:payoff}. We will investigate the general case. The payoff matrix in the general case is shown in figure \ref{fig:generalPayoff}.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.4]{generalpayoff.pdf}
+  \caption{General Payoff Matrix}
+  \label{fig:generalPayoff}
+\end{figure}
+
+\subsection*{Aim 3}
+In the previous aims we focused in fully mixed populations. Many time in reality, the population is structured. When the population is spatially structured, individuals interact only with their neighbors, which are more likely to be related. Therefore, cooperators are more likely to interact with cooperators and vice versa. Here we hypothesize that non-vertical transmission can also explain the evolution of cooperation in spatially structured population. We will develop and investigate a cultural evolution model. 
+we will analyse these models with simulations. 
+
+\newpage
+\section*{Conclusions}
+We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq. \eqref{result} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
+Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
+
+\bibliography{bib}
+
+
+\newpage
+\section*{Appendix A}
+In the section, we start with eq. \eqref{modeleq} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
+
+We start by multiple by $\overline{\omega}$ The result is shown in eq. \eqref{step1}.
+\begin{equation} 
+\begin{split} \label{step1}
+p + p^2(b-c) < & \, \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
+&+ pq(1+b)[\alpha T_A+(1-\alpha)T_Ap)] + q^2(1-\alpha)T_Ap\}
+\end{split}
+\end{equation}
+
+Divining by p and substituting $p=1-q$ give us eq. \eqref{step2}
+\begin{equation} 
+\begin{split} \label{step2}
+1 + (1-q)(b-c) < & \, \{ (1-q)(1+b-c)[1-(1-\alpha)T_Bq] + q(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
+&+ q(1+b)[\alpha T_A+(1-\alpha)T_A(1-q))] + q^2(1-\alpha)T_A\}
+\end{split}
+\end{equation}
+Eq. \eqref{step2} becomes eq. \eqref{step3}.
+%\begin{equation} 
+%\begin{split} \label{step3}
+%1 + b - c - q(b-c) < & \, \{ bq^2T_B-b\alpha q^2T_B - bq^2T_A + \alpha bq^2T_A - bq - qT_B - bqT_B + \alpha bqT_B +cqT_B + qT_A + bqT_B + b - c + 1 \}
+%\end{split}
+%\end{equation}
+\begin{equation} 
+\begin{split}\label{step3}
+ -q(b-c) < & \,  bq^2T_B-b\alpha q^2T_B - bq^2T_A + \alpha bq^2T_A - bq - qT_B - bqT_B + \alpha bqT_B +cqT_B + qT_A + bqT_B 
+\end{split}
+\end{equation}
+
+We can divide by q because we know that $0<q<1$ then,
+\begin{equation} 
+\begin{split} \label{step4}
+ c(1-T_B) < & \,  bqT_B(1-\alpha) - bqT_A(1-\alpha) + (T_A-T_B) + b(T_A - T_B) + \alpha bT_B.
+\end{split}
+\end{equation}
+
+In the special case when $T_A = T_B = T$ equation \eqref{step4} becomes
+\begin{equation} 
+\begin{split}\label{step5}
+c(1-T) < & \, \alpha bT.
+\end{split}
+\end{equation}
+Eq. \eqref{step5} can be rewritten as
+\begin{equation} 
+\begin{split}
+ \frac{1-T}{\alpha T} < \frac{b}{c}.
+\end{split}
+\end{equation}
+
+\newpage
+\section*{Appendix B - Research Schedule}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=1]{schdule2.pdf}
+\end{figure}
+
+
+
+\end{document}
