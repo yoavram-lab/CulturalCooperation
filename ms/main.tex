@@ -76,13 +76,14 @@ Group selection was criticized by biologists advocate gene-centered view of evol
 
 All the above theories assume that cooperation is genetically determined. This raises the question, is it possible that cooperation is determined by non-genetic factors?
 Recent work by Lewin-Epstein at el.~\cite{lewin2017microbes} sheds some light on this question. 
-Lewin-Epstein at el.~\cite{lewin2017microbes} have hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\cite{poulin2010parasite,dobson1988population}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions. Following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\cite{lewin2017microbes}. Microbes can also transfer vertically, from parent to offspring (yr: cite 10.1126/science.aat7164). As a result, a microbe that induces its host to cooperate with another host and thereby increases the other host fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
+Lewin-Epstein at el.~\cite{lewin2017microbes} have hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\cite{poulin2010parasite,dobson1988population}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions. Following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\cite{lewin2017microbes}. Microbes can also transfer vertically, from parent to offspring. % (yr: cite 10.1126/science.aat7164)
+As a result, a microbe that induces its host to cooperate with another host and thereby increases the other host fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
 %\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\cite{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
 
 \subsection*{Cultural Evolution of Cooperation}
 Lewin-Epstein at el.~\cite{lewin2017microbes} have demonstrated that \emph{non-vertical} transmission can help to explain the evolution of cooperative behavior. 
 Non-vertical transmission could be either a horizontal or oblique. Horizontal transmission occurs between individuals from the same generation. Oblique transmission occurs from an adult to an offspring. 
-Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission~\cite{ram2018evolution} (yr: not sure this is a good reference).   
+Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission~\cite{ram2018evolution}. % (yr: not sure that this is a good reference)
 
 Here we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. Surprisingly, some of the analysis made by Lewin-Epstein at el.~\cite{lewin2017microbes} can be applied to cultural transmission, because cultural transmission is mathematically akin to transmission of infectious diseases~\cite{cavalli1981cultural}.
 
@@ -91,11 +92,12 @@ Here, we hypothesise that non-vertical cultural transmission can explain the evo
 
 \section*{Models and Methods}
 
-First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modelled using the prisoner's dilemma (yr: add ref).
+First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modelled using the prisoner's dilemma. %(yr: add ref)
 
-Consider a very large population whose members are characterised by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors, with corresponding fitness values $w_A$ and $w_B$, which depend on the frequency of the phenotypes (see below).
+Consider a very large population whose members are characterized by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors, with corresponding fitness values $w_A$ and $w_B$, which depend on the frequency of the phenotypes (see below).
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
-Following~\cite{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uniparental inheritance (yr: cite Zefferman Behav Ecol 2016), the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
+Following~\cite{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uni-parental inheritance, %(yr: cite Zefferman Behav Ecol 2016),
+the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 
 \begin{equation} \label{eq:vertical_oblique_transmission}
 P(\phi'=A \mid \phi) = \begin{cases}
@@ -103,20 +105,21 @@ v + (1-v)p, & \text{if } \phi=A \\
 (1-v)p, & \text{if } \phi=B
 \end{cases},
 \end{equation}
-where $p=P(\phi=A)$ is the frequency of $A$ among adults in the parental generation.  
+where $p=P(\phi=A)$ is the frequency of $A$ among all adults in the parental generation.  
 
+Not all adults become parents due to natural selection, and we denote the frequency of phenotype $A$ among parents with $\tilde{p}$.
 Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after selection and vertical and oblique transmission) is
 
 \begin{equation}\label{eq:horizontal}
 \begin{aligned}
 \hat{p}
-& = \frac{w_A(p)}{\bar{w}} p [v + (1-v)p] + \frac{w_B(p)}{\bar{w}} (1-p) [(1-v)p] \\
-& = v \frac{w_A}{\bar{w}} p + (1-v) p,
+& = \tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] \\
+& = v \tilde{p} + (1-v) p.
 \end{aligned}
 \end{equation}
-where $\bar{w}=p w_A + (1-p) w_B$ is the population mean fitness.
 
-Fitness is determined by a prisoner's dilemma dynamic. Specifically, individuals interact in pairs, cooperators pay a cost $0<c<1$, and their partner gains a benefit $b$, where we assume $b>c$. The following payoff matrix shows the fitness of an individual with phenotype $\phi_1$ when interacting with a partner with phenotype $\phi_2$ ($b>c>0$):
+Individuals interact in a social interaction modeled as a prisoner's dilemma.
+Specifically, individuals interact in pairs, cooperators pay a fitness cost $0<c<1$, and their partner gains a fitness benefit $b$, where we assume $b>c$. The following payoff matrix shows the fitness of an individual with phenotype $\phi_1$ when interacting with a partner with phenotype $\phi_2$ ($b>c>0$):
 
 \begin{table}[h]\label{table:prisoner_payoff}
 \centering
@@ -127,32 +130,26 @@ $\phi_1=B$ & $b$        & $0$
 \end{tabular}
 \end{table}
 
-Interactions occur randomly.
+Social interactions occur randomly.
 So, two individuals with phenotype $A$ interact with probability $\hat{p}^2$, two individuals with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two individuals with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
-Therefore, the fitness values of the two phenotypes, $w_A$ and $w_B$ are
 
-\begin{equation}\label{eq:fitness}
-\begin{aligned}
-w_A(\hat{p}) & = \hat{p}(1+b-c) + (1-\hat{p})(1-c) = 1 - c + \hat{p} b \\
-w_B(\hat{p}) & = \hat{p}(1+b) + (1-\hat{p}) = 1 + \hat{p} b,
-\end{aligned}
-\end{equation}
-and the population mean fitness is therefore
-$\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$.
+%Therefore, the fitness values of the two phenotypes, $w_A$ and $w_B$ are
+%
+%\begin{equation}\label{eq:fitness}
+%\begin{aligned}
+%w_A(\hat{p}) & = \hat{p}(1+b-c) + (1-\hat{p})(1-c) = 1 - c + \hat{p} b \\
+%w_B(\hat{p}) & = \hat{p}(1+b) + (1-\hat{p}) = 1 + \hat{p} b,
+%\end{aligned}
+%\end{equation}
+%and the population mean fitness is therefore
+%$\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$.
 
-
-Horizontal cultural transmission, which occurs between peers, may occur between interaction partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\textbf{Fig.~\ref{fig:horizontal}}).
+Horizontal cultural transmission occurs between peers. 
+It may occur between social partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\textbf{Fig.~\ref{fig:horizontal}}).
 Horizontal transmission is not always successful, as one peer may reject the other's phenotype. The probability for successful transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=1]{figure.pdf}
-  \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interaction partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
-  \label{fig:horizontal}
-\end{figure}
-
-Therefore, the next-generation frequency $p'$ of adults with phenotype $A$ after interaction and horizontal transmission is (yr: please check)
-\begin{equation}\label{eq:horizontal}
+Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
+\begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
 p'
 & = \hat{p}^2 [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
@@ -162,42 +159,63 @@ p'
 \end{aligned}
 \end{equation}
 
+The frequency of $A$ among parents follows a similar dynamic, but also includes the effect of natural selection, and is therefore
+\begin{equation}\label{eq:nextgen_parents}
+\begin{aligned}
+\bar{w} \tilde{p}'
+& = \hat{p}^2 (1+b-c) [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
+& + \hat{p}(1-\hat{p}) (1-c) [\alpha(1-T_B) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
+& + (1-\hat{p})\hat{p} (1+b) [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
+& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A],
+\end{aligned}
+\end{equation}
+where $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the population mean fitness.
+
+\begin{figure}[b]
+  \centering
+  \includegraphics[scale=1]{figure.pdf}
+  \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interaction partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
+  \label{fig:horizontal}
+\end{figure}
+
 \section*{Results}
 
 We start by inspecting specific cases, for which we can derive general results. 
-Afterwards, we use numerical simulation to analyse more complex cases.
+Afterwards, we use numerical simulation to analyze more complex cases.
 
 \paragraph*{Without oblique transmission, $v=1$.} 
 With only vertical transmission eq.~\ref{eq:vertical_oblique_transmission} becomes
-\begin{equation}
-\hat{p} = \frac{w_A}{\bar{w}} p,
-\end{equation}
-and the change in frequency of adults with phenotype $A$ can be written as
+$\hat{p} =  \tilde{p}$,
+and eq.~\ref{eq:nextgen_parents} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
 
 \begin{equation} 
-\begin{split}\label{eq:model_v=1}
-p' =& \frac{1}{\overline{\omega}} \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
-&+ pq(1+b)[\alpha T_A+(1-\alpha)T_Ap)] + q^2(1-\alpha)T_Ap\}.
+\begin{split}\label{eq:nextgen_parents_vertical_only}
+\bar{w} \tilde{p}' 
+& = p^2 (1+b-c) (1 - (1-p) (1-\alpha) T_B) \\
+& + p(1-p) (1-c) (p (1-\alpha) T_B + 1 - T_B) \\
+& + p(1-p) (1+b) (p (1-\alpha) + \alpha) T_A \\
+& + (1-p)^2 p (1-\alpha) T_A
 \end{split}
 \end{equation}
-However, we are also interested when this assumption does not apply, meaning that $v<1$. In this, We will to run numerical simulation in order to better understand under what conditions cooperative behavior will take over the population. 
-\\\textbf{\underline{Preliminary Results}}
-We have preliminary result only when $v=1$.
-\\We get that $p'>p$ when (see appendix A):
-\begin{equation} 
-\begin{split} \label{result0}
- c(1-T_B) < & \,  bqT_B(1-\alpha) - bqT_A(1-\alpha) + (T_A-T_B) + b(T_A - T_B) + \alpha bT_B
-\end{split}
+
+\textbf{Result 1.}
+If 
+\begin{equation}\label{result1}
+c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b (p(1-\alpha) - 1)]
 \end{equation}
-We want to investigate few special cases:
-\\\underline{Special case 1 - $T_A = T_B = T$:} then, eq. \eqref{result0} becomes:
+then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
+
+\textbf{Corollary 1.1: equal horizontal transmission.}
+If $T=T_A=T_B$, then
 \begin{equation}
-\begin{split} \label{result}
- \frac{1-T}{\alpha T}< \frac{b}{c}
-\end{split}
+\label{eq:equal_transmission}
+\frac{1-T}{\alpha T} < \frac{b}{c},
 \end{equation}
-Therefore, cooperative behavior will take over the population when eq. \eqref{result} is satisfied.  
-\\\underline{Special case 2 - $\alpha =1$:} in this case, horizontal transmission can only occur as a result of interaction.
+which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}).
+
+%(yr: I stopped here)
+	
+\underline{Special case 2 - $\alpha =1$:} in this case, horizontal transmission can only occur as a result of interaction.
 \\Eq. \eqref{result0} becomes:
 \begin{equation} 
 \begin{split} \label{result3}
