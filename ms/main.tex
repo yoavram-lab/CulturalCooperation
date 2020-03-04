@@ -6,6 +6,7 @@
 \usepackage[displaymath, mathlines]{lineno}
 \usepackage{graphicx}
 \usepackage[numbers]{natbib}
+\usepackage{multirow}
 
  \bibliographystyle{ieeetr}
 
@@ -36,9 +37,11 @@ Here we attempt to determine to what extent cultural transmission can explain th
 Three major theories have been proposed to explain the evolution of cooperative behaviour.
 
 \textbf{Kin selection}, proposing that natural selection can favour cooperative behaviour between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by Hamilton~\cite{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the genetic relatedness $r$ of a recipient to an actor multiplied by the benefit $b$ to the recipient is greater than the reproductive cost $c$ to the actor. This is also known as Hamilton's Rule:
-\begin{equation} \label{hamiltonrule}
+
+\begin{equation} \label{eq:hamilton_rule}
 c<rb
 \end{equation}
+
 There is an ongoing debate about to what extent kin selection explains evolution of cooperation and altruism.
 It has been suggested that kin selection to explain the cooperative behaviour of eusocial insects like the honey bee.
 The most significant argument against kin selection is that cooperation can evolve with zero relatedness~\cite{wilson2005kin}. This makes Hamilton's rule incomplete according to Wilson~\cite{wilson2005kin}. Foster et~al.~\cite{foster2006kin} reject this claim. They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
@@ -49,9 +52,11 @@ that environmental factors causing a high benefit-to-cost ratio will favour coop
 This game-theoretic framework is known as the repeated Prisoner's Dilemma. 
 %A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
 Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit. 
-\begin{equation} \label{reciprocity}
+
+\begin{equation} \label{eq:reciprocity}
 c<bw
 \end{equation}
+
 Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions. In humans, such interactions happen often, for example humans often donate money. 
 
 \textbf{Indirect reciprocity} has been suggested to explain this behaviour. 
@@ -62,10 +67,12 @@ Nowak~\cite{nowak2006five} claims that direct reciprocity is like a barter econo
 Individuals reproduce proportional to their fitness. Offspring are added to the same group.
 If a group reaches a certain size it can split to two groups. A group that grow faster will split more often. Groups of cooperators are growing faster than group of defectors.
 Therefore, cooperation can evolve in this model when the ratio between benefit b and cost c is more than one plus the ratio between the maximum group size n and the number of groups m:
-\begin{equation} \label{groupselection}
+
+\begin{equation} \label{eq:groupselection}
 \frac{b}{c}>1+\frac{n}{m}
 \end{equation}
-The group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. Eldar et al.~\cite{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
+
+Group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. Eldar et al.~\cite{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
 
 All the above theories assume that cooperation is genetically determined. This raises the question, is it possible that cooperation is determined by non-genetic factors?
 Recent work by Lewin-Epstein at el.~\cite{lewin2017microbes} sheds some light on this question. 
@@ -75,7 +82,7 @@ Lewin-Epstein at el.~\cite{lewin2017microbes} have hypothesised that microbes th
 \subsection*{Cultural Evolution of Cooperation}
 Lewin-Epstein at el.~\cite{lewin2017microbes} have demonstrated that \emph{non-vertical} transmission can help to explain the evolution of cooperative behaviour. 
 Non-vertical transmission could be either a horizontal or oblique. Horizontal transmission occurs between individuals from the same generation. Oblique transmission occurs from an adult to an offspring. 
-Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission \cite{ram2018evolution} (yr: not sure this is a good reference).   
+Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission~\cite{ram2018evolution} (yr: not sure this is a good reference).   
 
 Here we suggest a model in which behavioural changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behaviour and will cooperate in the future. Surprisingly, some of the analysis made by Lewin-Epstein at el.~\cite{lewin2017microbes} can be applied to cultural transmission, because cultural transmission is mathematically akin to transmission of infectious diseases~\cite{cavalli1981cultural}.
 
@@ -84,69 +91,91 @@ Here, we hypothesise that non-vertical cultural transmission can explain the evo
 
 \section*{Models and Methods}
 
-Our first aim is to determine to what extent non-vertical transmission can explain the evolution of cooperation in a fully mixed population where cooperation is modelled using the prisoner's dilemma (yr: add ref).
+First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modelled using the prisoner's dilemma (yr: add ref).
 
-Consider a fully mixed asexual population where individuals interact in pairs with a prisoner's dilemma payoff~\ref{fig:payoff}.
- 
-Cooperative behaviour is a dichotomous cultural trait with phenotypes $A$ and $B$ for cooperation and defection, respectively. Cooperators pay a cost $0<c<1$ and their partner gains a benefit $b$, where we assume $b>c$.
-After each interaction, each individual will try to learn from its interaction partner with probability $\alpha$, and with probability $1-\alpha$ it will try to learn from random individual within the population as shown in table \ref{fig:payoff}. 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{payoff.pdf}
-  \caption{Payoff Matrix}
-  \label{fig:payoff}
-\end{figure}
+Consider a very large population whose members are characterised by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors, with corresponding fitness values $w_A$ and $w_B$, which depend on the frequency of the phenotypes (see below).
+An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
+Following~\cite{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uniparental inheritance (yr: cite Zefferman Behav Ecol 2016), the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 
-The transmission from type A will be successful with probability $T_a$ and from type B with probability $T_b$.
-In the model, in each generation each individual is having n interactions and then a reproduction is occurring according to each individual fitness and phenotypes A and B are vertically transmitted from parent to offspring. In general the vertical transition can be imperfect which means that with probability $v$ offspring inherits its parent’s phenotype and with probability $1-v$ it inherits a phenotype from its parent population. After reproduction the offspring replace the parent generation.
+\begin{equation} \label{eq:vertical_oblique_transmission}
+P(\phi'=A \mid \phi) = \begin{cases}
+v + (1-v)p, & \text{if } \phi=A \\
+(1-v)p, & \text{if } \phi=B
+\end{cases},
+\end{equation}
+where $p=P(\phi=A)$ is the frequency of $A$ among adults in the parental generation.  
+
+Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after selection and vertical and oblique transmission) is
+
+\begin{equation}\label{eq:horizontal}
+\begin{aligned}
+\hat{p}
+& = \frac{w_A(p)}{\bar{w}} p [v + (1-v)p] + \frac{w_B(p)}{\bar{w}} (1-p) [(1-v)p] \\
+& = v \frac{w_A}{\bar{w}} p + (1-v) p,
+\end{aligned}
+\end{equation}
+where $\bar{w}=p w_A + (1-p) w_B$ is the population mean fitness.
+
+Fitness is determined by a prisoner's dilemma dynamic. Specifically, individuals interact in pairs, cooperators pay a cost $0<c<1$, and their partner gains a benefit $b$, where we assume $b>c$. The following payoff matrix shows the fitness of an individual with phenotype $\phi_1$ when interacting with a partner with phenotype $\phi_2$ ($b>c>0$):
+
+\begin{table}[h]\label{table:prisoner_payoff}
+\centering
+\begin{tabular}{lll}
+           & $\phi_2=A$ & $\phi_2=B$ \\
+$\phi_1=A$ & $b-c$      & $-c$       \\
+$\phi_1=B$ & $b$        & $0$       
+\end{tabular}
+\end{table}
+
+Interactions occur randomly.
+So, two individuals with phenotype $A$ interact with probability $\hat{p}^2$, two individuals with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two individuals with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
+Therefore, the fitness values of the two phenotypes, $w_A$ and $w_B$ are
+
+\begin{equation}\label{eq:fitness}
+\begin{aligned}
+w_A(\hat{p}) & = \hat{p}(1+b-c) + (1-\hat{p})(1-c) = 1 - c + \hat{p} b \\
+w_B(\hat{p}) & = \hat{p}(1+b) + (1-\hat{p}) = 1 + \hat{p} b,
+\end{aligned}
+\end{equation}
+and the population mean fitness is therefore
+$\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$.
+
+
+Horizontal cultural transmission, which occurs between peers, may occur between interaction partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\textbf{Fig.~\ref{fig:horizontal}}).
+Horizontal transmission is not always successful, as one peer may reject the other's phenotype. The probability for successful transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
+
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=1]{figure.pdf}
-  \caption{Horizontal Transmission}
-  \label{fig:figure}
+  \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interaction partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
+  \label{fig:horizontal}
 \end{figure}
 
-
-We define $p$ to be the frequency of newborn with phenotype A and $q=1-p$ to be the frequency of newborn with phenotype B. In addition, we define $\hat{p},\hat{q}$ to be the frequency of phenotypes A and B before reproduction and after interaction.
-
-\begin{equation} \label{d}
-\hat{p} = p^2\left[1-\left(1-\alpha\right)qT_B\right] + pq\alpha T_A + pq\alpha(1-T_B) + pq(1-\alpha)[pT_A+q(1-T_B)]
+Therefore, the next-generation frequency $p'$ of adults with phenotype $A$ after interaction and horizontal transmission is (yr: please check)
+\begin{equation}\label{eq:horizontal}
+\begin{aligned}
+p'
+& = \hat{p}^2 [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
+& + \hat{p}(1-\hat{p}) [\alpha(1-T_b) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
+& + (1-\hat{p})\hat{p} [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
+& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A]
+\end{aligned}
 \end{equation}
 
-The mean fitness of the population in each generation is:
-\begin{equation} \label{d}
-\overline{\omega} = 1 + p(b-c)
+\section*{Results}
+
+We start by inspecting specific cases, for which we can derive general results. 
+Afterwards, we use numerical simulation to analyse more complex cases.
+
+\paragraph*{Without oblique transmission, $v=1$.} 
+With only vertical transmission eq.~\ref{eq:vertical_oblique_transmission} becomes
+\begin{equation}
+\hat{p} = \frac{w_A}{\bar{w}} p,
 \end{equation}
-As shown in eq. \eqref{vt} the probability to get a offspring with phenotype B given that its parent is of phenotype A is equal probability of imperfect vertical transmission times the proportion of A in the population. 
-\begin{equation} \label{vt}
-(1-v)\hat{q}
-\end{equation}
-
-Given p the frequency of phenotype A at the current generation, we are interested in frequency of A in the next generation. We have three possible interaction types A interacts with A, A interacts with B and B interacts with B.
-
-
-We focus on the frequency of phenotype A. We define $x_{AA}$ to be the frequency of offspring that their parent was of phenotype A and interacted with another individual of type A. Similarly we define $x_{AB}, \, x_{BA}, \, x_{BB}$.
+and the change in frequency of adults with phenotype $A$ can be written as
 
 \begin{equation} 
-\begin{split}\label{aim1model0}
- x_{AA} &= \frac{1}{\overline{\omega}}p^2(1+b-c)[(1-(1-\alpha)T_Bq)(1-(1-v)\hat{q})+(1-\alpha)T_Bq(1-v)\hat{p}]\\
- x_{AB} &= \frac{1}{\overline{\omega}}pq(1-c)[(1-(1-\alpha)T_Bq-\alpha T_B)(1-(1-v)\hat{q}) \\ &+ (\alpha T_B+(1-\alpha)T_Bq)(1-v)\hat{p}]\\
- x_{BA} &= \frac{1}{\overline{\omega}}pq(1+b)[(1-(1-\alpha)T_Ap-\alpha T_A)((1-v)\hat{p})\\ & +(\alpha T_A+(1-\alpha)T_A p)(1-(1-v)\hat{q})] \\
- x_{BB} &= \frac{1}{\overline{\omega}}q^2[(1-(1-\alpha)T_Ap)(1-v)\hat{p})+(1-\alpha)T_Ap(1-(1-v)\hat{q})]
-\end{split}
-\end{equation}
-We define p' to be the frequency of individuals of phenotype A in the next generation.
-\begin{equation} 
-\begin{split}\label{aim1model}
-& p' = x_{AA} + x_{AB} + x_{BA} + x_{BB}
-\end{split}
-\end{equation}
-
-The question we are interested in is under what conditions the cooperative behaviour represented by phenotype A will not become extinct. In order to do that we will investigate when $p' > p$.
-We can make a simplify assumption that vertical transmission is perfect, $v=1$ and then we will be able to solve the inequation more easily. Under this assumption equations \eqref{aim1model0},\eqref{aim1model} become
-
-\begin{equation} 
-\begin{split}\label{modeleq}
+\begin{split}\label{eq:model_v=1}
 p' =& \frac{1}{\overline{\omega}} \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
 &+ pq(1+b)[\alpha T_A+(1-\alpha)T_Ap)] + q^2(1-\alpha)T_Ap\}.
 \end{split}
