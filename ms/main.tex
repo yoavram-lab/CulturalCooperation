@@ -1,42 +1,118 @@
-\documentclass{article}
-\usepackage[margin=0.5in]{geometry}
-\usepackage[utf8]{inputenc}
+\documentclass[12pt]{extarticle}
+\usepackage{geometry}
+\geometry{
+a4paper,
+total={170mm,257mm},
+left=20mm,
+top=20mm,
+headheight=12pt
+}
+
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx} % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+% TeX will automatically convert eps --> pdf in pdflatex		
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{commath}
+\usepackage{longtable}
+\usepackage[hyphens]{url}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[unicode=true,colorlinks=true,urlcolor=CadetBlue,citecolor=black,linkcolor=black]{hyperref}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage{authblk}
+      
+%SetFonts
+% newtxtext+newtxmath
+\usepackage{newtxtext} %loads helv for ss, txtt for tt
 \usepackage{amsmath}
-\usepackage{xcolor}
-\usepackage[displaymath, mathlines]{lineno}
-\usepackage{graphicx}
-\usepackage[numbers]{natbib}
-\usepackage{multirow}
+\usepackage[bigdelims]{newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+%SetFonts
 
- \bibliographystyle{ieeetr}
+% less space before sections 
+% \@startsection {NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE} 
+%            optional * [ALTHEADING]{HEADING} 
+\makeatletter
+ \renewcommand\section{\@startsection {section}{1}{\z@}%
+     {-2.5ex \@plus -1ex \@minus -.2ex}%
+     {1.3ex \@plus.2ex}%
+    {\Large\bfseries}}
+    
+% Species names
+%% Meta-Command for defining new species macros
+\usepackage{xspace}
 
-%\renewcommand\linenumberfont{\normalfont\small\sffamily}
-%\linenumbers
-\modulolinenumbers[2]
-\geometry{a4paper, total={170mm,252mm},left=20mm,top=20mm,headheight=12pt}
-\linespread{1.5}
+\newcommand{\species}[3]{%
+  \newcommand{#1}{\gdef#1{\textit{#3}\xspace}\textit{#2}\xspace}}
+  
+\species{\yeast}{Saccharomyces cerevisiae}{S.~cerevisiae}
+\species{\calbicans}{Candida albicans}{C.~albicans}
+\species{\cneoformans}{Cryptococcus neoformans}{C.~neoformans}
 
-\title{Can Cultural Transmission Explain The Evolution of Cooperative behavior}
-\author{Dor Cohen \\ cohensdor@gmail.com \and Yoav Ram \\ yoav@yoavram.com}
-\date{School of Computer Science, IDC Herzliya, Israel\\ \today}
+% Yoav & Lee commands
+\newcommand*{\tr}{^\intercal}
+\let\vec\mathbf
+\newcommand{\matrx}[1]{{\left[ \stackrel{}{#1}\right]}}
+\newcommand{\diag}[1]{\mbox{diag}\matrx{#1}}
+\newcommand{\goesto}{\rightarrow}
+\newcommand{\dspfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2} }
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{result}{Result}
+\renewcommand\qedsymbol{} % no square at end of proof
+\newcommand{\cl}{\mathbf{L}}
+\newcommand{\cj}{\mathbf{J}}
+\newcommand{\ci}{I}
+
+% NatBib
+\usepackage[round,colon]{natbib}
+
+% Title page
+\title{Can Cultural Transmission Explain The Evolution of Cooperative Behavior?}
+
+% Authors
+\renewcommand\Affilfont{\small}
+
+\author[a]{Dor Cohen}
+\author[b]{Ohad Lewin-Epstein}
+\author[c]{Marcus W. Feldman}
+\author[a,*]{Yoav Ram}
+
+\affil[a]{School of Computer Sciences, IDC Herzliya, Herzliya, Israel}
+\affil[b]{School of Plant Sciences and Food Security, Tel Aviv University, Tel Aviv, Israel}
+\affil[c]{Department of Biology, Stanford University, Stanford, CA}
+\affil[*]{Corresponding author: yoav@yoavram.com}
+
+\date{\today}
 
 \begin{document}
 \maketitle
 
+% Abstract
+%\begin{abstract}
+%\end{abstract}
+
+\pagebreak
+
+% Introduction
 \section*{Introduction}
-Cooperative behavior can harm the individual's fitness and increase the fitness of its competitor~\cite{axelrod1981evolution}.
-Yet, cooperative behavior occurs in many non-human animals~\cite{dugatkin1997cooperation}, for example rats~\cite{rice1962altruism} and birds~\cite{krams2008experimental}.
+Cooperative behavior can harm the individual's fitness and increase the fitness of its competitor~\citep{axelrod1981evolution}.
+Yet, cooperative behavior occurs in many non-human animals~\citep{dugatkin1997cooperation}, for example rats~\citep{rice1962altruism} and birds~\citep{krams2008experimental}.
 Therefore, the evolution of cooperative behavior is an important open question in evolutionary biology.
 \\
 Cultural evolution is an evolutionary theory of social change.
-Culture has significant impact on the behavior of humans~\cite{ihara2004cultural,jeong2018bronze} as well as non-human animals~\cite{bonner2018evolution}.
-Under the view of cultural evolution, an individual can acquire its behavior from another individual in its social group through learning or other modes of cultural transmission \cite{richerson2008not}.
+Culture has significant impact on the behavior of humans~\citep{ihara2004cultural,jeong2018bronze} as well as non-human animals~\citep{bonner2018evolution}.
+Under the view of cultural evolution, an individual can acquire its behavior from another individual in its social group through learning or other modes of cultural transmission \citep{richerson2008not}.
 Here we attempt to determine to what extent cultural transmission can explain the evolution of cooperative behavior.
 
-\subsection*{Theories for Evolution of Cooperation}
+% subsection
+\subsection*{Theories for evolution of cooperation}
 Three major theories have been proposed to explain the evolution of cooperative behavior.
 
-\textbf{Kin selection}, proposing that natural selection can favor cooperative behavior between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by Hamilton~\cite{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the genetic relatedness $r$ of a recipient to an actor multiplied by the benefit $b$ to the recipient is greater than the reproductive cost $c$ to the actor. This is also known as Hamilton's Rule:
+\textbf{Kin selection}, proposing that natural selection can favor cooperative behavior between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the genetic relatedness $r$ of a recipient to an actor multiplied by the benefit $b$ to the recipient is greater than the reproductive cost $c$ to the actor. This is also known as Hamilton's Rule:
 
 \begin{equation} \label{eq:hamilton_rule}
 c<rb
@@ -44,11 +120,11 @@ c<rb
 
 There is an ongoing debate about to what extent kin selection explains evolution of cooperation and altruism.
 It has been suggested that kin selection to explain the cooperative behavior of eusocial insects like the honey bee.
-The most significant argument against kin selection is that cooperation can evolve with zero relatedness~\cite{wilson2005kin}. This makes Hamilton's rule incomplete according to Wilson~\cite{wilson2005kin}. Foster et~al.~\cite{foster2006kin} reject this claim. They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
-Wilson also criticises kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, Foster et~al.~\cite{foster2006kin} argue that kin selection does not ignore ecology. Hamilton’s rule shows
+The most significant argument against kin selection is that cooperation can evolve with zero relatedness~\citep{wilson2005kin}. This makes Hamilton's rule incomplete according to \citet{wilson2005kin}. \citet{foster2006kin} reject this claim. They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
+\citet{wilson2005kin} also criticizes kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, \citet{foster2006kin} argue that kin selection does not ignore ecology. Hamilton’s rule shows
 that environmental factors causing a high benefit-to-cost ratio will favor cooperation.
 
-\textbf{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. In \textit{direct reciprocity} there are a repeated encounters between the same two individuals. In every encounter, each player has a choice between cooperation and defection. If I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
+\paragraph{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. In \emph{direct reciprocity} there are a repeated encounters between the same two individuals. In every encounter, each player has a choice between cooperation and defection. If I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
 This game-theoretic framework is known as the repeated Prisoner's Dilemma. 
 %A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
 Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit. 
@@ -59,11 +135,11 @@ c<bw
 
 Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions. In humans, such interactions happen often, for example humans often donate money. 
 
-\textbf{Indirect reciprocity} has been suggested to explain this behavior. 
-Nowak~\cite{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of money. The money that "fuels the engines" of indirect reciprocity is reputation. 
-\\However, Reciprocity assume repeating interactions and therefore, has difficulty explaining evolution of cooperation if the no repeating interactions occurs. 
+\paragraph{Indirect reciprocity} has been suggested to explain this behavior.
+\citet{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of money. The money that "fuels the engines" of indirect reciprocity is reputation. 
+However, Reciprocity assume repeating interactions and therefore, has difficulty explaining evolution of cooperation if the no repeating interactions occurs. 
 
-\textbf{Group Selection} theory posits that cooperation is favored because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each groups there are cooperators, which help to other group members and defectors which do not help. 
+\paragraph{Group selection theory} posits that cooperation is favored because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each groups there are cooperators, which help to other group members and defectors which do not help.  % TODO add reference
 Individuals reproduce proportional to their fitness. Offspring are added to the same group.
 If a group reaches a certain size it can split to two groups. A group that grow faster will split more often. Groups of cooperators are growing faster than group of defectors.
 Therefore, cooperation can evolve in this model when the ratio between benefit b and cost c is more than one plus the ratio between the maximum group size n and the number of groups m:
@@ -72,31 +148,32 @@ Therefore, cooperation can evolve in this model when the ratio between benefit b
 \frac{b}{c}>1+\frac{n}{m}
 \end{equation}
 
-Group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. Eldar et al.~\cite{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
+Group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. \citet{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
 
 All the above theories assume that cooperation is genetically determined. This raises the question, is it possible that cooperation is determined by non-genetic factors?
-Recent work by Lewin-Epstein at el.~\cite{lewin2017microbes} sheds some light on this question. 
-Lewin-Epstein at el.~\cite{lewin2017microbes} have hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\cite{poulin2010parasite,dobson1988population}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions. Following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\cite{lewin2017microbes}. Microbes can also transfer vertically, from parent to offspring. % (yr: cite 10.1126/science.aat7164)
+Recent work by \citet{lewin2017microbes} sheds some light on this question. 
+\citet{lewin2017microbes} have hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{poulin2010parasite,dobson1988population}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions. Following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also transfer vertically, from parent to offspring. % yr: cite 10.1126/science.aat7164
 As a result, a microbe that induces its host to cooperate with another host and thereby increases the other host fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
-%\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\cite{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
+%\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\citep{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
 
-\subsection*{Cultural Evolution of Cooperation}
-Lewin-Epstein at el.~\cite{lewin2017microbes} have demonstrated that \emph{non-vertical} transmission can help to explain the evolution of cooperative behavior. 
+% subsection
+\subsection*{Cultural evolution of cooperation}
+\citet{lewin2017microbes} have demonstrated that \emph{non-vertical} transmission can help to explain the evolution of cooperative behavior. 
 Non-vertical transmission could be either a horizontal or oblique. Horizontal transmission occurs between individuals from the same generation. Oblique transmission occurs from an adult to an offspring. 
-Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission~\cite{ram2018evolution}. % (yr: not sure that this is a good reference)
+Evolution under either of these transmission models is can be be more rapid than under pure vertical transmission~\citep{ram2018evolution}. % (yr: not sure that this is a good reference)
 
-Here we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. Surprisingly, some of the analysis made by Lewin-Epstein at el.~\cite{lewin2017microbes} can be applied to cultural transmission, because cultural transmission is mathematically akin to transmission of infectious diseases~\cite{cavalli1981cultural}.
+Here we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. Surprisingly, some of the analysis made by \citet{lewin2017microbes} can be applied to cultural transmission, because cultural transmission is mathematically akin to transmission of infectious diseases~\citep{cavalli1981cultural}.
 
-Here, we hypothesise that non-vertical cultural transmission can explain the evolution of cooperation. We are develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using both mathematical analysis and simulations. 
+Here, we hypothesize that non-vertical cultural transmission can explain the evolution of cooperation. We are develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using both mathematical analysis and simulations. 
 
-
+% Models and Methods
 \section*{Models and Methods}
 
-First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modelled using the prisoner's dilemma. %(yr: add ref)
+First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modeled using the prisoner's dilemma. % yr: add ref
 
 Consider a very large population whose members are characterized by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors, with corresponding fitness values $w_A$ and $w_B$, which depend on the frequency of the phenotypes (see below).
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
-Following~\cite{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uni-parental inheritance, %(yr: cite Zefferman Behav Ecol 2016),
+Following~\citet{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uni-parental inheritance, % yr: cite Zefferman Behav Ecol 2016
 the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 
 \begin{equation} \label{eq:vertical_oblique_transmission}
@@ -178,6 +255,7 @@ where $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the popula
   \label{fig:horizontal}
 \end{figure}
 
+% Results
 \section*{Results}
 
 We start by inspecting specific cases, for which we can derive general results. 
@@ -223,7 +301,7 @@ c(1-T_B)  < & \, T_A -T_B +b(T_A-T_B)
 \end{split}
 \end{equation}
 Therefore, cooperative behavior will take over the population when eq. \eqref{result3} is satisfied. 
-This result is in accordance with the result presented by Lewin-Epstein at el. \cite{Ohad}. 
+This result is in accordance with the result presented by Lewin-Epstein at el. \citep{Ohad}. 
 \\\underline{Special case 3 - $\alpha = 0$:} in this case horizontal transmission can not occur as a result of interaction.  
 Then, eq. \eqref{result0} becomes:
 \begin{equation} 
@@ -259,19 +337,31 @@ In the third scenario, we want to use a general two player game. Prisoner dilemm
 In the previous aims we focused in fully mixed populations. Many time in reality, the population is structured. When the population is spatially structured, individuals interact only with their neighbors, which are more likely to be related. Therefore, cooperators are more likely to interact with cooperators and vice versa. Here we hypothesize that non-vertical transmission can also explain the evolution of cooperation in spatially structured population. We will develop and investigate a cultural evolution model. 
 we will analyse these models with simulations. 
 
-\newpage
-\section*{Conclusions}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq. \eqref{result} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
+% Discussion
+\section*{Discussion}
+We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\eqref{result} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
 Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
 
+%\pagebreak
+% Acknowledgements
+{\small
+\section*{Acknowledgements}
+We thank Lilach Hadany and Ayelet Shavit for discussions and comments.
+This work was supported in part by
+the Israel Science Foundation 552/19 (YR).
+% TODO funding for other authors?
+}
+
+% Bibliography
+\bibliographystyle{plainnat}
 \bibliography{bib}
 
-
+% Appendices
 \newpage
-\section*{Appendix A}
-In the section, we start with eq. \eqref{modeleq} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
+\section*{Appendix A} % TODO fix equations references
+In the section, we start with eq.~\eqref{modeleq} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
 
-We start by multiple by $\overline{\omega}$ The result is shown in eq. \eqref{step1}.
+We start by multiple by $\bar{w}$ The result is shown in eq. \eqref{step1}.
 \begin{equation} 
 \begin{split} \label{step1}
 p + p^2(b-c) < & \, \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
@@ -317,6 +407,5 @@ Eq. \eqref{step5} can be rewritten as
  \frac{1-T}{\alpha T} < \frac{b}{c}.
 \end{split}
 \end{equation}
-
 
 \end{document}
