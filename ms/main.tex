@@ -262,23 +262,23 @@ where $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the popula
 We start by inspecting specific cases, for which we can derive general results. 
 Afterwards, we use numerical simulation to analyze more complex cases.
 
-With only vertical transmission eq.~\ref{eq:vertical_oblique_transmission} becomes
+With only vertical transmission eq.~\ref{eq:horizontal} becomes
 $\hat{p} =  \tilde{p}$,
 and eq.~\ref{eq:nextgen_parents} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
 
 \begin{equation} 
 \begin{split}\label{eq:nextgen_parents_vertical_only}
 \bar{w} \tilde{p}' 
-& = p^2 (1+b-c) (1 - (1-p) (1-\alpha) T_B) \\
-& + p(1-p) (1-c) (p (1-\alpha) T_B + 1 - T_B) \\
-& + p(1-p) (1+b) (p (1-\alpha) + \alpha) T_A \\
-& + (1-p)^2 p (1-\alpha) T_A
+& = \tilde{p}^2 (1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
+& + \tilde{p}(1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
+& + \tilde{p}(1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A
 \end{split}
 \end{equation}
 
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
 If 
-\begin{equation}\label{result1}
+\begin{equation}\label{eq:unequal_transmission}
 c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b (p(1-\alpha) - 1)]
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
@@ -294,25 +294,35 @@ which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:h
 %(yr: I stopped here)
 	
 \underline{Special case 2 - $\alpha =1$:} in this case, horizontal transmission can only occur as a result of interaction.
-\\Eq. \eqref{result0} becomes:
+\\Eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
-\begin{split} \label{result3}
+\begin{split} \label{eq:horizontal_transmission_only_after_interaction}
 c(1-T_B)  < & \, T_A -T_B +b(T_A-T_B)
 \end{split}
 \end{equation}
-Therefore, cooperative behavior will take over the population when eq. \eqref{result3} is satisfied. 
-This result is in accordance with the result presented by Lewin-Epstein at el. \citep{Ohad}. 
+Therefore, cooperative behavior will take over the population when eq.~\ref{eq:horizontal_transmission_only_after_interaction} is satisfied. 
+This result is in accordance with the result presented by~\citet{lewin2017microbes}. 
 \\\underline{Special case 3 - $\alpha = 0$:} in this case horizontal transmission can not occur as a result of interaction.  
-Then, eq. \eqref{result0} becomes:
+Then, eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
-\begin{split} \label{result4}
+\begin{split} \label{eq:horizontal_transmission_from_population}
 0 < & \,  - bq(1-T_B)- bT_B-c(1-T_B)-T_B
 \end {split}
 \end{equation}
 Which is always false because all of the elements are negative. Therefore, cooperation will eventually disappear from population.
 \\Those are the results we have so far. However, there is a still work need to be done. \\
 We will analyze the equilibrium points in this model. We know that $p=1$ is an equilibrium point because if the all individuals in the population are cooperators then in next generation all individual will be cooperator as well. Same for $p=0$. We will check if there are any more equilibrium points. For each equilibrium point we will determine whether it is stable equilibrium or not. 
-\\So far, we assumed that $v=1$. We believe it will be interesting to test the effect of oblique transmission ($v\neq 1$) since oblique transmission is common in cultural evolution models. Therefore, we are planning to simulations to investigate the case when $v\neq 1$. 
+\\So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission ($v\neq 1$) which is common in cultural evolution models. Start by looking on special case where $v=0$. In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
+\begin{equation} 
+\begin{split}\label{eq:nextgen_parents_oblique_only}
+\bar{w} p' 
+& = p^2 (1+b-c) (1 - (1-p) (1-\alpha) T_B) \\
+& + p(1-p) (1-c) (p (1-\alpha) T_B + 1 - T_B) \\
+& + p(1-p) (1+b) (p (1-\alpha) + \alpha) T_A \\
+& + (1-p)^2 p (1-\alpha) T_A
+\end{split}
+\end{equation}
+The frequency of phenotype A among parents increases if $\tilde{p}'>\tilde{p}$. From eq.~\ref{eq:nextgen_parents_oblique_only} applies that $\tilde{p}'>\tilde{p}$ is satisfy when
 
 \subsection*{Aim 2}
 Prisoner's dilemma is widely studied and most of the models developed in order to learn about evolution of cooperation is using it as the model of interaction's result. However, often the reality is different. For example, interaction could be between than two individuals. 
