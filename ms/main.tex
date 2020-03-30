@@ -312,17 +312,21 @@ Then, eq.~\ref{eq:unequal_transmission} becomes:
 Which is always false because all of the elements are negative. Therefore, cooperation will eventually disappear from population.
 \\Those are the results we have so far. However, there is a still work need to be done. \\
 We will analyze the equilibrium points in this model. We know that $p=1$ is an equilibrium point because if the all individuals in the population are cooperators then in next generation all individual will be cooperator as well. Same for $p=0$. We will check if there are any more equilibrium points. For each equilibrium point we will determine whether it is stable equilibrium or not. 
-\\So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission ($v\neq 1$) which is common in cultural evolution models. Start by looking on special case where $v=0$. In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
+\\So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission ($v\neq 1$) which is common in cultural evolution models. 
+Start by looking on special case where $v=0$. In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
 \begin{equation} 
 \begin{split}\label{eq:nextgen_parents_oblique_only}
-\bar{w} p' 
-& = p^2 (1+b-c) (1 - (1-p) (1-\alpha) T_B) \\
-& + p(1-p) (1-c) (p (1-\alpha) T_B + 1 - T_B) \\
-& + p(1-p) (1+b) (p (1-\alpha) + \alpha) T_A \\
+p' 
+& = p^2 (1 - (1-p) (1-\alpha) T_B) \\
+& + p(1-p)(p (1-\alpha) + \alpha) T_A \\
+& + p(1-p)((1-\alpha)T_B + (1-\alpha)(p+(1-p)(1-T_B))) \\
 & + (1-p)^2 p (1-\alpha) T_A
 \end{split}
 \end{equation}
-The frequency of phenotype A among parents increases if $\tilde{p}'>\tilde{p}$. From eq.~\ref{eq:nextgen_parents_oblique_only} applies that $\tilde{p}'>\tilde{p}$ is satisfy when
+The frequency of phenotype A among adults increases if $p'>p$. From eq.~\ref{eq:nextgen_parents_oblique_only} applies that $p'>p$ is satisfied when:
+\begin{equation} \label{eq:oblique_only_result}
+T_A>T_B  
+\end{equation}
 
 \subsection*{Aim 2}
 Prisoner's dilemma is widely studied and most of the models developed in order to learn about evolution of cooperation is using it as the model of interaction's result. However, often the reality is different. For example, interaction could be between than two individuals. 
@@ -335,7 +339,7 @@ b_2-\frac{1}{n}c_2 >\, & b_1 - \frac{1}{n}c_1.
 \end{equation}
 Cooperative individual is an individual who choose to take the cheap dish. Choosing the cheap dish increases the fitness of the competitors. 
 In the second scenario we can use public common goods as our game. Public common goods is a multiplayer game in which each player can secretly choose how much he want to contribute. The contributions from all players is collected and the sum is multiplied by a factor (greater or equal to one) and the result is the "public good". The public good is evenly divided among the players. A player will be considered as a cooperator if decide to contribute. 
-In the third scenario, we want to use a general two player game. Prisoner dilemma is an example of a two player game with a payoff matrix shown in figure \ref{fig:payoff}. We will investigate the general case. The payoff matrix in the general case is shown in figure \ref{fig:generalPayoff}.
+In the third scenario, we want to use a general two player game. Prisoner dilemma is an example of a two player game with a payoff matrix shown in figure \ref{fig:generalPayoff}. We will investigate the general case. The payoff matrix in the general case is shown in figure \ref{fig:generalPayoff}.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.4]{generalpayoff.pdf}
@@ -349,7 +353,7 @@ we will analyse these models with simulations.
 
 % Discussion
 \section*{Discussion}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\eqref{result} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
+We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
 Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
 
 %\pagebreak
@@ -369,7 +373,7 @@ the Israel Science Foundation 552/19 (YR).
 % Appendices
 \newpage
 \section*{Appendix A} % TODO fix equations references
-In the section, we start with eq.~\eqref{modeleq} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
+In the section, we start with eq.~\ref{eq:nextgen_parents} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
 
 We start by multiple by $\bar{w}$ The result is shown in eq. \eqref{step1}.
 \begin{equation} 
@@ -387,14 +391,11 @@ Divining by p and substituting $p=1-q$ give us eq. \eqref{step2}
 \end{split}
 \end{equation}
 Eq. \eqref{step2} becomes eq. \eqref{step3}.
-%\begin{equation} 
-%\begin{split} \label{step3}
-%1 + b - c - q(b-c) < & \, \{ bq^2T_B-b\alpha q^2T_B - bq^2T_A + \alpha bq^2T_A - bq - qT_B - bqT_B + \alpha bqT_B +cqT_B + qT_A + bqT_B + b - c + 1 \}
-%\end{split}
-%\end{equation}
+
 \begin{equation} 
 \begin{split}\label{step3}
- -q(b-c) < & \,  bq^2T_B-b\alpha q^2T_B - bq^2T_A + \alpha bq^2T_A - bq - qT_B - bqT_B + \alpha bqT_B +cqT_B + qT_A + bqT_B 
+ -q(b-c) < & \,  bq^2T_B-b\alpha q^2T_B - bq^2T_A +  \alpha bq^2T_A - bq - qT_B - bqT_B + \\
+ & \alpha bqT_B +cqT_B + qT_A + bqT_B 
 \end{split}
 \end{equation}
 
