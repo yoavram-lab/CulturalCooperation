@@ -279,7 +279,7 @@ and eq.~\ref{eq:nextgen_parents} for the change in frequency $p'$ of phenotype $
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
 If 
 \begin{equation}\label{eq:unequal_transmission}
-c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b (p(1-\alpha) - 1)]
+c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + bp(1-\alpha)]
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
 
@@ -297,7 +297,7 @@ which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:h
 \\Eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_only_after_interaction}
-c(1-T_B)  < & \, T_A -T_B +b(T_A-T_B)
+c\cdot(1-T_B)  < \,& T_A\cdot(1+b) - T_B
 \end{split}
 \end{equation}
 Therefore, cooperative behavior will take over the population when eq.~\ref{eq:horizontal_transmission_only_after_interaction} is satisfied. 
@@ -306,12 +306,22 @@ This result is in accordance with the result presented by~\citet{lewin2017microb
 Then, eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population}
-0 < & \,  - bq(1-T_B)- bT_B-c(1-T_B)-T_B
-\end {split}
+c\cdot(1-T_B) < & (T_A-T_B)(1+bp)  
+\end{split}
 \end{equation}
-Which is always false because all of the elements are negative. Therefore, cooperation will eventually disappear from population.
-\\Those are the results we have so far. However, there is a still work need to be done. \\
-We will analyze the equilibrium points in this model. We know that $p=1$ is an equilibrium point because if the all individuals in the population are cooperators then in next generation all individual will be cooperator as well. Same for $p=0$. We will check if there are any more equilibrium points. For each equilibrium point we will determine whether it is stable equilibrium or not. 
+From eq.~\ref{eq:horizontal_transmission_from_population} we learn that when $T_B\leq T_A$ cooperation will not take over the population.
+When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes:
+\begin{equation} 
+\begin{split} \label{eq:horizontal_transmission_from_population_reorder}
+\frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} < & p  
+\end{split}
+\end{equation}
+Therefore, in the case $T_A>T_B$ a sufficient condition for cooperation fixation is:
+\begin{equation} 
+  \begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
+c < &\, \frac{T_A-T_B}{1-T_B}  
+  \end{split}
+  \end{equation}
 \\So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission ($v\neq 1$) which is common in cultural evolution models. 
 Start by looking on special case where $v=0$. In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
 \begin{equation} 
@@ -350,50 +360,34 @@ the Israel Science Foundation 552/19 (YR).
 % Appendices
 \newpage
 \section*{Appendix A} % TODO fix equations references
-In the section, we start with eq.~\ref{eq:nextgen_parents} and we want to investigate when $p\leq p'$. We know that $0<p<1$ and $0<c<b$.
+In the section, we start with eq.~\ref{eq:nextgen_parents_vertical_only} and we want to investigate when $\tilde{p}< \tilde{p}'$. 
+\begin{equation} 
+\begin{split} \label{eq:horizontal_transmission_from_interaction_step0}
+\bar{w}\tilde{p} < & \, \tilde{p}^2 (1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
+& + \tilde{p}(1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
+& + \tilde{p}(1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A
+\end{split}
+\end{equation}
+First divide by $\tilde{p}$, thus eq.~\ref{eq:horizontal_transmission_from_interaction_step0} becomes
+\begin{equation} 
+\begin{split} \label{eq:horizontal_transmission_from_interaction_step1}
+  \bar{w} < & \, \tilde{p}(1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
+  & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
+  & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+  & + (1-\tilde{p})^2 (1-\alpha) T_A
+\end{split}
+\end{equation}
+We know that the mean fitness $\bar{w} = 1 + \tilde{p}(b-c)$, thus eq.~\ref{eq:horizontal_transmission_from_interaction_step1} becomes
+\begin{equation} 
+\begin{split} \label{eq:horizontal_transmission_from_interaction_step2}
+  1 + \tilde{p}(b-c) < & \, \tilde{p}(1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
+  & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
+  & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+  & + (1-\tilde{p})^2 (1-\alpha) T_A
+\end{split}
+\end{equation}
+Eq.~\ref{eq:horizontal_transmission_from_interaction_step2} can be simplified into eq.~\ref{eq:unequal_transmission}.
 
-We start by multiple by $\bar{w}$ The result is shown in eq. \eqref{step1}.
-\begin{equation} 
-\begin{split} \label{step1}
-p + p^2(b-c) < & \, \{ p^2(1+b-c)[1-(1-\alpha)T_Bq] + pq(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
-&+ pq(1+b)[\alpha T_A+(1-\alpha)T_Ap)] + q^2(1-\alpha)T_Ap\}
-\end{split}
-\end{equation}
-
-Divining by p and substituting $p=1-q$ give us eq. \eqref{step2}
-\begin{equation} 
-\begin{split} \label{step2}
-1 + (1-q)(b-c) < & \, \{ (1-q)(1+b-c)[1-(1-\alpha)T_Bq] + q(1-c)[1-(1-\alpha)T_Bq-\alpha T_B)]\\
-&+ q(1+b)[\alpha T_A+(1-\alpha)T_A(1-q))] + q^2(1-\alpha)T_A\}
-\end{split}
-\end{equation}
-Eq. \eqref{step2} becomes eq. \eqref{step3}.
-
-\begin{equation} 
-\begin{split}\label{step3}
- -q(b-c) < & \,  bq^2T_B-b\alpha q^2T_B - bq^2T_A +  \alpha bq^2T_A - bq - qT_B - bqT_B + \\
- & \alpha bqT_B +cqT_B + qT_A + bqT_B 
-\end{split}
-\end{equation}
-
-We can divide by q because we know that $0<q<1$ then,
-\begin{equation} 
-\begin{split} \label{step4}
- c(1-T_B) < & \,  bqT_B(1-\alpha) - bqT_A(1-\alpha) + (T_A-T_B) + b(T_A - T_B) + \alpha bT_B.
-\end{split}
-\end{equation}
-
-In the special case when $T_A = T_B = T$ equation \eqref{step4} becomes
-\begin{equation} 
-\begin{split}\label{step5}
-c(1-T) < & \, \alpha bT.
-\end{split}
-\end{equation}
-Eq. \eqref{step5} can be rewritten as
-\begin{equation} 
-\begin{split}
- \frac{1-T}{\alpha T} < \frac{b}{c}.
-\end{split}
-\end{equation}
 
 \end{document}
