@@ -262,6 +262,8 @@ where $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the popula
 We start by inspecting specific cases, for which we can derive general results. 
 Afterwards, we use numerical simulation to analyze more complex cases.
 
+\subsection*{Without oblique transmission, $v=1$}
+
 With only vertical transmission eq.~\ref{eq:horizontal} becomes
 $\hat{p} =  \tilde{p}$,
 and eq.~\ref{eq:nextgen_parents} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
@@ -282,6 +284,7 @@ If
 c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + bp(1-\alpha)]
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
+\\
 
 \textbf{Corollary 1.1: equal horizontal transmission.}
 If $T=T_A=T_B$, then
@@ -291,9 +294,9 @@ If $T=T_A=T_B$, then
 \end{equation}
 which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}).
 
-%(yr: I stopped here)
+\paragraph*{Complete correlation between transmission and cooperation, $\alpha=1$.}
 	
-\underline{Special case 2 - $\alpha =1$:} in this case, horizontal transmission can only occur as a result of interaction.
+In this case, horizontal transmission can only occur as a result of cooperative interactions.
 \\Eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_only_after_interaction}
@@ -302,28 +305,39 @@ c\cdot(1-T_B)  < \,& T_A\cdot(1+b) - T_B
 \end{equation}
 Therefore, cooperative behavior will take over the population when eq.~\ref{eq:horizontal_transmission_only_after_interaction} is satisfied. 
 This result is in accordance with the result presented by~\citet{lewin2017microbes}. 
-\\\underline{Special case 3 - $\alpha = 0$:} in this case horizontal transmission can not occur as a result of interaction.  
+
+\paragraph*{No correlation between transmission and cooperation, $\alpha=0$.}
+
+In this case horizontal transmission can not occur as a result of interaction.  
 Then, eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population}
 c\cdot(1-T_B) < & (T_A-T_B)(1+bp)  
 \end{split}
 \end{equation}
-From eq.~\ref{eq:horizontal_transmission_from_population} we learn that when $T_B\leq T_A$ cooperation will not take over the population.
+
+Therefore, since $c>0$, cooperation will not take over the population (and furthermore will become extinct) if $T_A\leq T_B$.
 When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_reorder}
-\frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} < & p  
+p & > \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} .
 \end{split}
 \end{equation}
-Therefore, in the case $T_A>T_B$ a sufficient condition for cooperation fixation is:
+Hence, cooperation will take over the population when when eq.~\ref{eq:horizontal_transmission_from_population_reorder} is satisfied, that is if $p$ is above the threshold on the RHS. 
+Specifically, a sufficient condition for cooperation fixation is found by setting the RHS to be negative:
 \begin{equation} 
   \begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
 c < &\, \frac{T_A-T_B}{1-T_B}  
   \end{split}
   \end{equation}
-\\So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission ($v\neq 1$) which is common in cultural evolution models. 
-Start by looking on special case where $v=0$. In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
+
+\subsection*{With oblique transmission, $v<1$}
+    
+So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission: transmission from non-parental adults.
+
+\paragraph*{Without vertical transmission, $v = 0$.}
+
+In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
 \begin{equation} 
 \begin{split}\label{eq:nextgen_parents_oblique_only}
 p' 
@@ -333,7 +347,9 @@ p'
 & + (1-p)^2 p (1-\alpha) T_A
 \end{split}
 \end{equation}
-\textbf{Result 2: Oblique and horizontal transmission of cooperation.} The frequency of phenotype A among adults increases if $p'>p$. From eq.~\ref{eq:nextgen_parents_oblique_only} applies that $p'>p$ is satisfied when:
+
+\textbf{Result 2: Oblique and horizontal transmission of cooperation.} The frequency of phenotype $A$ among adults increases if $p'>p$.
+From eq.~\ref{eq:nextgen_parents_oblique_only}, this occurs when:
 \begin{equation} \label{eq:oblique_only_result}
 T_A>T_B  
 \end{equation}
