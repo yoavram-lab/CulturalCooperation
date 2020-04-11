@@ -236,6 +236,12 @@ p'
 & + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A]
 \end{aligned}
 \end{equation}
+Which can be simplified into
+\begin{equation}\label{eq:nextgen_adults_slimpify}
+  \begin{aligned}
+  p'  & = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) \\
+  \end{aligned}
+  \end{equation}
 
 The frequency of $A$ among parents follows a similar dynamic, but also includes the effect of natural selection, and is therefore
 \begin{equation}\label{eq:nextgen_parents}
@@ -248,6 +254,16 @@ The frequency of $A$ among parents follows a similar dynamic, but also includes 
 \end{aligned}
 \end{equation}
 where $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the population mean fitness.
+Eq~\ref{eq:nextgen_parents} can be slimpified to
+\begin{equation}\label{eq:nextgen_parents_simplified}
+\begin{aligned}
+\bar{w} \tilde{p}'
+& = \hat{p}^2 (1+b-c) [1-(1-\hat{p}(1-\alpha)T_B)] \\
+& + \hat{p}(1-\hat{p}) (1-c) [\hat{p}(1-\alpha)T_B+1-T_B] \\
+& + (1-\hat{p})\hat{p} (1+b) [\hat{p}(1-\alpha) + \alpha]T_A \\
+& + (1-\hat{p})^2 [(1-\alpha) \hat{p}]T_A,
+\end{aligned}
+\end{equation}
 
 \begin{figure}[b]
   \centering
@@ -266,22 +282,22 @@ Afterwards, we use numerical simulation to analyze more complex cases.
 
 With only vertical transmission eq.~\ref{eq:horizontal} becomes
 $\hat{p} =  \tilde{p}$,
-and eq.~\ref{eq:nextgen_parents} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
+and eq.~\ref{eq:nextgen_parents_simplified} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
 
 \begin{equation} 
 \begin{split}\label{eq:nextgen_parents_vertical_only}
 \bar{w} \tilde{p}' 
-& = \tilde{p}^2 (1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
-& + \tilde{p}(1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
-& + \tilde{p}(1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+& = \tilde{p}^2 (1+b-c) [1 - (1-\tilde{p}) (1-\alpha) T_B] \\
+& + \tilde{p}(1-\tilde{p}) (1-c) [\tilde{p} (1-\alpha) T_B + 1 - T_B] \\
+& + \tilde{p}(1-\tilde{p}) (1+b) [\tilde{p} (1-\alpha) + \alpha] T_A \\
 & + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A
 \end{split}
 \end{equation}
 
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
 If 
-\begin{equation}\label{eq:unequal_transmission}
-c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + bp(1-\alpha)]
+\begin{equation} \label{eq:unequal_transmission}
+c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)]
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
 \\
@@ -312,7 +328,7 @@ In this case horizontal transmission can not occur as a result of interaction.
 Then, eq.~\ref{eq:unequal_transmission} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population}
-c\cdot(1-T_B) < & (T_A-T_B)(1+bp)  
+c\cdot(1-T_B) < & (T_A-T_B)(1+b\tilde{p})  
 \end{split}
 \end{equation}
 
@@ -320,16 +336,23 @@ Therefore, since $c>0$, cooperation will not take over the population (and furth
 When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes:
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_reorder}
-p & > \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} .
+\tilde{p} & > \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)}
 \end{split}
 \end{equation}
-Hence, cooperation will take over the population when when eq.~\ref{eq:horizontal_transmission_from_population_reorder} is satisfied, that is if $p$ is above the threshold on the RHS. 
-Specifically, a sufficient condition for cooperation fixation is found by setting the RHS to be negative:
+Hence, cooperation will take over the population when when eq.~\ref{eq:horizontal_transmission_from_population_reorder} is satisfied, that is if $\tilde{p}$ is above the threshold on the RHS. 
+When $\tilde{p}$ is equal to eq.~\ref{eq:horizontal_transmission_from_population_reorder} RSH the frequency of phenotype A do not change. Denote $\tilde{p}^{*}$:
 \begin{equation} 
-  \begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
+\begin{split} \label{eq:horizontal_transmission_from_population_equilibrium}
+\tilde{p}^{*} & = \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} .
+\end{split}
+\end{equation}
+Therefore, $\tilde{p}^{*}$ is the third equilibrium in this system.
+Specifically, a sufficient condition for cooperation fixation is found by setting the the equilibrium $\tilde{p}^*$  to be negative:
+\begin{equation} 
+\begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
 c < &\, \frac{T_A-T_B}{1-T_B}  
-  \end{split}
-  \end{equation}
+\end{split}
+\end{equation}
 
 \subsection*{With oblique transmission, $v<1$}
     
