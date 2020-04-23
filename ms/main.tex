@@ -8,7 +8,7 @@ top=20mm,
 headheight=12pt
 }
 
-%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx} % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 % TeX will automatically convert eps --> pdf in pdflatex		
 
@@ -314,27 +314,39 @@ If
 c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)]
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
-\\
 
-\textbf{Corollary 1.1: equal horizontal transmission.}
+\textbf{Corollary 1.1: Equal horizontal transmission.}
 If $T=T_A=T_B$, then
 \begin{equation}
 \label{eq:equal_transmission}
-\frac{1-T}{\alpha T} < \frac{b}{c},
+\frac{b}{c} > \frac{1-T}{\alpha T},
 \end{equation}
 which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}).
 
 \paragraph*{Complete correlation between transmission and cooperation, $\alpha=1$.}
 	
 In this case, horizontal transmission can only occur as a result of cooperative interactions.
-\\Eq.~\ref{eq:unequal_transmission} becomes:
+Therefore, eq.~\ref{eq:unequal_transmission}, which determines the conditions for evolution of cooperation, becomes
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_only_after_interaction}
-c\cdot(1-T_B)  < \,& T_A\cdot(1+b) - T_B
+T_A b > \,& c (1-T_B) + (T_B - T_A).
 \end{split}
 \end{equation}
-Therefore, cooperative behavior will take over the population when eq.~\ref{eq:horizontal_transmission_only_after_interaction} is satisfied. 
-This result is in accordance with the result presented by~\citet{lewin2017microbes}. 
+This is equivalent to a result by~\citet[eq.~1]{lewin2017microbes}.
+Eq.~\ref{eq:horizontal_transmission_only_after_interaction} can be written as
+\begin{equation} 
+\begin{split} \label{eq:horizontal_transmission_only_after_interaction2}
+T_A\cdot(1+b) > \,& 1 - (1-T_B)(1-c).
+\end{split}
+\end{equation}
+This equation provides an interesting interpretation for the success of cooperation. 
+Consider an interaction between two individuals: a cooperator and a defector.
+$T_A\cdot(1+b)$ is the probability that the defector becomes cooperative and reproduces.
+This is the effective benefit for cooperation from this interaction.
+$(1-T_B)(1-c)$ is the probability that the cooperator remains cooperative and also reproduces. 
+Therefore, $1 - (1-T_B)(1-c)$ is the probability that either the cooperator becomes a defector, \emph{or} that it fails to reproduce.
+This is the effective cost for cooperation from this interaction.
+So, eq.~\ref{eq:horizontal_transmission_only_after_interaction2} means that cooperation can evolve if effective benefit is larger than the effective cost.
 
 \paragraph*{No correlation between transmission and cooperation, $\alpha=0$.}
 
