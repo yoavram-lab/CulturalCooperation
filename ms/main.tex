@@ -351,38 +351,36 @@ So, eq.~\ref{eq:horizontal_transmission_only_after_interaction2} means that coop
 \paragraph*{No correlation between transmission and cooperation, $\alpha=0$.}
 
 In this case horizontal transmission can not occur as a result of interaction.  
-Then, eq.~\ref{eq:unequal_transmission} becomes:
+Then, eq.~\ref{eq:unequal_transmission} becomes
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population}
-c\cdot(1-T_B) < & (T_A-T_B)(1+b\tilde{p})  
+c\cdot(1-T_B) < & (T_A-T_B)(1+b\tilde{p}).
 \end{split}
 \end{equation}
 
 Therefore, since $c>0$, cooperation will not take over the population (and furthermore will become extinct) if $T_A\leq T_B$.
-When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes:
+When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_reorder}
-\tilde{p} & > \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)}
+\tilde{p} & > \frac{c\cdot(1-T_B) - (T_A-T_B)}{b\cdot(T_A-T_B)}.
 \end{split}
 \end{equation}
-Hence, cooperation will take over the population when when eq.~\ref{eq:horizontal_transmission_from_population_reorder} is satisfied, that is if $\tilde{p}$ is above the threshold on the RHS. 
-When $\tilde{p}$ is equal to eq.~\ref{eq:horizontal_transmission_from_population_reorder} RSH the frequency of phenotype A do not change. Denote $\tilde{p}^{*}$:
+Hence, cooperation will evolve if $\tilde{p} > \tilde{p}^{*}$, which is given by
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_equilibrium}
-\tilde{p}^{*} & = \frac{c\cdot(1-T_B)+T_B-T_A}{b\cdot(T_A-T_B)} .
+\tilde{p}^{*} & = \frac{c\cdot(1-T_B)}{b\cdot(T_A-T_B)} - \frac{1}{b}.
 \end{split}
 \end{equation}
-Therefore, $\tilde{p}^{*}$ is the third equilibrium in this system.
-Specifically, a sufficient condition for cooperation fixation is found by setting the the equilibrium $\tilde{p}^*$  to be negative:
+A sufficient condition for evolution of cooperation is, then,
 \begin{equation} 
 \begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
-c < &\, \frac{T_A-T_B}{1-T_B}  
+\frac{T_A-T_B}{1-T_B} > &\ c.  
 \end{split}
 \end{equation}
 
 \subsection*{With oblique transmission, $v<1$}
     
-So far, we assumed that $v=1$. The next section discuss the effect of oblique transmission: transmission from non-parental adults.
+We now discuss the effect of oblique transmission, i.e. transmission from non-parental adults.
 
 \paragraph*{Without vertical transmission, $v = 0$.}
 
@@ -400,8 +398,9 @@ p'
 \textbf{Result 2: Oblique and horizontal transmission of cooperation.} The frequency of phenotype $A$ among adults increases if $p'>p$.
 From eq.~\ref{eq:nextgen_parents_oblique_only}, this occurs when:
 \begin{equation} \label{eq:oblique_only_result}
-T_A>T_B  
+T_A>T_B. 
 \end{equation}
+% TODO proof.
 
 % Discussion
 \section*{Discussion}
