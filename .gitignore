@@ -6,3 +6,4 @@
 *.log
 *.fdb_latexmk
 *.fls
+*.json

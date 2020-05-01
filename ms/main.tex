@@ -384,14 +384,10 @@ We now discuss the effect of oblique transmission, i.e. transmission from non-pa
 
 \paragraph*{Without vertical transmission, $v = 0$.}
 
-In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents} becomes:
+In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents_simplified} becomes:
 \begin{equation} 
 \begin{split}\label{eq:nextgen_parents_oblique_only}
-p' 
-& = p^2 (1 - (1-p) (1-\alpha) T_B) \\
-& + p(1-p)(p (1-\alpha) + \alpha) T_A \\
-& + p(1-p)((1-\alpha)T_B + (1-\alpha)(p+(1-p)(1-T_B))) \\
-& + (1-p)^2 p (1-\alpha) T_A
+p' = p^2\cdot(T_B-T_A) + p\cdot(1+T_A-T_B)
 \end{split}
 \end{equation}
 
@@ -400,7 +396,6 @@ From eq.~\ref{eq:nextgen_parents_oblique_only}, this occurs when:
 \begin{equation} \label{eq:oblique_only_result}
 T_A>T_B. 
 \end{equation}
-% TODO proof.
 
 % Discussion
 \section*{Discussion}
