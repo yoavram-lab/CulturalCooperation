@@ -6,4 +6,4 @@
 *.log
 *.fdb_latexmk
 *.fls
-*.json
+.vscode/settings.json
