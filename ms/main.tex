@@ -10,7 +10,10 @@ headheight=12pt
 
 \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx} % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-% TeX will automatically convert eps --> pdf in pdflatex		
+% TeX will automatically convert eps --> pdf in pdflatex
+\graphicspath{ {./Figures/} }
+\usepackage{subcaption}
+\usepackage{float}
 
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{commath}
@@ -265,7 +268,7 @@ Eq~\ref{eq:nextgen_parents} can be slimpified to
 \end{aligned}
 \end{equation}
 
-\begin{table}[]
+\begin{table}[H]
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 \textbf{Interaction Type} & \textbf{Frequency}    & \textbf{Fitness}      & \multicolumn{2}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Probability of first interactor\\  to be A following interaction\end{tabular}}}                                                                                                     \\ \hline
@@ -281,7 +284,7 @@ $BxB$                     & $(1-\hat{p})^2$       & $1$                   & $0$ 
 
 \begin{figure}[b]
   \centering
-  \includegraphics[scale=1]{figure.pdf}
+  \includegraphics[scale=1]{figure1.pdf}
   \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interaction partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
   \label{fig:horizontal}
 \end{figure}
@@ -322,6 +325,7 @@ If $T=T_A=T_B$, then
 \frac{b}{c} > \frac{1-T}{\alpha T},
 \end{equation}
 which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}).
+When the ratio $\frac{b}{c}$ is larger than the RHS of eq.~\ref{eq:equal_transmission} cooperation will take over of the population (see~\textbf{\autoref{fig:results_a}}).
 
 \paragraph*{Complete correlation between transmission and cooperation, $\alpha=1$.}
 	
@@ -365,7 +369,7 @@ When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes
 \tilde{p} & > \frac{c\cdot(1-T_B) - (T_A-T_B)}{b\cdot(T_A-T_B)}.
 \end{split}
 \end{equation}
-Hence, cooperation will evolve if $\tilde{p} > \tilde{p}^{*}$, which is given by
+Hence, cooperation will evolve if $\tilde{p} > \tilde{p}^{*}$ (see~\textbf{\autoref{fig:results_b}}), which is given by
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_equilibrium}
 \tilde{p}^{*} & = \frac{c\cdot(1-T_B)}{b\cdot(T_A-T_B)} - \frac{1}{b}.
@@ -396,6 +400,28 @@ From eq.~\ref{eq:nextgen_parents_oblique_only}, this occurs when:
 \begin{equation} \label{eq:oblique_only_result}
 T_A>T_B. 
 \end{equation}
+Therefore, fixation occur when $T_A>T_B$ (see~\textbf{\autoref{fig:results_c}}).
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2a.pdf}
+    \caption{$V=1$, $T_A=T_B=T$, $\alpha \neq 0$}
+    \label{fig:results_a}
+  \end{subfigure}
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2b.pdf}
+    \caption{$V=1$, $\alpha = 0$}
+    \label{fig:results_b}
+  \end{subfigure}
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2c.pdf}
+    \caption{$V=0$}
+    \label{fig:results_c}
+  \end{subfigure}
+  \label{fig:results}
+  \caption{numerical results}
+\end{figure}
 
 % Discussion
 \section*{Discussion}
