@@ -405,12 +405,72 @@ Therefore, fixation occur when $T_A>T_B$ (see~\textbf{\autoref{fig:results_c}}).
 \textbf{With vertical transmission $0<v<1$}
 In this case we will not look for global fixation as we did in previous cases.
 For simplicity, we will invsetigate local equilibriums. We will use eq.~\ref{eq:nextgen_adults_slimpify}
-and eq.~\ref{eq:nextgen_parents_simplified} and substitute it in eq.~\ref{eq:horizontal}.
-We are looking for the equilibrium $p^*$ which happens when $\hat{p}' = \hat{p}$ and we get
-\begin{equation} \label{eq:oblique_and_vertic_result}
-  \hat{p}^* =  \frac{\alpha bvT_A + cvT_B + T_A-T_B}{\alpha bv\cdot(T_A-T_B)- b\cdot(T_A-T_B) - cv\cdot(T_A-T_B) + c\cdot(T_A-T_B)}
+and eq.~\ref{eq:nextgen_parents_simplified} and substitute it in eq.~\ref{eq:horizontal}. 
+By doing this we get a single equation depending only on $\hat{p}$.
+For simplicity, Let's assume that $T_A = T_B = T$ so we will get
+\begin{equation} \label{eq:equal_horizontal_transmission}
+  \hat{p}' - \hat{p} =  \hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T))
 \end{equation}
 
+We are looking for the equilibrium $\hat{p}^*$ which happens when $\hat{p}' = \hat{p}$ and we get two equilibriums
+
+\textbf{Result 2.1: equliburims with equal horizontal transmission $T$ and vertical transmission $0<v<1$}
+\begin{equation} \label{eq:result2.1}
+  \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1
+\end{equation}
+We would like to know under what condition fixation of cooperation is stable. 
+In order to do that we find the derivative  $f(\hat{p}) = \hat{p}'-\hat{p}$.
+\begin{equation} \label{eq:derivative_of_phattag-phat}
+ f'(\hat{p}) = 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
+\end{equation}
+We are interested in the case when when $\hat{p} = \hat{p}^*_1=1$ therefore
+$f'(1) = -\alpha bvT + cv(1-T)$. Therefore, fixation of cooperation is stable when
+\textbf{Results 2.2: condition for stability of fixation of cooperation}
+\begin{equation} \label{eq:oblique_and_vertic_result}
+  \frac{b}{c}>\frac{1-T}{\alpha T}
+\end{equation}
+Which is the same condition we get in corollary 1.1.
+Now let's assume that the general case where $T_A \neq T_B$ and we get that
+\begin{equation} \label{eq:general_case_polynomial}
+  \hat{p}'-\hat{p} = \beta_1p^3 + \beta_2 p^2 + \beta_3p + \beta_4
+\end{equation}
+where 
+\begin{equation} \label{eq:polynomial_coefficients}
+\begin{split}
+  & \beta_1 = c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B) \\
+  & \beta_2 = (b(1-\alpha v)-c(1-v)-1)(T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
+  & \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \\
+  & \beta_4 = 0
+\end{split}
+\end{equation}
+Since the degree of eq.~\ref{eq:general_case_polynomial} is a third degree polynomial,
+three equilibrium exist. We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibrium.
+We can find the third equilibrium by finding wehen eq.~\ref{eq:general_case_polynomial} is equal to zero and we get
+\begin{equation} \label{eq:oblique_and_vertic_result}
+  \hat{p}^*_2 =  \frac{\alpha bvT_A + cvT_B + T_A-T_B-cv}{c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B)}
+\end{equation}
+Next we would like to learn under what conditions $\hat{p}^*_2$ is locally stable. 
+For simplicity let's assume that $T_A > T_B$ and we will check when $\hat{p}^*_0 \, \hat{p}^*_1$ are stable.
+In order to do that we find the derivative  $f(\hat{p}) = \hat{p}'-\hat{p}$ of $\hat{p}$.
+\begin{equation} \label{eq:derivative_of_phattag-phat2}
+  f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3
+ \end{equation}
+ When $\hat{p} = \hat{p}^*_0 = 0$ we get
+ \begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
+  f'(0) = \beta_3
+ \end{equation}
+ Therefore, $\hat{p}^*_0$ is stable when
+ \begin{equation} \label{eq:p=0_stability_condition}
+  f'(0) = \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) < 0
+ \end{equation}
+ And $\hat{p}^*_1=1$ is stable when
+ \begin{equation} \label{eq:p=1_stability_condition}
+  f'(1) =3\beta_1 + 2\beta_2 +\beta_3 = cv + (T_A-T_B)(b-c) - T_B(1+\alpha bv)  + T_A(1-cv) < 0
+ \end{equation}
+
+
+
+>>>>>>> Stashed changes
 \begin{figure}[H]
   \centering
   \begin{subfigure}{8cm}
