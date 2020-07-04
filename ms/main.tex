@@ -445,28 +445,42 @@ where
 \end{equation}
 Since the degree of eq.~\ref{eq:general_case_polynomial} is a third degree polynomial,
 three equilibrium exist. We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibrium.
-We can find the third equilibrium by finding wehen eq.~\ref{eq:general_case_polynomial} is equal to zero and we get
+We can find the third equilibrium by finding when eq.~\ref{eq:general_case_polynomial} is equal to zero and we get
 \begin{equation} \label{eq:oblique_and_vertic_result}
   \hat{p}^*_2 =  \frac{\alpha bvT_A + cvT_B + T_A-T_B-cv}{c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B)}
 \end{equation}
-Next we would like to learn under what conditions $\hat{p}^*_2$ is locally stable. 
-For simplicity let's assume that $T_A > T_B$ and we will check when $\hat{p}^*_0 \, \hat{p}^*_1$ are stable.
+We would like to know when $\hat{p}_2$ is realistic meaning $0<\hat{p}_2<1$.  
 In order to do that we find the derivative  $f(\hat{p}) = \hat{p}'-\hat{p}$ of $\hat{p}$.
 \begin{equation} \label{eq:derivative_of_phattag-phat2}
   f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3
  \end{equation}
- When $\hat{p} = \hat{p}^*_0 = 0$ we get
- \begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
+We assume that $T_A>T_B$ and we get that $\beta_1<0$ since $c(1-v)-b(1-\alpha v)<0$ and $c<b$ $v<1$.
+In this case the polynomial goes to $\infty$ when $\hat{p}$ goes to infinity. 
+Therefore, if $\hat{p}_2$ is positive then $f'(0)$ must be negative
+\begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
   f'(0) = \beta_3
  \end{equation}
- Therefore, $\hat{p}^*_0$ is stable when
- \begin{equation} \label{eq:p=0_stability_condition}
-  f'(0) = \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) < 0
- \end{equation}
- And $\hat{p}^*_1=1$ is stable when
- \begin{equation} \label{eq:p=1_stability_condition}
-  f'(1) =3\beta_1 + 2\beta_2 +\beta_3 = cv + (T_A-T_B)(b-c) - T_B(1+\alpha bv)  + T_A(1-cv) < 0
- \end{equation}
+$\hat{p}_2>0$ when $\beta_3<0$. In addition, $\hat{p}_0=0$ is stable when $|f'(0)|<1$ therefore, when $-1<\beta_3<1$. We can prove that $-1<\beta_3$:
+\begin{equation} \label{eq:beta3-condition}
+  \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) > -cv(1-T_B) > -1
+\end{equation}
+Therefore, when $\hat{p}_2>0$ we get that $-1<\beta_3<0$ and $\hat{p}_0=0$ is always stable. 
+
+Now we would like to find when $\hat{p}_2<1$. If $T_A>T_B$ like before then the polynomial goes to minus infinity when $\hat{p}$ goes to infinity.
+Hence, if $\hat{p}_2<1$ then $f'(1)$ must be negative
+\begin{equation} \label{eq:derivative_of_phattag-phat_p=1}
+  f'(0) = \beta_1 - \beta_3
+\end{equation}
+Therefore, $\hat{p}_2<1$ when $\beta_1-\beta_3<0$. In addition, $\hat{p}_1=1$ is stable when $|f'(1)|<1$ therefore, when $-1<\beta_1-\beta_3<1$. 
+We can prove that when $0<\hat{p}_2<1$ hence $\beta_3<0$ and $\beta_1-\beta_3<0$ we get that $-1<\beta_1-\beta_3$:
+\begin{equation} \label{eq:beta1-beta3-condition}
+ \beta_1 - \beta_3 > - \beta_3 > 0 > -1
+\end{equation}
+which means that when $0<\hat{p}_2<1$ then $\hat{p}_1=1$ is always stable.
+
+\textbf{result 2.3}: for the case when $T_A>T_B$ $\hat{p_2}$ is realistic when $\beta_1<\beta_3<0$ and is always unstable equilibrium.
+
+\textbf{result 2.4}: for the case when $T_B>T_A$ $\hat{p_2}$ is realistic when $\beta_1>\beta_3>0$ and is always unstable equilibrium.
 
 \begin{figure}[H]
   \centering
