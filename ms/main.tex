@@ -74,19 +74,19 @@ headheight=12pt
 \usepackage[round,colon]{natbib}
 
 % Title page
-\title{Can Cultural Transmission Explain The Evolution of Cooperative Behavior?}
+\title{Cultural Transmission Can Explain the Evolution of Cooperative Behavior}
 
 % Authors
 \renewcommand\Affilfont{\small}
 
-\author[a]{Dor Cohen}
-\author[b]{Ohad Lewin-Epstein}
-\author[c]{Marcus W. Feldman}
+\author[1]{Dor Cohen}
+\author[2]{Ohad Lewin-Epstein}
+\author[3]{Marcus W. Feldman}
 \author[a,*]{Yoav Ram}
 
-\affil[a]{School of Computer Sciences, IDC Herzliya, Herzliya, Israel}
-\affil[b]{School of Plant Sciences and Food Security, Tel Aviv University, Tel Aviv, Israel}
-\affil[c]{Department of Biology, Stanford University, Stanford, CA}
+\affil[1]{School of Computer Sciences, IDC Herzliya, Herzliya, Israel}
+\affil[2]{School of Plant Sciences and Food Security, Tel Aviv University, Tel Aviv, Israel}
+\affil[3]{Department of Biology, Stanford University, Stanford, CA}
 \affil[*]{Corresponding author: yoav@yoavram.com}
 
 \date{\today}
@@ -115,25 +115,26 @@ Here we attempt to determine to what extent cultural transmission can explain th
 \subsection*{Theories for evolution of cooperation}
 Three major theories have been proposed to explain the evolution of cooperative behavior.
 
-\paragraph{Kin selection theory} suggests that natural selection can favor cooperative behavior between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the genetic relatedness $r$ of a recipient to an actor multiplied by the benefit $b$ to the recipient is greater than the reproductive cost $c$ to the actor. This is also known as Hamilton's Rule:
+\paragraph{Kin selection theory} suggests that natural selection can favor cooperative behavior between kin. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton, kin selection causes allele to increase in frequency when the the reproductive cost to the actor, $c$, is less than the benefit to the recipient, $b$, times the genetic relatedness between the recipient and the actor, $r$.
+This is also known as Hamilton's Rule:
 
 \begin{equation} \label{eq:hamilton_rule}
-c<rb
+c < b \cdot r.
 \end{equation}
 
 There is an ongoing debate about to what extent kin selection explains evolution of cooperation and altruism.
 It has been suggested that kin selection to explain the cooperative behavior of eusocial insects like the honey bee.
 The most significant argument against kin selection is that cooperation can evolve with zero relatedness~\citep{wilson2005kin}. This makes Hamilton's rule incomplete according to \citet{wilson2005kin}. \citet{foster2006kin} reject this claim. They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
-\citet{wilson2005kin} also criticizes kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, \citet{foster2006kin} argue that kin selection does not ignore ecology. Hamilton’s rule shows
+\citet{wilson2005kin} also criticizes kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, \citet{foster2006kin} argue that kin selection does not ignore ecology. Hamilton's rule shows
 that environmental factors causing a high benefit-to-cost ratio will favor cooperation.
 
 \paragraph{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. In \emph{direct reciprocity} there are a repeated encounters between the same two individuals. In every encounter, each player has a choice between cooperation and defection. If I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
 This game-theoretic framework is known as the repeated Prisoner's Dilemma. 
 %A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
-Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit. 
+Direct reciprocity can only lead to the evolution of cooperation if the cost is less than the benefit $b$ times the probability for another encounter between the same two individuals, $w$, 
 
 \begin{equation} \label{eq:reciprocity}
-c<bw
+c < b \cdot w.
 \end{equation}
 
 Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions. In humans, such interactions happen often, for example humans often donate money. 
@@ -144,11 +145,12 @@ However, Reciprocity assume repeating interactions and therefore, has difficulty
 
 \paragraph{Group selection theory} posits that cooperation is favored because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each groups there are cooperators, which help to other group members and defectors which do not help.  % TODO add reference
 Individuals reproduce proportional to their fitness. Offspring are added to the same group.
-If a group reaches a certain size it can split to two groups. A group that grow faster will split more often. Groups of cooperators are growing faster than group of defectors.
-Therefore, cooperation can evolve in this model when the ratio between benefit b and cost c is more than one plus the ratio between the maximum group size n and the number of groups m:
+If a group reaches a certain size it can split to two groups. A group that grow faster will split more often.
+Groups of cooperators are growing faster than group of defectors.
+Therefore, cooperation can evolve in this model when the cost $c$ is less than the benefit $b$ times the ratio between the  the number of groups $m$ and the sum of $m$ and the maximum group size $n$,
 
 \begin{equation} \label{eq:groupselection}
-\frac{b}{c}>1+\frac{n}{m}
+c < b \cdot \frac{m}{m+n} .
 \end{equation}
 
 Group selection was criticized by biologists advocate gene-centered view of evolution. Group selection has been criticized due to the fact that the trait like cooperation evolves in the total population. According to natural selection, if cooperation took over the population it must have better fitness. However, in group selection the fitness of cooperator in the individual level is lower. The fact that a trait with a lower fitness took over the population is a contradiction. \citet{eldakar2011eight} reject this argument. They believe that this argument is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and among groups in a multi group population. When a trait is evolve by group selection, despite the fact that it has lower fitness within the group, it has a better fit, all thing considered. 
@@ -236,15 +238,13 @@ p'
 & = \hat{p}^2 [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
 & + \hat{p}(1-\hat{p}) [\alpha(1-T_B) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
 & + (1-\hat{p})\hat{p} [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
-& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A]
+& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
 \end{aligned}
 \end{equation}
-Which can be simplified into
+which can be simplified into
 \begin{equation}\label{eq:nextgen_adults_slimpify}
-  \begin{aligned}
-  p'  & = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) \\
-  \end{aligned}
-  \end{equation}
+p' = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) .
+\end{equation}
 
 The frequency of $A$ among parents follows a similar dynamic, but also includes the effect of natural selection, and is therefore
 \begin{equation}\label{eq:nextgen_parents}
@@ -253,7 +253,7 @@ The frequency of $A$ among parents follows a similar dynamic, but also includes 
 & = \hat{p}^2 (1+b-c) [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
 & + \hat{p}(1-\hat{p}) (1-c) [\alpha(1-T_B) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
 & + (1-\hat{p})\hat{p} (1+b) [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
-& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A],
+& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
 \end{aligned}
 \end{equation}
 where fitness values are taken from \autoref{table:1} and $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the population mean fitness.
@@ -261,10 +261,10 @@ Eq~\ref{eq:nextgen_parents} can be slimpified to
 \begin{equation}\label{eq:nextgen_parents_simplified}
 \begin{aligned}
 \bar{w} \tilde{p}'
-& = \hat{p}^2 (1+b-c) [1-(1-\hat{p})(1-\alpha)T_B)] \\
-& + \hat{p}(1-\hat{p}) (1-c) [\hat{p}(1-\alpha)T_B+1-T_B] \\
-& + (1-\hat{p})\hat{p} (1+b) [\hat{p}(1-\alpha) + \alpha]T_A \\
-& + (1-\hat{p})^2 [(1-\alpha) \hat{p}]T_A,
+& = \hat{p}^2 (1+b-c) \big(1-(1-\hat{p})(1-\alpha)T_B)\big) \\
+& + \hat{p}(1-\hat{p}) (1-c) \big(\hat{p}(1-\alpha)T_B+1-T_B\big) \\
+& + (1-\hat{p})\hat{p} (1+b) \big(\hat{p}(1-\alpha) + \alpha\big) T_A \\
+& + (1-\hat{p})^2 \hat{p} (1-\alpha) T_A \;.
 \end{aligned}
 \end{equation}
 
@@ -295,9 +295,10 @@ $BxB$                     & $(1-\hat{p})^2$       & $1$                   & $0$ 
 We start by inspecting specific cases, for which we can derive general results. 
 Afterwards, we use numerical simulation to analyze more complex cases.
 
-\subsection*{Without oblique transmission, $v=1$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Without Oblique Transmission}
 
-With only vertical transmission eq.~\ref{eq:horizontal} becomes
+With only vertical and horizontal transmission, i.e. $v=1$, eq.~\ref{eq:horizontal} becomes
 $\hat{p} =  \tilde{p}$,
 and eq.~\ref{eq:nextgen_parents_simplified} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
 
@@ -311,162 +312,159 @@ and eq.~\ref{eq:nextgen_parents_simplified} for the change in frequency $p'$ of 
 \end{split}
 \end{equation}
 
+We find the following result and corollaries.
+
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
 If 
 \begin{equation} \label{eq:unequal_transmission}
 c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)]
 \end{equation}
-then $\tilde{p}' > \tilde{p}$, and the frequency of phenotype $A$ among parents increases. 
+then $\tilde{p}' > \tilde{p}$, and the frequency of the cooperator phenotype $A$ among parents increases every generation.
 
-\textbf{Corollary 1.1: Equal horizontal transmission.}
+\textbf{Corollary 1.1: Symmetric horizontal transmission.}
 If $T=T_A=T_B$, then
 \begin{equation}
 \label{eq:equal_transmission}
-\frac{b}{c} > \frac{1-T}{\alpha T},
+c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
-which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}).
-When the ratio $\frac{b}{c}$ is larger than the RHS of eq.~\ref{eq:equal_transmission} cooperation will take over of the population (see~\textbf{\autoref{fig:results_a}}).
+which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}), where $r_H=\alpha T/(1-T)$ can be thought of as \emph{horizontal relatedness}.
+Therefore, if the cost $c$ is less than the benefit $b$ times the horizontal relatedness $r_H$, then cooperation will take over of the population (see~\textbf{\autoref{fig:results_a}}).
 
-\paragraph*{Complete correlation between transmission and cooperation, $\alpha=1$.}
+\textbf{Corollary 1.2: Complete correlation between transmission and cooperation.}
 	
-In this case, horizontal transmission can only occur as a result of cooperative interactions.
+In this case $\alpha=1$, and horizontal transmission can only occur as a result of cooperative interactions.
 Therefore, eq.~\ref{eq:unequal_transmission}, which determines the conditions for evolution of cooperation, becomes
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_only_after_interaction}
-T_A b > \,& c (1-T_B) + (T_B - T_A).
-\end{split}
+\begin{equation}\label{eq:horizontal_transmission_only_after_interaction}
+c \cdot (1-T_B) < b \cdot T_A + (T_A - T_B).
 \end{equation}
 This is equivalent to a result by~\citet[eq.~1]{lewin2017microbes}.
+
 Eq.~\ref{eq:horizontal_transmission_only_after_interaction} can be written as
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_only_after_interaction2}
-T_A\cdot(1+b) > \,& 1 - (1-T_B)(1-c).
-\end{split}
+\begin{equation} \label{eq:horizontal_transmission_only_after_interaction2}
+1 - (1-T_B)(1-c) < T_A \cdot (1+b) ,
 \end{equation}
-This equation provides an interesting interpretation for the success of cooperation. 
+which provides an interesting interpretation for the success of cooperation. 
 Consider an interaction between two individuals: a cooperator and a defector.
-$T_A\cdot(1+b)$ is the probability that the defector becomes cooperative and reproduces.
-This is the effective benefit for cooperation from this interaction.
 $(1-T_B)(1-c)$ is the probability that the cooperator remains cooperative and also reproduces. 
 Therefore, $1 - (1-T_B)(1-c)$ is the probability that either the cooperator becomes a defector, \emph{or} that it fails to reproduce.
 This is the effective cost for cooperation from this interaction.
-So, eq.~\ref{eq:horizontal_transmission_only_after_interaction2} means that cooperation can evolve if effective benefit is larger than the effective cost.
+$T_A\cdot(1+b)$ is the probability that the defector becomes cooperative and reproduces.
+This is the effective benefit for cooperation from this interaction.
+So, eq.~\ref{eq:horizontal_transmission_only_after_interaction2} means that cooperation can evolve if effective cost is less than the effective benefit.
 
-\paragraph*{No correlation between transmission and cooperation, $\alpha=0$.}
+\textbf{Corollary 1.3: No correlation between transmission and cooperation.}
 
-In this case horizontal transmission can not occur as a result of interaction.  
+In this case $\alpha=0$, and horizontal transmission is entirely independent from cooperative interactions.  
 Then, eq.~\ref{eq:unequal_transmission} becomes
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_from_population}
-c\cdot(1-T_B) < & (T_A-T_B)(1+b\tilde{p}).
-\end{split}
+\begin{equation} \label{eq:horizontal_transmission_from_population}
+c\cdot(1-T_B) < b \cdot \tilde{p} \;(T_A-T_B) + (T_A-T_B). 
 \end{equation}
 
-Therefore, since $c>0$, cooperation will not take over the population (and furthermore will become extinct) if $T_A\leq T_B$.
-When $T_A > T_B$ eq.~\ref{eq:horizontal_transmission_from_population} becomes
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_from_population_reorder}
-\tilde{p} & > \frac{c\cdot(1-T_B) - (T_A-T_B)}{b\cdot(T_A-T_B)}.
-\end{split}
-\end{equation}
-Hence, cooperation will evolve if $\tilde{p} > \tilde{p}^{*}$ (see~\textbf{\autoref{fig:results_b}}), which is given by
+Therefore, because all the parameters are all positive, cooperation cannot take over the population (and furthermore will become extinct) if cooperators doesn't have a horizontal transmission bias, i.e. if $T_A\leq T_B$.
+When such a bias does exist, $T_A > T_B$, then cooperation will evolve if $\tilde{p} > \tilde{p}^{*}$, where (see also ~\textbf{\autoref{fig:results_b}})
 \begin{equation} 
 \begin{split} \label{eq:horizontal_transmission_from_population_equilibrium}
-\tilde{p}^{*} & = \frac{c\cdot(1-T_B)}{b\cdot(T_A-T_B)} - \frac{1}{b}.
+\tilde{p}^{*} & = \frac{c}{b} \cdot \frac{1-T_B}{T_A-T_B} - \frac{1}{b}.
 \end{split}
 \end{equation}
-A sufficient condition for evolution of cooperation is, then,
-\begin{equation} 
-\begin{split} \label{eq:sufficient_horizontal_transmission_from_population}
-\frac{T_A-T_B}{1-T_B} > &\ c.  
-\end{split}
+A sufficient condition for evolution of cooperation is that $\tilde{p}^{*} < 0$, which occurs if
+\begin{equation} \label{eq:sufficient_horizontal_transmission_from_population}
+c < \frac{T_A-T_B}{1-T_B} .  
 \end{equation}
 
-\subsection*{With oblique transmission, $v<1$}
-    
-We now discuss the effect of oblique transmission, i.e. transmission from non-parental adults.
 
-\paragraph*{Without vertical transmission, $v = 0$.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Without Vertical Transmission}
 
-In this case eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_parents_simplified} becomes
-\begin{equation} 
-\begin{split}\label{eq:nextgen_parents_oblique_only}
-p' = p^2\cdot(T_B-T_A) + p\cdot(1+T_A-T_B)
-\end{split}
+With only oblique and horizontal transmission, i.e. $v = 0$, eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_adults_slimpify} becomes % TODO check this, I changed the ref from nextgen_parents_simplified to nextgen_adults_slimpify
+\begin{equation}  \label{eq:nextgen_parents_oblique_only}
+p' = p^2 (T_B-T_A) + p (1+T_A-T_B) .
 \end{equation}
+
+We find the following results.
 
 \textbf{Result 2: Oblique and horizontal transmission of cooperation.} The frequency of phenotype $A$ among adults increases if $p'>p$.
-From eq.~\ref{eq:nextgen_parents_oblique_only}, this occurs when
+Using eq.~\ref{eq:nextgen_parents_oblique_only}, we find that $p'>p$ occurs when
 \begin{equation} \label{eq:oblique_only_result}
-T_A>T_B. 
+T_A > T_B . 
 \end{equation}
-Therefore, fixation occur when $T_A>T_B$ (see~\textbf{\autoref{fig:results_c}}).
+Therefore, cooperation will evolve if the cooperator phenotype has a horizontal transmission bias (see~\textbf{\autoref{fig:results_c}}).
 
-\textbf{With vertical transmission $0<v<1$}
-In this case we will not look for global fixation as we did in previous cases.
-For simplicity, we will invsetigate local equilibriums. We will use eq.~\ref{eq:nextgen_adults_slimpify}
-and eq.~\ref{eq:nextgen_parents_simplified} and substitute it in eq.~\ref{eq:horizontal}. 
-By doing this we get a single equation depending only on $\hat{p}$.
-For simplicity, Let's assume that $T_A = T_B = T$ so we will get
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{With Vertical and Oblique Transmission}
+
+In this case $0<v<1$, and the equation system is more complex than before.
+Therefore, we focus on local rather than global stability, which was the case so far.\\
+To proceed, we note that 
+eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
+eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
+eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
+Combining these equations, we will find an equation for $\hat{p}'$ as a function of $\hat{p}$.
+We will then determine the equilibria of this function, that is, solutions for $\hat{p}' = \hat{p}$, and their stability.
+
+\textbf{Result 3: Oblique and vertical transmission of cooperation with symmetric horizontal transmission.}
+
+Assuming equal horizontal transmission, i.e. $T_A = T_B = T$, and following the above procedure, we have
 \begin{equation} \label{eq:equal_horizontal_transmission}
-  \hat{p}' - \hat{p} =  \hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T))
+%\hat{p}' - \hat{p} =  \hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T))
+\bar{w} (\hat{p}' - \hat{p}) =  \hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T))
 \end{equation}
 
-We are looking for the equilibrium $\hat{p}^*$ which happens when $\hat{p}' = \hat{p}$ and we get two equilibriums
+It is easy to see that $\hat{p}^*_0 =  0$ and $\hat{p}^*_1 = 1$ are equilibria of eq.~\ref{eq:equal_horizontal_transmission}, that is, both extinction and fixation of the cooperator phenotype are equilibria.
 
-\textbf{Result 2.1: equliburims with equal horizontal transmission $T$ and vertical transmission $0<v<1$}
-\begin{equation} \label{eq:result2.1}
-  \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1
-\end{equation}
-We would like to know under what condition fixation of cooperation is stable. 
+%TODO fix the following, you forgot wbar in eq:equal_horizontal_transmission
 In order to do that we find the derivative  $f(\hat{p}) = \hat{p}'-\hat{p}$.
 \begin{equation} \label{eq:derivative_of_phattag-phat}
  f'(\hat{p}) = 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
 \end{equation}
 We are interested in the case when when $\hat{p} = \hat{p}^*_1=1$ therefore
 $f'(1) = -\alpha bvT + cv(1-T)$. Therefore, fixation of cooperation is stable when
-\textbf{Results 2.2: condition for stability of fixation of cooperation}
 \begin{equation} \label{eq:oblique_and_vertic_result2}
   \frac{b}{c}>\frac{1-T}{\alpha T}
 \end{equation}
 Which is the same condition we get in corollary 1.1.
-Now let's assume that the general case where $T_A \neq T_B$ and we get that
+
+\textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
+
+Next, we study the general case where $T_A \neq T_B$. We have
+%TODO check again, I think you forgot wbar here, too
 \begin{equation} \label{eq:general_case_polynomial}
-  \hat{p}'-\hat{p} = \beta_1p^3 + \beta_2 p^2 + \beta_3p + \beta_4
+  f(\hat{p}) = \hat{p}'-\hat{p} = \beta_1 p^3 + \beta_2 p^2 + \beta_3 p
 \end{equation}
 where 
 \begin{equation} \label{eq:polynomial_coefficients}
 \begin{split}
   & \beta_1 = c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B) \\
   & \beta_2 = (b(1-\alpha v)-c(1-v)-1)(T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
-  & \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \\
-  & \beta_4 = 0
+  & \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B)
 \end{split}
 \end{equation}
-Since the degree of eq.~\ref{eq:general_case_polynomial} is a third degree polynomial,
-three equilibrium exist. We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibrium.
-We can find the third equilibrium by finding when eq.~\ref{eq:general_case_polynomial} is equal to zero and we get
+
+$f(\hat{p})$ is a cubic, and its three roots are the equilibria of the system, i.e. the solutions for $\hat{p}'=\hat{p}$.
+As $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibria, there is only one equilibrium left, $\hat{p}^*_2$, which solves $f(\hat{p})/\big(\hat{p}(1-\hat{p})\big)=0$. Solving this we find that
 \begin{equation} \label{eq:oblique_and_vertic_result}
   \hat{p}^*_2 =  \frac{\alpha bvT_A + cvT_B + T_A-T_B-cv}{c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B)}
 \end{equation}
-We would like to know when $\hat{p}_2$ is realistic meaning $0<\hat{p}_2<1$.  
-In order to do that we find the derivative  $f(\hat{p}) = \hat{p}'-\hat{p}$ of $\hat{p}$.
-\begin{equation} \label{eq:derivative_of_phattag-phat2}
-  f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3
+
+$\hat{p}^*_2$ is a legitimate equilibrium if $0<\hat{p}^*_2<1$.  
+To determine if $\hat{p}^*_2$ is legitimate, we need the derivative of $f(\hat{p})$,\begin{equation} \label{eq:derivative_of_phattag-phat2}
+  f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3.
  \end{equation}
-We assume that $T_A>T_B$ and we get that $\beta_1<0$ since $c(1-v)-b(1-\alpha v)<0$ and $c<b$ $v<1$.
-In this case the polynomial goes to $\infty$ when $\hat{p}$ goes to infinity. 
-Therefore, if $\hat{p}_2$ is positive then $f'(0)$ must be negative
-\begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
-  f'(0) = \beta_3
- \end{equation}
-$\hat{p}_2>0$ when $\beta_3<0$. In addition, $\hat{p}_0=0$ is stable when $|f'(0)|<1$ therefore, when $-1<\beta_3<1$. We can prove that $-1<\beta_3$:
+First, we assume that $T_A>T_B$, and therefore $\beta_1<0$, because $c(1-v)-b(1-\alpha v)<0$ and $c<b$ $v<1$. % why?
+In this case $f(\hat{p})$ goes to infinity when $\hat{p}$ goes to infinity. 
+Therefore, if $\hat{p}^*_2$ is positive then $f'(0)= \beta_3$ must be negative, and
+% TODO remove
+%\begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
+%  f'(0) = \beta_3
+% \end{equation} 
+$\hat{p}_2^*>0$ when $\beta_3<0$. In addition, $\hat{p}^*_0=0$ is stable when $|f'(0)|<1$ therefore, when $-1<\beta_3<1$. We can show that 
 \begin{equation} \label{eq:beta3-condition}
   \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) > -cv(1-T_B) > -1
 \end{equation}
-Therefore, when $\hat{p}_2>0$ we get that $-1<\beta_3<0$ and $\hat{p}_0=0$ is always stable. 
+Therefore, when $\hat{p}^*_2>0$ we get that $-1<\beta_3<0$ and $\hat{p}^*_0=0$ is locally stable. 
 
-Now we would like to find when $\hat{p}_2<1$. If $T_A>T_B$ like before then the polynomial goes to minus infinity when $\hat{p}$ goes to infinity.
+Next we would like to find when $\hat{p}^*_2<1$.
+If $T_A>T_B$ like before then the polynomial goes to minus infinity when $\hat{p}$ goes to infinity.
 Hence, if $\hat{p}_2<1$ then $f'(1)$ must be negative
 \begin{equation} \label{eq:derivative_of_phattag-phat_p=1}
   f'(0) = \beta_1 - \beta_3
