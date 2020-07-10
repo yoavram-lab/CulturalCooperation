@@ -414,8 +414,9 @@ It is easy to verify that fixation of either phenotype is an equilibrium, that i
 \begin{equation} \label{eq:result2.1}
   \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1 .
 \end{equation}
-We wish to determine when fixation of cooperation is locally stable. % state the general condition on the derivative that implies local stability
-To do that, we calculate the derivative of $f(\hat{p}) = \hat{p}'-\hat{p}$, 
+We wish to determine when fixation of cooperation is locally stable. 
+An equilibrium point $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p}) = \hat{p}'-\hat{p}$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
+Calculating the derivative of $f(\hat{p})$ give us 
 \begin{equation} \label{eq:derivative_of_phattag-phat}
  f'(\hat{p}) = 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
 \end{equation}
@@ -429,13 +430,13 @@ Which is the same condition we get in corollary 1.1.
 \textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
 
 We now study the general case where $T_A \neq T_B$. We have
-\begin{equation} \label{eq:general_case_polynomial}% check, because I think wbar is missing
+\begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \hat{p}'-\hat{p} = \beta_1p^3 + \beta_2 p^2 + \beta_3p + \beta_4
 \end{equation}
 where 
 \begin{equation} \label{eq:polynomial_coefficients}
 \begin{split}
-  & \beta_1 = c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B) \\
+  & \beta_1 = [c(1-v) -b (1-\alpha v)] \cdot(T_A-T_B) \\
   & \beta_2 = (b(1-\alpha v)-c(1-v)-1)(T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
   & \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \\
   & \beta_4 = 0
@@ -453,9 +454,17 @@ To do that we find the derivative  of $f(\hat{p})$,
 \begin{equation} \label{eq:derivative_of_phattag-phat2}
   f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3
  \end{equation}
-We assume that $T_A>T_B$ and we get that $\beta_1<0$ since $c(1-v)-b(1-\alpha v)<0$ and $c<b$ $v<1$. % why?
-In this case the cubic $f(\hat{p})$ goes to infinity when $\hat{p}$ goes to infinity. 
-Therefore, if $\hat{p}^*_2$ is positive then $f'(0)$ must be negative % are you sure? I think it must be positive, because i think that the two extremes of a cubic must go in opposite directions
+We assume that $T_A>T_B$ and we look on $\beta_1$:
+\begin{equation} \label{eq:beta1}
+  \begin{split}
+   \beta_1 & = [c(1-v) -b (1-\alpha v)] \cdot(T_A-T_B) \\
+   &< [c(1-\alpha v) - b(1-\alpha v)]\cdot(T_A-T_B) \\
+   &= (1-\alpha v)(c-b)(T_A-T_B)
+  \end{split}
+ \end{equation}
+From eq.~\ref{eq:beta1} we get that $\beta_1<0$ since $c-b<0$ $1-\alpha v>0$ and we assumed that $T_A > T_B$.
+In this case the cubic $f(\hat{p})$ goes to infinity when $\hat{p}$ goes to minus infinity ($-\infty$). 
+Therefore, if $\hat{p}^*_2$ is positive then $f'(0)$ must be negative % are you sure? I think it must be positive, because i think that the two extremes of a cubic must go in opposite directions DC: Yest, but I've fixed in the line before, there was minus sign missing
 \begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
   f'(0) = \beta_3
  \end{equation}
