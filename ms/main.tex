@@ -405,11 +405,11 @@ eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\til
 eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
 eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
-We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and their stability.
+We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
+
 
 We start with the simpler case of symmetric horizontal transmission, $T=T_A=T_B$. 
-We apply eqs.~\ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to define $f(\hat{p})$ as 
-% Yoav: I checked again, substituting eq 7 and 9 to eq 5: you have to divide the RHS by wbar.
+We apply eqs.~\ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to define 
 \begin{equation} \label{eq:equal_horizontal_transmission}
 \begin{aligned}
   %\hat{p}' - \hat{p} = 
@@ -420,17 +420,13 @@ We apply eqs.~\ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq
 \end{aligned}
 \end{equation}
 
-The equilibria $\hat{p}^*$ are solutions to $f(\hat{p}^*)=0$, or $\hat{p}'^* = \hat{p}^*$.
-It is easy to verify that fixation of either phenotype is an equilibrium, that is,
-\begin{equation} \label{eq:result2.1}
-  \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1 .
-\end{equation}
-An equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
-Since the derivative is 
+The equilibria are solutions to $f(\hat{p})=0$, or $\hat{p}' = \hat{p}$.
+It is easy to verify that fixation of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$, is an equilibrium.
+Since the derivative of $f'(\hat{p}$ is 
 \begin{equation}
 f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
 \end{equation}
-then the condition for local stability of $\hat{p}^*_1$ is
+then the condition for local stability of $\hat{p}=1$ is
 \begin{equation} \label{eq:derivative_of_phattag-phat}
 	f'(1) =
 % 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
@@ -446,7 +442,8 @@ If horizontal transmission is symmetric, $T = T_A = T_B$, and if
 	c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
 then fixation of the cooperator phenotype $A$ is locally stable.
-This is the same condition we found in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
+The same condition was given in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
+% TODO what happens if the condition does not apply? can there be an non-zero stable equilibrium?
 \\
 \\
 We now turn to the general case where $T_A \neq T_B$. We have
@@ -457,17 +454,17 @@ We now turn to the general case where $T_A \neq T_B$. We have
 where 
 \begin{equation} \label{eq:polynomial_coefficients}
 \begin{aligned}
-\beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \\
+\beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) , \\
 %\beta_2 &= -[c(1-v) - b(1-\alpha v) +  1](T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
-\beta_2 &= -\beta_1 -\beta_3  \\
+\beta_2 &= -\beta_1 -\beta_3 ,  \\
 \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) .
 \end{aligned}
 \end{equation}
 Since $f(\hat{p})$ is a cubic polynomial, three equilibria exist.
-We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibria.
+We already know that $\hat{p} = 0 $ and $\hat{p} = 1$ are equilibria.
 By solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} = 0$ we can find the third equilibrium,
 \begin{equation} \label{eq:oblique_and_vertic_result}
-  \hat{p}^*_2 =  
+  \hat{p}^* =  
   \frac{\beta_3}{\beta_1}.
   %\frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}
   %     {\big(c(1-v) -b (1-\alpha v)\big) (T_A-T_B)} .
@@ -482,9 +479,9 @@ If $T_A>T_B$, then
  \end{equation}
 since $c<b$, and $1>\alpha v$.
 So the sign of the cubic at positive and negative infinity is negative and positive, respectively.
-First, if $\beta_3<\beta_1$ then $0<\hat{p}^*_2<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations are locally stable and $\hat{p}^*_2$ separates the domains of attraction.
-Second, if $\beta_1<\beta_3<0$ then $1<\hat{p}^*_2$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
-Third, if $0<\beta_3$ then $\hat{p}^*_2<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+First, if $\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
+Second, if $\beta_1<\beta_3<0$ then $1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
+Third, if $0<\beta_3$ then $\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
 Similarly, if $T_B>T_A$, then
 \begin{equation} \label{eq:beta1_rev}
@@ -493,14 +490,14 @@ Similarly, if $T_B>T_A$, then
    = (1-\alpha v)(c-b)(T_A-T_B) > 0,
  \end{equation}
 since $c<b$, and $1>\alpha v$. So the sign of the cubic at positive and negative infinity is positive and negative, respectively. 
-First, if $\beta_3<0$ then $\hat{p}^*_2<0$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $A=B$ is the only locally stable legitimate equilibrium.
-Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*_2<1$ and therefore $f'(0)>0$ and $f'(1)>0$, that is, both fixations are locally unstable and $\hat{p}^*_2$ is a stable polymorphic equilibrium.
-Third, if $\beta_1<\beta_3$ then $\hat{p}^*_2>1$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $A=B$ is the only locally stable legitimate equilibrium.
+Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$, that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
+Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
 The following result summarizes these findings.
 
 \textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
-The cultural evolution of a cooperator phenotype will follow on of th following scenarios, depending on the signs of the horizontal transmission bias $T_A-T_B$, the coefficient $\beta_3$, and ratio $\beta_3/\beta_1$:
+The cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the horizontal transmission bias $T_A-T_B$ and the coefficients $\beta_1$ and $\beta_3$:
 \begin{enumerate}
 \item \emph{Fixation of the cooperative phenotype $A$}, if $T_A>T_B$ and $0<\beta_3$, or $T_A<T_B$ and $\beta_1<\beta_3$.
 
@@ -512,38 +509,39 @@ The cultural evolution of a cooperator phenotype will follow on of th following 
 
 \end{enumerate}
 
-%\begin{figure}[H]
-%  \centering
-%  \begin{subfigure}{8cm}
-%    \includegraphics[scale=0.5]{figure2a.pdf}
-%    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
-%    \label{fig:results_a}
-%  \end{subfigure}
-%  \begin{subfigure}{8cm}
-%    \includegraphics[scale=0.5]{figure2b.pdf}
-%    \caption{$v=1$, $\alpha = 0$}
-%    \label{fig:results_b}
-%  \end{subfigure}
-%  \begin{subfigure}{8cm}
-%    \includegraphics[scale=0.5]{figure2c.pdf}
-%    \caption{$v=0$}
-%    \label{fig:results_c}
-%  \end{subfigure}
-%  \label{fig:results}
-%  \caption{
-%  \textbf{Numerical results for cultural evolution of cooperation.}
-%  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
-%  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange). %TODO ic (c), the blue and green got mixed. 
-%  % TODO have all panels in one row.
-%  }
-%\end{figure}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2a.pdf}
+    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
+    \label{fig:results_a}
+  \end{subfigure}
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2b.pdf}
+    \caption{$v=1$, $\alpha = 0$}
+    \label{fig:results_b}
+  \end{subfigure}
+  \begin{subfigure}{8cm}
+    \includegraphics[scale=0.5]{figure2c.pdf}
+    \caption{$v=0$}
+    \label{fig:results_c}
+  \end{subfigure}
+  \label{fig:results}
+  \caption{
+  \textbf{Numerical results for cultural evolution of cooperation.}
+  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
+  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange).
+  %TODO ic (c), the blue and green got mixed. 
+  % TODO have all panels in one row.
+  }
+\end{figure}
 
 % Discussion
-\section*{Discussion}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
-Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
+%\section*{Discussion}
+%We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
+%Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
 
-%\pagebreak
+\pagebreak
 % Acknowledgements
 {\small
 \section*{Acknowledgements}
