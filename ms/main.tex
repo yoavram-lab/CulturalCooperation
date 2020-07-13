@@ -321,7 +321,7 @@ We find the following result and corollaries.
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
 If 
 \begin{equation} \label{eq:unequal_transmission}
-c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)]
+c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)] ,
 \end{equation}
 then $\tilde{p}' > \tilde{p}$, and the frequency of the cooperator phenotype $A$ among parents increases every generation.
 
@@ -387,18 +387,19 @@ p' = p^2 (T_B-T_A) + p (1+T_A-T_B) .
 
 We find the following results.
 
-\textbf{Result 2: Oblique and horizontal transmission of cooperation.} The frequency of phenotype $A$ among adults increases if $p'>p$.
-Using eq.~\ref{eq:nextgen_parents_oblique_only}, we find that $p'>p$ occurs when
+\textbf{Result 2: Oblique and horizontal transmission of cooperation.} 
+If there is a horizontal transmission bias in favor of cooperation,
 \begin{equation} \label{eq:oblique_only_result}
-T_A > T_B . 
+T_A > T_B, 
 \end{equation}
+then $p'>p$, and the frequency of the cooperator phenotype among adults increases every generation.
 Therefore, cooperation will evolve if the cooperator phenotype has a horizontal transmission bias (see~\textbf{\autoref{fig:results_c}}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Vertical and Oblique Transmission}
 
-In this case $0<v<1$, and the equation system is more complex than before.
-Therefore, we focus on local rather than global stability, which was the case so far.\\
+In this case $0<v<1$, and the equation system is more complex.
+Therefore, we focus on local, rather than global, stability.\\
 To proceed, we note that 
 eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
 eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
@@ -406,42 +407,49 @@ eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\ha
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
 We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and their stability.
 
-\textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
-
-For simplicity, we start with the assumption that $T_A = T_B = T$. We have
+We start with the simpler case of symmetric horizontal transmission, $T=T_A=T_B$. 
+We apply eqs.~\ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to define $f(\hat{p})$ as 
+% Yoav: I checked again, substituting eq 7 and 9 to eq 5: you have to divide the RHS by wbar.
 \begin{equation} \label{eq:equal_horizontal_transmission}
-% DOR: I checked again, substituting eq 7 and 9 to eq 5: you have to divide the RHS by wbar.
+\begin{aligned}
   %\hat{p}' - \hat{p} = 
   %\hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T)) = 
-  \bar{w}(\hat{p}' - \hat{p}) = 
-  f(\hat{p}) = \hat{p}(1-\hat{p})(\alpha bvT - cv(1-T)) % shorter version
+  f(\hat{p}) &= 
+  \bar{w}(\hat{p}' - \hat{p}) = \\
+  &\hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big]. % shorter version
+\end{aligned}
 \end{equation}
 
-We are looking for the equilibrium $\hat{p}^*$ which occurs when $f(\hat{p}^*)=0$, or $\hat{p}' = \hat{p}$.
+The equilibria $\hat{p}^*$ are solutions to $f(\hat{p}^*)=0$, or $\hat{p}'^* = \hat{p}^*$.
 It is easy to verify that fixation of either phenotype is an equilibrium, that is,
 \begin{equation} \label{eq:result2.1}
   \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1 .
 \end{equation}
-
-Is fixation of cooperation, $\hat{p}^*_1=1$, locally stable?. 
-An equilibrium point $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
-This derivative is
-\begin{equation} \label{eq:derivative_of_phattag-phat}
-	f'(\hat{p}) \mid_{\hat{p}=1} = 
-% 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
-	(1- 2\hat{p}) (\alpha bvT - cv(1-T)) \mid_{\hat{p}=1} = 
-	-\alpha bvT + cv(1-T)).
+An equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
+Since the derivative is 
+\begin{equation}
+f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
 \end{equation}
-Therefore, fixation of cooperation is locally stable when
+then the condition for local stability of $\hat{p}^*_1$ is
+\begin{equation} \label{eq:derivative_of_phattag-phat}
+	f'(1) =
+% 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
+%	(1- 2\hat{p}) (\alpha bvT - cv(1-T)) \mid_{\hat{p}=1} = 
+	-\alpha bvT + cv(1-T) < 0,
+\end{equation}
+which gives us the following result.
+
+\textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
+If horizontal transmission is symmetric, $T = T_A = T_B$, and if
 \begin{equation} \label{eq:oblique_and_vertic_result2}
   %\frac{b}{c}>\frac{1-T}{\alpha T}
 	c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
-which is the same condition we found in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
-
-\textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
-
-We now study the general case where $T_A \neq T_B$. We have
+then fixation of the cooperator phenotype $A$ is locally stable.
+This is the same condition we found in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
+\\
+\\
+We now turn to the general case where $T_A \neq T_B$. We have
 \begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
   \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p},
@@ -457,69 +465,78 @@ where
 \end{equation}
 Since $f(\hat{p})$ is a cubic polynomial, three equilibria exist.
 We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibria.
-The third equilibrium $\hat{p}^*_2$ can be found by solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} = 0$:
+By solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} = 0$ we can find the third equilibrium,
 \begin{equation} \label{eq:oblique_and_vertic_result}
   \hat{p}^*_2 =  
   \frac{\beta_3}{\beta_1}.
   %\frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}
   %     {\big(c(1-v) -b (1-\alpha v)\big) (T_A-T_B)} .
 \end{equation}
-To determine when $\hat{p}^*_2$ is a legitimate equilibrium (i.e. $0<\hat{p}^*_2<1$), we first focus on the left inequality, $0<\hat{p}^*_2$, and
-%To do that we find the derivative  of $f(\hat{p})$,
-%\begin{equation} \label{eq:derivative_of_phattag-phat2}
-%  f'(\hat{p}) = 3\beta_1 \hat{p}^2 + 2\beta_2\hat{p}^2 + \beta_3
-% \end{equation}
-assume that $T_A>T_B$. In this case,
+
+Note that the sign of the cubic $f(\hat{p})$ at positive (negative) infinity is equal (inverse) to the sign of $\beta_1$. 
+If $T_A>T_B$, then 
 \begin{equation} \label{eq:beta1}
-  \begin{split}
-   \beta_1 & = [c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
-   &< [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) \\
-   &= (1-\alpha v)(c-b)(T_A-T_B) < 0 ,
-  \end{split}
+   \beta_1 %& = [c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
+   < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) < 0 ,
  \end{equation}
-since $T_A > T_B$, $c<b$, and $1>\alpha v$.
-Therefore, when $\hat{p}$ goes to negative infinity, the cubic $f(\hat{p})$ goes to positive infinity.
-So, a necessary condition for $\hat{p}^*_2>0$ is that $f'(0) = \beta_3 < 0$.
-This condition also satisfies local stability of $\hat{p}^*_0=0$.
-Hence, if $\hat{p}^*_2$ is legitimate, then extinction of cooperation is locally stable. 
+since $c<b$, and $1>\alpha v$.
+So the sign of the cubic at positive and negative infinity is negative and positive, respectively.
+First, if $\beta_3<\beta_1$ then $0<\hat{p}^*_2<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations are locally stable and $\hat{p}^*_2$ separates the domains of attraction.
+Second, if $\beta_1<\beta_3<0$ then $1<\hat{p}^*_2$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
+Third, if $0<\beta_3$ then $\hat{p}^*_2<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
-We now focus on $\hat{p}^*_2<1$, still assuming $T_A>T_B$.
-When $\hat{p}$ goes to positive infinity, the cubic $f(\hat{p})$ goes to negative infinity (Eq.~\ref{eq:beta1}).
-So, a necessary condition for $\hat{p}^*_2<1$ is that $f'(1)=\beta_1 - \beta_3<0$.
-This condition also satisfies local stability of $\hat{p}^*_1=1$.
-Hence, if $\hat{p}^*_2$ is legitimate, then fixation of cooperation is also locally stable.
-Moreover, since legitimacy of $\hat{p}^*_2$ implies local stability of both $\hat{p}^*_0$ and $\hat{p}^*_1$, we conclude that $\hat{p}^*_2$ is locally unstable.
+Similarly, if $T_B>T_A$, then
+\begin{equation} \label{eq:beta1_rev}
+   \beta_1 %& = -[c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
+   > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) > 0,
+ \end{equation}
+since $c<b$, and $1>\alpha v$. So the sign of the cubic at positive and negative infinity is positive and negative, respectively. 
+First, if $\beta_3<0$ then $\hat{p}^*_2<0$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $A=B$ is the only locally stable legitimate equilibrium.
+Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*_2<1$ and therefore $f'(0)>0$ and $f'(1)>0$, that is, both fixations are locally unstable and $\hat{p}^*_2$ is a stable polymorphic equilibrium.
+Third, if $\beta_1<\beta_3$ then $\hat{p}^*_2>1$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
-If we assume instead that $T_A < T_B$, we reach the following results:
+The following result summarizes these findings.
 
-\textbf{Result 4}: if $T_A>T_B$ ($T_B>T_A$), then $\hat{p}^*_2$ is a legitimate locally unstable equilibrium when $\beta_1<\beta_3<0$ ($\beta_1>\beta_3>0$). In this case, both fixations are locally stable and $\hat{p}^*_2$ separates the domains of attraction.
+\textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
+The cultural evolution of a cooperator phenotype will follow on of th following scenarios, depending on the signs of the horizontal transmission bias $T_A-T_B$, the coefficient $\beta_3$, and ratio $\beta_3/\beta_1$:
+\begin{enumerate}
+\item \emph{Fixation of the cooperative phenotype $A$}, if $T_A>T_B$ and $0<\beta_3$, or $T_A<T_B$ and $\beta_1<\beta_3$.
 
+\item \emph{Fixation of the defector phenotype $B$}, if $T_A>T_B$ and $\beta_1<\beta_3<0$, or $T_A<T_B$ and $\beta_3<0$.
 
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure2a.pdf}
-    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
-    \label{fig:results_a}
-  \end{subfigure}
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure2b.pdf}
-    \caption{$v=1$, $\alpha = 0$}
-    \label{fig:results_b}
-  \end{subfigure}
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure2c.pdf}
-    \caption{$v=0$}
-    \label{fig:results_c}
-  \end{subfigure}
-  \label{fig:results}
-  \caption{
-  \textbf{Numerical results for cultural evolution of cooperation.}
-  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
-  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange). %TODO ic (c), the blue and green got mixed. 
-  % TODO have all panels in one row.
-  }
-\end{figure}
+\item \emph{Protected polymorphism, or co-existence of both phenotypes}, if $T_A < T_B$ and $0<\beta_3<\beta_1$.
+
+\item \emph{Fixation of either phenotype depending on initial frequency}, if $T_A>T_B$ and $\beta_3<\beta_1$.
+
+\end{enumerate}
+
+%\begin{figure}[H]
+%  \centering
+%  \begin{subfigure}{8cm}
+%    \includegraphics[scale=0.5]{figure2a.pdf}
+%    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
+%    \label{fig:results_a}
+%  \end{subfigure}
+%  \begin{subfigure}{8cm}
+%    \includegraphics[scale=0.5]{figure2b.pdf}
+%    \caption{$v=1$, $\alpha = 0$}
+%    \label{fig:results_b}
+%  \end{subfigure}
+%  \begin{subfigure}{8cm}
+%    \includegraphics[scale=0.5]{figure2c.pdf}
+%    \caption{$v=0$}
+%    \label{fig:results_c}
+%  \end{subfigure}
+%  \label{fig:results}
+%  \caption{
+%  \textbf{Numerical results for cultural evolution of cooperation.}
+%  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
+%  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange). %TODO ic (c), the blue and green got mixed. 
+%  % TODO have all panels in one row.
+%  }
+%\end{figure}
 
 % Discussion
 \section*{Discussion}
