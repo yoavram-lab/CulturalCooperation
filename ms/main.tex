@@ -256,7 +256,11 @@ The frequency of $A$ among parents follows a similar dynamic, but also includes 
 & + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
 \end{aligned}
 \end{equation}
-where fitness values are taken from \autoref{table:1} and $\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$ is the population mean fitness.
+where fitness values are taken from \autoref{table:1}, and 
+\begin{equation} \label{eq:mean_fitness}
+\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)
+\end{equation}
+is the population mean fitness.
 Eq~\ref{eq:nextgen_parents} can be slimpified to
 \begin{equation}\label{eq:nextgen_parents_simplified}
 \begin{aligned}
@@ -399,95 +403,97 @@ To proceed, we note that
 eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
 eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
 eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
-Combining these equations, we will find an equation for $\hat{p}'$ as a function of $\hat{p}$.
-We will then determine the equilibria of this function, that is, solutions for $\hat{p}' = \hat{p}$, and their stability.
+Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
+We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and their stability.
 
 \textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
 
-For simplicity, assume that $T_A = T_B = T$ so we will get
+For simplicity, we start with the assumption that $T_A = T_B = T$. We have
 \begin{equation} \label{eq:equal_horizontal_transmission}
-  \hat{p}' - \hat{p} =  \hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T))
+% DOR: I checked again, substituting eq 7 and 9 to eq 5: you have to divide the RHS by wbar.
+  %\hat{p}' - \hat{p} = 
+  %\hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T)) = 
+  \bar{w}(\hat{p}' - \hat{p}) = 
+  f(\hat{p}) = \hat{p}(1-\hat{p})(\alpha bvT - cv(1-T)) % shorter version
 \end{equation}
 
-We are looking for the equilibrium $\hat{p}^*$ which occurs when $\hat{p}' = \hat{p}$.
+We are looking for the equilibrium $\hat{p}^*$ which occurs when $f(\hat{p}^*)=0$, or $\hat{p}' = \hat{p}$.
 It is easy to verify that fixation of either phenotype is an equilibrium, that is,
 \begin{equation} \label{eq:result2.1}
   \hat{p}^*_0 =  0, \, \hat{p}^*_1 = 1 .
 \end{equation}
-We wish to determine when fixation of cooperation is locally stable. 
-An equilibrium point $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p}) = \hat{p}'-\hat{p}$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
-Calculating the derivative of $f(\hat{p})$ give us 
+
+Is fixation of cooperation, $\hat{p}^*_1=1$, locally stable?. 
+An equilibrium point $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at $p^*$ is negative, $f'(\hat{p}^*)<0$. 
+This derivative is
 \begin{equation} \label{eq:derivative_of_phattag-phat}
- f'(\hat{p}) = 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
+	f'(\hat{p}) \mid_{\hat{p}=1} = 
+% 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
+	(1- 2\hat{p}) (\alpha bvT - cv(1-T)) \mid_{\hat{p}=1} = 
+	-\alpha bvT + cv(1-T)).
 \end{equation}
-For $\hat{p} = \hat{p}^*_1=1$, the derivative is
-$f'(1) = -\alpha bvT + cv(1-T)$, and therefore, fixation of cooperation is locally stable when
+Therefore, fixation of cooperation is locally stable when
 \begin{equation} \label{eq:oblique_and_vertic_result2}
-  \frac{b}{c}>\frac{1-T}{\alpha T}
+  %\frac{b}{c}>\frac{1-T}{\alpha T}
+	c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
-Which is the same condition we get in corollary 1.1.
+which is the same condition we found in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
 
 \textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
 
 We now study the general case where $T_A \neq T_B$. We have
 \begin{equation} \label{eq:general_case_polynomial}
-  f(\hat{p}) = \hat{p}'-\hat{p} = \beta_1p^3 + \beta_2 p^2 + \beta_3p + \beta_4
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
+  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p},
 \end{equation}
 where 
 \begin{equation} \label{eq:polynomial_coefficients}
-\begin{split}
-  & \beta_1 = [c(1-v) -b (1-\alpha v)] \cdot(T_A-T_B) \\
-  & \beta_2 = (b(1-\alpha v)-c(1-v)-1)(T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
-  & \beta_3 = \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \\
-  & \beta_4 = 0
-\end{split}
+\begin{aligned}
+\beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \\
+%\beta_2 &= -[c(1-v) - b(1-\alpha v) +  1](T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
+\beta_2 &= -\beta_1 -\beta_3  \\
+\beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) .
+\end{aligned}
 \end{equation}
 Since $f(\hat{p})$ is a cubic polynomial, three equilibria exist.
 We already know that $\hat{p}^*_0 = 0 $ and $\hat{p}^*_1 = 1$ are equilibria.
-The third equilibrium can be found by solving $f(\hat{p})/\big(\hat{p}(1-\hat{p})\big)=0$, and it is
+The third equilibrium $\hat{p}^*_2$ can be found by solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} = 0$:
 \begin{equation} \label{eq:oblique_and_vertic_result}
-  \hat{p}^*_2 =  \frac{\alpha bvT_A + cvT_B + T_A-T_B-cv}{c(1-v)\cdot(T_A-T_B) -b (1-\alpha v) \cdot(T_A-T_B)}
+  \hat{p}^*_2 =  
+  \frac{\beta_3}{\beta_1}.
+  %\frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}
+  %     {\big(c(1-v) -b (1-\alpha v)\big) (T_A-T_B)} .
 \end{equation}
-
-We would like to know when $\hat{p}^*_2$ is legitimate equilibrium, i.e. $0<\hat{p}^*_2<1$.  
-To do that we find the derivative  of $f(\hat{p})$,
-\begin{equation} \label{eq:derivative_of_phattag-phat2}
-  f'(\hat{p}) = 3\beta_0 \hat{p}^2 + 2\beta_1\hat{p}^2 + \beta_3
- \end{equation}
-We assume that $T_A>T_B$ and we look on $\beta_1$:
+To determine when $\hat{p}^*_2$ is a legitimate equilibrium (i.e. $0<\hat{p}^*_2<1$), we first focus on the left inequality, $0<\hat{p}^*_2$, and
+%To do that we find the derivative  of $f(\hat{p})$,
+%\begin{equation} \label{eq:derivative_of_phattag-phat2}
+%  f'(\hat{p}) = 3\beta_1 \hat{p}^2 + 2\beta_2\hat{p}^2 + \beta_3
+% \end{equation}
+assume that $T_A>T_B$. In this case,
 \begin{equation} \label{eq:beta1}
   \begin{split}
-   \beta_1 & = [c(1-v) -b (1-\alpha v)] \cdot(T_A-T_B) \\
-   &< [c(1-\alpha v) - b(1-\alpha v)]\cdot(T_A-T_B) \\
-   &= (1-\alpha v)(c-b)(T_A-T_B)
+   \beta_1 & = [c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
+   &< [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) \\
+   &= (1-\alpha v)(c-b)(T_A-T_B) < 0 ,
   \end{split}
  \end{equation}
-From eq.~\ref{eq:beta1} we get that $\beta_1<0$ since $c-b<0$ $1-\alpha v>0$ and we assumed that $T_A > T_B$.
-In this case the cubic $f(\hat{p})$ goes to infinity when $\hat{p}$ goes to minus infinity ($-\infty$). 
-Therefore, if $\hat{p}^*_2$ is positive then $f'(0)$ must be negative % are you sure? I think it must be positive, because i think that the two extremes of a cubic must go in opposite directions DC: Yest, but I've fixed in the line before, there was minus sign missing
-\begin{equation} \label{eq:derivative_of_phattag-phat_p=0}
-  f'(0) = \beta_3
- \end{equation}
-$\hat{p}^*_2>0$ when $\beta_3<0$.
-In addition, $\hat{p}^*_0=0$ is stable when $f'(0) = \beta_3 <0$.
-Therefore, when $\hat{p}^*_2>0$ the coefficient $\beta_3$ must be negative and $\hat{p}^*_0=0$ is locally stable. 
+since $T_A > T_B$, $c<b$, and $1>\alpha v$.
+Therefore, when $\hat{p}$ goes to negative infinity, the cubic $f(\hat{p})$ goes to positive infinity.
+So, a necessary condition for $\hat{p}^*_2>0$ is that $f'(0) = \beta_3 < 0$.
+This condition also satisfies local stability of $\hat{p}^*_0=0$.
+Hence, if $\hat{p}^*_2$ is legitimate, then extinction of cooperation is locally stable. 
 
-Now we would like to find when $\hat{p}^*_2<1$.
-If $T_A>T_B$, as before, then the cubic $f(\hat{p})$ goes to minus infinity ($-\infty$) when $\hat{p}$ goes to infinity.
-Hence, if $\hat{p}^*_2<1$ then $f'(1)$ must be negative % again, i think that the two extremes of a cubic must go in opposite directions. DC: I've double checked and I'm pretty sure my results are correct 
-\begin{equation} \label{eq:derivative_of_phattag-phat_p=1}
-  f'(1) = \beta_1 - \beta_3
-\end{equation}
-Therefore, $\hat{p}^*_2<1$ when $\beta_1-\beta_3<0$.
-In addition, $\hat{p}^*_1=1$ is stable when $f'(1) = \beta_1-\beta_3<0$. 
-We saw that when $0<\hat{p}^*_2<1$ the following must apply $f'(0)=\beta_3<0$ and $f'(1)=\beta_1-\beta_3<0$.
-Hence, when $0<\hat{p}^*_2<1$ then $\hat{p}^*_1=1$ is locally stable.
+We now focus on $\hat{p}^*_2<1$, still assuming $T_A>T_B$.
+When $\hat{p}$ goes to positive infinity, the cubic $f(\hat{p})$ goes to negative infinity (Eq.~\ref{eq:beta1}).
+So, a necessary condition for $\hat{p}^*_2<1$ is that $f'(1)=\beta_1 - \beta_3<0$.
+This condition also satisfies local stability of $\hat{p}^*_1=1$.
+Hence, if $\hat{p}^*_2$ is legitimate, then fixation of cooperation is also locally stable.
+Moreover, since legitimacy of $\hat{p}^*_2$ implies local stability of both $\hat{p}^*_0$ and $\hat{p}^*_1$, we conclude that $\hat{p}^*_2$ is locally unstable.
 
-\textbf{Result 4.1}: if $\hat{p}^*_2$ is a legitimate equilibrium, then it is locally unstable.
+If we assume instead that $T_A < T_B$, we reach the following results:
 
-\textbf{Result 4.2}: if $T_A>T_B$, then $\hat{p}^*_2$ is a legitimate equilibrium when $\beta_1<\beta_3<0$.
+\textbf{Result 4}: if $T_A>T_B$ ($T_B>T_A$), then $\hat{p}^*_2$ is a legitimate locally unstable equilibrium when $\beta_1<\beta_3<0$ ($\beta_1>\beta_3>0$). In this case, both fixations are locally stable and $\hat{p}^*_2$ separates the domains of attraction.
 
-\textbf{Result 4.3}: if $T_B>T_A$, then $\hat{p}^*_2$ is a legitimate equilibrium when $\beta_1>\beta_3>0$. % DC: I didn't show it but it applies
 
 \begin{figure}[H]
   \centering
@@ -507,7 +513,12 @@ Hence, when $0<\hat{p}^*_2<1$ then $\hat{p}^*_1=1$ is locally stable.
     \label{fig:results_c}
   \end{subfigure}
   \label{fig:results}
-  \caption{Numerical results of different scenarios. $\tilde{p}$ is ploted against time (generations) in (a) and (b), where $\tilde{p}$ is the frequency of parents with phenotypes A (cooperators) among the population. \\ $p'$ is ploted against time (generations) in (c). In each figure, the green line presnt the condition for fixation of cooperation, the orange line is equilibria and green is fixation of defectors}
+  \caption{
+  \textbf{Numerical results for cultural evolution of cooperation.}
+  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
+  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange). %TODO ic (c), the blue and green got mixed. 
+  % TODO have all panels in one row.
+  }
 \end{figure}
 
 % Discussion
@@ -521,7 +532,8 @@ Our results improve our understating of cultural evolution of cooperation. Our m
 \section*{Acknowledgements}
 We thank Lilach Hadany and Ayelet Shavit for discussions and comments.
 This work was supported in part by
-the Israel Science Foundation 552/19 (YR).
+the Israel Science Foundation 552/19 (YR),
+and Minerva Center for Lab Evolution (YR).
 % TODO funding for other authors?
 }
 
