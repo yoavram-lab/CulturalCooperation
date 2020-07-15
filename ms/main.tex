@@ -405,7 +405,7 @@ eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\til
 eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
 eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
-We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
+We then determine the equilibria of this equation, that is, solutions for $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. %TODO show this is necessary and sufficient
 
 
 We start with the simpler case of symmetric horizontal transmission, $T=T_A=T_B$. 
@@ -479,9 +479,12 @@ If $T_A>T_B$, then
  \end{equation}
 since $c<b$, and $1>\alpha v$.
 So the sign of the cubic at positive and negative infinity is negative and positive, respectively.
-First, if $\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
-Second, if $\beta_1<\beta_3<0$ then $1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
-Third, if $0<\beta_3$ then $\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+First, if $\beta_3<\beta_1$ then 
+$1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
+Second, if $\beta_1<\beta_3<0$ then 
+$0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
+Third, if $0<\beta_3$ then 
+$\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
 Similarly, if $T_B>T_A$, then
 \begin{equation} \label{eq:beta1_rev}
@@ -490,22 +493,25 @@ Similarly, if $T_B>T_A$, then
    = (1-\alpha v)(c-b)(T_A-T_B) > 0,
  \end{equation}
 since $c<b$, and $1>\alpha v$. So the sign of the cubic at positive and negative infinity is positive and negative, respectively. 
-First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $A=B$ is the only locally stable legitimate equilibrium.
-Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$, that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
-Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+First, if $\beta_3<0$ then 
+$\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$, that is, fixation of the defector phenotype $A=B$ is the only locally stable legitimate equilibrium.
+Second, if $0<\beta_3<\beta_1$ then 
+$0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$, that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
+Third, if $\beta_1<\beta_3$ then 
+$\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
-The following result summarizes these findings.
+The following result summaries these findings.
 
 \textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
 The cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the horizontal transmission bias $T_A-T_B$ and the coefficients $\beta_1$ and $\beta_3$:
 \begin{enumerate}
 \item \emph{Fixation of the cooperative phenotype $A$}, if $T_A>T_B$ and $0<\beta_3$, or $T_A<T_B$ and $\beta_1<\beta_3$.
 
-\item \emph{Fixation of the defector phenotype $B$}, if $T_A>T_B$ and $\beta_1<\beta_3<0$, or $T_A<T_B$ and $\beta_3<0$.
+\item \emph{Fixation of the defector phenotype $B$}, if $T_A>T_B$ and $\beta_3<\beta_1$, or $T_A<T_B$ and $\beta_3<0$.
 
 \item \emph{Protected polymorphism, or co-existence of both phenotypes}, if $T_A < T_B$ and $0<\beta_3<\beta_1$.
 
-\item \emph{Fixation of either phenotype depending on initial frequency}, if $T_A>T_B$ and $\beta_3<\beta_1$.
+\item \emph{Fixation of either phenotype depending on initial frequency}, if $T_A>T_B$ and $\beta_1<\beta_3<0$.
 
 \end{enumerate}
 
