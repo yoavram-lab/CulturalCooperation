@@ -17,12 +17,14 @@ headheight=12pt
 
 \usepackage{amssymb,amsmath,amsthm}
 \usepackage{commath}
-\usepackage{longtable}
 \usepackage[hyphens]{url}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[unicode=true,colorlinks=true,urlcolor=CadetBlue,citecolor=black,linkcolor=black]{hyperref}
 \PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
 \usepackage{authblk}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{booktabs}
       
 %SetFonts
 % newtxtext+newtxmath
@@ -180,7 +182,7 @@ Here, we develop cultural evolution models that include both vertical and non-ve
 
 First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modeled using the prisoner's dilemma. % yr: add ref
 
-Consider a very large population whose members are characterized by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors, with corresponding fitness values $w_A$ and $w_B$, which depend on the frequency of the phenotypes (see below).
+Consider a very large population whose members are characterized by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors.
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
 Following~\citet{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uni-parental inheritance, % yr: cite Zefferman Behav Ecol 2016
 the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
@@ -205,35 +207,32 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 \end{equation}
 
 Individuals interact according to a prisoner's dilemma.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $b>c$. The following payoff matrix shows the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$ ($b>c>0$):
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $b>c$. \autoref{table:prisoner_payoff} shows the payoff matrix, i.e. the fitness, of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$ (we assume $b>c>0$):
 
-\begin{table}[h]\label{table:prisoner_payoff}
+% Table: payoff matrix
+
+\begin{table}[h]
 \centering
 \begin{tabular}{lll}
-           & $\phi_2=A$ & $\phi_2=B$ \\
-$\phi_1=A$ & $b-c$      & $-c$       \\
-$\phi_1=B$ & $b$        & $0$       
+\toprule
+           & $\phi_2=A$ & $\phi_2=B$ \\ \cmidrule(r){1-3}
+$\phi_1=A$ & $1+b-c$ & $1-c$ \\
+$\phi_1=B$ & $1+b$   & $1$
+\\ \bottomrule
 \end{tabular}
+\caption{\textbf{Payoff matrix for prisoner's dilemma.}
+The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ is a cooperative phenotype, $B$ is a defector phenotype, $b$ is the benefit gained by an individual interacting with a cooperator, and $c$ is the cost of cooperation. $b>c>0$.
+}
+\label{table:prisoner_payoff}
 \end{table}
 
 Social interactions occur randomly:
 two individuals with phenotype $A$ interact with probability $\hat{p}^2$, two individuals with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two individuals with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
 
-%Therefore, the fitness values of the two phenotypes, $w_A$ and $w_B$ are
-%
-%\begin{equation}\label{eq:fitness}
-%\begin{aligned}
-%w_A(\hat{p}) & = \hat{p}(1+b-c) + (1-\hat{p})(1-c) = 1 - c + \hat{p} b \\
-%w_B(\hat{p}) & = \hat{p}(1+b) + (1-\hat{p}) = 1 + \hat{p} b,
-%\end{aligned}
-%\end{equation}
-%and the population mean fitness is therefore
-%$\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)$.
-
 Horizontal cultural transmission occurs between peers. 
 It may occur between social partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\textbf{\autoref{fig:horizontal}}).
 Horizontal transmission is not always successful, as one peer may reject the other's phenotype. The probability for successful transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.\\
-\autoref{table:1} contains the probability of first interactor to be A following interaction by interaction type.
+\autoref{table:interactions} contains the probability of first interactor to be A following interaction by interaction type.
 Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
@@ -259,10 +258,10 @@ The frequency of $A$ among parents (after selection) follows a similar dynamic, 
 & + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
 \end{aligned}
 \end{equation}
-where fitness values are taken from \autoref{table:1}, and 
+where fitness values are taken from \autoref{table:interactions}, and 
 \begin{equation} \label{eq:mean_fitness}
-\bar{w} = \hat{p} w_A + (1-\hat{p}) w_B = 1 + \hat{p}(b-c)
-\end{equation}  %MWF: Define w_A, w_B.
+\bar{w} =  1 + \hat{p}(b-c)
+\end{equation}
 is the population mean fitness.
 Eq~\ref{eq:nextgen_parents} can be simplified to
 \begin{equation}\label{eq:nextgen_parents_simplified}
@@ -275,21 +274,27 @@ Eq~\ref{eq:nextgen_parents} can be simplified to
 \end{aligned}
 \end{equation}
 
-\begin{table}[H]
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-\textbf{Interaction Type} & \textbf{Frequency}    & \textbf{Fitness}      & \multicolumn{2}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Probability of first interactor\\  to be A %MWF: What is A?
- following interaction\end{tabular}}}                                                                                                     \\ \hline
-\multicolumn{1}{|l|}{}    & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{} & \textbf{\begin{tabular}[c]{@{}c@{}}Horizontal transmission\\  from partner, \\ probability $\alpha$\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Horizontal transmission \\ from population, \\ probability $1-\alpha$\end{tabular}} \\ \hline
-$AxA$                     & $\hat{p}^2$           & $1+b-c$               & $1$                                                                                                               & $\hat{p}+(1-\hat{p})(1-T_B)$                                                                                           \\ \hline
-$AxB$                     & $\hat{p}(1-\hat{p})$  & $1-c$                 & $1-T_B$                                                                                                           & $\hat{p}+(1-\hat{p})(1-T_B)$                                                                                           \\ \hline
-$BxA$                     & $\hat{p}(1-\hat{p})$  & $1+b$                 & $T_A$                                                                                                             & $\hat{p}T_A$                                                                                                           \\ \hline
-$BxB$                     & $(1-\hat{p})^2$       & $1$                   & $0$                                                                                                               & $\hat{p}T_A$                                                                                                           \\ \hline
+% Table: interactions
+\begin{table}[]
+\begin{tabular}{@{}llllll@{}}
+\toprule
+\multirow{2}{*}{Phenotype $\phi_1$} &
+  \multirow{2}{*}{Phenotype $\phi_2$} &
+  \multirow{2}{*}{Frequency} &
+  \multirow{2}{*}{Fitness of $\phi_1$} &
+  \multicolumn{2}{l}{$P(\phi_1=A)$ via horizontal transmission:} \\ \cmidrule(l){5-6} 
+    &     &                      &         & from partner, $\alpha$ & from population, $(1-\alpha)$ \\ \cmidrule(r){1-6}
+$A$ & $A$ & $\hat{p}^2$          & $1+b-c$ & 1                      & $\hat{p}+(1-\hat{p})(1-T_B)$  \\
+$A$ & $B$ & $\hat{p}(1-\hat{p})$ & $1-c$   & $1-T_B$                & $\hat{p}+(1-\hat{p})(1-T_B)$  \\
+$B$ & $A$ & $\hat{p}(1-\hat{p})$ & $1+b$   & $T_A$                  & $\hat{p} T_A$                 \\
+$B$ & $B$ & $(1-\hat{p})^2$      & $1$     & $0$                    & $\hat{p} T_A$                 \\ \bottomrule
 \end{tabular}
-\caption{Fitness and probability of the first interactor to be A following interaction by interaction type} %MWF: What is A?
-\label{table:1}
+\caption{\textbf{Interaction frequency, fitness, and transmission probabilities.}}
+\label{table:interactions}
 \end{table}
 
+
+% Figure: model illustration
 \begin{figure}[b]
   \centering
   \includegraphics[scale=1]{figure1.pdf}
