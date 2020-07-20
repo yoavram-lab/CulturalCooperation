@@ -86,7 +86,7 @@ headheight=12pt
 \author[3]{Marcus W. Feldman}
 \author[a,*]{Yoav Ram}
 
-\affil[1]{School of Computer Sciences, IDC Herzliya, Herzliya, Israel}
+\affil[1]{School of Computer Science, Inetdisciplinary Center Herzliya, Herzliya, Israel}
 \affil[2]{School of Plant Sciences and Food Security, Tel Aviv University, Tel Aviv, Israel}
 \affil[3]{Department of Biology, Stanford University, Stanford, CA}
 \affil[*]{Corresponding author: yoav@yoavram.com}
@@ -114,68 +114,59 @@ Cultural transmission allows an individual to acquire attitudes and behavioral t
 Here we attempt to determine to what extent cultural transmission can explain the evolution of cooperative behavior.
 
 % subsection
-\subsection*{Theories for evolution of cooperation}
-Three major theories have been proposed to explain the evolution of cooperative behavior.
-
-\paragraph{Kin selection theory} posits that natural selection can favor cooperation between related individuals. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton,  an allele that determines altruistic behavior should increase in frequency when  the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the genetic relatedness between the recipient and the actor, $r$.
+%\subsection*{Theories for evolution of cooperation}
+Three major theories have been proposed to explain the evolution of cooperative behavior:\\
+1. \emph{Kin selection} theory posits that natural selection can favor cooperation between related individuals. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton,  an allele that determines altruistic behavior should increase in frequency when  the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the genetic relatedness between the recipient and the actor, $r$.
 This is also known as Hamilton's Rule:
-
 \begin{equation} \label{eq:hamilton_rule}
 c < b \cdot r.
 \end{equation}
 
-There is an ongoing debate about to what extent kin selection explains evolution of cooperation and altruism.
-It has been suggested that kin selection can explain the cooperative behavior of worker castes of eusocial insects like the honey bee.
-The most significant argument against kin selection is that in some cases cooperation among unrelated individuals appears to have evolved~\citep{wilson2005kin}. This makes Hamilton's rule incomplete according to \citet{wilson2005kin}, although \citet{foster2006kin} reject this claim and argue that altruism cannot evolve without relatedness. They refer  to Hamilton, who claimed that relatedness can arise without recent common ancestry. %MWF: How?
-\citet{wilson2005kin} also criticizes kin selection on the grounds that environmental or ecological factors are probably more important than relatedness in determining social actions. Although \citet{foster2006kin} argue that kin selection does not ignore ecology. Hamilton's rule suggests
-that environmental factors causing a high benefit-to-cost ratio will favor cooperation.
+There is an ongoing debate about the extent to which kin selection explains the evolution of cooperation and altruism.
+For example, it has been suggested that it can explain the cooperative behavior of worker castes of eusocial insects like the honey bee. % TODO REF
+The most significant argument against kin selection is that in some cases cooperation among unrelated individuals appears to have evolved~\citep{wilson2005kin}. According to \citet{wilson2005kin}, this makes Hamilton's rule incomplete, although \citet{foster2006kin} reject this claim and argue that altruism cannot evolve without relatedness. They refer  to Hamilton, who claimed that relatedness can arise without recent common ancestry. %MWF: How?
+\citet{wilson2005kin} also criticizes kin selection on the grounds that environmental or ecological factors are probably more important than relatedness in determining social actions. However, \citet{foster2006kin} argue that kin selection does not ignore ecology, and Hamilton's rule suggests that environmental factors causing a high benefit-to-cost ratio will favor cooperation.
 
-\paragraph{Reciprocity} entails that repeated interactions or individual recognition are key components of the evolution of cooperation. In \emph{direct reciprocity} there are repeated encounters between the same two individuals, where at every encounter, each player has a choice between cooperation and defection: if I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
-This game-theoretic framework, known as the repeated Prisoner's Dilemma, 
+2. \emph{Reciprocity} entails that repeated interactions or individual recognition are key components of the evolution of cooperation. In \emph{direct reciprocity} there are repeated encounters between the same two individuals, and at every encounter each individual has a choice between cooperation and defection. Hence, it may eventually pay off to cooperate if it may cause your partner to cooperate in the future.
+This game-theoretic framework, known as the \emph{repeated prisoner's dilemma}, 
 %A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
 can only lead to the evolution of cooperation if the cost is less than the benefit $b$ times the probability of another encounter between the same two individuals, $w$, 
-%MWF: Referencess?
-
+%TODO Referencess
 \begin{equation} \label{eq:reciprocity}
 c < b \cdot w.
 \end{equation}
 
-Direct reciprocity assumes that both players are in a position to cooperate, but it can not explain cooperation in asymmetric interactions such as human philanthropy.  
-
-\paragraph{Indirect reciprocity} has also been suggested as an explanation of this behavior.
-\citet{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of money. 
-%MWF: More refs
-The money that ``fuels the engines'' of indirect reciprocity is reputation. 
+Direct reciprocity assumes that both players are in a position to cooperate, but it can not explain cooperation in asymmetric interactions such as human philanthropy. \\
+\emph{Indirect reciprocity} has also been suggested to explain the evolution of cooperation.
+\citet{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of currency. 
+%TODO: refs
+The currency that ``fuels the engines'' of indirect reciprocity is \emph{reputation}. 
 However, reciprocity assumes repeated interactions and therefore has difficulty in explaining the evolution of cooperation if  interactions are not repeated. 
 
-\paragraph{Group selection theory} posits that cooperation is favored because it imparts an advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection divides the population into groups in which there are cooperators that help  other group members and defectors that do not.  % TODO add reference
+3. \emph{Group selection} theory posits that cooperation is favored because it imparts an advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection divides the population into groups in which there are cooperators that help  other group members and defectors that do not.  % TODO add reference
 Individuals reproduce proportionally to their fitness, and offspring are added to the same group as their parents.
 If a group reaches a certain size it can split to two groups, so groups that grow faster will split more often.
 Groups with cooperators  grow faster than groups without cooperators, and
 cooperation can evolve in this model when the cost $c$ is less than the benefit $b$ times the ratio between the  the number of groups $m$ and the sum of $m$ and the maximum group size $n$,
-
 \begin{equation} \label{eq:groupselection}
 c < b \cdot \frac{m}{m+n} .
 \end{equation}
 
-Group selection has been criticized by biologists who advocate a gene-centered view of evolution. Group selection has also been criticized because a trait such as cooperation evolves in the total population. For cooperation to take over the population it must have higher fitness, while under group selection the fitness of cooperators at the individual level is lower. Thus a trait with a lower fitness taking over the population is a contradiction. \citet{eldakar2011eight} reject this argument claiming that it is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and between groups in a multi-group population, and when a trait  evolves by group selection, despite having lower fitness within a group, that group might have higher average fitness in competition with other groups, all things considered. 
+Group selection has been criticized by biologists who advocate a gene-centered view of evolution. It has also been criticized because for cooperation to take over the population it must have higher fitness than defection, while under group selection theory the fitness of cooperators at the individual level is lower than the fitness of defectors. Thus a trait with a lower fitness taking over the population is a contradiction %TODO ref.
+\citet{eldakar2011eight} reject this argument, claiming that it is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and between groups in a multi-group population, and when a trait  evolves by group selection, despite having lower fitness within a group, that group might have higher average fitness in competition with other groups, all things considered. % TODO cite Simpsons' paradox?
 
-\paragraph{}
-All the above theories assume that cooperation is genetically determined, which raises the question, is it possible that cooperation is determined by non-genetic factors? \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission. They showed that under vertical (parent-to-offspring) cultural transmission, Hamilton's rule does not govern the evolution of parent-to-offspring or sib-to-sib altruism.
-Recent work by \citet{lewin2017microbes} also sheds some light on this question. 
-They hypothesise that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{poulin2010parasite,dobson1988population}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
-a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
-%\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\citep{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
+The above theories assume that cooperation is genetically determined, which raises the question: \emph{Is it possible that cooperation is determined by non-genetic factors?}
+\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission. They showed that under vertical (parent-to-offspring) cultural transmission, Hamilton's rule does not govern the evolution of parent-to-offspring or sib-to-sib altruism.
+Non-vertical transmission may be either a horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs from an adult to an unrelated offspring. 
+Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,ram2018evolution}.
 
-% subsection
-\subsection*{Cultural evolution of cooperation}
-\citet{lewin2017microbes} have demonstrated that \emph{non-vertical transmission} can help to explain the evolution of cooperative behavior. 
-Non-vertical transmission may be either a horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs from an adult to an offspring. 
-Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,ram2018evolution}. % (yr: not sure that this is a good reference)
+\citet{lewin2017microbes} have demonstrated that \emph{non-vertical transmission}, mediated by microbes that manipulate their host behavior, can help to explain the evolution of cooperative behavior. Interestingly, some of the analysis made by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
 
-Here we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. Some of the analysis made by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
+Here we hypothesize that non-vertical cultural transmission can explain the evolution of cooperation. 
+To test this hypothesis, we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. 
+We develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using both mathematical analysis and simulations.  
+Our results demonstrate the conditions in which cooperation can evolve when it is culturally, rather than genetically, transmitted.
 
-Here, we develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using both mathematical analysis and simulations.  We hypothesize that non-vertical cultural transmission can explain the evolution of cooperation. 
 
 % Models and Methods
 \section*{Models and Methods}
@@ -550,9 +541,17 @@ The cultural evolution of a cooperator phenotype will follow one of the followin
 \end{figure}
 
 % Discussion
-%\section*{Discussion}
-%We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
-%Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
+\section*{Discussion}
+We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
+Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
+
+Recent work by \citet{lewin2017microbes} also sheds some light on this question. 
+They hypothesise that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
+a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
+%\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\citep{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
+
+
+
 
 \pagebreak
 % Acknowledgements
