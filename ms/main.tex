@@ -25,6 +25,7 @@ headheight=12pt
 \usepackage{longtable}
 \usepackage{multirow}
 \usepackage{booktabs}
+\usepackage{lipsum}  
       
 %SetFonts
 % newtxtext+newtxmath
@@ -55,6 +56,12 @@ headheight=12pt
 \species{\calbicans}{Candida albicans}{C.~albicans}
 \species{\cneoformans}{Cryptococcus neoformans}{C.~neoformans}
 
+% line numbers
+ \usepackage[displaymath, mathlines]{lineno}
+ \renewcommand\linenumberfont{\normalfont\small\sffamily}
+\linenumbers
+\modulolinenumbers[2]
+
 % Yoav & Lee commands
 \newcommand*{\tr}{^\intercal}
 \let\vec\mathbf
@@ -71,6 +78,17 @@ headheight=12pt
 \newcommand{\cl}{\mathbf{L}}
 \newcommand{\cj}{\mathbf{J}}
 \newcommand{\ci}{I}
+
+% Supplementary
+\newcommand{\beginsupplement}{%
+      	\setcounter{table}{0}
+        \renewcommand{\thetable}{S\arabic{table}}%
+        \setcounter{figure}{0}
+        \renewcommand{\thefigure}{S\arabic{figure}}%
+		\setcounter{equation}{0}
+        \renewcommand{\theequation}{A\arabic{equation}}%
+
+}
 
 % NatBib
 \usepackage[round,colon]{natbib}
@@ -102,20 +120,15 @@ headheight=12pt
 
 \pagebreak
 
-% Introduction
+
+
+%%% Introduction
 \section*{Introduction}
 Cooperative behavior can harm an individual's fitness and increase the fitness of its conspecifics or competitors~\citep{axelrod1981evolution}.
 Nevertheless, cooperative behavior appears to occur in many non-human animals~\citep{dugatkin1997cooperation}, for example rats~\citep{rice1962altruism} and birds~\citep{krams2008experimental}.
-Evolution of cooperative behavior remains  an important  conundrum in evolutionary biology.
-\\
-Cultural evolution is an evolutionary theory of individual and group-level change in beliefs, behaviors, and norms \citep{cavalli1981cultural}.
-Culture has significant impact on the behavior of humans~\citep{ihara2004cultural,jeong2018bronze} as well as non-human animals~\citep{bonner2018evolution}.
-Cultural transmission allows an individual to acquire attitudes and behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
-Here we attempt to determine to what extent cultural transmission can explain the evolution of cooperative behavior.
+Evolution of cooperative behavior remains an important conundrum in evolutionary biology.
+Three major theories have been proposed to explain the evolution of cooperative behavior:
 
-% subsection
-%\subsection*{Theories for evolution of cooperation}
-Three major theories have been proposed to explain the evolution of cooperative behavior:\\
 1. \emph{Kin selection} theory posits that natural selection can favor cooperation between related individuals. The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}. According to Hamilton,  an allele that determines altruistic behavior should increase in frequency when  the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the genetic relatedness between the recipient and the actor, $r$.
 This is also known as Hamilton's Rule:
 \begin{equation} \label{eq:hamilton_rule}
@@ -146,32 +159,40 @@ However, reciprocity assumes repeated interactions and therefore has difficulty 
 3. \emph{Group selection} theory posits that cooperation is favored because it imparts an advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection divides the population into groups in which there are cooperators that help  other group members and defectors that do not.  % TODO add reference
 Individuals reproduce proportionally to their fitness, and offspring are added to the same group as their parents.
 If a group reaches a certain size it can split to two groups, so groups that grow faster will split more often.
-Groups with cooperators  grow faster than groups without cooperators, and
+Groups with cooperators grow faster than groups without cooperators, and
 cooperation can evolve in this model when the cost $c$ is less than the benefit $b$ times the ratio between the  the number of groups $m$ and the sum of $m$ and the maximum group size $n$,
 \begin{equation} \label{eq:groupselection}
 c < b \cdot \frac{m}{m+n} .
 \end{equation}
 
-Group selection has been criticized by biologists who advocate a gene-centered view of evolution. It has also been criticized because for cooperation to take over the population it must have higher fitness than defection, while under group selection theory the fitness of cooperators at the individual level is lower than the fitness of defectors. Thus a trait with a lower fitness taking over the population is a contradiction %TODO ref.
+Group selection has been criticized by biologists who advocate a gene-centered view of evolution. % TODO ref
+It has also been criticized because for cooperation to take over the population it must have higher fitness than defection, while under group selection theory the fitness of cooperators at the individual level is lower than the fitness of defectors. Thus a trait with a lower fitness taking over the population is a contradiction %TODO ref.
 \citet{eldakar2011eight} reject this argument, claiming that it is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and between groups in a multi-group population, and when a trait  evolves by group selection, despite having lower fitness within a group, that group might have higher average fitness in competition with other groups, all things considered. % TODO cite Simpsons' paradox?
 
-The above theories assume that cooperation is genetically determined, which raises the question: \emph{Is it possible that cooperation is determined by non-genetic factors?}
-\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission. They showed that under vertical (parent-to-offspring) cultural transmission, Hamilton's rule does not govern the evolution of parent-to-offspring or sib-to-sib altruism.
-Non-vertical transmission may be either a horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs from an adult to an unrelated offspring. 
-Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,ram2018evolution}.
 
-\citet{lewin2017microbes} have demonstrated that \emph{non-vertical transmission}, mediated by microbes that manipulate their host behavior, can help to explain the evolution of cooperative behavior. Interestingly, some of the analysis made by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
+
+These theories assume that cooperation is genetically determined, which raises the question: \emph{Is it possible that cooperation is determined by non-genetic factors?}
+Culture has significant impact on the behavior of humans~\citep{ihara2004cultural,jeong2018bronze} as well as non-human animals~\citep{bonner2018evolution}.
+Here we attempt to determine to what extent the evolution of cooperative behavior can be explained by \emph{cultural transmission},
+which allows an individual to acquire attitudes and behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
+\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission.
+They showed that under vertical (parent-to-offspring) cultural transmission, Hamilton's rule does not govern the evolution of parent-to-offspring or sib-to-sib altruism.
+
+\emph{Non-vertical transmission} may be either horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs from adults to unrelated offspring. 
+Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,ram2018evolution}.
+\citet{lewin2017microbes} have demonstrated that non-vertical transmission, mediated by microbes that manipulate their host behavior, can help to explain the evolution of cooperative behavior. Interestingly, some of their analysis can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
 
 Here we hypothesize that non-vertical cultural transmission can explain the evolution of cooperation. 
-To test this hypothesis, we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interaction. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will cooperate in the future. 
-We develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using both mathematical analysis and simulations.  
-Our results demonstrate the conditions in which cooperation can evolve when it is culturally, rather than genetically, transmitted.
+To test this hypothesis, we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interactions. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will be cooperative in the future. 
+We develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using mathematical analysis and simulations.  
+Our results demonstrate cultural transmission can facilitate the evolution of cooperation even when genetic transmission cannot.
+These results suggest that further research on the evolution of cooperation should account for non-vertical transmission and that treatment of cooperation as a cultural, rather then genetic trait, can lead to a better understanding of this important and enigmatic phenomenon.
 
 
-% Models and Methods
-\section*{Models and Methods}
+% Models
+\section*{Models}
 
-First, we focus on the evolution of cooperation in a fully mixed population where cooperation is modeled using the prisoner's dilemma. % yr: add ref
+We focus on the evolution of cooperation in a fully mixed population where cooperation is modeled using the \emph{prisoner's dilemma}. % yr: add ref
 
 Consider a very large population whose members are characterized by their phenotype $\phi$, which can be of two types, $\phi=A$ for cooperators or $\phi=B$ for defectors.
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
@@ -198,10 +219,9 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 \end{equation}
 
 Individuals interact according to a prisoner's dilemma.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $b>c$. \autoref{table:prisoner_payoff} shows the payoff matrix, i.e. the fitness, of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$ (we assume $b>c>0$):
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $b>c>0$. \textbf{\autoref{table:prisoner_payoff}} shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
 
-% Table: payoff matrix
-
+%%% Table: payoff matrix
 \begin{table}[h]
 \centering
 \begin{tabular}{lll}
@@ -216,14 +236,15 @@ The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ 
 }
 \label{table:prisoner_payoff}
 \end{table}
+%%%
 
 Social interactions occur randomly:
 two individuals with phenotype $A$ interact with probability $\hat{p}^2$, two individuals with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two individuals with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
 
 Horizontal cultural transmission occurs between peers. 
 It may occur between social partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\textbf{\autoref{fig:horizontal}}).
-Horizontal transmission is not always successful, as one peer may reject the other's phenotype. The probability for successful transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.\\
-\autoref{table:interactions} contains the probability of first interactor to be A following interaction by interaction type.
+Horizontal transmission is not always successful, as one peer may reject the other's phenotype. The probability for successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\textbf{\autoref{table:interactions}}).
+
 Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
@@ -239,7 +260,7 @@ which simplifies to
 p' = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) .
 \end{equation}
 
-The frequency of $A$ among parents (after selection) follows a similar dynamic, but also includes the effect of natural selection, and is therefore
+The frequency of $A$ among parents (i.e. after selection) follows a similar dynamic, but also includes the effect of natural selection, and is therefore
 \begin{equation}\label{eq:nextgen_parents}
 \begin{aligned}
 \bar{w} \tilde{p}'
@@ -249,12 +270,12 @@ The frequency of $A$ among parents (after selection) follows a similar dynamic, 
 & + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
 \end{aligned}
 \end{equation}
-where fitness values are taken from \autoref{table:interactions}, and 
+where fitness values are taken from \textbf{\autoref{table:prisoner_payoff}} and \textbf{\autoref{table:interactions}}, and the population mean fitness is
 \begin{equation} \label{eq:mean_fitness}
-\bar{w} =  1 + \hat{p}(b-c)
+\bar{w} =  1 + \hat{p}(b-c).
 \end{equation}
-is the population mean fitness.
-Eq~\ref{eq:nextgen_parents} can be simplified to
+
+\autoref{eq:nextgen_parents} can be simplified to
 \begin{equation}\label{eq:nextgen_parents_simplified}
 \begin{aligned}
 \bar{w} \tilde{p}'
@@ -265,7 +286,7 @@ Eq~\ref{eq:nextgen_parents} can be simplified to
 \end{aligned}
 \end{equation}
 
-% Table: interactions
+%%% Table: interactions
 \begin{table}[]
 \begin{tabular}{@{}llllll@{}}
 \toprule
@@ -283,43 +304,41 @@ $B$ & $B$ & $(1-\hat{p})^2$      & $1$     & $0$                    & $\hat{p} T
 \caption{\textbf{Interaction frequency, fitness, and transmission probabilities.}}
 \label{table:interactions}
 \end{table}
+%%%
 
-
-% Figure: model illustration
+%%% Figure: model illustration
 \begin{figure}[b]
   \centering
   \includegraphics[scale=1]{figure1.pdf}
   \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
   \label{fig:horizontal}
 \end{figure}
+%%%
 
-% Results
+
+%%% Results
 \section*{Results}
 
-We start by studying specific cases, for which we can derive general results, and then 
-we use numerical simulation to analyze more complex cases.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Without Oblique Transmission}
 
-With only vertical and horizontal transmission, i.e. $v=1$, eq.~\ref{eq:horizontal} becomes
+With only vertical and horizontal transmission, i.e. $v=1$, \autoref{eq:horizontal} becomes
 $\hat{p} =  \tilde{p}$,
-and eq.~\ref{eq:nextgen_parents_simplified} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
-
-\begin{equation} 
-\begin{split}\label{eq:nextgen_parents_vertical_only}
+and \autoref{eq:nextgen_parents_simplified} for the change in frequency $p'$ of phenotype $A$ among parents can be written as
+\begin{equation} \label{eq:nextgen_parents_vertical_only} 
+\begin{aligned}
 \bar{w} \tilde{p}' 
 & = \tilde{p}^2 (1+b-c) [1 - (1-\tilde{p}) (1-\alpha) T_B] \\
 & + \tilde{p}(1-\tilde{p}) (1-c) [\tilde{p} (1-\alpha) T_B + 1 - T_B] \\
 & + \tilde{p}(1-\tilde{p}) (1+b) [\tilde{p} (1-\alpha) + \alpha] T_A \\
-& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A
-\end{split}
+& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A .
+\end{aligned}
 \end{equation}
 
 We find the following result and corollaries.
 
 \textbf{Result 1: Vertical and horizontal transmission of cooperation.}
-From eq.~\ref{eq:nextgen_parents_vertical_only}, if
+From \autoref{eq:nextgen_parents_vertical_only}, if
 \begin{equation} \label{eq:unequal_transmission}
 c \cdot (1-T_B) < b \cdot  \alpha T_A  + (T_A - T_B) [1 + b\tilde{p}(1-\alpha)] ,
 \end{equation}
@@ -331,19 +350,19 @@ If $T=T_A=T_B$, then
 \label{eq:equal_transmission}
 c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
-which can be seen as a cultural version of \emph{Hamilton's rule} (eq.~\ref{eq:hamilton_rule}), where $r_H=\alpha T/(1-T)$ can be thought of as \emph{horizontal relatedness}.
+which can be seen as a cultural version of \emph{Hamilton's rule} (\autoref{eq:hamilton_rule}), where $r_H=\alpha T/(1-T)$ can be thought of as \emph{horizontal relatedness}.
 Therefore, if the cost $c$ is less than the benefit $b$ times the horizontal relatedness $r_H$, then cooperation will take over of the population (see~\textbf{\autoref{fig:results_a}}).
 
 \textbf{Corollary 1.2: Complete correlation between transmission and cooperation.}
 	
 In this case $\alpha=1$, and horizontal transmission can only occur as a result of cooperative interactions.
-Therefore, eq.~\ref{eq:unequal_transmission}, which determines the conditions for evolution of cooperation, becomes
+Therefore, \autoref{eq:unequal_transmission}, which determines the conditions for evolution of cooperation, becomes
 \begin{equation}\label{eq:horizontal_transmission_only_after_interaction}
 c \cdot (1-T_B) < b \cdot T_A + (T_A - T_B).
 \end{equation}
 This is equivalent to a result by~\citet[eq.~1]{lewin2017microbes}.
 
-Eq.~\ref{eq:horizontal_transmission_only_after_interaction} can be written as
+\autoref{eq:horizontal_transmission_only_after_interaction} can be written as
 \begin{equation} \label{eq:horizontal_transmission_only_after_interaction2}
 1 - (1-T_B)(1-c) < T_A \cdot (1+b) ,
 \end{equation}
@@ -354,12 +373,12 @@ Therefore, $1 - (1-T_B)(1-c)$ is the probability that either the cooperator beco
 This is the effective cost for cooperation from this interaction.
 $T_A\cdot(1+b)$ is the probability that the defector becomes cooperative and reproduces.
 This is the effective benefit for cooperation from this interaction.
-So, eq.~\ref{eq:horizontal_transmission_only_after_interaction2} means that cooperation can evolve if effective cost is less than the effective benefit.
+So, \autoref{eq:horizontal_transmission_only_after_interaction2} means that cooperation can evolve if the effective cost is less than the effective benefit.
 
 \textbf{Corollary 1.3: No correlation between transmission and cooperation.}
 
 In this case $\alpha=0$, and horizontal transmission is entirely independent from cooperative interactions.  
-Then, eq.~\ref{eq:unequal_transmission} becomes
+Then, \autoref{eq:unequal_transmission} becomes
 \begin{equation} \label{eq:horizontal_transmission_from_population}
 c\cdot(1-T_B) < b \cdot \tilde{p} \;(T_A-T_B) + (T_A-T_B). 
 \end{equation}
@@ -380,7 +399,7 @@ c < \frac{T_A-T_B}{1-T_B} .
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Without Vertical Transmission}
 
-With only oblique and horizontal transmission, i.e. $v = 0$, eq.~\ref{eq:horizontal} becomes $\hat{p}=p$ and eq.~\ref{eq:nextgen_adults_slimpify} becomes % TODO check this, I changed the ref from nextgen_parents_simplified to nextgen_adults_slimpify
+With only oblique and horizontal transmission, i.e. $v = 0$, \autoref{eq:horizontal} becomes $\hat{p}=p$ and \autoref{eq:nextgen_adults_slimpify} becomes % TODO check this, I changed the ref from nextgen_parents_simplified to nextgen_adults_slimpify
 \begin{equation}  \label{eq:nextgen_parents_oblique_only}
 p' = p^2 (T_B-T_A) + p (1+T_A-T_B) ,
 \end{equation}
@@ -399,18 +418,17 @@ Therefore, cooperation will evolve if the cooperator phenotype has a horizontal 
 \subsection*{With Vertical and Oblique Transmission}
 
 In this case $0<v<1$, and the recursion system is more complex.
-Therefore, we focus on local, rather than global, stability.
+Therefore, we focus on local stability, rather than global stability.
 To proceed, we note that 
-eq.~\ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
-eq.~\ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
-eq.~\ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
+\autoref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
+\autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
+\autoref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
-We then determine the equilibria, which are solutions of $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. %MWF: Define f(\hat p).
-
+We then determine the equilibria, which are solutions of $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
 
 We start with the simple case of symmetrical horizontal transmission, $T=T_A=T_B$ and 
 %MWF: Write the full recursion.
-apply eqs.~\ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to obtain 
+apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain 
 \begin{equation} \label{eq:equal_horizontal_transmission}
 \begin{aligned}
   %\hat{p}' - \hat{p} = 
@@ -434,7 +452,7 @@ then the condition for local stability of $\hat{p}=1$ is
 %	(1- 2\hat{p}) (\alpha bvT - cv(1-T)) \mid_{\hat{p}=1} = 
 	-\alpha bvT + cv(1-T) < 0,
 \end{equation}
-which produces the following result.
+which gives the following result.
 
 \textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
 If horizontal transmission is symmetric, $T = T_A = T_B$, and if
@@ -443,7 +461,7 @@ If horizontal transmission is symmetric, $T = T_A = T_B$, and if
 	c < b \cdot \frac{\alpha T}{1-T},
 \end{equation}
 then fixation of the cooperator phenotype $A$ is locally stable.
-The same condition was given in Corollary 1.1, Eq.~\ref{eq:equal_transmission}.
+The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
 % TODO what happens if the condition does not apply? can there be an non-zero stable equilibrium?
 \\
 \\
@@ -542,13 +560,20 @@ The cultural evolution of a cooperator phenotype will follow one of the followin
 
 % Discussion
 \section*{Discussion}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation. We used a model with non-vertical transmissions and have found that if eq.~\ref{eq:unequal_transmission} is satisfied cooperation will take over the population in fully mixed population with prisoner's dilemma payoff. In addition, we found that when horizontal transmission cannot occur after interaction ($\alpha = 0$) cooperation will always become extinct. 
-Our results improve our understating of cultural evolution of cooperation. Our model shows that cooperation can evolve even in a fully mixed population, where the population is non-structured, there are no repeating interactions and nor individual recognition.
+We hypothesized that non-vertical transmission can explain the evolution of cooperation.
+We studied fully mixed and very large populations with a prisoner's dilemma payoff. 
+We found that under horizontal and vertical cultural transmissions, if \autoref{eq:unequal_transmission} is satisfied, cooperation will take over fully mixed populations (Result 1).
+Under oblique and horizontal transmission, horizontal transmission bias for the cooperative phenotype is sufficient and necessary for evolution of cooperation (Result 2, \autoref{eq:oblique_only_result}).
+Under a combination of vertical, oblique, and horizontal transmission the dynamics are further complicated. Yet, we find that cooperation can evolve and in some cases be maintained together with defection (Result 4). 
+Importantly, our results demonstrate that cooperation can evolve even in a fully mixed population (i.e. in an unstructured population), without repeating interactions or individual recognition.
+These results significantly further our understating of the cultural evolution of cooperation. 
 
-Recent work by \citet{lewin2017microbes} also sheds some light on this question. 
-They hypothesise that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
+This study was partialy inspired by \citet{lewin2017microbes}. 
+They hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
 a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
-%\\While the hypothesis that microbes could manipulate their hosts to act altruistically is mathematically feasible~\citep{lewin2017microbes}, there are still no empirical evidence of whether microbes indeed mediate altruistic behavior of their hosts.
+
+% TODO continue discussion
+\lipsum[1-2]
 
 
 
@@ -568,37 +593,39 @@ and Minerva Center for Lab Evolution (YR).
 \bibliographystyle{plainnat}
 \bibliography{bib}
 
+\beginsupplement % https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
+
 % Appendices
 \newpage
 \section*{Appendix A} % TODO fix equations references
-In the section, we start with eq.~\ref{eq:nextgen_parents_vertical_only} and we want to investigate when $\tilde{p}< \tilde{p}'$, that is, when 
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_from_interaction_step0}
+We start with \autoref{eq:nextgen_parents_vertical_only} and we want to investigate when $\tilde{p}< \tilde{p}'$, that is, when 
+\begin{equation} \label{eq:horizontal_transmission_from_interaction_step0}
+\begin{aligned}
 \bar{w}\tilde{p} < & \, \tilde{p}^2 (1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
 & + \tilde{p}(1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
 & + \tilde{p}(1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
-& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A
-\end{split}
+& + (1-\tilde{p})^2 \tilde{p} (1-\alpha) T_A .
+\end{aligned}
 \end{equation}
 First divide by $\tilde{p}$ to obtain
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_from_interaction_step1}
+\begin{equation} \label{eq:horizontal_transmission_from_interaction_step1} 
+\begin{aligned} 
   \bar{w} < & \, \tilde{p}(1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
   & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
   & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
-  & + (1-\tilde{p})^2 (1-\alpha) T_A
-\end{split}
+  & + (1-\tilde{p})^2 (1-\alpha) T_A .
+\end{aligned}
 \end{equation}
-We know that the mean fitness $\bar{w} = 1 + \tilde{p}(b-c)$ Tthus eq.~\ref{eq:horizontal_transmission_from_interaction_step1} becomes
-\begin{equation} 
-\begin{split} \label{eq:horizontal_transmission_from_interaction_step2}
+We know that the mean fitness $\bar{w} = 1 + \tilde{p}(b-c)$, thus \autoref{eq:horizontal_transmission_from_interaction_step1} becomes
+\begin{equation} \label{eq:horizontal_transmission_from_interaction_step2} 
+\begin{aligned} 
   1 + \tilde{p}(b-c) < & \, \tilde{p}(1+b-c) (1 - (1-\tilde{p}) (1-\alpha) T_B) \\
   & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
   & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
-  & + (1-\tilde{p})^2 (1-\alpha) T_A
-\end{split}
+  & + (1-\tilde{p})^2 (1-\alpha) T_A .
+\end{aligned}
 \end{equation}
-Eq.~\ref{eq:horizontal_transmission_from_interaction_step2} can be simplified to become inequality~\ref{eq:unequal_transmission}.
+\autoref{eq:horizontal_transmission_from_interaction_step2} can be simplified to become inequality~\autoref{eq:unequal_transmission}.
 
 
 \end{document}
