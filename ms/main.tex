@@ -421,7 +421,7 @@ In this case $0<v<1$, and the recursion system is more complex.
 Therefore, we focus on local stability, rather than global stability.
 To proceed, we note that 
 \autoref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
-\autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\hat{p}$, and 
+\autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\tilde{p}$, and 
 \autoref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
 We then determine the equilibria, which are solutions of $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
@@ -597,7 +597,7 @@ and Minerva Center for Lab Evolution (YR).
 
 % Appendices
 \newpage
-\section*{Appendix A} % TODO fix equations references
+\section*{Appendix A} 
 We start with \autoref{eq:nextgen_parents_vertical_only} and we want to investigate when $\tilde{p}< \tilde{p}'$, that is, when 
 \begin{equation} \label{eq:horizontal_transmission_from_interaction_step0}
 \begin{aligned}
@@ -627,5 +627,59 @@ We know that the mean fitness $\bar{w} = 1 + \tilde{p}(b-c)$, thus \autoref{eq:h
 \end{equation}
 \autoref{eq:horizontal_transmission_from_interaction_step2} can be simplified to become inequality~\autoref{eq:unequal_transmission}.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section*{Appendix B} 
+We want to find the frequency of juveniles with phenotype A in next generation $\hat{p}'$ as a function of frequency
+of juveniles in current generation $\hat{p}$. We can change from eq.~\ref{eq:horizontal} so it contain the frequency $\hat{p}'$.
+\begin{equation}\label{eq:appendix_b_1}\tag{B.1}
+  \begin{aligned}
+  \hat{p}' & = v \tilde{p}' + (1-v) p'
+  \end{aligned}
+  \end{equation}
+Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ using eq.~\ref{eq:nextgen_parents_simplified} give us:
+\begin{equation}\label{eq:appendix_b_2}\tag{B.2}
+  \begin{aligned}
+  \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
+  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1-c)\left[ \hat{p}(1-\alpha)T_B + 1 - T_B \right] \right\} \\
+  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1+b)\left[\hat{p}(1-\alpha) + \alpha \right]T_A \right\} \\
+  & + \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \\
+  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B)
+  \end{aligned}
+  \end{equation}
+  Where $\bar{w} = 1 + \hat{p}(b-c)$.
+
+  We define $f(\hat{p})$ as follow:
+  \begin{equation} \label{eq:appendix_b_3}\tag{B.3}
+    \begin{aligned}
+      %\hat{p}' - \hat{p} = 
+      %\hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T)) = 
+      f(\hat{p}) &= 
+      \bar{w}(\hat{p}' - \hat{p})
+    \end{aligned}
+    \end{equation}
+  Using SymPy \cite{10.7717/peerj-cs.103}, a Python library for symbolic mathematics we can smplify eq.~\ref{eq:appendix_b_3} to be:
+\begin{equation} \label{eq:appendix_b_4}
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
+  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} + \beta_4,
+\end{equation}
+Where
+\begin{equation} \label{eq:appendix_b_5}
+\begin{aligned}
+  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) , \\
+  \beta_2 &= -\beta_1 -\beta_3 ,  \\
+  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B), \\
+  \beta_4 & = 0
+\end{aligned}
+\end{equation}
+When $T_A=T_B=T$ we get
+\begin{equation} \label{eq:appendix_b_5}
+  \begin{aligned}
+    \beta_1 &= 0 , \\
+    \beta_2 &= -\beta_3 ,  \\
+    \beta_3 &= \alpha bvT- cv(1-T), \\
+    \beta_4 & = 0
+  \end{aligned}
+  \end{equation}
 
 \end{document}
