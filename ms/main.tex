@@ -431,14 +431,12 @@ We start with the simple case of symmetrical horizontal transmission, $T=T_A=T_B
 apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain 
 \begin{equation} \label{eq:equal_horizontal_transmission}
 \begin{aligned}
-  %\hat{p}' - \hat{p} = 
-  %\hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T)) = 
   f(\hat{p}) &= 
   \bar{w}(\hat{p}' - \hat{p}) = \\
   &\hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big]. % shorter version
 \end{aligned}
 \end{equation}
-
+A detailed explain of how we get eq.~\ref{eq:equal_horizontal_transmission} can be found in appendix B.
 The equilibria are solutions of $f(\hat{p})=0$, or $\hat{p}' = \hat{p}$.
 It is easy to verify that fixation of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$, is an equilibrium.
 Since the derivative of $f'(\hat{p}$ is 
@@ -447,10 +445,7 @@ f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
 \end{equation}
 then the condition for local stability of $\hat{p}=1$ is
 \begin{equation} \label{eq:derivative_of_phattag-phat}
-	f'(1) =
-% 2\cdot\hat{p} (-\alpha bvT + cv(1-T)) + (\alpha bvT -cv(1-T)).
-%	(1- 2\hat{p}) (\alpha bvT - cv(1-T)) \mid_{\hat{p}=1} = 
-	-\alpha bvT + cv(1-T) < 0,
+	f'(1) =	-\alpha bvT + cv(1-T) < 0,
 \end{equation}
 which gives the following result.
 
@@ -463,8 +458,7 @@ If horizontal transmission is symmetric, $T = T_A = T_B$, and if
 then fixation of the cooperator phenotype $A$ is locally stable.
 The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
 % TODO what happens if the condition does not apply? can there be an non-zero stable equilibrium?
-\\
-\\
+
 We now turn to the general case where $T_A \neq T_B$. We have
 \begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
@@ -474,7 +468,6 @@ where
 \begin{equation} \label{eq:polynomial_coefficients}
 \begin{aligned}
 \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) , \\
-%\beta_2 &= -[c(1-v) - b(1-\alpha v) +  1](T_A-T_B)-\alpha bv T_A + cv(1-T_B) \\
 \beta_2 &= -\beta_1 -\beta_3 ,  \\
 \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) .
 \end{aligned}
@@ -485,15 +478,13 @@ By solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} =
 \begin{equation} \label{eq:oblique_and_vertic_result}
   \hat{p}^* =  
   \frac{\beta_3}{\beta_1}.
-  %\frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}
-  %     {\big(c(1-v) -b (1-\alpha v)\big) (T_A-T_B)} .
 \end{equation}
+A detailed explain of how we get eq.~\ref{eq:general_case_polynomial}, eq.~\ref{eq:polynomial_coefficients} and eq.~\ref{eq:oblique_and_vertic_result} can be found in appendix B.
 
 Note that the sign of the cubic $f(\hat{p})$ at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
 If $T_A>T_B$, then 
 \begin{equation} \label{eq:beta1}
-   \beta_1 %& = [c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
-   < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
    = (1-\alpha v)(c-b)(T_A-T_B) < 0 ,
  \end{equation}
 since $c<b$ and $1>\alpha v$, the sign of the cubic at positive and negative infinity is negative and positive, respectively.
@@ -507,8 +498,7 @@ $\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the co
 
 Similarly, if $T_B>T_A$, then
 \begin{equation} \label{eq:beta1_rev}
-   \beta_1 %& = -[c(1-v) - b (1-\alpha v)] (T_A-T_B) \\
-   > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
    = (1-\alpha v)(c-b)(T_A-T_B) > 0,
  \end{equation}
 since $c<b$, and $1>\alpha v$. So the sign of the cubic at positive and negative infinity is positive and negative, respectively. 
@@ -652,19 +642,16 @@ Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ us
   We define $f(\hat{p})$ as follow:
   \begin{equation} \label{eq:appendix_b_3}\tag{B.3}
     \begin{aligned}
-      %\hat{p}' - \hat{p} = 
-      %\hat{p} ^2(-\alpha bvT + cv(1-T)) + \hat{p} (\alpha bvT -cv(1-T)) = 
-      f(\hat{p}) &= 
-      \bar{w}(\hat{p}' - \hat{p})
+      f(\hat{p}) &= \bar{w}(\hat{p}' - \hat{p})
     \end{aligned}
     \end{equation}
-  Using SymPy \cite{10.7717/peerj-cs.103}, a Python library for symbolic mathematics we can smplify eq.~\ref{eq:appendix_b_3} to be:
-\begin{equation} \label{eq:appendix_b_4}
+Using SymPy \cite{10.7717/peerj-cs.103}, a Python library for symbolic mathematics we can smplify eq.~\ref{eq:appendix_b_3} to be:
+\begin{equation} \label{eq:appendix_b_4}\tag{B.4}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
   \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} + \beta_4,
 \end{equation}
 Where
-\begin{equation} \label{eq:appendix_b_5}\tag{B.4}
+\begin{equation} \label{eq:appendix_b_5}\tag{B.5}
 \begin{aligned}
   \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) , \\
   \beta_2 &= -\beta_1 -\beta_3 ,  \\
@@ -673,13 +660,45 @@ Where
 \end{aligned}
 \end{equation}
 When $T_A=T_B=T$ we get
-\begin{equation} \label{eq:appendix_b_5}\tag{B.4}
+\begin{equation} \label{eq:appendix_b_6}\tag{B.6}
   \begin{aligned}
     \beta_1 &= 0 , \\
     \beta_2 &= -\beta_3 ,  \\
     \beta_3 &= \alpha bvT- cv(1-T), \\
     \beta_4 & = 0
   \end{aligned}
-  \end{equation}
+\end{equation}
+Substituting the coefficients in eq.~\ref{eq:appendix_b_6} in eq.~\ref{eq:appendix_b_4} give us eq.~\ref{eq:equal_horizontal_transmission}.
+
+Now we will prove that $f'(\hat{p}^*)<0$ is a sufficient(?) condition for stability of equilibrium $\hat{p}^*$.
+We will write $f(\hat{p})$ as a taylor aproximaiton around the equilibrium $\hat{p}^*$. 
+\begin{equation} \label{eq:appendix_b_taylor}\tag{B.7}
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f(\hat{p}^*) + f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
+\end{equation}
+Where $R_2(\hat{p})$ is the remainder. Since $\hat{p}^*$ is an equilibrium $f(\hat{p}^*)=0$.
+\begin{equation} \label{eq:appendix_b_taylor0}\tag{B.8}
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =  f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
+\end{equation}
+Neglecting the remainder(?) and we get: 
+\begin{equation} \label{eq:appendix_b_taylor_without_remainder}\tag{B.9}
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f'(\hat{p}^*)(\hat{p}-\hat{p}^*)
+\end{equation}
+And we get:
+\begin{equation} \label{eq:appendix_b_derivative}\tag{B.10}
+  \begin{aligned}
+  f'(\hat{p}^*) &= \bar{w}(\frac{\hat{p}'-\hat{p}}{\hat{p}-\hat{p}^*})\\
+  & = \bar{w}(\frac{\hat{p}'-\hat{p}^*+\hat{p}^*-\hat{p}}{\hat{p}-\hat{p}}) \\
+  & = \bar{w}(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1)
+  \end{aligned}
+\end{equation}
+In order for the equilibrium $\hat{p}^*$ to be stable we demand that if $\hat{p} > \hat{p}^*$ then $\hat{p}'-\hat{p}^* < \hat{p}-\hat{p}^*$
+and if $\hat{p} < \hat{p}^*$ we demand that $-(\hat{p}'-\hat{p}^*) < -(\hat{p}-\hat{p}^*)$. 
+In other words, $\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}<1$ for every $\hat{p}$. Therefore,
+\begin{equation} \label{eq:appendix_b_condition}\tag{B.11}
+  \begin{aligned}
+  f'(\hat{p}^*) = \bar{w}(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1) < 0
+  \end{aligned}
+\end{equation}
+Therefore, $f'(\hat{p}^*)$ is a sufficient condition for stability of $\hat{p}^*$.
 
 \end{document}
