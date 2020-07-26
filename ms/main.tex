@@ -26,6 +26,8 @@ headheight=12pt
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{lipsum}  
+\usepackage[title,page]{appendix}
+\usepackage{chngcntr}
       
 %SetFonts
 % newtxtext+newtxmath
@@ -80,6 +82,7 @@ headheight=12pt
 \newcommand{\ci}{I}
 
 % Supplementary
+% https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
 \newcommand{\beginsupplement}{%
       	\setcounter{table}{0}
         \renewcommand{\thetable}{S\arabic{table}}%
@@ -87,7 +90,6 @@ headheight=12pt
         \renewcommand{\thefigure}{S\arabic{figure}}%
 		\setcounter{equation}{0}
         \renewcommand{\theequation}{A\arabic{equation}}%
-
 }
 
 % NatBib
@@ -423,43 +425,42 @@ To proceed, we note that
 \autoref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$,
 \autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\tilde{p}$, and 
 \autoref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
-Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$.
-We then determine the equilibria, which are solutions of $\hat{p}' = \hat{p}$, and analyse their local stability: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
+Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$, see Appendix~\autoref{sec:appendixB}.
+We then determine the equilibria, which are solutions of $\hat{p}' = \hat{p}$, and analyse their local stability.
+%: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
 
-We start with the simple case of symmetrical horizontal transmission, $T=T_A=T_B$ and 
-%MWF: Write the full recursion.
-apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain 
-\begin{equation} \label{eq:equal_horizontal_transmission}
-\begin{aligned}
-  f(\hat{p}) &= 
-  \bar{w}(\hat{p}' - \hat{p}) = \\
-  &\hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big]. % shorter version
-\end{aligned}
-\end{equation}
-A detailed explain of how we get eq.~\ref{eq:equal_horizontal_transmission} can be found in appendix B.
-The equilibria are solutions of $f(\hat{p})=0$, or $\hat{p}' = \hat{p}$.
-It is easy to verify that fixation of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$, is an equilibrium.
-Since the derivative of $f'(\hat{p}$ is 
-\begin{equation}
-f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
-\end{equation}
-then the condition for local stability of $\hat{p}=1$ is
-\begin{equation} \label{eq:derivative_of_phattag-phat}
-	f'(1) =	-\alpha bvT + cv(1-T) < 0,
-\end{equation}
-which gives the following result.
+%We start with the simple case of symmetrical horizontal transmission, $T=T_A=T_B$ and apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain 
+%\begin{equation} \label{eq:equal_horizontal_transmission}
+%\begin{aligned}
+%  f(\hat{p}) &= 
+%  \bar{w}(\hat{p}' - \hat{p}) = \\
+%  &\hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big].\end{aligned}
+%\end{equation}
+%A detailed explain of how we get eq.~\ref{eq:equal_horizontal_transmission} can be found in appendix B.
+%The equilibria are solutions of $f(\hat{p})=0$, or $\hat{p}' = \hat{p}$.
+%It is easy to verify that fixation of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$, is an equilibrium.
+%Since the derivative of $f'(\hat{p}$ is 
+%\begin{equation}
+%f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
+%\end{equation}
+%then the condition for local stability of $\hat{p}=1$ is
+%\begin{equation} \label{eq:derivative_of_phattag-phat}
+%	f'(1) =	-\alpha bvT + cv(1-T) < 0,
+%\end{equation}
+%which gives the following result.
+%
+%\textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
+%If horizontal transmission is symmetric, $T = T_A = T_B$, and if
+%\begin{equation} \label{eq:oblique_and_vertic_result2}
+%  %\frac{b}{c}>\frac{1-T}{\alpha T}
+%	c < b \cdot \frac{\alpha T}{1-T},
+%\end{equation}
+%then fixation of the cooperator phenotype $A$ is locally stable.
+%The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
 
-\textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
-If horizontal transmission is symmetric, $T = T_A = T_B$, and if
-\begin{equation} \label{eq:oblique_and_vertic_result2}
-  %\frac{b}{c}>\frac{1-T}{\alpha T}
-	c < b \cdot \frac{\alpha T}{1-T},
-\end{equation}
-then fixation of the cooperator phenotype $A$ is locally stable.
-The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
-% TODO what happens if the condition does not apply? can there be an non-zero stable equilibrium?
+%We now turn to the general case where $T_A \neq T_B$. 
+We apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain the function $f(\hat{p})$, see Appendix~\autoref{sec:appendixB}:
 
-We now turn to the general case where $T_A \neq T_B$. We have
 \begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
   \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p},
@@ -472,16 +473,38 @@ where
 \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) .
 \end{aligned}
 \end{equation}
-Since $f(\hat{p})$ is a cubic polynomial, three equilibria may exist, two of which are
+
+If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$. 
+Therefore, $f(\hat{p})$ is a quadratic polynomial,
+\begin{equation} \label{eq:equal_horizontal_transmission}
+  f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big].
+\end{equation}
+Clearly the only two equilibria are the fixations of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$.
+These equilibria are locally stable if $f'(\hat{p})<0$ (Appendix~\autoref{sec:appendixC}).
+Therefore, we find the derivative,
+\begin{equation}
+f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
+\end{equation}
+and investigate its sign at the equilibria,
+\begin{equation} \label{eq:derivative_of_phattag-phat}
+\begin{aligned}
+	f'(0) &=	\alpha bvT - cv(1-T), \\
+	f'(1) &=	-\alpha bvT + cv(1-T).
+\end{aligned}
+\end{equation}
+Therefore with symmetric horizontal transmission, fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary 1.1, \autoref{eq:equal_transmission}.
+
+
+In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
+Therefore, three equilibria may exist, two of which are
 $\hat{p} = 0 $ and $\hat{p} = 1$.
 By solving $f(\hat{p})/\big[\hat{p}(1-\hat{p})\big] = \beta_3 -\beta_1 \hat{p} = 0$ we  find the third equilibrium
 \begin{equation} \label{eq:oblique_and_vertic_result}
   \hat{p}^* =  
   \frac{\beta_3}{\beta_1}.
 \end{equation}
-A detailed explain of how we get eq.~\ref{eq:general_case_polynomial}, eq.~\ref{eq:polynomial_coefficients} and eq.~\ref{eq:oblique_and_vertic_result} can be found in appendix B.
 
-Note that the sign of the cubic $f(\hat{p})$ at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
+Note that the sign of this cubic at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
 If $T_A>T_B$, then 
 \begin{equation} \label{eq:beta1}
    \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
@@ -495,7 +518,6 @@ $0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$, that is, both fixations a
 Third, if $0<\beta_3$ then 
 $\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$, that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
-
 Similarly, if $T_B>T_A$, then
 \begin{equation} \label{eq:beta1_rev}
    \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
@@ -508,12 +530,22 @@ Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1
 
 The following result summarizes these findings.
 
-\textbf{Result 4: Oblique and vertical transmission of cooperation with asymmetric horizontal transmission.}
+\textbf{Result 3: Oblique and vertical transmission of cooperation.}
 The cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the horizontal transmission bias $T_A-T_B$ and the coefficients $\beta_1$ and $\beta_3$:
 \begin{enumerate}
-\item \emph{Fixation of the cooperative phenotype $A$}, if $T_A>T_B$ and $0<\beta_3$, or $T_A<T_B$ and $\beta_1<\beta_3$.
+\item \emph{Fixation of the cooperative phenotype $A$}, 
+\begin{enumerate}
+\item if $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$, or
+\item if $T_A>T_B$ and $0<\beta_3$, or 
+\item if $T_A<T_B$ and $\beta_1<\beta_3$.
+\end{enumerate}
 
-\item \emph{Fixation of the defector phenotype $B$}, if $T_A>T_B$ and $\beta_1<\beta_3<0$, or $T_A<T_B$ and $\beta_3<0$.
+\item \emph{Fixation of the defector phenotype $B$}, 
+\begin{enumerate}
+\item if $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$, or 
+\item if $T_A>T_B$ and $\beta_1<\beta_3<0$, or 
+\item if $T_A<T_B$ and $\beta_3<0$.
+\end{enumerate}
 
 \item \emph{Protected polymorphism, or co-existence of both phenotypes}, if $T_A < T_B$ and $0<\beta_3<\beta_1$.
 
@@ -562,9 +594,6 @@ This study was partialy inspired by \citet{lewin2017microbes}.
 They hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
 a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
 
-% TODO continue discussion
-\lipsum[1-2]
-
 
 
 
@@ -575,7 +604,7 @@ a microbe that induces its host to cooperate with another host and thereby incre
 We thank Lilach Hadany and Ayelet Shavit for discussions and comments.
 This work was supported in part by
 the Israel Science Foundation 552/19 (YR),
-and Minerva Center for Lab Evolution (YR).
+and Minerva Stiftung Center for Lab Evolution (YR).
 % TODO funding for other authors?
 }
 
@@ -583,11 +612,14 @@ and Minerva Center for Lab Evolution (YR).
 \bibliographystyle{plainnat}
 \bibliography{bib}
 
-\beginsupplement % https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
 
 % Appendices
-\newpage
-\section*{Appendix A} 
+\begin{appendices}
+\renewcommand{\theequation}{\thesection\arabic{equation}}
+\counterwithin*{equation}{section}
+
+\section{} \label{sec:appendixA}
+
 We start with \autoref{eq:nextgen_parents_vertical_only} and we want to investigate when $\tilde{p}< \tilde{p}'$, that is, when 
 \begin{equation} \label{eq:horizontal_transmission_from_interaction_step0}
 \begin{aligned}
@@ -615,90 +647,72 @@ We know that the mean fitness $\bar{w} = 1 + \tilde{p}(b-c)$, thus \autoref{eq:h
   & + (1-\tilde{p})^2 (1-\alpha) T_A .
 \end{aligned}
 \end{equation}
-\autoref{eq:horizontal_transmission_from_interaction_step2} can be simplified to become inequality~\autoref{eq:unequal_transmission}.
+which we simplify to inequality~\autoref{eq:unequal_transmission}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section*{Appendix B} 
-We want to find the frequency of juveniles with phenotype A in next generation $\hat{p}'$ as a function of frequency
-of juveniles in current generation $\hat{p}$. We can change from eq.~\ref{eq:horizontal} so it contain the frequency $\hat{p}'$.
-\begin{equation}\label{eq:appendix_b_1}\tag{B.1}
-  \begin{aligned}
-  \hat{p}' & = v \tilde{p}' + (1-v) p'
-  \end{aligned}
+\section{} \label{sec:appendixB}
+We want to find the frequency of juveniles with phenotype $A$ in next generation $\hat{p}'$ as a function of frequency
+of juveniles with phenotype $A$ in the current generation $\hat{p}$.
+We start from eq.~\ref{eq:horizontal},
+\begin{equation}\label{eq:appendix_b_1}
+  \hat{p}' = v \tilde{p}' + (1-v) p'
   \end{equation}
-Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ using eq.~\ref{eq:nextgen_parents_simplified} give us:
-\begin{equation}\label{eq:appendix_b_2}\tag{B.2}
+Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ using eq.~\ref{eq:nextgen_parents_simplified}, we have
+\begin{equation}\label{eq:appendix_b_2}
   \begin{aligned}
   \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
   & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1-c)\left[ \hat{p}(1-\alpha)T_B + 1 - T_B \right] \right\} \\
   & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1+b)\left[\hat{p}(1-\alpha) + \alpha \right]T_A \right\} \\
   & + \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \\
-  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B)
-  \end{aligned}
-  \end{equation}
-  Where $\bar{w} = 1 + \hat{p}(b-c)$.
-
-  We define $f(\hat{p})$ as follow:
-  \begin{equation} \label{eq:appendix_b_3}\tag{B.3}
-    \begin{aligned}
-      f(\hat{p}) &= \bar{w}(\hat{p}' - \hat{p})
-    \end{aligned}
-    \end{equation}
-Using SymPy \cite{10.7717/peerj-cs.103}, a Python library for symbolic mathematics we can smplify eq.~\ref{eq:appendix_b_3} to be:
-\begin{equation} \label{eq:appendix_b_4}\tag{B.4}
-  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
-  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} + \beta_4,
-\end{equation}
-Where
-\begin{equation} \label{eq:appendix_b_5}\tag{B.5}
-\begin{aligned}
-  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) , \\
-  \beta_2 &= -\beta_1 -\beta_3 ,  \\
-  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B), \\
-  \beta_4 & = 0
+  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B),
 \end{aligned}
 \end{equation}
-When $T_A=T_B=T$ we get
-\begin{equation} \label{eq:appendix_b_6}\tag{B.6}
-  \begin{aligned}
-    \beta_1 &= 0 , \\
-    \beta_2 &= -\beta_3 ,  \\
-    \beta_3 &= \alpha bvT- cv(1-T), \\
-    \beta_4 & = 0
-  \end{aligned}
-\end{equation}
-Substituting the coefficients in eq.~\ref{eq:appendix_b_6} in eq.~\ref{eq:appendix_b_4} give us eq.~\ref{eq:equal_horizontal_transmission}.
+where $\bar{w} = 1 + \hat{p}(b-c)$.
 
-Now we will prove that $f'(\hat{p}^*)<0$ is a sufficient(?) condition for stability of equilibrium $\hat{p}^*$.
-We will write $f(\hat{p})$ as a taylor aproximaiton around the equilibrium $\hat{p}^*$. 
-\begin{equation} \label{eq:appendix_b_taylor}\tag{B.7}
+We define $f(\hat{p})$ to be
+\begin{equation} \label{eq:appendix_b_3}
+\begin{aligned}
+      f(\hat{p}) &= \bar{w}(\hat{p}' - \hat{p})
+\end{aligned}
+\end{equation}
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we simplify \autoref{eq:appendix_b_3} to 
+\autoref{eq:general_case_polynomial} and \autoref{eq:polynomial_coefficients}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{} \label{sec:appendixC}
+
+We show that $f'(\hat{p}^*)<0$ is a sufficient condition for local stability an equilibrium $\hat{p}^*$.
+We will write $f(\hat{p})$ as a Taylor approximation around the equilibrium $\hat{p}^*$. 
+\begin{equation} \label{eq:appendix_b_taylor}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f(\hat{p}^*) + f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
 \end{equation}
 Where $R_2(\hat{p})$ is the remainder. Since $\hat{p}^*$ is an equilibrium $f(\hat{p}^*)=0$.
-\begin{equation} \label{eq:appendix_b_taylor0}\tag{B.8}
+\begin{equation} \label{eq:appendix_b_taylor0}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =  f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
 \end{equation}
 Neglecting the remainder(?) and we get: 
-\begin{equation} \label{eq:appendix_b_taylor_without_remainder}\tag{B.9}
+\begin{equation} \label{eq:appendix_b_taylor_without_remainder}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f'(\hat{p}^*)(\hat{p}-\hat{p}^*)
 \end{equation}
 And we get:
-\begin{equation} \label{eq:appendix_b_derivative}\tag{B.10}
+\begin{equation} \label{eq:appendix_b_derivative}
   \begin{aligned}
-  f'(\hat{p}^*) &= \bar{w}(\frac{\hat{p}'-\hat{p}}{\hat{p}-\hat{p}^*})\\
-  & = \bar{w}(\frac{\hat{p}'-\hat{p}^*+\hat{p}^*-\hat{p}}{\hat{p}-\hat{p}}) \\
-  & = \bar{w}(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1)
+  f'(\hat{p}^*) &= \bar{w}\Big(\frac{\hat{p}'-\hat{p}}{\hat{p}-\hat{p}^*}\Big)\\
+  & = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*+\hat{p}^*-\hat{p}}{\hat{p}-\hat{p}}\Big) 
+  = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1\Big) .
   \end{aligned}
 \end{equation}
 In order for the equilibrium $\hat{p}^*$ to be stable we demand that if $\hat{p} > \hat{p}^*$ then $\hat{p}'-\hat{p}^* < \hat{p}-\hat{p}^*$
 and if $\hat{p} < \hat{p}^*$ we demand that $-(\hat{p}'-\hat{p}^*) < -(\hat{p}-\hat{p}^*)$. 
-In other words, $\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}<1$ for every $\hat{p}$. Therefore,
-\begin{equation} \label{eq:appendix_b_condition}\tag{B.11}
+In other words, $\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}<1$ for every $\hat{p}$.
+Therefore,
+\begin{equation} \label{eq:appendix_b_condition}
   \begin{aligned}
-  f'(\hat{p}^*) = \bar{w}(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1) < 0
+  f'(\hat{p}^*) = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1\Big) < 0 .
   \end{aligned}
 \end{equation}
 Therefore, $f'(\hat{p}^*)$ is a sufficient condition for stability of $\hat{p}^*$.
+
+\end{appendices}
 
 \end{document}
