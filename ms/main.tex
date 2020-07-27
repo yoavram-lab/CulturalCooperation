@@ -590,9 +590,19 @@ Under a combination of vertical, oblique, and horizontal transmission the dynami
 Importantly, our results demonstrate that cooperation can evolve even in a fully mixed population (i.e. in an unstructured population), without repeating interactions or individual recognition.
 These results significantly further our understating of the cultural evolution of cooperation. 
 
-This study was partialy inspired by \citet{lewin2017microbes}. 
+This study was partially inspired by \citet{lewin2017microbes}. 
 They hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
 a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
+
+\citet{Eshel1982} have studied a relevant model for the evolution of cooperative behavior under vertical transmission. Their model included \emph{assortative meeting}, or non-random encounters. This assortment may be due, for example, to population structure or active partner choice.
+In this model, cooperative behavior can evolve if \citep[eq.~3.2]{Eshel1982}
+\begin{equation} \label{eq:assortative_meeting}
+c < b \cdot m,
+\end{equation}
+where $b$ and $c$ are the benefit and cost of cooperation, and $m$ is the fraction of the population that meets an individual of the same phenotype rather than a random individual\footnote{In an extended model, which allows an individual to encounter $N$ individuals before choosing a partner, the righthand side is multiplied by $E[N]$, the expected number of encounters \citep[eq.~4.6]{Eshel1982}.
+}. 
+As a version of Hamilton's rule, $m$ can be interpreted as the effective relatedness.
+In our Corollary 1.1 (\autoref{eq:equal_transmission}), cooperation evolves if $c < b \cdot \alpha T / (1-T)$. So in our model $\alpha T/(1-T)$ is the effective relatedness, which is affected by $\alpha$, the correlation between transmission and interaction, and $T$, the horizontal transmission rate.
 
 % Javarone MA, Atzeni AE, Galam S. Emergence of Cooperation in the Prisoner ’ s Dilemma Driven by Conformity. 2:155-163. doi:10.1007/978-3-319-16549-3
 % Woodcock S. The significance of non-vertical transmission of phenotype for the evolution of altruism. Biol Philos. 2006;21:213-234. doi:10.1007/s10539-005-8241-1
