@@ -286,7 +286,7 @@ $B$ & $B$ & $(1-\hat{p})^2$      & $1$     & $0$                    & $\hat{p} T
 %%%
 
 %%% Figure: model illustration
-\begin{figure}[b]
+\begin{figure}[thb]
   \centering
   \includegraphics[scale=1]{figure1.pdf}
   \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
@@ -308,16 +308,18 @@ With only oblique and horizontal transmission, i.e. $v = 0$, \autoref{eq:horizon
 p' = p^2 (T_B-T_A) + p (1+T_A-T_B) ,
 \end{equation}
 
-which gives the following result.
+which gives the following result.\\
 
 \begin{result}[Oblique and horizontal transmission of cooperation]
-If there is a horizontal transmission bias in favor of cooperation, namely
+Without vertical transmission ($v=0$), if there is a horizontal transmission bias in favor of cooperation, namely
 \begin{equation} \label{eq:oblique_only_result}
 T_A > T_B, 
 \end{equation}
 then $p'>p$, and the frequency of the cooperator phenotype among adults increases every generation.
-Therefore, cooperation will evolve if the cooperator phenotype has a horizontal transmission bias (see~\textbf{\autoref{fig:results_c}}).
 \end{result}
+
+Therefore, in the absence of vertical transmission, selection plays no role in the evolution of cooperation. Hence, cooperation will evolve if the cooperator phenotype has a horizontal transmission bias (see~{\autoref{fig:results_c}).
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -342,11 +344,11 @@ We therefore assume for the remainder of the analysis that $0<\tilde{p}<1$.
 
 If $\alpha=1$, then $\tilde{p}'= \tilde{p}$ is reduced to
 \begin{equation}
-p(1-p)\big[(1+b)T_A + (1-c)(1-T_B)-1\big] = 0,
+\tilde{p}(1-\tilde{p})\big[(1+b)T_A + (1-c)(1-T_B)-1\big] = 0,
 \end{equation}
 and there are no additional equilibria.
 
-Therefore, for cooperation to take over the population ($\tilde{p}=1$ to be globally stable) we require $\tilde{p}'>\tilde{p}$, that is,
+Therefore, for cooperation to take over the population (for $\tilde{p}=1$ to be globally stable) we require $\tilde{p}'>\tilde{p}$, that is,
 \begin{equation}
   \tilde{p}^2 (1+b-c) + \tilde{p}(1-\tilde{p}) \big[(1-c) (1 - T_B) + (1+b)T_A\big] 
   > \bar{w}\tilde{p} .
@@ -359,11 +361,13 @@ We divide by $\tilde{p}$, set $\bar{w} = 1 + \tilde{p}(b-c)$, and rearrange to g
 Dividing by $(1-\tilde{p})$ we find that $\tilde{p}'>\tilde{p}$ if 
 \begin{equation} \label{eq:vert_hori_alpha1_global_condition}
   (1-c) (1 - T_B) + (1+b)T_A
-  > 1 .
+  > 1 \Leftrightarrow
+  c < \frac{bT_A + (T_A- T_B)}{1-T_B}.
 \end{equation}
+\\
 
-If $\alpha<1$, we want to determine a condition for $\tilde{p}'>\tilde{p}$ in \autoref{eq:nextgen_parents_vertical_only}. 
-We divide  by $\tilde{p}$ and set $\bar{w} = 1 + \tilde{p}(b-c)$ to get
+If $\alpha<1$, we want to determine a condition for $\tilde{p}'>\tilde{p}$. 
+We divide \autoref{eq:nextgen_parents_vertical_only} by $\tilde{p}$ and set $\bar{w} = 1 + \tilde{p}(b-c)$ to get
 \begin{equation}
 \begin{aligned} 
   1 + \tilde{p}(b-c) < 
@@ -383,7 +387,7 @@ Rearranging, we get
   & + (1-\tilde{p})^2 (1-\alpha) T_A .
 \end{aligned}
 \end{equation}
-We divide by $(1-\tilde{p})$ and rearrange so that free terms are on the left and terms with $\tilde{p}$ are on the right. We get
+Diving by $(1-\tilde{p})$ and rearranging so that free terms are on the left and terms with $\tilde{p}$ are on the right, we have
 \begin{equation} 
 \begin{aligned} 
   &1 - (1-\alpha) T_A - (1+b) \alpha T_A - (1 - T_B)(1-c)  < \\
@@ -398,51 +402,56 @@ Simplifying, we find that $\tilde{p}'>\tilde{p}$ if and only if
 c(1-T_B) - b \alpha T_A - (T_A-T_B) < \tilde{p} \cdot b (1-\alpha) (T_A-T_B).
 \end{equation}
 
-Therefore, in this case there can be a third, polymorphic equilibrium, if $0<\tilde{p}^*<1$, where
+Following the same steps to solve $\tilde{p}'=\tilde{p}$, we find that there can be a third, polymorphic equilibrium 
 \begin{equation} \label{eq:vert_hori_equilibrium}
   \tilde{p}^* = 
-  \frac{c(1-T_B) - b \alpha T_A - (T_A-T_B)}{b (1-\alpha) (T_A-T_B) }.
+  \frac{c(1-T_B) - b \alpha T_A - (T_A-T_B)}{b (1-\alpha) (T_A-T_B)} .
 \end{equation} 
+Note that this is a legitimate equilibrium only if $0<\tilde{p}^*<1$.
 
 Note that all parameters are positive.
-So, applying \autoref{eq:vert_hori_global_condition}, for $\tilde{p}'>\tilde{p}$,  we require that either 
-\begin{equation} \label{eq:vert_hori_global_condition1}
-T_A>T_B, \;\text{and}\; \tilde{p}>\tilde{p}^*,
-\end{equation} or 
-\begin{equation} \label{eq:vert_hori_global_condition2}
-T_A<T_B, \;\text{and}\; \tilde{p}<\tilde{p}^* .
-\end{equation}
-
+So, applying \autoref{eq:vert_hori_global_condition}, for $\tilde{p}'>\tilde{p}$ we require that either 
+\begin{align} 
+\label{eq:vert_hori_global_condition1}
+T_A > T_B \quad&\text{and}\quad \tilde{p}>\tilde{p}^*,  \quad \text{or} \\
+\label{eq:vert_hori_global_condition2}
+T_A <T_B \quad&\text{and}\quad \tilde{p}<\tilde{p}^* .
+\end{align}
 
 We therefore have the following result and corollaries.\\
 
 \begin{result}[Vertical and horizontal transmission of cooperation]
-When $0 \le \alpha<1$ and $v=1$, fixation, extinction, and stable coexistence of both cooperation and defection are possible.
+Without oblique transmission ($v=1$), fixation, extinction, and coexistence of both phenotypes are possible.
 \end{result}
 
-Determining the outcome of the dynamics depends on the sign of $T_A-T_B$ and on the legitimacy of the third equilibrium, that is, if $0<\tilde{p}^*<1$.
-\\
+We define the initial frequency as $\tilde{p}_0$ and
+\begin{equation}\begin{aligned}
+\gamma_1 = \frac{b \alpha T_A - (T_A - T_B)}{1-T_B}, \quad
+\gamma_2 = \frac{b \alpha T_B + (1+b) (T_A - T_B)}{1-T_B}.
+\end{aligned}\end{equation}
+Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2} we can summarize the possible outcomes:
+\begin{enumerate}
+\item Fixation of cooperation,
+	if $T_A>T_B$ and $c < \gamma_1$, or
+	if $T_A>T_B$ and $\gamma_1 < c < \gamma_2$, and $\tilde{p}_0>\tilde{p}^*$, or
+	if $T_A<T_B$ and $\gamma_2 < c$.
+\item Global fixation of defection,
+	if $T_A>T_B$ and $\gamma_2 < c$, or
+	if $T_A<T_B$ and $c < \gamma_1$, or
+	if $T_A<T_B$ and $\gamma_1 < c < \gamma_2$, and $\tilde{p}_0<\tilde{p}^*$.
+\item Co-existence of both phenotypes at $\tilde{p}^*$, 
+	if $T_A<T_B$ and
+	$\gamma_2 < c < \gamma_1$.
+\end{enumerate}
 
-%This condition can also be formulated as a condition on the cost of cooperation $c$: cooperation will take over the population if
-%\begin{equation} \label{eq:unequal_transmission}
-%c < \frac{
-%	b \big[\alpha T_A + (1-\alpha)\tilde{p}(T_A - T_B)\big] + (T_A - T_B)
-%	}{
-%	1-T_B
-%	}.
-%\end{equation}
-%
-%Importantly, the condition for cooperation to increase from rarity is (set $\tilde{p}=0$ in \autoref{eq:unequal_transmission})
-%\begin{equation} \label{eq:unequal_transmission_from_rarity}
-%c < \frac{
-%	b \alpha T_A + (T_A - T_B)
-%	}{
-%	1-T_B
-%	} .
-%\end{equation} 
-%
-%In general, these conditions cannot be formulated in the form of Hamilton's rule ($c<b\cdot r$) due to the horizontal transmission bias $T_A-T_B$.
-%Without horizontal transmission bias, we get the following corollary that does have the form of Hamilton's rule.
+Importantly, the condition for cooperation to increase from rarity ($\tilde{p}_0 \approx 0$) is
+\begin{equation} \label{eq:unequal_transmission_from_rarity}
+T_A>T_B \; \text{and} \; c < \gamma_1
+\end{equation} 
+Thus, cooperation must have a horizontal transmission bias, and the cost of cooperation cannot be too big. 
+
+In general, these conditions cannot be formulated in the form of Hamilton's rule ($c<b\cdot r$) due to the horizontal transmission bias $T_A-T_B$.
+Without horizontal transmission bias, we get the following corollary that does have the form of Hamilton's rule.\\
 
 \begin{corollary}[Symmetric horizontal transmission]
 If $T=T_A=T_B$, then cooperation will take over the population if
@@ -458,16 +467,24 @@ This can be interpreted as a version of Hamilton's rule (\autoref{eq:hamilton_ru
 \\
 
 \begin{corollary}[No assortment of transmission and cooperation]
-If $\alpha=0$, then the third equilibrium is
-\begin{equation} \label{eq:vert_hori_alpha0_equilibrium}
-\tilde{p}^*(\alpha=0) = \frac{c(1-T_B) - (T_A-T_B)}{b (T_A-T_B) }.
-\end{equation} 
-If there is a horizontal transmission bias for cooperation, $T_A>T_B$, then cooperation will fix in the population if the cost is not too high $c < (1+b) \frac{T_A-T_B}{1-T_B}$, and the initial frequency is high enough, $\tilde{p}(0) > \tilde{p}^*$.
+When $\alpha=0$, 
+if there is a horizontal transmission bias for cooperation, $T_A>T_B$, the cost is not too high $c < (1+b) \frac{T_A-T_B}{1-T_B}$, and the initial frequency is high enough, $\tilde{p}_0 > \tilde{p}^*$, then cooperation will fix in the population,
 If there is a horizontal transmission bias for defection, $T_A<T_B$, defection will take over the population.
 \end{corollary}
 
-This can be shown by setting $\alpha=0$ in \autoref{eq:vert_hori_equilibrium}. 
-Then, when $T_A>T_B$ we find a condition for $\tilde{p}^*<1$ and $\tilde{p}>\tilde{p}^*$ (\autoref{eq:vert_hori_global_condition1}). When $T_A<T_B$, we have $\tilde{p}^*<0$ and because of \autoref{eq:vert_hori_global_condition2}, any initial frequency leads to fixation of defection, $\tilde{p}=0$.\\
+Here, the third equilibrium is
+\begin{equation} \label{eq:vert_hori_alpha0_equilibrium}
+\tilde{p}^*(\alpha=0) = \frac{c(1-T_B) - (T_A-T_B)}{b (T_A-T_B) },
+\end{equation} 
+and the cost boundaries are
+\begin{equation}\begin{aligned}
+\gamma_1(\alpha=0) = -\frac{(T_A - T_B)}{1-T_B}, \quad
+\gamma_2(\alpha=0) = \frac{(1+b) (T_A - T_B)}{1-T_B}.
+\end{aligned}\end{equation}
+If $T_A>T_B$ then $c>0>\gamma_1$ and cooperation cannot increase from rarity, but it can fix if $c<\frac{(1+b) (T_A - T_B)}{1-T_B}$; otherwise defection will fix.
+
+If $T_A<T_B$ then % TODO check this... gamma2<0 means fixation of A???
+\\
 
 \begin{corollary}[Complete assortment of transmission and cooperation]
 \end{corollary}
