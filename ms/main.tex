@@ -695,35 +695,76 @@ Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics
 
 We show that $f'(\hat{p}^*)<0$ is a sufficient condition for local stability an equilibrium $\hat{p}^*$.
 We will write $f(\hat{p})$ as a Taylor approximation around the equilibrium $\hat{p}^*$. 
-\begin{equation} \label{eq:appendix_b_taylor}
-  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f(\hat{p}^*) + f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
+\begin{equation} \label{eq:appendix_c_taylor}
+  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f(\hat{p}^*) + f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + O((\hat{p}-\hat{p}^*)^2)
 \end{equation}
-Where $R_2(\hat{p})$ is the remainder. Since $\hat{p}^*$ is an equilibrium $f(\hat{p}^*)=0$.
-\begin{equation} \label{eq:appendix_b_taylor0}
-  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =  f'(\hat{p}^*)(\hat{p}-\hat{p}^*) + R_2(\hat{p})
+Where $O((\hat{p}-\hat{p}^*)^2)$ is big O notation. Denote, $\epsilon = \hat{p}-\hat{p}^*$ and $\epsilon'=\hat{p}'-\hat{p}$.
+\begin{equation} \label{eq:appendix_c_taylor0}
+  f(\hat{p}) = \bar{w}\epsilon' = f(\hat{p}^*) + f'(\hat{p}^*)\epsilon + O(\epsilon^2)
 \end{equation}
-Neglecting the remainder(?) and we get: 
-\begin{equation} \label{eq:appendix_b_taylor_without_remainder}
-  f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) = f'(\hat{p}^*)(\hat{p}-\hat{p}^*)
+Since $\hat{p}^*$ is an equilibrium $f(\hat{p}^*)=0$ we get
+\begin{equation} \label{eq:appendix_c_taylor0}
+  f(\hat{p}) = \bar{w}\epsilon' = f'(\hat{p}^*)\epsilon + O(\epsilon^2)
 \end{equation}
-And we get:
-\begin{equation} \label{eq:appendix_b_derivative}
-  \begin{aligned}
-  f'(\hat{p}^*) &= \bar{w}\Big(\frac{\hat{p}'-\hat{p}}{\hat{p}-\hat{p}^*}\Big)\\
-  & = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*+\hat{p}^*-\hat{p}}{\hat{p}-\hat{p}}\Big) 
-  = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1\Big) .
-  \end{aligned}
-\end{equation}
-In order for the equilibrium $\hat{p}^*$ to be stable we demand that if $\hat{p} > \hat{p}^*$ then $\hat{p}'-\hat{p}^* < \hat{p}-\hat{p}^*$
-and if $\hat{p} < \hat{p}^*$ we demand that $-(\hat{p}'-\hat{p}^*) < -(\hat{p}-\hat{p}^*)$. 
-In other words, $\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}<1$ for every $\hat{p}$.
+By definition of big-O, if $f’(\hat{p}*)$ is negative, then there exists some $\epsilon$ (i.e. some neighbourhood of $\hat{p}^*$) for which $f’(\hat{p}^*) + O(\epsilon)$ is also negative.
 Therefore,
-\begin{equation} \label{eq:appendix_b_condition}
+\begin{equation} \label{eq:appendix_c_taylor_is_negative}
+  \bar{w}\epsilon' = f'(\hat{p}^*)\epsilon + O(\epsilon^2) < 0
+\end{equation}
+In addition, we know that $f(\hat{p}^*)=0$ therefore, there exist some $\epsilon$ for which $f(\hat{p}) > - \delta$ for some $\delta > 0$. 
+We choose delta to be $\delta = \frac{1}{\bar{w}}$, therefore  $f(\hat{p})=\bar{w}\epsilon'>-\frac{1}{\bar{w}}$. Therefore,
+\begin{equation} \label{eq:appendix_c_taylor_is_negative_and_bound_by_minus1}
+  -\frac{1}{\bar{w}} <\bar{w}\epsilon' = f'(\hat{p}^*)\epsilon + O(\epsilon^2) < 0
+\end{equation}
+
+Let's start simplify
+\begin{equation} \label{eq:appendix_c_taylor_is_negative}
+  -\frac{1}{\bar{w}} < \bar{w}\frac{\epsilon'}{\epsilon} < 0
+\end{equation}
+Since $\bar{w}>0$ we get that
+\begin{equation} \label{eq:appendix_c_condition_for_positive_epsilon}
   \begin{aligned}
-  f'(\hat{p}^*) = \bar{w}\Big(\frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*}-1\Big) < 0 .
+  -1 < \frac{\epsilon'}{\epsilon} & = \frac{\hat{p}'-\hat{p}}{\hat{p}-\hat{p}^*} = \frac{\hat{p}'-\hat{p}^*+\hat{p}^*-\hat{p}}{\hat{p}-\hat{p}^*} \\
+  & \frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*} - 1< 0
   \end{aligned}
 \end{equation}
-Therefore, $f'(\hat{p}^*)$ is a sufficient condition for stability of $\hat{p}^*$.
+From eq.~\ref{eq:appendix_c_condition_for_positive_epsilon} we get that
+\begin{equation} \label{eq:appendix_c_final_condition_for_positive_epsilon}
+  \begin{aligned}
+    -1 < \frac{\hat{p}'-\hat{p}^*}{\hat{p}-\hat{p}^*} < 1
+  \end{aligned}
+\end{equation}
+We can apply absoulte value
+\begin{equation} \label{eq:appendix_c_final_condition_for_positive_epsilon}
+  \begin{aligned}
+    |\hat{p}'-\hat{p}^*| < |\hat{p}-\hat{p}^*|
+  \end{aligned}
+\end{equation}
+
+Therefore, if $f'(\hat{p}^*)<0$ there exist some neighbourhood of $\hat{p}^*$ where $\hat{p}'$ is closer to $\hat{p}$, which means that $f'(\hat{p}^*)<0$ is sufficient condition for stability of $\hat{p}^*$.
+
+Now let's assume by contradiction that $\hat{p}^*$ is also locally stable when $f'(\hat{p}^*) > 0$.
+When $f'(\hat{p}^*) > 0$ there exist some neighbourhood $\epsilon$ in which $f'(\hat{p})>0$ for every $\hat{p}$ in the neighbourhood.
+
+If $\hat{p} > \hat{p}^*$ we get:
+\begin{equation} \label{eq:appendix_c_1}
+  \begin{aligned}
+    f(\hat{p}) = w\epsilon' > f(\hat{p}^*) = 0
+  \end{aligned}
+\end{equation}
+From eq.~\ref{eq:appendix_c_1} we can see that $\hat{p}' > \hat{p} > \hat{p}^*$ and therefore, $\hat{p}^*$ is not stable.
+
+If $\hat{p}<\hat{p}^*$ we get:
+\begin{equation} \label{eq:appendix_c_2}
+  \begin{aligned}
+    f(\hat{p}) = w\epsilon' < f(\hat{p}^*) = 0
+  \end{aligned}
+\end{equation}
+From eq.~\ref{eq:appendix_c_1} we can see that $\hat{p}' < \hat{p} < \hat{p}^*$ and therefore, $\hat{p}^*$ is not stable.
+%TODO: Add show for f'(p)=0
+
+We saw that if $f'(\hat{p}^*)<0$ then $\hat{p}^*$ is stable, and if $f'(\hat{p}^*)>0$ then $\hat{p}^*$ is unstable.
+Therefore, $f'(\hat{p}^*)$ is sufficient and necessary condition for equilibrium stability.
 
 \end{appendices}
 
