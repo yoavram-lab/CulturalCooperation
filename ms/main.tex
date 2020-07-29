@@ -359,10 +359,9 @@ We divide by $\tilde{p}$, set $\bar{w} = 1 + \tilde{p}(b-c)$, and rearrange to g
   > 1 -\tilde{p} .
 \end{equation}
 Dividing by $(1-\tilde{p})$ we find that $\tilde{p}'>\tilde{p}$ if 
-\begin{equation} \label{eq:vert_hori_alpha1_global_condition}
+\begin{equation} \label{eq:vert_hori_alpha1_condition_proof}
   (1-c) (1 - T_B) + (1+b)T_A
-  > 1 \Leftrightarrow
-  c < \frac{bT_A + (T_A- T_B)}{1-T_B}.
+  > 1
 \end{equation}
 \\
 
@@ -424,31 +423,50 @@ We therefore have the following result and corollaries.\\
 Without oblique transmission ($v=1$), fixation, extinction, and coexistence of both phenotypes are possible.
 \end{result}
 
-We define the initial frequency as $\tilde{p}_0$ and
+We define the initial frequency as $\tilde{p}_0$ and the cost boundaries
 \begin{equation}\begin{aligned}
 \gamma_1 = \frac{b \alpha T_A - (T_A - T_B)}{1-T_B}, \quad
 \gamma_2 = \frac{b \alpha T_B + (1+b) (T_A - T_B)}{1-T_B}.
 \end{aligned}\end{equation}
 Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2} we can summarize the possible outcomes:
-\begin{enumerate}
+%\begin{enumerate} % p* version
+%\item Fixation of cooperation,
+%	if $T_A>T_B$ and $0<\tilde{p}^*$, or
+%	if $T_A>T_B$ and $0<\tilde{p}^*<1$, and $\tilde{p}_0>\tilde{p}^*$, or
+%	if $T_A<T_B$ and $1<\tilde{p}^*$.
+%\item Global fixation of defection,
+%	if $T_A>T_B$ and $\tilde{p}^*>1$, or
+%	if $T_A>T_B$ and $0<\tilde{p}^*<1$, and $\tilde{p}_0<\tilde{p}^*$, or
+%	if $T_A<T_B$ and $\tilde{p}^*<0$
+%\item Co-existence of both phenotypes at $\tilde{p}^*$, 
+%	if $T_A<T_B$ and $0<\tilde{p}^*<1$.
+%\end{enumerate}
+\begin{enumerate} % gamma version
 \item Fixation of cooperation,
-	if $T_A>T_B$ and $c < \gamma_1$, or
-	if $T_A>T_B$ and $\gamma_1 < c < \gamma_2$, and $\tilde{p}_0>\tilde{p}^*$, or
-	if $T_A<T_B$ and $\gamma_2 < c$.
-\item Global fixation of defection,
-	if $T_A>T_B$ and $\gamma_2 < c$, or
-	if $T_A<T_B$ and $c < \gamma_1$, or
-	if $T_A<T_B$ and $\gamma_1 < c < \gamma_2$, and $\tilde{p}_0<\tilde{p}^*$.
-\item Co-existence of both phenotypes at $\tilde{p}^*$, 
-	if $T_A<T_B$ and
-	$\gamma_2 < c < \gamma_1$.
+	if $T_A>T_B$ and $c<\gamma_1$; or
+	if $T_A>T_B$ and $\gamma_1<c<\gamma_2$ and $\tilde{p}_0>\tilde{p}^*$; or
+	if $T_A<T_B$ and $c<\gamma_2$.
+\item Fixation of defection,
+	if $T_A>T_B$ and $\gamma_2<c$; or
+	if $T_A>T_B$ and $\gamma_1<c<\gamma_2$ and $\tilde{p}_0<\tilde{p}^*$; or
+	if $T_A<T_B$ and $\gamma_1<c$.
+\item Coexistence of both phenotypes at $\tilde{p}^*$, 
+	if $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
+
+Much of the literature on evolution of cooperation focuses on conditions for cooperation to invade a population of defectors.
+The next corollary deals with such a condition.
+\\
 \end{enumerate}
 
-Importantly, the condition for cooperation to increase from rarity ($\tilde{p}_0 \approx 0$) is
+\begin{corollary}[Condition for cooperation to increase from rarity]
+If the initial frequency of the cooperative phenotype if very close to zero, $\tilde{p}_0 \approx 0$, then its frequency will increase if 
 \begin{equation} \label{eq:unequal_transmission_from_rarity}
-T_A>T_B \; \text{and} \; c < \gamma_1
+\begin{aligned}
+T_A>T_B \;\; \text{and} \;\; c < \gamma_1, \quad \text{or} \quad
+T_A<T_B \;\; \text{and} \;\; \gamma_2<c < \gamma_1. 
+\end{aligned}
 \end{equation} 
-Thus, cooperation must have a horizontal transmission bias, and the cost of cooperation cannot be too big. 
+\end{corollary}
 
 In general, these conditions cannot be formulated in the form of Hamilton's rule ($c<b\cdot r$) due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, we get the following corollary that does have the form of Hamilton's rule.\\
@@ -467,9 +485,9 @@ This can be interpreted as a version of Hamilton's rule (\autoref{eq:hamilton_ru
 \\
 
 \begin{corollary}[No assortment of transmission and cooperation]
-When $\alpha=0$, 
-if there is a horizontal transmission bias for cooperation, $T_A>T_B$, the cost is not too high $c < (1+b) \frac{T_A-T_B}{1-T_B}$, and the initial frequency is high enough, $\tilde{p}_0 > \tilde{p}^*$, then cooperation will fix in the population,
-If there is a horizontal transmission bias for defection, $T_A<T_B$, defection will take over the population.
+When $\alpha=0$, then either
+\textbf{(1)} cooperation can fix, but not increase from rarity, if there is horizontal bias for cooperation ($T_A>T_B$) and the cost is low enough ($c<(1+b)(T_A-T_B)/(1-T_B)$), or 
+\textbf{(2)} cooperation can increase from rarity to a stable coexistence with defection, if there is horizontal bias for defection ($T_A<T_B$) and the cost is low enough ($c<(T_B-T_A)/(1-T_B)$).
 \end{corollary}
 
 Here, the third equilibrium is
@@ -478,23 +496,26 @@ Here, the third equilibrium is
 \end{equation} 
 and the cost boundaries are
 \begin{equation}\begin{aligned}
-\gamma_1(\alpha=0) = -\frac{(T_A - T_B)}{1-T_B}, \quad
+\gamma_1(\alpha=0) = \frac{T_B - T_A}{1-T_B}, \quad
 \gamma_2(\alpha=0) = \frac{(1+b) (T_A - T_B)}{1-T_B}.
 \end{aligned}\end{equation}
-If $T_A>T_B$ then $c>0>\gamma_1$ and cooperation cannot increase from rarity, but it can fix if $c<\frac{(1+b) (T_A - T_B)}{1-T_B}$; otherwise defection will fix.
-
-If $T_A<T_B$ then % TODO check this... gamma2<0 means fixation of A???
+If $T_A>T_B$ then $\gamma_1(\alpha=0)<0<\gamma_2(\alpha=0)$.
+So cooperation cannot increase from rarity, but it can fix if $c<\gamma_2(\alpha=0)$.
+If $T_A<T_B$ then $\gamma_2(\alpha=0)<0<\gamma_1(\alpha=0)$.
+So cooperation cannot fix, but if $c<\gamma_1(\alpha=0)$ then it can increase from rarity to a stable coexistence at $\tilde{p}^*(\alpha=0)$.
 \\
 
 \begin{corollary}[Complete assortment of transmission and cooperation]
-\end{corollary}
-In this case $\alpha=1$, and horizontal transmission always occurs together with the cooperative interaction; there is complete assortment.
-In this case there are only two equilibria, $\tilde{p}=0$ and $\tilde{p}=1$.
-The condition for evolution of cooperation (i.e. global stability of $\tilde{p}=1$) is found by setting $\tilde{p}'>\tilde{p}$, which gives (\autoref{eq:vert_hori_alpha1})
+When $\alpha=1$, there are only two equilibria, $\tilde{p}=0$ and $\tilde{p}=1$.
+The condition for evolution of cooperation (i.e. global stability of $\tilde{p}=1$) is found by setting $\tilde{p}'>\tilde{p}$, which gives
 \begin{equation}\label{eq:vert_hori_alpha1}
 c < \frac{b \cdot T_A + (T_A - T_B)}{1-T_B}.
 \end{equation}
-This is equivalent to a result by~\citet[eq.~1]{lewin2017microbes}.
+\end{corollary}
+This is proven in \autoref{eq:vert_hori_alpha1_condition_proof}.
+In this case there is complete assortment, and horizontal transmission always occurs together with the cooperative interaction. The same occurs in \citet{lewin2017microbes}, and therefore this corollary is equivalent to their result, see their eq.~1.
+
+In terms of the cost boundaries, \autoref{eq:vert_hori_alpha1} is equivalent to $c<\gamma_1$. If $T_A>T_B$ then that suffices for fixation of cooperation. If $T_B>T_A$ then $\gamma_2(\alpha=1)<0$ and again, \autoref{eq:vert_hori_alpha1} is sufficient for increase in frequency of $A$ up to $\tilde{p}^*(\alpha=1) \approx \infty$.
 
 \autoref{eq:vert_hori_alpha1} can be written as
 \begin{equation} \label{eq:vert_hori_alpha1_effective}
