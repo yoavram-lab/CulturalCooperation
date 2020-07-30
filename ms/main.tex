@@ -197,7 +197,7 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 \end{equation}
 
 Individuals interact according to a prisoner's dilemma.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $b>c>0$. \textbf{\autoref{table:prisoner_payoff}} shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \textbf{\autoref{table:prisoner_payoff}} shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
 
 %%% Table: payoff matrix
 \begin{table}[h]
@@ -425,7 +425,7 @@ Without oblique transmission ($v=1$), fixation, extinction, and coexistence of b
 
 We define the initial frequency as $\tilde{p}_0$ and the cost boundaries
 \begin{equation}\begin{aligned}
-\gamma_1 = \frac{b \alpha T_A - (T_A - T_B)}{1-T_B}, \quad
+\gamma_1 = \frac{b \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
 \gamma_2 = \frac{b \alpha T_B + (1+b) (T_A - T_B)}{1-T_B}.
 \end{aligned}\end{equation}
 Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2} we can summarize the possible outcomes:
@@ -452,11 +452,11 @@ Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition
 	if $T_A<T_B$ and $\gamma_1<c$.
 \item Coexistence of both phenotypes at $\tilde{p}^*$, 
 	if $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
+\end{enumerate}
 
 Much of the literature on evolution of cooperation focuses on conditions for cooperation to invade a population of defectors.
-The next corollary deals with such a condition.
+The next corollary deals with such a condition, followed by a corollary that deals with symmetric horizontal transmission, i.e. $T_A=T_B$.
 \\
-\end{enumerate}
 
 \begin{corollary}[Condition for cooperation to increase from rarity]
 If the initial frequency of the cooperative phenotype if very close to zero, $\tilde{p}_0 \approx 0$, then its frequency will increase if 
@@ -485,9 +485,9 @@ This can be interpreted as a version of Hamilton's rule (\autoref{eq:hamilton_ru
 \\
 
 \begin{corollary}[No assortment of transmission and cooperation]
-When $\alpha=0$, then either
-\textbf{(1)} cooperation can fix, but not increase from rarity, if there is horizontal bias for cooperation ($T_A>T_B$) and the cost is low enough ($c<(1+b)(T_A-T_B)/(1-T_B)$), or 
-\textbf{(2)} cooperation can increase from rarity to a stable coexistence with defection, if there is horizontal bias for defection ($T_A<T_B$) and the cost is low enough ($c<(T_B-T_A)/(1-T_B)$).
+When $\alpha=0$, then if there is horizontal bias for cooperation ($T_A>T_B$) and
+\textbf{(1)} the cost is low compared to the bias ($c<(T_A-T_B)/(1-T_B)$), then cooperation will fix from any positive frequency; or
+\textbf{(2)} the cost is low compared to the benefit ($c<(1+b)(T_A-T_B)(1-T_B)$), then cooperation will fix if the initial frequency if high enough ($\tilde{p}_0 > \tilde{p}^*$).
 \end{corollary}
 
 Here, the third equilibrium is
@@ -496,13 +496,13 @@ Here, the third equilibrium is
 \end{equation} 
 and the cost boundaries are
 \begin{equation}\begin{aligned}
-\gamma_1(\alpha=0) = \frac{T_B - T_A}{1-T_B}, \quad
-\gamma_2(\alpha=0) = \frac{(1+b) (T_A - T_B)}{1-T_B}.
+\gamma_1(\alpha=0) = \frac{T_A - T_B}{1-T_B}, \quad
+\gamma_2(\alpha=0) = (1+b)\frac{T_A - T_B}{1-T_B}.
 \end{aligned}\end{equation}
-If $T_A>T_B$ then $\gamma_1(\alpha=0)<0<\gamma_2(\alpha=0)$.
-So cooperation cannot increase from rarity, but it can fix if $c<\gamma_2(\alpha=0)$.
-If $T_A<T_B$ then $\gamma_2(\alpha=0)<0<\gamma_1(\alpha=0)$.
-So cooperation cannot fix, but if $c<\gamma_1(\alpha=0)$ then it can increase from rarity to a stable coexistence at $\tilde{p}^*(\alpha=0)$.
+If $T_A>T_B$ then $0<\gamma_1(\alpha=0)<\gamma_2(\alpha=0)$.
+So either $c<\gamma_1(\alpha=0)$ or $\gamma_1(\alpha=0)<c<\gamma_2(\alpha=0)$ will allow fixation of cooperation, the latter only if the initial frequency is high enough.
+If $T_A<T_B$ then $\gamma_2(\alpha=0)<\gamma_1(\alpha=0)<0<c$.
+So defection will fix..
 %TODO add "effective cost" argument: c<TA-TB/(1-TB) <=> 1-(1-c)(1-TB)<TA.
 \\
 
