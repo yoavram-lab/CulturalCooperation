@@ -785,11 +785,11 @@ and Minerva Stiftung Center for Lab Evolution (YR).
 \section{} \label{sec:appendixB}
 We want to find the frequency of juveniles with phenotype $A$ in next generation $\hat{p}'$ as a function of frequency
 of juveniles with phenotype $A$ in the current generation $\hat{p}$.
-We start from eq.~\ref{eq:horizontal},
+Starting from \autoref{eq:horizontal},
 \begin{equation}\label{eq:appendix_b_1}
-  \hat{p}' = v \tilde{p}' + (1-v) p'
-  \end{equation}
-Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ using eq.~\ref{eq:nextgen_parents_simplified}, we have
+  \hat{p}' = v \tilde{p}' + (1-v) p',
+\end{equation}
+we substitute $p'$ using \autoref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ using \autoref{eq:nextgen_parents_simplified}, we have
 \begin{equation}\label{eq:appendix_b_2}
   \begin{aligned}
   \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
@@ -799,16 +799,15 @@ Substituting $p'$ using eq.~\ref{eq:nextgen_adults_slimpify} and $\tilde{p}'$ us
   & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B),
 \end{aligned}
 \end{equation}
-where $\bar{w} = 1 + \hat{p}(b-c)$.
-
-We define $f(\hat{p})$ to be
-\begin{equation} \label{eq:appendix_b_3}
+where $\bar{w} = 1 + \hat{p}(b-c)$. 
+We define $f(\hat{p})$ as
+\begin{equation} \label{eq:appendix_define_f}
 \begin{aligned}
       f(\hat{p}) &= \bar{w}(\hat{p}' - \hat{p})
 \end{aligned}
 \end{equation}
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we simplify \autoref{eq:appendix_b_3} to 
-\autoref{eq:general_case_polynomial} and \autoref{eq:polynomial_coefficients}.
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we simplify \autoref{eq:appendix_define_f} to 
+eqs.~\ref{eq:general_case_polynomial}-\ref{eq:polynomial_coefficients}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{} \label{sec:appendixC}
