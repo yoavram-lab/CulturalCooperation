@@ -148,8 +148,8 @@ where $b$ and $c$ are the benefit and cost of cooperation
 Here, $m$ takes the role of the relatedness $r$.
 
 
-These theories assume that cooperation is genetically determined, which raises the question: \emph{Is it possible that cooperation is determined by non-genetic factors?}
-Culture has significant impact on the behavior of humans~\citep{ihara2004cultural,jeong2018bronze} as well as non-human animals~\citep{bonner2018evolution}.
+%These theories assume that cooperation is genetically determined, which raises the question: \emph{Is it possible that cooperation is determined by non-genetic factors?}
+%Culture has significant impact on the behavior of humans~\citep{ihara2004cultural,jeong2018bronze} as well as non-human animals~\citep{bonner2018evolution}.
 Here we attempt to determine to what extent the evolution of cooperative behavior can be explained by \emph{cultural transmission},
 which allows an individual to acquire attitudes and behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission.
@@ -159,7 +159,7 @@ They showed that under vertical (parent-to-offspring) cultural transmission, Ham
 Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,ram2018evolution}.
 \citet{lewin2017microbes} have demonstrated that non-vertical transmission, mediated by microbes that manipulate their host behavior, can help to explain the evolution of cooperative behavior. Interestingly, some of their analysis can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
 
-Here we hypothesize that non-vertical cultural transmission can explain the evolution of cooperation. 
+We hypothesize that non-vertical cultural transmission can help explain the evolution of cooperation. 
 To test this hypothesis, we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interactions. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is a positive behavior and will be cooperative in the future. 
 We develop cultural evolution models that include both vertical and non-vertical transmission of cooperation and investigate these models using mathematical analysis and simulations.  
 Our results demonstrate cultural transmission can facilitate the evolution of cooperation even when genetic transmission cannot.
@@ -310,7 +310,7 @@ p' = p^2 (T_B-T_A) + p (1+T_A-T_B) ,
 
 which gives the following result.\\
 
-\begin{result}[Oblique and horizontal transmission of cooperation]
+\begin{result}[Oblique and horizontal transmission of cooperation] \label{result:obli_hori}
 Without vertical transmission ($v=0$), if there is a horizontal transmission bias in favor of cooperation, namely
 \begin{equation} \label{eq:oblique_only_result}
 T_A > T_B, 
@@ -419,7 +419,7 @@ T_A <T_B \quad&\text{and}\quad \tilde{p}<\tilde{p}^* .
 
 We therefore have the following result and corollaries.\\
 
-\begin{result}[Vertical and horizontal transmission of cooperation]
+\begin{result}[Vertical and horizontal transmission of cooperation] \label{result:vert_hori}
 Without oblique transmission ($v=1$), fixation, extinction, and coexistence of both phenotypes are possible.
 \end{result}
 
@@ -502,7 +502,7 @@ and the cost boundaries are
 If $T_A>T_B$ then $0<\gamma_1(\alpha=0)<\gamma_2(\alpha=0)$.
 So either $c<\gamma_1(\alpha=0)$ or $\gamma_1(\alpha=0)<c<\gamma_2(\alpha=0)$ will allow fixation of cooperation, the latter only if the initial frequency is high enough.
 If $T_A<T_B$ then $\gamma_2(\alpha=0)<\gamma_1(\alpha=0)<0<c$.
-So defection will fix..
+So defection will fix in any case.
 %TODO add "effective cost" argument: c<TA-TB/(1-TB) <=> 1-(1-c)(1-TB)<TA.
 \\
 
@@ -647,7 +647,7 @@ Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1
 
 The following result summarizes these findings.
 
-\begin{result}[Vertical, oblique, and horizontal transmission of cooperation]
+\begin{result}[Vertical, oblique, and horizontal transmission of cooperation] \label{result:vert_obli_hori}
 The cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the horizontal transmission bias $T_A-T_B$ and the coefficients $\beta_1$ and $\beta_3$:
 \begin{enumerate}
 \item \emph{Fixation of cooperation}, 
@@ -700,57 +700,54 @@ if $T_A < T_B$ and $0<\beta_3<\beta_1$.
 \section*{Discussion}
 We hypothesized that non-vertical transmission can explain the evolution of cooperation.
 We studied fully mixed and very large populations with a prisoner's dilemma payoff. 
-We found that under horizontal and vertical cultural transmissions, if \autoref{eq:unequal_transmission} is satisfied, cooperation will take over fully mixed populations (Result 1).
-Under oblique and horizontal transmission, horizontal transmission bias for the cooperative phenotype is sufficient and necessary for evolution of cooperation (Result 2, \autoref{eq:oblique_only_result}).
-Under a combination of vertical, oblique, and horizontal transmission the dynamics are further complicated. Yet, we find that cooperation can evolve and in some cases be maintained together with defection (Result 4). 
-Importantly, our results demonstrate that cooperation can evolve even in a fully mixed population (i.e. in an unstructured population), without repeating interactions or individual recognition.
-These results significantly further our understating of the cultural evolution of cooperation. 
+We found that under oblique and horizontal transmission, horizontal transmission bias for the cooperative phenotype is sufficient and necessary for evolution of cooperation (Result~\autoref{result:obli_hori}).
+Under horizontal and vertical cultural transmissions, cooperation or defection can fix, or coexist in a stable polymorphism, depending on the relationship between the cost and benefit of cooperation, the horizontal bias, and the correlation between cooperation and transmission (Result~\autoref{result:vert_hori}).
+Under a combination of vertical, oblique, and horizontal transmission the dynamics are further complicated. We find again that under some conditions cooperation can evolve, and can even be maintained in a stable coexistence with defection (Result~\autoref{result:vert_obli_hori}).
 
 This study was partially inspired by \citet{lewin2017microbes}. 
 They hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
 a microbe that induces its host to cooperate with another host and thereby increases the latter's fitness will  increase the vertical transmission of the microbes of the receiving individual. Kin selection among microbes could therefore favor microbes that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
 
+%There is an ongoing debate about the extent to which kin selection explains the evolution of cooperation and altruism.
+%For example, it has been suggested that it can explain the cooperative behavior of worker castes of eusocial insects like the honey bee. % TODO REF
+%The most significant argument against kin selection is that in some cases cooperation among unrelated individuals appears to have evolved~\citep{wilson2005kin}.
+%Therefore, other theories have been develop to explain the evolution of cooperation and altruism.
 
+%\emph{Reciprocity} entails that repeated interactions or individual recognition are key components of the evolution of cooperation. In \emph{direct reciprocity} there are repeated encounters between the same two individuals, and at every encounter each individual has a choice between cooperation and defection. Hence, it may eventually pay off to cooperate if it may cause your partner to cooperate in the future.
+%This game-theoretic framework, known as the \emph{repeated prisoner's dilemma}, 
+%%A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
+%can only lead to the evolution of cooperation if the cost is less than the benefit $b$ times the probability of another encounter between the same two individuals, $w$, 
+%%TODO Referencess
+%\begin{equation} \label{eq:reciprocity}
+%c < b \cdot w.
+%\end{equation}
+%
+%Direct reciprocity assumes that both players are in a position to cooperate, but it can not explain cooperation in asymmetric interactions such as human philanthropy. \\
+%\emph{Indirect reciprocity} has also been suggested to explain the evolution of cooperation.
+%\citet{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of currency. 
+%%TODO: refs
+%The currency that ``fuels the engines'' of indirect reciprocity is \emph{reputation}. 
+%However, reciprocity assumes repeated interactions and therefore has difficulty in explaining the evolution of cooperation if  interactions are not repeated. 
+%
+%\emph{Group selection} theory posits that cooperation is favored because it imparts an advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection divides the population into groups in which there are cooperators that help  other group members and defectors that do not.  % TODO add reference
+%Individuals reproduce proportionally to their fitness, and offspring are added to the same group as their parents.
+%If a group reaches a certain size it can split to two groups, so groups that grow faster will split more often.
+%Groups with cooperators grow faster than groups without cooperators, and
+%cooperation can evolve in this model when the cost $c$ is less than the benefit $b$ times the ratio between the  the number of groups $m$ and the sum of $m$ and the maximum group size $n$,
+%\begin{equation} \label{eq:groupselection}
+%c < b \cdot \frac{m}{m+n} .
+%\end{equation}
+%
+%Group selection has been criticized by biologists who advocate a gene-centered view of evolution. % TODO ref
+%It has also been criticized because for cooperation to take over the population it must have higher fitness than defection, while under group selection theory the fitness of cooperators at the individual level is lower than the fitness of defectors. Thus a trait with a lower fitness taking over the population is a contradiction %TODO ref.
+%\citet{eldakar2011eight} reject this argument, claiming that it is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and between groups in a multi-group population, and when a trait  evolves by group selection, despite having lower fitness within a group, that group might have higher average fitness in competition with other groups, all things considered. % TODO cite Simpsons' paradox?
 
+\citet{Eshel1982} have shown that with assortative meeting, i.e. probability $m$ that individuals interact with within their phenotypic group, cooperation can evolve if $c < b \cdot m$.
+Our results highlight another possibility for assortative meeting, in which individuals interact with probability $\alpha$ with their cultural partners, i.e. during horizontal transmission.
+We show that high levels of assortative meeting ($\alpha$) significantly increase the potential for evolution of cooperation. With a high enough $\alpha$, cooperation can increase from rarity, although not fix, even when there is horizontal bias against cooperation ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$, see Result~\autoref{result:vert_hori})
 
-There is an ongoing debate about the extent to which kin selection explains the evolution of cooperation and altruism.
-For example, it has been suggested that it can explain the cooperative behavior of worker castes of eusocial insects like the honey bee. % TODO REF
-The most significant argument against kin selection is that in some cases cooperation among unrelated individuals appears to have evolved~\citep{wilson2005kin}.
-Therefore, other theories have been develop to explain the evolution of cooperation and altruism.
-
-\emph{Reciprocity} entails that repeated interactions or individual recognition are key components of the evolution of cooperation. In \emph{direct reciprocity} there are repeated encounters between the same two individuals, and at every encounter each individual has a choice between cooperation and defection. Hence, it may eventually pay off to cooperate if it may cause your partner to cooperate in the future.
-This game-theoretic framework, known as the \emph{repeated prisoner's dilemma}, 
-%A well known strategy to play this game is called  'tit-for-tat'. This strategy always starts with a cooperation, then it does whatever the other player has done in the previous round: a cooperation for a cooperation, a defection for a defection. There a unlimited number of possible strategies to play this game. However, 
-can only lead to the evolution of cooperation if the cost is less than the benefit $b$ times the probability of another encounter between the same two individuals, $w$, 
-%TODO Referencess
-\begin{equation} \label{eq:reciprocity}
-c < b \cdot w.
-\end{equation}
-
-Direct reciprocity assumes that both players are in a position to cooperate, but it can not explain cooperation in asymmetric interactions such as human philanthropy. \\
-\emph{Indirect reciprocity} has also been suggested to explain the evolution of cooperation.
-\citet{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of currency. 
-%TODO: refs
-The currency that ``fuels the engines'' of indirect reciprocity is \emph{reputation}. 
-However, reciprocity assumes repeated interactions and therefore has difficulty in explaining the evolution of cooperation if  interactions are not repeated. 
-
-\emph{Group selection} theory posits that cooperation is favored because it imparts an advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection divides the population into groups in which there are cooperators that help  other group members and defectors that do not.  % TODO add reference
-Individuals reproduce proportionally to their fitness, and offspring are added to the same group as their parents.
-If a group reaches a certain size it can split to two groups, so groups that grow faster will split more often.
-Groups with cooperators grow faster than groups without cooperators, and
-cooperation can evolve in this model when the cost $c$ is less than the benefit $b$ times the ratio between the  the number of groups $m$ and the sum of $m$ and the maximum group size $n$,
-\begin{equation} \label{eq:groupselection}
-c < b \cdot \frac{m}{m+n} .
-\end{equation}
-
-Group selection has been criticized by biologists who advocate a gene-centered view of evolution. % TODO ref
-It has also been criticized because for cooperation to take over the population it must have higher fitness than defection, while under group selection theory the fitness of cooperators at the individual level is lower than the fitness of defectors. Thus a trait with a lower fitness taking over the population is a contradiction %TODO ref.
-\citet{eldakar2011eight} reject this argument, claiming that it is a tautology and does not qualify as an argument against group selection. The distinction between individual and group selection requires a comparison of fitness differentials within and between groups in a multi-group population, and when a trait  evolves by group selection, despite having lower fitness within a group, that group might have higher average fitness in competition with other groups, all things considered. % TODO cite Simpsons' paradox?
-
-\citet{Eshel1982} have shown that with assortative meeting, i.e. probability $m$ that individuals interact with within their phenotypic group, cooperation can evolve if $m > c/b$.
-In our Corollary 1.1 (\autoref{eq:equal_transmission}), cooperation evolves if $\alpha T / (1-T) > c/b$. So in our model $\alpha T/(1-T)$ is the effective relatedness, which is affected by $\alpha$, the correlation between transmission and interaction, and $T$, the horizontal transmission rate.
-
-
+Importantly, we demonstrate that cooperation can evolve even in a fully mixed population (i.e. in an unstructured population), without repeating interactions or individual recognition.
+Our results highlight the potential importance of non-vertical cultural transmission for explaining complex evolutionary phenomena, and significantly further our understating of the cultural evolution of cooperation. 
 
 % Javarone MA, Atzeni AE, Galam S. Emergence of Cooperation in the Prisoner ’ s Dilemma Driven by Conformity. 2:155-163. doi:10.1007/978-3-319-16549-3
 % Woodcock S. The significance of non-vertical transmission of phenotype for the evolution of altruism. Biol Philos. 2006;21:213-234. doi:10.1007/s10539-005-8241-1
