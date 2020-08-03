@@ -424,11 +424,13 @@ Without oblique transmission ($v=1$), fixation, extinction, and coexistence of b
 \end{result}
 
 We define the initial frequency as $\tilde{p}_0$ and the cost boundaries
-\begin{equation}\begin{aligned}
+\begin{equation} \label{eq:cost_boundaries}
+\begin{aligned}
 \gamma_1 = \frac{b \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
 \gamma_2 = \frac{b \alpha T_B + (1+b) (T_A - T_B)}{1-T_B}.
-\end{aligned}\end{equation}
-Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2} we can summarize the possible outcomes:
+\end{aligned}
+\end{equation}
+Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2} we can summarize the possible outcomes (\autoref{fig:results2}):
 %\begin{enumerate} % p* version
 %\item Fixation of cooperation,
 %	if $T_A>T_B$ and $0<\tilde{p}^*$, or
@@ -454,26 +456,34 @@ Applying eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition
 	if $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
 \end{enumerate}
 
+It is interesting to note that cooperation and defection can stably coexist if there his horizontal bias for defection and the cost of cooperation is large but not too large. The recurrence for this case is illustrated in \autoref{fig:coexistence}.
+
 Much of the literature on evolution of cooperation focuses on conditions for cooperation to invade a population of defectors.
 The next corollary deals with such a condition, followed by a corollary that deals with symmetric horizontal transmission, i.e. $T_A=T_B$.
 \\
-%%% Figure: Boundries graph of results 2
 
-\begin{figure}[H]
+%%% Figure: Result 2 Boundaries
+
+\begin{figure}[htb]
   \centering
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure2a.pdf}
-    \caption{$b=1.3$, $T_A=0.4$, $\alpha = 0.7$}
-    \label{fig:results2_a}
-    \includegraphics[scale=0.5]{figure2b.pdf}
-    \caption{$b=1.3$, $T_A=0.4$, $\alpha = 0$}
-    \label{fig:results2_b}
-  \end{subfigure}
-  \label{fig:results2}
-  \caption{\textbf{Boundaries graph} This figure illustrates under what values of $T_A-T_B$ and cost $c$ fixation of cooperates, fixation of defectors or coexistence are possible given where $b$, $\alpha$ and $T_B$ are known.
-    Figure \textbf{(a)} illustrates that when $\alpha \neq 0$ fixation of cooperates, fixation of defectors or coexistence are possible. \textbf{(b)} illustrates that when $\alpha=0$ coexistence is not possible, only fixation of one of the phenotypes}
+    \includegraphics[scale=1]{figure2a.pdf}
+    \includegraphics[scale=1]{figure2b.pdf}
+  \caption{\textbf{Vertical and horizontal transmission.} The figure illustrates combinations of horizontal bias, $T_A-T_B$, and cost of cooperation, $c$, that lead to either global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or fixation depending on the initial frequencies (blue), or coexistence of cooperation and defection (yellow). The blue and orange curves show the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries}).
+  Here, benefit of cooperation is $b=1.3$, horizontal transmission of cooperation $T_A=0.4$, $c$ and $T_B$ vary on the y- and x-axes. \textbf{Left}: With $\alpha = 0.7 > 0$, coexistence is possible (yellow). \textbf{Right}: With $\alpha=0$, coexistence is not possible.}
+    \label{fig:results2}
 \end{figure}
 %%%
+
+%%% Figure: coexistence map
+\begin{figure}[htb]
+\centering
+\includegraphics[scale=1]{coexistence.pdf}
+\caption{\textbf{Stable coexistence between cooperation and defection.} The frequency of the cooperative phenotype $A$ among juveniles in the next generation $\hat{p}'$ is plotted in blue as a function of the frequency in the current generation $\hat{p}$ for $T_A<T_B$ and $\gamma_2<c<\gamma_1$. The line of $\hat{p}'=p$ is in orange. The curve and line intersect at the equilibrium $\hat{p}^*$. 
+The blue curve is above the orange line$\hat{p}<\hat{p}^*$, so that the frequency increases towards $\hat{p}^*$. The blue curve is below the orange line when $\hat{p}>\hat{p}^*$, so that the frequency decreases towards $\hat{p}^*$.
+}
+\label{fig:coexistence}
+\end{figure}
+
 
 \begin{corollary}[Condition for cooperation to increase from rarity]
 If the initial frequency of the cooperative phenotype if very close to zero, $\tilde{p}_0 \approx 0$, then its frequency will increase if 
@@ -481,7 +491,7 @@ If the initial frequency of the cooperative phenotype if very close to zero, $\t
 \begin{aligned}
 T_A>T_B \;\; \text{and} \;\; c < \gamma_1, \quad \text{or} \quad
 T_A<T_B \;\; \text{and} \;\; \gamma_2<c < \gamma_1. 
-\end{aligned}f
+\end{aligned}
 \end{equation} 
 \end{corollary}
 
@@ -506,6 +516,8 @@ When $\alpha=0$, then if there is horizontal bias for cooperation ($T_A>T_B$) an
 \textbf{(1)} the cost is low compared to the bias ($c<(T_A-T_B)/(1-T_B)$), then cooperation will fix from any positive frequency; or
 \textbf{(2)} the cost is low compared to the benefit ($c<(1+b)(T_A-T_B)(1-T_B)$), then cooperation will fix if the initial frequency if high enough ($\tilde{p}_0 > \tilde{p}^*$).
 \end{corollary}
+
+\autoref{fig:results2}b demonstrates this these conditions.
 
 Here, the third equilibrium is
 \begin{equation} \label{eq:vert_hori_alpha0_equilibrium}
@@ -547,6 +559,28 @@ This is the effective cost for cooperation from this interaction.
 $(1+b) T_A$ is the probability that the defector becomes cooperative and reproduces.
 This is the effective benefit for cooperation from this interaction.
 So, \autoref{eq:vert_hori_alpha1} means that cooperation can evolve if the effective cost for cooperation is less than the effective benefit.
+
+
+\begin{figure}[htb]
+  \centering
+    \includegraphics[scale=0.75]{figure3a.pdf}
+%    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
+    \label{fig:results_a}
+    \includegraphics[scale=0.75]{figure3b.pdf}
+%    \caption{$v=1$, $\alpha = 0$}
+    \label{fig:results_b}
+    \includegraphics[scale=0.75]{figure3c.pdf}
+%    \caption{$v=0$}
+  \label{fig:results}
+  \caption{
+  \textbf{Numerical results for cultural evolution of cooperation.}
+  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
+  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue), and stable coexistence of cooperators and defectors (orange).
+  Parameters: (a) $v=1$, $T_A=T_B=T$, $\alpha \neq 0$; (b) $v=1$, $\alpha = 0$; (c) $v=0$.
+  % TODO add all parameters.
+  % TODO remove legends, increase fonts, explain in caption instead of legend.
+  }
+\end{figure}
 
 
 
@@ -681,35 +715,6 @@ if $T_A < T_B$ and $0<\beta_3<\beta_1$.
 
 \end{enumerate}
 \end{result}
-
-
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure3a.pdf}
-    \caption{$v=1$, $T_A=T_B=T$, $\alpha \neq 0$}
-    \label{fig:results_a}
-  \end{subfigure}
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure3b.pdf}
-    \caption{$v=1$, $\alpha = 0$}
-    \label{fig:results_b}
-  \end{subfigure}
-  \begin{subfigure}{8cm}
-    \includegraphics[scale=0.5]{figure3c.pdf}
-    \caption{$v=0$}
-    \label{fig:results_c}
-  \end{subfigure}
-  \label{fig:results}
-  \caption{
-  \textbf{Numerical results for cultural evolution of cooperation.}
-  Shown are dynamics of \textbf{(a-b)} $\tilde{p}$, the frequency of parents with cooperative phenotype $A$; \textbf{(c)} $p'$, the frequency of adults with cooperative phenotype $A$.
-  The figure demonstrates fixation of cooperation (green), extinction of cooperation (blue)m and stable co-existence of cooperators and defectors (orange).
-  % TODO have all panels in one row.
-  }
-\end{figure}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
