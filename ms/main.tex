@@ -331,12 +331,12 @@ For cooperation to take over the population (for $\tilde{p}=1$ to be globally st
   \tilde{p}^2 (1+b-c) + \tilde{p}(1-\tilde{p}) \big[(1-c) (1 - T_B) + (1+b)T_A\big] 
   > \bar{w}\tilde{p} .
 \end{equation}
-We divide by $\tilde{p}$, set $\bar{w} = 1 + \tilde{p}(b-c)$, and rearrange to get
-\begin{equation}
-  (1-\tilde{p}) \big[(1-c) (1 - T_B) + (1+b)T_A\big] 
-  > 1 -\tilde{p} .
-\end{equation}
-Dividing by $(1-\tilde{p})$ we find that $\tilde{p}'>\tilde{p}$ if 
+Factoring out $\tilde{p}(1-\tilde{p})$ and setting $\bar{w} = 1 + \tilde{p}(b-c)$, we find that $\hat{p}'>\hat{p}$ if
+%\begin{equation}
+%  (1-\tilde{p}) \big[(1-c) (1 - T_B) + (1+b)T_A\big] 
+%  > 1 -\tilde{p} .
+%\end{equation}
+%Dividing by $(1-\tilde{p})$ we find that $\tilde{p}'>\tilde{p}$ if 
 \begin{equation} \label{eq:vert_hori_alpha1_condition_proof}
   (1-c) (1 - T_B) + (1+b)T_A
   > 1
@@ -353,26 +353,26 @@ If $\alpha<1$, divide both sides of Eq.\ \ref{eq:nextgen_parents_vertical_only} 
   & + (1-\tilde{p})^2 (1-\alpha) T_A .
 \end{aligned}
 \end{equation}
-Rearranging, we get
-\begin{equation} 
-\begin{aligned} 
-  1 - \tilde{p} < 
-  & - \tilde{p}(1+b-c)(1-\tilde{p}) (1-\alpha) T_B \\
-  & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
-  & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
-  & + (1-\tilde{p})^2 (1-\alpha) T_A .
-\end{aligned}
-\end{equation}
-Diving by $(1-\tilde{p})$ and rearranging so that free terms are on the left and terms with $\tilde{p}$ are on the right, we have
-\begin{equation} 
-\begin{aligned} 
-  &1 - (1-\alpha) T_A - (1+b) \alpha T_A - (1 - T_B)(1-c)  < \\
-   &\tilde{p}[ - (1+b-c) (1-\alpha) T_B 
-   + (1-c) (1-\alpha) T_B
-   + (1+b) (1-\alpha) T_A 
-   - (1-\alpha) T_A].
-\end{aligned}
-\end{equation}
+%Rearranging, we get
+%\begin{equation} 
+%\begin{aligned} 
+%  1 - \tilde{p} < 
+%  & - \tilde{p}(1+b-c)(1-\tilde{p}) (1-\alpha) T_B \\
+%  & + (1-\tilde{p}) (1-c) (\tilde{p} (1-\alpha) T_B + 1 - T_B) \\
+%  & + (1-\tilde{p}) (1+b) (\tilde{p} (1-\alpha) + \alpha) T_A \\
+%  & + (1-\tilde{p})^2 (1-\alpha) T_A .
+%\end{aligned}
+%\end{equation}
+%Diving by $(1-\tilde{p})$ and rearranging so that free terms are on the left and terms with $\tilde{p}$ are on the right, we have
+%\begin{equation} 
+%\begin{aligned} 
+%  &1 - (1-\alpha) T_A - (1+b) \alpha T_A - (1 - T_B)(1-c)  < \\
+%   &\tilde{p}[ - (1+b-c) (1-\alpha) T_B 
+%   + (1-c) (1-\alpha) T_B
+%   + (1+b) (1-\alpha) T_A 
+%   - (1-\alpha) T_A].
+%\end{aligned}
+%\end{equation}
 Simplifying, we find that $\tilde{p}'>\tilde{p}$ if and only if
 \begin{equation} \label{eq:vert_hori_global_condition}
 c(1-T_B) - b \alpha T_A - (T_A-T_B) < \tilde{p} \cdot b (1-\alpha) (T_A-T_B).
@@ -395,7 +395,7 @@ T_A <T_B \quad&\text{and}\quad \tilde{p}<\tilde{p}^* .
 \end{align}
 
 We summarize these findings in the following result and corollaries.\\
-
+%TODO:format like result 3
 \begin{result}[Vertical and horizontal transmission of cooperation] \label{result:vert_hori}
 Without oblique transmission ($v=1$), fixation, extinction, and coexistence of both phenotypes are possible.
 \end{result}
@@ -433,11 +433,12 @@ Then, applying \ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_conditio
 	if $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
 \end{enumerate}
 
-Note that cooperation and defection can  coexist stably if there is horizontal bias for defection and the cost of cooperation is large but not too large. The recursion dynamic for this case is illustrated in \autoref{fig:coexistence}.
+Note that cooperation and defection can coexist stably if there is horizontal bias for defection and the cost of cooperation is large but not too large. The recursion dynamic for this case is illustrated in \autoref{fig:coexistence}.
 
 Much of the literature on evolution of cooperation focuses on conditions for an initially rare cooperative phenotype to invade a population of defectors.
 The next corollary deals with such a condition, followed by a corollary that deals with symmetric horizontal transmission, i.e. $T_A=T_B$.
 \\
+
 
 %%% Figure: Result 2 Boundaries
 
@@ -533,7 +534,6 @@ $(1+b) T_A$ is the probability that the defector becomes cooperative and reprodu
  is the effective benefit for cooperation from this interaction.
 Thus inequality (\ref{eq:vert_hori_alpha1}) entails that cooperation can evolve if the effective cost for cooperation is less than the effective benefit.
 
-
 \begin{figure}[htb]
   \centering
     \includegraphics[scale=0.75]{figure3a.pdf}
@@ -568,7 +568,7 @@ Eq.\ \ref{eq:horizontal} can give $\hat{p}'$ as a function of both $p'$ and $\ti
 %Equation 4 does not give $\hat{p}$---MF
 Eq.\ \ref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\tilde{p}$, since $\hat{p}$ is given in Eq.\ \ref{eq:horizontal} as a function of $\tilde{p}$ and 
 Eq.\ \ref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
-Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$ (shown in Appendix~\autoref{sec:appendixB}).
+Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$ (shown in Appendix~\autoref{sec:appendixA}).
 We then determine the equilibria, namely, solutions of $\hat{p}' = \hat{p}$, and analyse their local stability.
 %: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
 
@@ -602,7 +602,7 @@ We then determine the equilibria, namely, solutions of $\hat{p}' = \hat{p}$, and
 %The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
 
 %We now turn to the general case where $T_A \neq T_B$. 
-We apply Eqs.\ \ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to obtain the function $f(\hat{p})$ (see Appendix~\autoref{sec:appendixB}):
+We apply Eqs.\ \ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} to obtain the function $f(\hat{p})$ (see Appendix~\autoref{sec:appendixA}):
 
 \begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
@@ -623,7 +623,7 @@ and $f(\hat{p})$ becomes a quadratic polynomial:
   f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big].
 \end{equation}
 Clearly the only two equilibria are the fixations  $\hat{p} =  0$ and $\hat{p} = 1$.
-These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (Appendix~\autoref{sec:appendixC}), and
+These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (Appendix~\autoref{sec:appendixB}), and
 \begin{equation}
 f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
 \end{equation}
@@ -676,12 +676,12 @@ The cultural evolution of a cooperator phenotype will follow one of the followin
 \begin{enumerate}
 \item \emph{Fixation of cooperation}: 
 if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
-\emph{(ii)} if $T_A>T_B$ and $0<\beta_3$; or 
-\emph{(iii)} if $T_A<T_B$ and $\beta_1<\beta_3$.
+if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
+if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
 \item \emph{Fixation of the defection}: 
 if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
-\emph{(v)} if $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
-\emph{(vi)} if $T_A<T_B$ and $\beta_3<0$.
+if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
+if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
 \item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
 if \emph{(vi)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
 \item \emph{Fixation of either phenotype depending on initial frequency}: if \emph{(vii)}  $T_A>T_B$ and $\beta_3<\beta_1$.
@@ -691,10 +691,11 @@ if \emph{(vi)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
 \section*{Discussion}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation and evaluated this hypothesis using a deterministic discrete-time evolutionary model with fitnesses in the form of payoffs from a prisoner's dilemma game..
+We hypothesized that non-vertical transmission can explain the evolution of cooperation and evaluated this hypothesis using a deterministic discrete-time evolutionary model with fitnesses in the form of payoffs from a prisoner's dilemma game.
 Under oblique and horizontal transmission, horizontal transmission bias for the cooperative phenotype was found to be sufficient and necessary for evolution of cooperation (Result~\autoref{result:obli_hori}).
 Under horizontal and vertical cultural transmission, cooperation, or defection can fix, or coexist at a stable polymorphism, depending on the relationship between the cost and benefit of cooperation, the horizontal bias, and the correlation between cooperation and transmission (Result~\autoref{result:vert_hori}).
-Under a combination of vertical, oblique, and horizontal transmission the dynamics are much more complicated. However, we show that under some conditions cooperation can evolve, and can even be maintained in  stable coexistence with defection (Result~\autoref{result:vert_obli_hori}).
+Under a combination of vertical, oblique, and horizontal transmission the dynamics are much more complicated. However, we show that under some conditions cooperation can evolve, and can even be maintained in stable coexistence with defection (Result~\autoref{result:vert_obli_hori}).
+We saw that it is likely to find configuration of parameters that results coexistence as can be seen in \autoref{fig:results2}a. In figure \autoref{fig:results2}a the yellow area in which coexistence occur has horizontal bias that favor defection ($T_B>T_A$) and the cost is relatively small. 
 
 This study was partially inspired by the work of \citet{lewin2017microbes}, 
 who hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the widespread occurrence of cooperative behavior. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. Microbes can also be transferred vertically, from parent to offspring, and % yr: cite 10.1126/science.aat7164
@@ -770,7 +771,7 @@ and Minerva Stiftung Center for Lab Evolution (YR).
 \counterwithin*{equation}{section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixB}
+\section{} \label{sec:appendixA}
 We want to find the frequency of juveniles with phenotype $A$ in next generation $\hat{p}'$ as a function of frequency
 of juveniles with phenotype $A$ in the current generation $\hat{p}$.
 Starting from \autoref{eq:horizontal},
@@ -798,7 +799,7 @@ Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics
 eqs.~\ref{eq:general_case_polynomial}-\ref{eq:polynomial_coefficients}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixC}
+\section{} \label{sec:appendixB}
 
 Denote $f(p)=\lambda(p'-p)$, where $\lambda>0$, and assume $f(p^*)=0$; i.e., $p^*$ is an equilibrium.
 %HOW DO YOU KNOW $p^*\in(0,1)$?--MF
@@ -827,8 +828,6 @@ Using a linear approximation for $f(p)$ near $1$, we have
 f'(1) - O(1-p) &< 0.
 \end{aligned}\end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ it is guaranteed that $1-p'<1-p$, that is, $p'$ is closer than $p$ to one.
-
-
 \end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -837,6 +836,7 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 \bibliography{bib}
 
 \newpage
+
 
 \begin{table}[h]
 \centering
