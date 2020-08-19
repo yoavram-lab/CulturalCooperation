@@ -429,7 +429,7 @@ Then, applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_con
 \\
 
 \begin{result}[Vertical and horizontal transmission of cooperation] \label{result:vert_hori}
-With vertical and horizontal but without oblique transmission ($v=1$), the cultural evolution of a cooperator phenotype will follow one of the following scenarios:
+With vertical and horizontal but without oblique transmission ($v=1$), the cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries}):
 
 %\begin{enumerate} % p* version
 %\item Fixation of cooperation,
@@ -669,16 +669,43 @@ First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; 
 Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
 Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
-The following result summarizes these findings.
+We redefine the cost boundaries,
+the \emph{cost boundaries},
+\begin{equation} \label{eq:cost_boundaries_v}
+\begin{aligned}
+\hat\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
+\hat\gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)}.
+\end{aligned}
+\end{equation}
+The following result summarizes the possible outcomes.
 \\
 
 \begin{result}[Vertical, oblique, and horizontal transmission of cooperation] \label{result:vert_obli_hori}
-With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios:
+With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios depending on the cost boundaries $\hat\gamma_1$ and $\hat\gamma_3$ (\autoref{eq:cost_boundaries_v}):
+
+% in beta
+%\begin{enumerate}
+%\item \emph{Fixation of cooperation}: 
+%	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
+%	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
+%	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
+%\item \emph{Fixation of the defection}: 
+%	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
+%	if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
+%	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
+%\item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
+%	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
+%\item \emph{Fixation of either phenotype depending on initial frequency}:
+%	if \emph{(viii)}  $T_A>T_B$ and $\beta_3<\beta_1$.
+%\end{enumerate}
+
+% in gamma
 \begin{enumerate}
 \item \emph{Fixation of cooperation}: 
 	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
-	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
-	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
+	if \emph{(ii)} $T_A>T_B$ and $c < \hat\gamma_1$; or 
+	if \emph{(iiia)} $T_A<T_B$ and $v>\frac{T_B-T_A}{1-T_A}$ and $c < \hat\gamma_2$; or
+	if \emph{(iiib)} $T_A<T_B$ and $v<\frac{T_B-T_A}{1-T_A}$ and $c > \hat\gamma_2$.
 \item \emph{Fixation of the defection}: 
 	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
 	if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
