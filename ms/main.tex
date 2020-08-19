@@ -418,20 +418,19 @@ T_A > T_B \quad&\text{and}\quad \tilde{p}>\tilde{p}^*,  \quad \text{or} \\
 T_A <T_B \quad&\text{and}\quad \tilde{p}<\tilde{p}^* .
 \end{align}
 
-We summarize these findings in the following result and corollaries.\\
-%TODO:format like result 3
-\begin{result}[Vertical and horizontal transmission of cooperation] \label{result:vert_hori}
-Without oblique transmission ($v=1$), fixation, extinction, and coexistence of both phenotypes are possible.
-\end{result}
-
-Let the initial frequency of the alternative phenotype be $\tilde{p}_0$ and denote the cost boundaries by
+We define the initial frequency of the cooperator phenotype among parents, $\tilde{p}_0$, and the \emph{cost boundaries},
 \begin{equation} \label{eq:cost_boundaries}
 \begin{aligned}
 \gamma_1 = \frac{b \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
 \gamma_2 = \frac{b \alpha T_B + (1+b) (T_A - T_B)}{1-T_B}.
 \end{aligned}
 \end{equation}
-Then, applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2}, we  summarize the possible outcomes which are illustrated in \autoref{fig:results2}:
+Then, applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2}, we  summarize the possible outcomes in following result and corollaries.
+\\
+
+\begin{result}[Vertical and horizontal transmission of cooperation] \label{result:vert_hori}
+With vertical and horizontal but without oblique transmission ($v=1$), the cultural evolution of a cooperator phenotype will follow one of the following scenarios:
+
 %\begin{enumerate} % p* version
 %\item Fixation of cooperation,
 %	if $T_A>T_B$ and $0<\tilde{p}^*$, or
@@ -445,18 +444,22 @@ Then, applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_con
 %	if $T_A<T_B$ and $0<\tilde{p}^*<1$.
 %\end{enumerate}
 \begin{enumerate} % gamma version
-\item Fixation of cooperation,
-	if $T_A>T_B$ and $c<\gamma_1$; or
-	if $T_A>T_B$ and $\gamma_1<c<\gamma_2$ and $\tilde{p}_0>\tilde{p}^*$; or
-	if $T_A<T_B$ and $c<\gamma_2$.
-\item Fixation of defection,
-	if $T_A>T_B$ and $\gamma_2<c$; or
-	if $T_A>T_B$ and $\gamma_1<c<\gamma_2$ and $\tilde{p}_0<\tilde{p}^*$; or
-	if $T_A<T_B$ and $\gamma_1<c$.
-\item Coexistence of both phenotypes at $\tilde{p}^*$, 
-	if $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
+\item \emph{Fixation of cooperation}:
+	if \emph{(i)} $T=T_A=T_B$ and $c < b \cdot \frac{\alpha T}{1-T}$; or
+	if \emph{(ii)} $T_A>T_B$ and $c<\gamma_1$; or
+	if \emph{(iii)} $T_A<T_B$ and $c<\gamma_2$.
+\item \emph{Fixation of defection}:
+	if \emph{(iv)} $T=T_A=T_B$ and $c > b \cdot \frac{\alpha T}{1-T}$; or
+	if \emph{(vi)} $T_A>T_B$ and $\gamma_2<c$; or
+	if \emph{(vi)} $T_A<T_B$ and $\gamma_1<c$.
+\item \emph{Fixation of either phenotype depending on initial frequency}: 
+	if \emph{(vii)} $T_A>T_B$ and $\gamma_1<c<\gamma_2$.
+\item \emph{Coexistence of both phenotypes at $\tilde{p}^*$}:
+	if \emph{(viii)} $T_A<T_B$ and $\gamma_2<c<\gamma_1$.
 \end{enumerate}
+\end{result}
 
+These conditions are illustrated in \autoref{fig:results2}b-c.
 Note that cooperation and defection can coexist stably if there is horizontal bias for defection and the cost of cooperation is large but not too large. The recursion dynamic for this case is illustrated in \autoref{fig:coexistence}.
 
 Much of the literature on evolution of cooperation focuses on conditions for an initially rare cooperative phenotype to invade a population of defectors.
@@ -551,7 +554,7 @@ The cooperative phenotype will increase from rarity if the assortment is high en
 \end{corollary}
 
 \autoref{fig:results2}c demonstrates these conditions. With horizontal bias for cooperation ($T_A>T_B$; positive x-axis) cooperation fixes in the population from any initial positive frequency (green) if $\alpha$ (y-axis) is above the orange line ($a_1$), or if initially present at a high enough frequency (blue) if $\alpha$ is above the blue line ($a_2$).
-With horizontal bias for defection ($T_B>T_A$; negative x-axis) cooperation fixes if $alpha$ is above the blue line ($a_2$), but can be maintained in coexistence with defection (yellow) if $\alpha$ is above the orange line ($a_1$). Without horizontal bias ($T_A=T_B$) fixation occurs if $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\autoref{}).
+With horizontal bias for defection ($T_B>T_A$; negative x-axis) cooperation fixes if $alpha$ is above the blue line ($a_2$), but can be maintained in coexistence with defection (yellow) if $\alpha$ is above the orange line ($a_1$). Without horizontal bias ($T_A=T_B$) fixation occurs if $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}).
 
 
 
@@ -667,23 +670,27 @@ Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and 
 Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
 
 The following result summarizes these findings.
+\\
 
 \begin{result}[Vertical, oblique, and horizontal transmission of cooperation] \label{result:vert_obli_hori}
-The cultural evolution of a cooperator phenotype will follow one of the following scenarios, depending on the horizontal transmission bias $T_A-T_B$ and the coefficients $\beta_1$ and $\beta_3$:
+With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios:
 \begin{enumerate}
 \item \emph{Fixation of cooperation}: 
-if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
-if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
-if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
+	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
+	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
+	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
 \item \emph{Fixation of the defection}: 
-if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
-if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
-if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
+	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
+	if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
+	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
 \item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
-if \emph{(vi)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
-\item \emph{Fixation of either phenotype depending on initial frequency}: if \emph{(vii)}  $T_A>T_B$ and $\beta_3<\beta_1$.
+	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
+\item \emph{Fixation of either phenotype depending on initial frequency}:
+	if \emph{(viii)}  $T_A>T_B$ and $\beta_3<\beta_1$.
 \end{enumerate}
 \end{result}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
