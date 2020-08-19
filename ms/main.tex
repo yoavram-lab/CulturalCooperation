@@ -674,14 +674,19 @@ the \emph{cost boundaries},
 \begin{equation} \label{eq:cost_boundaries_v}
 \begin{aligned}
 \hat\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
-\hat\gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)}.
+\hat\gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)},
 \end{aligned}
 \end{equation}
+and define a vertical transmission threshold,
+\begin{equation} \label{eq:v_threshold}
+\hat v = \frac{T_B - T_A)}{1-T_A} \,.
+\end{equation}
+
 The following result summarizes the possible outcomes.
 \\
 
 \begin{result}[Vertical, oblique, and horizontal transmission of cooperation] \label{result:vert_obli_hori}
-With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios depending on the cost boundaries $\hat\gamma_1$ and $\hat\gamma_3$ (\autoref{eq:cost_boundaries_v}):
+With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios depending on the cost boundaries $\hat\gamma_1$ and $\hat\gamma_3$ (\autoref{eq:cost_boundaries_v}) and the vertical threshold $\hat v$ (\autoref{eq:v_threshold}) :
 
 % in beta
 %\begin{enumerate}
@@ -704,8 +709,8 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \item \emph{Fixation of cooperation}: 
 	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
 	if \emph{(ii)} $T_A>T_B$ and $c < \hat\gamma_1$; or 
-	if \emph{(iiia)} $T_A<T_B$ and $v>\frac{T_B-T_A}{1-T_A}$ and $c < \hat\gamma_2$; or
-	if \emph{(iiib)} $T_A<T_B$ and $v<\frac{T_B-T_A}{1-T_A}$ and $c > \hat\gamma_2$.
+	if \emph{(iiia)} $T_A<T_B$ and $v>\hat v$ and $c < \hat\gamma_2$; or
+	if \emph{(iiib)} $T_A<T_B$ and $v<\hat v$ and $c > \hat\gamma_2$.
 \item \emph{Fixation of the defection}: 
 	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
 	if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
