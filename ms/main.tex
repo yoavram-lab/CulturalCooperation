@@ -853,38 +853,33 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 %%% Figure: coexistence map
 \begin{figure}[htb]
 \centering
-\includegraphics{coexistence.pdf}
-\caption{\textbf{Stable coexistence between cooperation and defection.} The frequency of the cooperative phenotype $A$ among juveniles in the next generation $\hat{p}'$ is plotted as a function of the frequency in the current generation $\hat{p}$ for $T_A<T_B$ and $\gamma_2<c<\gamma_1$. The line $\hat{p}'=\hat{p}$ is shown as a dashed black line.
-The curve and dashed line intersect at the equilibrium $\hat{p}^*$ (black circle). 
-When the curve is above the dashed line ($\hat{p}<\hat{p}^*$) the frequency $\hat{p}$increases towards $\hat{p}^*$.
-When the curve is below the dashed line ($\hat{p}>\hat{p}^*$) the frequency $\hat{p}$ decreases towards $\hat{p}^*$.
-% TODO add the actual values of all parameters.
-% TODO add reference to equation
-}
+\includegraphics{coexistence_result2.pdf}
+\caption{\textbf{Stable and unstable coexistence between cooperation and defection.} The frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ is plotted as a function of the frequency in the current generation $\tilde{p}$.
+The line $\tilde{p}'=\tilde{p}$ is shown as a dashed black line. The curves and dashed line intersect at the equilibrium $\hat{p}^*$ (black circle).
+When the curves are above the dashed line ($\tilde{p}<\tilde{p}^*$) the frequency $\tilde{p}$increases towards $\tilde{p}^*$.
+When the curves are below the dashed line ($\tilde{p}>\tilde{p}^*$) the frequency $\tilde{p}$ decreases towards $\tilde{p}^*$.
+The yellow curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, $\alpha = 0.45$. For those values we get that $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
+The blue curve is \textbf{unstable coexistence} and has the following parameters values: $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $\alpha = 0.4$. For those values we can that $\gamma_1<c<\gamma_2$}
 \label{fig:coexistence}
 \end{figure}
-
 
 %%% Figure: Conditions for fixation 
 
 \begin{figure}[htb]
   \centering
   % TODO for some reason figs a and b have a lot of white space on their right side
-    \includegraphics[scale=0.75]{figure2a.pdf}
+    \includegraphics[scale=0.75]{boundiries_non_zero_alpha.pdf}
     
-    \includegraphics[scale=0.75]{figure2b.pdf}
+    \includegraphics[scale=0.75]{boundiries_alpha0.pdf}
     
     \includegraphics[scale=0.75]{boundiries_withAlpha_y_axis.pdf}
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission.} 
-The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions (blue), and stable coexistence of cooperation and defection (yellow).
+The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions - unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
 In all cases the horizontal bias ($T_A-T_B$) is on the x-axis.
-(\textbf{a-b})~the cost of cooperation $c$ is on the y-axis; the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries}) are the solid and dashed lines.
+(\textbf{a-b})~the cost of cooperation $c$ is on the y-axis; the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries}) are the solid and dashed lines. 
 (\textbf{c})~the assortment $\alpha$ is on the y-axis; the assortment boundaries $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting}) are the solid and dashed lines.
-Here, $b=1.3$, $T_A=0.4$.
-  % TODO what is c in (3) and alpha in (1) and (2)??
+Here, $b=1.3$, $T_A=0.4$. In figure (\textbf{a})~$\alpha = 0.7$ and in figure (\textbf{b})~$\alpha = 0$. In figure (\textbf{c})~$c = 0.35$.
   % TODO missing text descriptions of conditions on (3)
-  % TODO change lines from blue and orange to black solid and black dashed, and make them a bit wider
-  % TODO I think you were right: in the figure we should call it stable coexistence and unstable coexistence.
   	}
     \label{fig:results2}
 \end{figure}
@@ -893,9 +888,9 @@ Here, $b=1.3$, $T_A=0.4$.
 %%% Figure: frequency dynamics
 \begin{figure}[htb]
   \centering
-    \includegraphics[scale=0.75]{figure3a.pdf}
-    \includegraphics[scale=0.75]{figure3b.pdf}
-    \includegraphics[scale=0.75]{figure3c.pdf}
+    \includegraphics[scale=0.7]{figure3a.pdf}
+    \includegraphics[scale=0.7]{figure3b.pdf}
+    \includegraphics[scale=0.7]{figure3c.pdf}
   \caption{
   \textbf{Dynamics of the frequency of cooperation.}
   The frequency $\tilde{p}$ of parents with cooperative phenotype $A$ in \textbf{(a-b)} and the frequency $p$ of adults with cooperative phenotype $A$ in \textbf{(c)}.
