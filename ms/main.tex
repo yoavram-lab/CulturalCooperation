@@ -460,7 +460,7 @@ With vertical and horizontal but without oblique transmission ($v=1$), the cultu
 \end{result}
 
 These conditions are illustrated in \autoref{fig:results2}b-c.
-Note that cooperation and defection can coexist stably if there is horizontal bias for defection and the cost of cooperation is large but not too large. The recursion dynamic for this case is illustrated in \autoref{fig:coexistence}.
+Note that cooperation and defection can coexist stably if there is horizontal bias for defection and the cost of cooperation is large but not too large. The recursion dynamic for this case is illustrated in \autoref{fig:coexistence_without_oblique}.
 
 Much of the literature on evolution of cooperation focuses on conditions for an initially rare cooperative phenotype to invade a population of defectors.
 The next corollary deals with such a condition, followed by a corollary that deals with symmetric horizontal transmission, i.e. $T_A=T_B$.
@@ -850,17 +850,17 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 
 
 
-%%% Figure: coexistence map
+%%% Figure: coexistence map - without oblique transmission
 \begin{figure}[htb]
 \centering
-\includegraphics{coexistence_result2.pdf}
-\caption{\textbf{Stable and unstable coexistence between cooperation and defection.} The frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ is plotted as a function of the frequency in the current generation $\tilde{p}$.
-The line $\tilde{p}'=\tilde{p}$ is shown as a dashed black line. The curves and dashed line intersect at the equilibrium $\hat{p}^*$ (black circle).
+\includegraphics{coexistence_without_oblique.pdf}
+\caption{\textbf{Stable and unstable coexistence between cooperation and defection - with oblique transmission.} The frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ is plotted as a function of the frequency in the current generation $\tilde{p}$.
+The line $\tilde{p}'=\tilde{p}$ is shown as a dashed black line. The curves and dashed line intersect at the equilibrium $\tilde{p}^*$ (black circle).
 When the curves are above the dashed line ($\tilde{p}<\tilde{p}^*$) the frequency $\tilde{p}$increases towards $\tilde{p}^*$.
 When the curves are below the dashed line ($\tilde{p}>\tilde{p}^*$) the frequency $\tilde{p}$ decreases towards $\tilde{p}^*$.
-The yellow curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, $\alpha = 0.45$. For those values we get that $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
-The blue curve is \textbf{unstable coexistence} and has the following parameters values: $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $\alpha = 0.4$. For those values we can that $\gamma_1<c<\gamma_2$}
-\label{fig:coexistence}
+The yellow curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, $\alpha = 0.45$. For those values we get that $0<\beta_3<\beta_1$ (\autoref{eq:polynomial_coefficients})
+The blue curve is \textbf{unstable coexistence} and has the following parameters values: $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $\alpha = 0.4$. For those values we can that $\beta_3<\beta_1$}
+\label{fig:coexistence_without_oblique}
 \end{figure}
 
 %%% Figure: Conditions for fixation 
@@ -884,6 +884,18 @@ Here, $b=1.3$, $T_A=0.4$. In figure (\textbf{a})~$\alpha = 0.7$ and in figure (\
     \label{fig:results2}
 \end{figure}
 
+%%% Figure: coexistence map - without oblique transmission
+\begin{figure}[htb]
+  \centering
+  \includegraphics{coexistence_with_oblique.pdf}
+  \caption{\textbf{Stable and unstable coexistence between cooperation and defection - without oblique transmission.} The frequency of the cooperative phenotype $A$ among juveniles in the next generation $\hat{p}'$ is plotted as a function of the frequency in the current generation $\hat{p}$.
+  The line $\hat{p}'=\hat{p}$ is shown as a dashed black line. The curves and dashed line intersect at the equilibrium $\hat{p}^*$ (black circle).
+  When the curves are above the dashed line ($\hat{p}<\hat{p}^*$) the frequency $\hat{p}$increases towards $\hat{p}^*$.
+  When the curves are below the dashed line ($\hat{p}>\hat{p}^*$) the frequency $\hat{p}$ decreases towards $\hat{p}^*$.
+  The yellow curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$. For those values we get that $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
+  The blue curve is \textbf{unstable coexistence} and has the following parameters values: $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $\alpha = 0.4$. For those values we can that $\gamma_1<c<\gamma_2$}
+  \label{fig:coexistence_with_oblique}
+  \end{figure}
 
 %%% Figure: frequency dynamics
 \begin{figure}[htb]
