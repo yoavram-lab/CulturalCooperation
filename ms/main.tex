@@ -673,13 +673,13 @@ We redefine the cost boundaries,
 the \emph{cost boundaries},
 \begin{equation} \label{eq:cost_boundaries_v}
 \begin{aligned}
-\hat\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{1-T_B}, \quad
+\hat\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)}, \quad
 \hat\gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)},
 \end{aligned}
 \end{equation}
 and define a vertical transmission threshold,
 \begin{equation} \label{eq:v_threshold}
-\hat v = \frac{T_B - T_A)}{1-T_A} \,.
+\hat v = \frac{T_B - T_A}{1-T_A} \,.
 \end{equation}
 
 The following result summarizes the possible outcomes.
@@ -713,12 +713,15 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 	if \emph{(iiib)} $T_A<T_B$ and $v<\hat v$ and $c > \hat\gamma_2$.
 \item \emph{Fixation of the defection}: 
 	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
-	if \emph{(v)} $T_A>T_B$ and $\beta_1<\beta_3<0$; or 
-	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
+  if \emph{(va)} $T_A>T_B$ and $\hat{\gamma_1} < c < \hat{\gamma_2}$ and $v>\hat{v}$; or 
+  if \emph{(vb)} $T_A>T_B$ and $ c > \hat{\gamma_1} $ and $ c > \hat{\gamma_2}$ and $v<\hat{v}$; or 
+	if \emph{(vi)} $T_A<T_B$ and $c>\hat{\gamma_1}$.
 \item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
-	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
+  if \emph{(viia)} $T_A < T_B$ and $v<\hat{v}$ and $\hat{\gamma_1}<c<\hat{\gamma_2}$; or
+  if \emph{viib} $T_A < T_B$ and $v>\hat{v}$ and $c>\hat{\gamma_1}$ and $c>\hat{\gamma_2}$. %$0<\beta_3<\beta_1$.
 \item \emph{Fixation of either phenotype depending on initial frequency}:
-	if \emph{(viii)}  $T_A>T_B$ and $\beta_3<\beta_1$.
+  if \emph{(viiia)}  $T_A>T_B$ and $c > \hat{\gamma_2}$ and $v>\hat{v}$; or
+  if \emph{(viiin)}  $T_A>T_B$ and $c < \hat{\gamma_2}$ and $v<\hat{v}$.
 \end{enumerate}
 \end{result}
 
