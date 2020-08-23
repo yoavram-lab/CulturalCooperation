@@ -133,16 +133,17 @@ headheight=12pt
 \section*{Introduction}
 Cooperative behavior can reduce an individual's fitness and increase the fitness of its conspecifics or competitors~\citep{axelrod1981evolution}.
 Nevertheless, cooperative behavior appears to occur in many non-human animals~\citep{dugatkin1997cooperation}, including primates~\citep{jaeggi2013natural},  rats~\citep{rice1962altruism}, birds~\citep{stacey1990cooperative,krams2008experimental}, and lizards~\citep{sinervo2006self}.
-Evolution of cooperative behavior remains an important conundrum in evolutionary biology. Since the work of  \citet{hamilton1964genetical} and \citet{axelrod1981evolution}, theories for the evolution of cooperative and altruistic behaviors have been intertwined often under the rubric of kin selection.
+Evolution of cooperative behavior remains an important conundrum in evolutionary biology. Since the work of  \citet{hamilton1964genetical} and \citet{axelrod1981evolution}, theories for the evolution of cooperative and altruistic behaviors have been intertwined often under the rubric of \emph{kin selection}.
 
-\emph{Kin selection theory} posits that natural selection is more likely to favor cooperation between more closely related individuals.
-The importance of relatedness to the evolution of cooperation and altruism was shown by~\citet{hamilton1964genetical}, who showed that an allele that determines cooperative behavior will increase in frequency if the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the relatedness, $r$, between the recipient and the actor. This relatedness coefficient $r$ measures a probability that an allele sampled from the cooperator is identical by descent to one at the same locus in the recipient.
+Kin selection theory posits that natural selection is more likely to favor cooperation between more closely related individuals.
+The importance of relatedness to the evolution of cooperation and altruism was demonstrated by \citet{hamilton1964genetical}, who showed that an allele that determines cooperative behavior will increase in frequency if the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the relatedness, $r$, between the recipient and the actor. This relatedness coefficient $r$ measures a probability that an allele sampled from the cooperator is identical by descent to one at the same locus in the recipient.
 This condition is  known as \emph{Hamilton's rule}:
 \begin{equation} \label{eq:hamilton_rule}
 c < b \cdot r.
 \end{equation}
 
-\citet{Eshel1982} studied a related model for the evolution of cooperative behavior under vertical transmission. Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  
+\citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
+Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  
 Such assortative meeting may be due, for example, to population structure or active partner choice.
 In their model, cooperative behavior can evolve if\footnote{In an extended model, which allows an individual to encounter $N$ individuals before choosing a partner, the righthand side is multiplied by $E[N]$, the expected number of encounters \citep[eq.~4.6]{Eshel1982}.
 } 
@@ -151,7 +152,7 @@ In their model, cooperative behavior can evolve if\footnote{In an extended model
 c < b \cdot m \,,
 \end{equation}
 where $b$ and $c$ are the benefit and cost of cooperation. 
-Here $m$ in \autoref{eq:eshel1982} takes the role of the relatedness $r$  in \autoref{eq:hamilton_rule}.
+Here $m$ in \autoref{eq:eshel1982} takes the role of the relatedness $r$ in \autoref{eq:hamilton_rule}.
 
 Here we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission.
@@ -160,15 +161,17 @@ For example, if the fidelity of cultural transmission of altruism is $\varphi$, 
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
+In this case $\varphi$ takes the role of the relatedness $r$ in \autoref{eq:hamilton_rule}, but the effective benefit $b\cdot \varphi$ is further reduced by $(1-\varphi)/\varphi$.
 
-\emph{Non-vertical cultural transmission} may be either viewed as horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs  to  offspring from the generation to which their parents belong. 
+Non-vertical cultural transmission may be either viewed as horizontal or oblique: horizontal transmission occurs between individuals from the same generation, while oblique transmission occurs  to  offspring from the generation to which their parents belong. 
 Evolution under either of these transmission models  can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,lycett2008questions,ram2018evolution}.
-\citet{lewin2017microbes} have demonstrated that non-vertical transmission, mediated by microbes that manipulate their host's behavior, can help to explain the evolution of cooperative behavior. Some of their analysis can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
+\citet{lewin2017microbes} and \citet{lewin2020rock–paper–scissors} have demonstrated that non-vertical transmission, mediated by microbes that manipulate their host's behavior, can help to explain the evolution of cooperative behavior. Some of their analysis can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
+Importantly, their results depended on non-vertical transmission of the cooperation-determining microbes.
 
-% TODO
-We hypothesize that non-vertical cultural transmission can enhance the evolution of cooperation, and 
-to test this hypothesis we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interactions. For example, if an individual interacts with a cooperative individual, it might learn that cooperation is an advantageous behavior and will be cooperative in the future. 
-Our cultural evolution models  include both vertical and non-vertical transmission of cooperation, and we investigate these models using mathematical analysis and simulations.  
+We therefore hypothesize that non-vertical cultural transmission can enhance the evolution of cooperation.
+To test this hypothesis we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interactions. That is, if there exists assortative meeting in the choice of the social interaction partner, or assortative learning in choice of the cultural transmission partner.
+For example, if an individual interacts with a cooperative individual, it might learn that cooperation is an advantageous behavior and will be cooperative in the future. 
+Our cultural evolution models include both vertical and non-vertical transmission of cooperation, and we investigate these models using mathematical analysis and simulations.  
 Our results demonstrate that cultural transmission can facilitate the evolution of cooperation even when genetic transmission can not, and that treatment of cooperation as a cultural, rather than a genetic, trait can lead to a better understanding of its evolutionary dynamics.
 
 
