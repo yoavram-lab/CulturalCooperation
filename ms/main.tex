@@ -746,14 +746,14 @@ Microbes can also be transferred vertically, from parent to offspring, and % yr:
 a microbe that induces its host to cooperate with another host, and thereby increases the latter's fitness, will  increase its vertical transmission  from the receiving individual. Kin selection among microbes could therefore favor those that induce cooperative behavior in their hosts, thereby increasing the transmission of their microbial kin.
 
 \citet{Eshel1982} showed that with assortative meeting, namely, a probability $m$ that individuals interact  within their phenotypic group, cooperation can evolve if $c < b \cdot m$.
-Our results highlight another possibility for assortatment, namely, individuals interacting at rate $\alpha$ with their cultural partners, resulting in horizontal transmission.
+Our results highlight another possibility for assortment, namely, individuals interacting at rate $\alpha$ with their cultural partners, resulting in horizontal transmission.
 We show that high levels of assortment  significantly increase the potential for evolution of cooperation. With a high enough $\alpha$, cooperation can increase when initially rare (although it will not fix) even when there is horizontal bias against cooperation ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$, see Result~\autoref{result:vert_hori})
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to include such genetic modification of cultural transmission to our model.
 
 \citet{woodcock2006significance} showed the importance of non-vertical transmission for the evolution of cooperation. In their model the individuals interact according to standard prisoner dilemma game.
-However, they do not link between interaction and transmission. In terms of our model they have choosen the assortative meeting coefficient $\alpha$ to be zero. Our results are more general since it shows the importance of assortative meeting for the evolution of cooperation.
+However, they do not link between interaction and transmission. In terms of our model they have chosen the assortative meeting coefficient $\alpha$ to be zero. Our results are more general since it shows the importance of assortative meeting for the evolution of cooperation.
 
 An important implication of our results is that cooperation can evolve even in a fully mixed population (i.e., in an unstructured population), without repeated interactions or individual recognition.
 This highlights the potential importance of non-vertical cultural transmission for explaining complex evolutionary phenomena, and  furthers our understating of the cultural evolution of cooperation. 
@@ -855,7 +855,7 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 \begin{figure}[thb]
   \centering
   \includegraphics[scale=1]{figure1.pdf}
-  \caption{\textbf{Cultural horizontal transmission.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
+  \caption{\textbf{Cultural horizontal transmission with assortment.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$.}
   \label{fig:horizontal}
 \end{figure}
 
@@ -865,12 +865,16 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 \begin{figure}[htb]
 \centering
 \includegraphics{coexistence_without_oblique.pdf}
-\caption{\textbf{Stable and unstable coexistence between cooperation and defection - without oblique transmission.} The frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ is plotted as a function of the frequency in the current generation $\tilde{p}$.
-The line $\tilde{p}'=\tilde{p}$ is shown as a dashed black line. The curves and dashed line intersect at the equilibrium $\tilde{p}^*$ (black circle).
-When the curves are above the dashed line ($\tilde{p}<\tilde{p}^*$) the frequency $\tilde{p}$increases towards $\tilde{p}^*$.
-When the curves are below the dashed line ($\tilde{p}>\tilde{p}^*$) the frequency $\tilde{p}$ decreases towards $\tilde{p}^*$.
-The yellow curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, $\alpha = 0.45$. For those values we get that $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
-The blue curve is \textbf{unstable coexistence} and has the following parameters values: $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $\alpha = 0.4$. For those values we can that $\gamma_1<c<\gamma_2$}
+\caption{\textbf{Stable and unstable coexistence between cooperation and defection without oblique transmission.}
+  The curves show the frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ vs. the current generation $\tilde{p}$ (\autoref{eq:nextgen_parents_vertical_only}).
+  The dashed black line is $\tilde{p}'=\tilde{p}$.
+  The curves and the dashed line intersect at the polymorphic equilibrium $\tilde{p}^*$ (black circle).
+  When the curves are above the dashed line, $\tilde'{p}>\tilde{p}$, then $\tilde{p}$ increase.
+  When the curves are below the dashed line, $\tilde'{p}<\tilde{p}$, then $\tilde{p}$ decreases.
+  The yellow curve, for which the polymorphic equilibrium is stable, is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$, which give $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
+  The blue curve, for which the equilibrium is unstable, is given by $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, and $\alpha = 0.4$, which give $\gamma_1<c<\gamma_2$.
+  In both cases there is no oblique transmission, $v=1$; see \autoref{fig:coexistence_with_oblique} for $v<1$.
+  }
 \label{fig:coexistence_without_oblique}
 \end{figure}
 
@@ -885,11 +889,11 @@ The blue curve is \textbf{unstable coexistence} and has the following parameters
     
     \includegraphics[scale=0.75]{boundiries_withAlpha_y_axis.pdf}
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission.} 
-The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions - unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
+The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
 In all cases the horizontal bias ($T_A-T_B$) is on the x-axis.
 (\textbf{a-b})~the cost of cooperation $c$ is on the y-axis; the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries}) are the solid and dashed lines. 
 (\textbf{c})~the assortment $\alpha$ is on the y-axis; the assortment boundaries $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting}) are the solid and dashed lines.
-Here, $b=1.3$, $T_A=0.4$. In figure (\textbf{a})~$\alpha = 0.7$ and in figure (\textbf{b})~$\alpha = 0$. In figure (\textbf{c})~$c = 0.35$.
+Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0.7$.(\textbf{b})~$\alpha = 0$. (\textbf{c})~$c = 0.35$.
   % TODO missing text descriptions of conditions on (3)
   	}
     \label{fig:results2}
@@ -899,11 +903,14 @@ Here, $b=1.3$, $T_A=0.4$. In figure (\textbf{a})~$\alpha = 0.7$ and in figure (\
 \begin{figure}[htb]
   \centering
   \includegraphics{coexistence_with_oblique.pdf}
-  \caption{\textbf{Stable coexistence between cooperation and defection - with oblique transmission.} The frequency of the cooperative phenotype $A$ among juveniles in the next generation $\hat{p}'$ is plotted as a function of the frequency in the current generation $\hat{p}$.
-  The line $\hat{p}'=\hat{p}$ is shown as a dashed black line. The curve and dashed line intersect at the equilibrium $\hat{p}^*$ (black circle).
-  When the curves are above the dashed line ($\hat{p}<\hat{p}^*$) the frequency $\hat{p}$increases towards $\hat{p}^*$.
-  When the curves are below the dashed line ($\hat{p}>\hat{p}^*$) the frequency $\hat{p}$ decreases towards $\hat{p}^*$.
-  The curve is \textbf{stable coexistence} and has the following parameters values:  $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, $v=0.4$. For those values we get that $0<\beta_3<\beta_1$ (\autoref{eq:polynomial_coefficients})}
+  \caption{\textbf{Stable coexistence between cooperation and defection with oblique transmission.}
+  The curve shows the frequency of the cooperative phenotype $A$ among juveniles in the next generation $\hat{p}'$ vs. the current generation $\hat{p}$ (\autoref{eq:horizontal}).
+  The dashed black line is $\hat{p}'=\hat{p}$.
+  The curve and the dashed line intersect at the stable equilibrium $\hat{p}^*$ (black circle).
+  When $\hat{p} < \hat{p}^*$ then the curve is above the dashed line, $\hat{p}' > \hat{p}$, and $\hat{p}$ increases towards $\hat{p}^*$.
+  When $\hat{p} > \hat{p}^*$ then the curve is below the dashed line, $\hat{p}' < \hat{p}$, and $\hat{p}$ decreases towards $\hat{p}^*$.
+  Here,  $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, and $v=0.4$, which give $0<\beta_3<\beta_1$ (\autoref{eq:polynomial_coefficients}).
+  }
   \label{fig:coexistence_with_oblique}
   \end{figure}
 
