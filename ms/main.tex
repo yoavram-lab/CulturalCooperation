@@ -123,9 +123,11 @@ headheight=12pt
 
 % Abstract
 \begin{abstract}
-We construct models for the cultural evolution of cooperation in a well-mixed population with vertical, horizontal, and oblique transmission. Conditions are found for fixation and coexistence of cooperation and defection. Comparisons are drawn with Hamilton's rule and the concepts of relatedness and assortment.
-%A spatial model is constructed and its results are compared to the well-mixed model.
-We show that assortment between cooperation and horizontal transmission facilitates the evolution of cooperation.
+We construct models for the cultural evolution of cooperation in a well-mixed population with vertical, horizontal, and oblique transmission.
+Conditions are found for fixation and coexistence of cooperation and defection. 
+The results show that association between cooperation and horizontal transmission facilitates the evolution of cooperation.
+A spatial model is constructed and its results are compared to the well-mixed model.
+Comparisons are drawn with Hamilton's rule and the concepts of relatedness and assortment.
 % and increases the population mean fitness. 
 % TODO what about oblique?
 \end{abstract}
@@ -168,26 +170,26 @@ c < b \cdot (e_C - e_D ) \,,
 where $e_C$ is the probability that a cooperator receives help, and $e_D$ is the probability that a defector receives help.\footnote{inequality~\ref{eq:fletcher2009} generalizes inequality~\ref{eq:hamilton_rule} and inequality~\ref{eq:eshel1982} by substituting $e_C=r + p$, $e_D=p$ and $e_C=m + (1-m)p$, $e_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}
 
 
-Here we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
+In this paper we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission.
 They demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
-Here $\varphi$ takes the role of `relatedness' ($r$ in Eq.~\ref{eq:hamilton_rule}) or `assortment' ($m$ in Eq.~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is further reduced by $(1-\varphi)/\varphi$. This shows that under a combination of genetic and vertical (parent-to-offspring) cultural transmission, the condition for the evolutionary success of altruism entails a modification of Hamilton's rule (\autoref{eq:hamilton_rule}).
+In inequality~\ref{eq:feldman1985}, $\varphi$ takes the role of `relatedness' ($r$ in Eq.~\ref{eq:hamilton_rule}) or `assortment' ($m$ in Eq.~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is further reduced by $(1-\varphi)/\varphi$. This shows that under a combination of genetic and vertical (parent-to-offspring) cultural transmission, the condition for the evolutionary success of altruism entails a modification of Hamilton's rule (\autoref{eq:hamilton_rule}).
 
 Cultural transmission may be either viewed as vertical, horizontal or oblique:  vertical transmission occurs between parents and offspring, horizontal transmission occurs between individuals from the same generation, and oblique transmission occurs  to offspring from the generation to which their parents belong (i.e. from non-parental adults). 
 Evolution under either of these transmission models can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,lycett2008questions,ram2018evolution}.
 Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated that non-vertical transmission can help explain the evolution of cooperative behavior (the former using simulations with cultural transmission, the latter using a model where cooperation is mediated by microbes that manipulate their host's behavior.) 
 Some of the analyses by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
-Importantly, \citet{woodcock2006significance} showed the significance of non-vertical transmission for the evolution of cooperation. In their model individuals play a prisoner's dilemma game.
-They do not link between interaction and transmission (i.e. no assortment), but their model demonstrates that it is possible to sustain altruistic behaviour via cultural transmission for a significant duration of time in the absence of any direct biological propensity favouring this behaviour.
 
-We therefore hypothesize that non-vertical cultural transmission can enhance the evolution of cooperation.
-To test this hypothesis we suggest a model in which behavioral changes are mediated by cultural transmission that can occur during social interactions. That is, if there exists assortative meeting in the choice of the social interaction partner, or assortative learning in choice of the cultural transmission partner.
-For example, if an individual interacts with a cooperative individual, it might learn that cooperation is an advantageous behavior and will be cooperative in the future. 
-Our cultural evolution models include both vertical and non-vertical transmission of cooperation, and we investigate these models using mathematical analysis and simulations.  
-Our results demonstrate that cultural transmission can facilitate the evolution of cooperation even when genetic transmission can not because it facilitates the generation of assortment, and that treatment of cooperation as a cultural trait, rather than a genetic one, can lead to a better understanding of its evolutionary dynamics.
+Here, we study cultural-evolution models of cooperation that include both vertical and non-vertical transmission. 
+We investigate these models using mathematical analysis and simulations.  
+In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
+For instance, when there is an association between the choice of partner for social interaction and the choice of partner for cultural transmission.
+As another example, when an individual interacts with an individual of a different phenotype, this exposure to a different phenotype may lead it to learn or convert its phenotype.
+Our results demonstrate that cultural transmission can enhance the evolution of cooperation even when genetic transmission cannot (partly because it facilitates the generation of assortment in the sense of~\citet{Fletcher2009assortment}).
+This further emphasizes that treatment of cooperation as a cultural trait, rather than a genetic one, can lead to a better understanding of its evolutionary dynamics.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -749,36 +751,42 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
 \section*{Discussion}
-We hypothesized that non-vertical transmission can explain the evolution of cooperation and evaluated this hypothesis using a deterministic discrete-time evolutionary model with fitnesses in the form of payoffs from a prisoner's dilemma game.
-
+We studied the evolution of cooperation under non-vertical transmission using deterministic discrete-time evolutionary models with fitnesses in the form of payoffs from a prisoner's dilemma game. 
 Under oblique and horizontal cultural transmission, a horizontal transmission bias for the cooperative phenotype was found to be sufficient and necessary for evolution of cooperation (Result~\autoref{result:obli_hori}).
-Under horizontal and vertical cultural transmission, cooperation or defection can either fix or coexist at a stable polymorphism, depending on the relationship between the cost and benefit of cooperation, the horizontal bias, and the assortment between cooperation and transmission (Result~\autoref{result:vert_hori}).
-Under a combination of vertical, oblique, and horizontal transmission the dynamics are more complicated, but all outcomes can still occur, depending on parameter values (Result~\autoref{result:vert_obli_hori}).
-Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_B>T_A$) and the cost of cooperation and assortment ratio are intermediate (yellow areas \autoref{fig:results2}).
+Under a combination of vertical, oblique, and horizontal transmission, cooperation or defection can either fix or coexist at a stable polymorphism, depending on the relationship between the cost and benefit of cooperation, the horizontal bias, and the association between cooperation and transmission (Results~\autoref{result:vert_hori} and~\autoref{result:vert_obli_hori}).
+Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_B>T_A$) and both the cost of cooperation and social association are intermediate (yellow areas in \autoref{fig:results2}).
 % TODO figure for result 3
 % TODO something about v-hat
-
-\citet{Eshel1982} showed that with assortative meeting, namely, a probability $m$ that individuals interact  within their phenotypic group, cooperation can evolve if $c < b \cdot m$.
-\citet{Fletcher2009assortment} have further argued that a simple and general explanation for the evolution of altruism is given by assortment between individuals that carry an altruistic trait, and the altruistic behavior of others.
-They therefore suggested that to explain the evolution of altruism, we should seek mechanisms that generate such assortment, and that one such major mechanism is population structure.
-Our results highlight another possibility for assortment, namely, individuals socially interacting at rate $\alpha$ with their horizontal transmission partners. This mechanism does not require population structure. Rather, it depends on the co-occurrence of two social processes: cultural transmission and cooperation.
-We show that high levels of assortment significantly increase the potential for evolution of cooperation (\autoref{fig:results2}).
-With enough assortment ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal bias against it ($T_B>T_A$, see Result~\autoref{result:vert_hori}).
-
-This study was partially inspired by the work of \citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors}, 
-who hypothesised that microbes that manipulate their hosts to act altruistically can be favored by selection, and may play a role in the evolution of cooperation. Indeed, it has been shown that microbes can mediate behavioral changes in their hosts~\citep{dobson1988population,poulin2010parasite}. 
-Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. Microbes can be transmitted \emph{horizontally} from one host to another during host interactions, and following horizontal transfer, the recipient host may carry microbes that are closely related to the microbes of the donor host, 
-even when the two hosts are (genetically) unrelated~\citep{lewin2017microbes}. 
-Although this result can be described from a kin selection point-of-view, we are more interested in the assortment point-of-view:
-infection by behavior-determining microbes during interactions effectively generates assortment, as a cooperating donor can transmit to the recipient both the benefit of the cooperative behavior and behavior-determining microbe.
-Horizontal cultural transmission can similarly generate assortment between the cooperative phenotype and the benefit of cooperation if cultural transmission and helping interactions occur between the same individuals, which in our model occurs with rate $\alpha$. 
-So, because non-vertical transmission can effectively generate assortment, we suggest a revision of the conclusion made by \citet{Fletcher2009assortment}\footnote{``what is necessary for the evolution of altruism is assortment between focal genotype and phenotypic help, rather than the assortment among genetic types often emphasized in kin selection theory.''}: what is necessary for the evolution of altruism is assortment between focal \emph{pheno-genotype} and phenotypic help.
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to include such genetic modification of cultural transmission to our model.
 
-An important implication of our results is that cooperation can evolve even without population structure, repeated interactions, or individual recognition.
-This highlights the potential importance of non-vertical cultural transmission for explaining complex evolutionary phenomena, and  furthers our understating of the cultural evolution of cooperation. 
+\citet{woodcock2006significance} has previously argued the significance of non-vertical transmission for the evolution of cooperation. He executed simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$). Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a significant duration of time.
+Our results provide strong evidence for his hypothesis that horizontal transmission could have an important role in the evolution of cooperation. 
+
+To understand the role of horizontal transmission, we first discuss the role of \emph{assortment}.
+\citet{Eshel1982} showed that altruism can evolve when there is enough \emph{assortative meeting}, namely, a tendency for individuals to interact within their phenotypic group.
+\citet{Fletcher2009assortment} have further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group.
+They therefore suggested that to explain the evolution of altruism, we should seek mechanisms that generate such assortment, like population structure, repeated interactions, and individual recognition.
+Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and partner for transmission.
+This mechanism does not require population structure, repeated interactions, or individual recognition.
+We show that high levels of such social association greatly increase the potential for evolution of cooperation (\autoref{fig:results2}).
+With enough social association ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_B>T_A$, see Result~\autoref{result:vert_hori}).
+
+How does non-vertical transmission generate assortment? 
+\citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors}, 
+who suggested that microbes that manipulate their hosts to act altruistically can be favored by selection, and may help explain the evolution of cooperation. 
+%Indeed, it has been shown that microbes can mediate behavioral changes in their  hosts~\citep{dobson1988population,poulin2010parasite}. 
+%Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. 
+From the kin selection point-of-view, if microbes can be transmitted \emph{horizontally} from one host to another during host interactions, then following horizontal transmission the recipient host will carry microbes that are closely related to the microbes of the donor host, 
+even when the two hosts are (genetically) unrelated. 
+However, we are more interested in the assortment point-of-view:
+infection by behavior-determining microbes during interactions effectively generates assortment because receipient of help may be infected by the behavior-determining microbe and therefore become a helper.
+Cultural horizontal transmission can similarly generate assortment between the cooperative phenotype and the benefit of cooperation if cultural transmission and helping interactions occur between the same individuals, which in our model occurs with probability $\alpha$. 
+
+Thus, with horizontal transmission, ``assortment between focal cooperative players and cooperative acts in their interaction
+environment''~\citep{Fletcher2009assortment} is generated not because \emph{the helper is likely to be helped}, but rather because \emph{the helped is likely to become a helper}.
+These conclusions highlight the importance of non-vertical cultural transmission for explaining complex evolutionary phenomena, and  furthers our understating of the cultural evolution of cooperation. 
 
 % Javarone MA, Atzeni AE, Galam S. Emergence of Cooperation in the Prisoner ’ s Dilemma Driven by Conformity. 2:155-163. doi:10.1007/978-3-319-16549-3
 
