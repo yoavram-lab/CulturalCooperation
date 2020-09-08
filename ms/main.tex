@@ -315,7 +315,6 @@ where fitness values are taken from \autoref{table:prisoner_payoff} and \autoref
 \end{aligned}
 \end{equation}
 where $\hat{p}=v\tilde{p}+(1-v)p$.
-%This is not a recursion-MF
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,7 +499,7 @@ T_A<T_B \;\; \text{and} \;\; \gamma_2<c < \gamma_1.
 In general, these conditions cannot be formulated in the form of Hamilton's rule ($c<b\cdot r$) due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.\\
 
-\begin{corollary}[Symmetric horizontal transmission]
+\begin{corollary}[Symmetric horizontal transmission] \label{sec:sym_hor_trans}
 If $T=T_A=T_B$, then cooperation will take over the population if
 \begin{equation}
 \label{eq:equal_transmission}
@@ -746,6 +745,29 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 %This result illustrates the crucial role of vertical and oblique transmission: the same cost of cooperation $c$ can lead to remarkably different outcomes if the vertical transmission rate $v$ is below or above the threshold $\hat v$.
 % TODO example with figure
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{With population structure}
+
+We constructed an additional model in which partner association emerges from the population structure.
+We model a non-overlapping population colonizing a 2D grid of size 100x100, where each site is inhabited by one individual, similarly to \citet{lewin2020rockpaperscissors}.
+Each individual is characterized by its phenotype which is either a cooperator, $A$, or a defector $B$.
+In each generation individuals interact with their neighbors, i.e. individuals that inhabit adjacent sites, in a prisoner’s dilemma game (\autoref{table:prisoner_payoff}) and in horizontal cultural transmission.
+As before, $T_A$ and $T_B$ are the probabilities to transmit the phenotypes $A$ and $B$ during horizontal transmission.
+At each generation, each individual is chosen to "initiate" interactions with probability 1/2.
+Initiators then interact with a random neighbor for a prisoners’ dilemma game and a random neighbor (with replacement) for horizontal cultural transmission (as both the game and the transmission are symmetrical, the expected number of each of these interactions per individual per generation is 1).
+Therefore, the effective partner association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors. On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
+
+The order of the interactions across the lattice on each generation is random.
+After all interactions take place, individual's fitness is determined by
+$w = 1 + b \cdot n_b - c \cdot n_c$,
+where $n_b$ is the number interactions of that individual with cooperative neighbors, and $n_c$ is the total number of interactions of that individual ($n_b \le n_c$).
+Then a new generation is generated.
+Each site is colonized by an offspring of one of the individuals that inhabit either this site or one of the neighboring sites.
+The parent is randomly drawn with probability proportional to its fitness, divided by the average fitness in his neighborhood.
+Offspring then have the same phenotype as their parents.
+
+\autoref{fig:spatial} shows that the highest cooperation cost to benefit ratio ($c/b$) that permits the evolution of cooperation in simulations of the spatial model is roughly $\alpha \cdot T / (1-T)$, where $T=T_A=T_B$ is the horizontal transmission rate. This agrees with the condition we derived in Corollary~\ref{sec:sym_hor_trans} for a population without population structure. 
+This demonstrates that the partner association parameter $\alpha$ can emerge from local interactions between individuals in a structured population.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -757,6 +779,8 @@ Under a combination of vertical, oblique, and horizontal transmission, cooperati
 Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_B>T_A$) and both the cost of cooperation and social association are intermediate (yellow areas in \autoref{fig:results2}).
 % TODO figure for result 3
 % TODO something about v-hat
+
+We tested the applicability of our analytic results to a complex spatial stochastic model (\autoref{fig:spatial}). Indeed, our derived condition provide a good approximation to simulation results, demonstrating that association between cooperation and transmission can arise in a structured population simply because the choice of individuals for social interactions is small.
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to include such genetic modification of cultural transmission to our model.
@@ -960,6 +984,20 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
   % TODO remove legends, increase fonts, explain in caption instead of legend.
   }
   \label{fig:results}
+\end{figure}
+
+
+%%% Figure: Spatial model
+\begin{figure}[htb]
+  \centering
+    \includegraphics[scale=0.7]{spatial.pdf}
+  \caption{
+  \textbf{Evolution of cooperation in a spatial model.}
+  The proportion of cooperators after 10,000 generations is plotted (color coded) as function of the ration between the cost and benefit of cooperation ($c/b$) on the y-axis, and the horizontal transmission rate of both phenotypes $A$ and $B$ (without transmission bias, $T=T_A=T_B$) on the x-axis. The blue curve represents the condition for the evolution of cooperation in a well-mixed population with partner selection, $c/b<\alpha T / (1-T)$(\autoref{eq:equal_transmission}), where $\alpha=1/8$.
+  The difference between the results of the spatial model and the analytical condition are because in the spatial model selection is local (i.e. among neighbors, offspring are born to their parent's neighborhood) whereas in the well-mixed population model selection is global.
+  Here, population size is $10,000$ (100-by-100 grid); cost of cooperation, $c=0.05$. Simulations were stopped at generation 10,000 or if one of the phenotypes fixed.
+  }
+  \label{fig:spatial}
 \end{figure}
 
 %%%
