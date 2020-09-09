@@ -7,3 +7,6 @@
 *.fdb_latexmk
 *.fls
 .vscode/settings.json
+.DS_Store
+.ipynb_checkpoints/
+Untitled*.ipynb
