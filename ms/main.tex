@@ -248,7 +248,7 @@ two juvenile individuals with phenotype $A$ interact with probability $\hat{p}^2
 
 Horizontal cultural transmission occurs between pairs of individuals from the same generation. 
 It occurs between social partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\autoref{fig:horizontal}).
-The assortment rate $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
+The social association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
 Horizontal transmission is not always successful, as one partner may reject the other's phenotype. The probability for successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}).
 
 
@@ -510,8 +510,8 @@ Inequality \ref{eq:equal_transmission} is obtained by setting $T=T_A=T_B$ in ine
 \autoref{fig:results}a demonstrates this condition. 
 \\
 
-\begin{corollary}[No assortment of transmission and cooperation]
-Without assortment ($\alpha=0$) and with horizontal bias for cooperation ($T_A>T_B$), then 
+\begin{corollary}[No social association of transmission and cooperation]
+Without association ($\alpha=0$) and with horizontal bias for cooperation ($T_A>T_B$), then 
 (1) if the cost is low compared to the bias ($c<(T_A-T_B)/(1-T_B)$), then cooperation will fix from any positive frequency; 
 (2) if the cost is low compared to the benefit ($c<(1+b)(T_A-T_B)(1-T_B)$), then cooperation will fix if the initial frequency is high enough ($\tilde{p}_0 > \tilde{p}^*$).
 \end{corollary}
@@ -533,8 +533,8 @@ and defection will fix.
 %TODO add "effective cost" argument: c<TA-TB/(1-TB) <=> 1-(1-c)(1-TB)<TA.
 \\
 
-\begin{corollary}[Perfect assortment of transmission and cooperation]
-With perfect assortment ($\alpha=1$), there are only two equilibria, $\tilde{p}=0$ and $\tilde{p}=1$.
+\begin{corollary}[Perfect social association of transmission and cooperation]
+With perfect social association ($\alpha=1$), there are only two equilibria, $\tilde{p}=0$ and $\tilde{p}=1$.
 The condition for evolution of cooperation (i.e. global stability of $\tilde{p}=1$) is found from inequality \ref{eq:vert_hori_alpha1_condition_proof}, namely
 \begin{equation}\label{eq:vert_hori_alpha1}
 c < \frac{b \cdot T_A + (T_A - T_B)}{1-T_B}.
@@ -734,7 +734,7 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
   if \emph{(v)} $T_A>T_B$ and $\hat\gamma_2 < c$; or 
 	if \emph{(vi)} $T_A<T_B$ and $\hat\gamma_1 < c$.
 \item \emph{Stable Coexistence of both phenotypes at $\hat{p}^*$}: 
-  if \emph{(vii.a)} $T_A < T_B$ and $v<\hat{v}$ and $\hat\gamma_1 < c < \hat\gamma_2$; or
+  if \emph{(vii.a)} $T_A < T_B$ and $v<\hat{v}$ and $c < \hat\gamma_2$ and $c < \hat\gamma_1$; or
   if \emph{(vii.b)} $T_A < T_B$ and $v>\hat{v}$ and $\hat\gamma_2 < c < \hat\gamma_1$. 
 \item \emph{Unstable coexistence and fixation of either phenotype depending on initial frequency}:
   if \emph{(viii)}  $T_A>T_B$ and $\hat\gamma_1 < c < \hat\gamma_2$.
