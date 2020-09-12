@@ -741,9 +741,9 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{enumerate}
 
 \end{result}
+These conditions are illustrated in \autoref{fig:result3}.
 
 %This result illustrates the crucial role of vertical and oblique transmission: the same cost of cooperation $c$ can lead to remarkably different outcomes if the vertical transmission rate $v$ is below or above the threshold $\hat v$.
-% TODO example with figure
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With population structure}
@@ -917,7 +917,7 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 %%% Figure: coexistence map - without oblique transmission
 \begin{figure}[htb]
 \centering
-\includegraphics{coexistence_without_oblique.pdf}
+\includegraphics[scale = 0.75]{coexistence_without_oblique.pdf}
 \caption{\textbf{Stable and unstable coexistence between cooperation and defection without oblique transmission.}
   The curves show the frequency of the cooperative phenotype $A$ among parents in the next generation $\tilde{p}'$ vs. the current generation $\tilde{p}$ (\autoref{eq:nextgen_parents_vertical_only}).
   The dashed black line is $\tilde{p}'=\tilde{p}$.
@@ -931,12 +931,10 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 \label{fig:coexistence_without_oblique}
 \end{figure}
 
-%%% Figure: Conditions for fixation 
+%%% Figure: Boundaries figure - only vertical
 
 \begin{figure}[htb]
-  \centering
-  % TODO for some reason figs a and b have a lot of white space on their right side
-       
+  \centering       
     \includegraphics[scale=0.5]{Result2_zero_alpha.pdf}
 
     \includegraphics[scale=0.5]{Result2__non_zero_alpha.pdf}
@@ -951,6 +949,19 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
   % TODO missing text descriptions of conditions on (3)
   	}
     \label{fig:results2}
+\end{figure}
+
+%%% Figure: Boundaries figure - vertical and oblique
+
+\begin{figure}[htb]
+  \centering       
+    \includegraphics[scale=0.5]{Result3_boundaries.pdf}
+    \caption{\textbf{Evolution of cooperation under vertical, oblique and horizontal cultural transmission.} 
+The figure shows the global fixation of cooperation (green), global fixation of defection (red) and stable coexistence of cooperation and defection (yellow).
+In all cases the horizontal bias ($T_A-T_B$) is negative meaning $T_B>T_A$.
+The vertical transmission rate $v$ is on the y-axis; the cost boundaries $\hat\gamma_1$ and $\hat\gamma_2$ (\autoref{eq:cost_boundaries_v}) are the solid and dashed lines. 
+Here, $b=2$, $T_A=0.5$, $T_B = 0.7$, $\alpha = 0.7$.}
+    \label{fig:result3}
 \end{figure}
 
 %%% Figure: coexistence map - with oblique transmission
