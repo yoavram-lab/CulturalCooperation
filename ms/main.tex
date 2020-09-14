@@ -733,7 +733,7 @@ and define a vertical transmission threshold,
 \hat v = \frac{T_B - T_A}{1-T_A} \,.
 \end{equation}
 
-Assume $T_A<T_B$.
+Now, assume $T_A<T_B$.
 For $\beta_3<0$ we need $\hat\gamma_1<c$.
 For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
 Note that the expression in the square brackets is positive if and only if $v > \hat v$.
@@ -774,15 +774,17 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
     if \emph{(iii)} $T_A \ge T_B$ and $\hat\gamma_2 < c$; or 
 	if \emph{(iv)} $T_A < T_B$ and $\hat\gamma_1 < c$.
 \item \emph{Stable Coexistence}: 
-    if \emph{(vi)} $T_A < T_B$ and $v>\hat{v}$ and $\hat\gamma_2 < c < \hat\gamma_1$. 
+    if \emph{(v)} $T_A < T_B$ and $v>\hat{v}$ and $\hat\gamma_2 < c < \hat\gamma_1$. 
 \item \emph{Unstable coexistence}:
-    if \emph{(vii)} $T_A > T_B$ and $\hat\gamma_1 < c < \hat\gamma_2$.
+    if \emph{(vi)} $T_A > T_B$ and $\hat\gamma_1 < c < \hat\gamma_2$.
 \end{enumerate}
 
 \end{result}
 These conditions are illustrated in \autoref{fig:result3}.
 
-%This result illustrates the crucial role of vertical and oblique transmission: the same cost of cooperation $c$ can lead to remarkably different outcomes if the vertical transmission rate $v$ is below or above the threshold $\hat v$.
+\emph{//additional corollaries//}
+
+%Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With population structure}
@@ -815,26 +817,26 @@ This demonstrates that the social association parameter $\alpha$ can emerge from
 We studied the evolution of cooperation under non-vertical transmission using deterministic discrete-time evolutionary models with fitnesses in the form of payoffs from a prisoner's dilemma game. 
 Under oblique and horizontal cultural transmission, a horizontal transmission bias for the cooperative phenotype was found to be sufficient and necessary for evolution of cooperation (Result~\autoref{result:obli_hori}).
 Under a combination of vertical, oblique, and horizontal transmission, cooperation or defection can either fix or coexist at a stable polymorphism, depending on the relationship between the cost and benefit of cooperation, the horizontal bias, and the association between cooperation and transmission (Results~\autoref{result:vert_hori} and~\autoref{result:vert_obli_hori}).
-Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_B>T_A$) and both the cost of cooperation and social association are intermediate (yellow areas in \autoref{fig:results2}).
+Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_A<T_B$) and both the cost of cooperation and social association are intermediate (yellow areas in \autoref{fig:results2}).
 % TODO figure for result 3
 % TODO something about v-hat
 
-We tested the applicability of our analytic results to a complex spatial stochastic model (\autoref{fig:spatial}). Indeed, our derived condition provide a good approximation to simulation results, demonstrating that association between cooperation and transmission can arise in a structured population simply because the choice of individuals for social interactions is small.
+We tested the applicability of our analytic results to a complex spatial stochastic model. Our derived condition provide a good approximation to simulation results  (\autoref{fig:spatial}), demonstrating that association between cooperation and transmission can arise in a structured population simply because the choice of individuals for social interactions is small.
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to include such genetic modification of cultural transmission to our model.
 
 \citet{woodcock2006significance} has previously argued the significance of non-vertical transmission for the evolution of cooperation. He executed simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$). Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a significant duration of time.
-Our results provide strong evidence for his hypothesis that horizontal transmission could have an important role in the evolution of cooperation. 
+Our results provide strong evidence for his hypothesis that horizontal transmission can have an important role in the evolution of cooperation. 
 
 To understand the role of horizontal transmission, we first discuss the role of \emph{assortment}.
 \citet{Eshel1982} showed that altruism can evolve when there is enough \emph{assortative meeting}, namely, a tendency for individuals to interact within their phenotypic group.
-\citet{Fletcher2009assortment} have further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group.
+\citet{Fletcher2009assortment} have further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group; see also \citet{Bijma2010assortment}.
 They therefore suggested that to explain the evolution of altruism, we should seek mechanisms that generate such assortment, like population structure, repeated interactions, and individual recognition.
 Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and partner for transmission.
 This mechanism does not require population structure, repeated interactions, or individual recognition.
 We show that high levels of such social association greatly increase the potential for evolution of cooperation (\autoref{fig:results2}).
-With enough social association ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_B>T_A$, see Result~\autoref{result:vert_hori}).
+With enough social association ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$, see Result~\autoref{result:vert_hori}).
 
 How does non-vertical transmission generate assortment? 
 \citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors}, 
