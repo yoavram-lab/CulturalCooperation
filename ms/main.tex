@@ -513,25 +513,6 @@ Cooperation and defection can coexist stably at frequencies $\tilde{p}^*$ and $1
 When unstable coexistence occurs, phenotype $A$ will fix if initially at a frequency $p>\tilde{p}^*$, and phenotype $B$ will fix if initially at a frequency $1-p>1-\tilde{p}^*$; this occurs when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
 \autoref{fig:coexistence_without_oblique} shows the mapping $\tilde p \to \tilde p'$; see blue areas in \autoref{fig:results2}a and \autoref{fig:results2}b.
 
-Much of the literature on evolution of cooperation focuses on conditions for  initially rare cooperative phenotype to invade a population of defectors.
-The next corollary deals with such a condition.
-\\
-
-\begin{corollary}[Condition for cooperation to increase when initially rare]
-If the initial frequency of cooperation is very close to zero, $\tilde{p}_0 \approx 0$, then its frequency will increase if 
-\begin{equation} \label{eq:unequal_transmission_from_rarity}
-\begin{aligned}
-c < \gamma_1 = \frac{b \alpha T_A + (T_A - T_B)}{1-T_B} \;.
-\end{aligned}
-\end{equation} 
-\end{corollary}
-
-Note that the right-hand side equals $\gamma_1$.
-This condition follows from combining the conditions for fixation of cooperation and for stable coexistence.
-
-In general, these conditions cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
-Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
-\\
 
 \begin{corollary}[Symmetric horizontal transmission] \label{sec:sym_hor_trans}
 If $T=T_A=T_B$, then cooperation will take over the population if
@@ -783,7 +764,33 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{result}
 These conditions are illustrated in \autoref{fig:result3}.
 
-\emph{//additional corollaries//}
+Much of the literature on evolution of cooperation focuses on conditions for  initially rare cooperative phenotype to invade a population of defectors.
+The next corollary deals with such a condition.
+\begin{corollary}[Condition for cooperation to increase when initially rare]
+  If the initial frequency of cooperation is very close to zero, $\hat{p}_0 \approx 0$, then its frequency will increase if 
+  \begin{equation} \label{eq:unequal_transmission_from_rarity_general_case}
+  \begin{aligned}
+  c < \hat\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)} \;.
+  \end{aligned}
+  \end{equation} 
+  \end{corollary}
+
+Note that the right-hand side equals $\hat\gamma_1$.
+This condition follows from combining the conditions for fixation of cooperation and for stable coexistence.
+
+In general, these conditions cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
+Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
+\\
+\begin{corollary}[Necessity condition for fixation of cooperation.]
+  Fixation of cooperation is possible only when
+  \begin{equation} \label{eq:fixation_of_cooperation_vertical_transmission_condition}
+    \begin{aligned}
+      v>\hat{v} = \frac{T_B - T_A}{1-T_A} \;.
+    \end{aligned}
+    \end{equation} 
+\end{corollary}
+When there is horizontal transmission bias for cooperation, fixation can occured for every value of vertical transmission because $\hat{v}<0$.
+However, if the the horizontal bias favours defection, for fixation of cooperation to occur the vertical transmission must be higer than $\hat{v}$.
 
 %Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
 
