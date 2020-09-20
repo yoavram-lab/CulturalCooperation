@@ -573,7 +573,7 @@ We denote the social association boundaries by
 Applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2}, we have the following corollary.
 \\
 
-\begin{corollary}[Intermediate association of transmission and cooperation]
+\begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:Intermediate_association}
 Cooperation will increase from rarity if social association is high enough, or specifically if
   \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
     \begin{aligned}
@@ -762,7 +762,7 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{enumerate}
 
 \end{result}
-These conditions are illustrated in \autoref{fig:result3}.
+These conditions are illustrated in \autoref{fig:result3}a and \autoref{fig:result3}b.
 
 Much of the literature on evolution of cooperation focuses on conditions for  initially rare cooperative phenotype to invade a population of defectors.
 The next corollary deals with such a condition.
@@ -791,6 +791,16 @@ Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions r
 \end{corollary}
 When there is horizontal transmission bias for cooperation, fixation can occured for every value of vertical transmission because $\hat{v}<0$.
 However, if the the horizontal bias favours defection, for fixation of cooperation to occur the vertical transmission must be higer than $\hat{v}$.
+\\
+
+We already examine the effect of social association in the case of perfect vertical transmission ($v=1$). Now we'll move to the genral case where $0<v\leq 1$.
+We denote the social association boundaries of the general case by
+\begin{equation}\begin{aligned}\label{eq:boundries_assortative_meeting_general_case}
+  \hat{a}_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
+  \hat{a}_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A}.
+\end{aligned}\end{equation}
+\emph{Corollary~\autoref{corollary:Intermediate_association}} is true for the general but with new boundaries coefficients $\hat{a}_1$, $\hat{a}_2$. \autoref{fig:result3}c and \autoref{fig:result3}d illustrate this result.
+
 
 %Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
 
@@ -1006,13 +1016,18 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
   \centering       
     \includegraphics[width=0.45\textwidth]{Result3_TA_TB.eps}~
     \includegraphics[width=0.45\textwidth]{Result3_TB_TA.eps}
+    \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TA_TB.eps}~
+    \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TB_TA.eps}
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
     The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
     The vertical transmission rate $v$ is on the x-axis.
     Horizontal transmission bias (\textbf{a}) for cooperation, $T_A>T_B$ and (\textbf{b}) for defection, $T_A<T_B$.
-    Cost boundaries $\hat\gamma_1$ and $\hat\gamma_2$ (\autoref{eq:cost_boundaries_v}) are represented by the solid and dashed lines. 
+    Cost boundaries $\hat\gamma_1$ and $\hat\gamma_2$ (\autoref{eq:cost_boundaries_v}) are represented by the solid and dashed lines in figures \textbf{(a)}, \textbf{(b)}. 
+    Soical association boundaries $\hat{a}_1$ and $\hat{a}_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines in figures \textbf{(c)}, \textbf{(d)}.
     (\textbf{a}) $b=1.2$, $T_A = 0.5$, $T_B = 0.4$, $\alpha = 0.4$.
-    (\textbf{b}), $b=2$, $T_A=0.5$, $T_B = 0.7$, $\alpha = 0.7$.}
+    (\textbf{b}), $b=2$, $T_A=0.5$, $T_B = 0.7$, $\alpha = 0.7$.
+    (\textbf{c}), $b=1.2$, $T_A=0.5$, $T_B = 0.4$, $c=0.5$.
+    (\textbf{d}), $b=2$, $T_A=0.5$, $T_B = 0.7$, $c=0.5$.}
     \label{fig:result3}
 \end{figure}
 
