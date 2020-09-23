@@ -574,7 +574,7 @@ Applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition
 \\
 
 \begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:Intermediate_association}
-Cooperation will increase when rare if social association is high enough; specifically if
+Cooperation will increase from rarity if social association is high enough, specifically if
   \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
     \begin{aligned}
     T_A > T_B &\;\; \text{and} \;\; a_2 < \alpha, \quad \text{or} \\
@@ -761,13 +761,13 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{enumerate}
 
 \end{result}
-These conditions are illustrated in \autoref{fig:result3}a and \autoref{fig:result3}b.
+These conditions are illustrated in \autoref{fig:result3}ab.
 
 Much of the literature on evolution of cooperation focuses on conditions for  initially rare cooperative phenotype to invade a population of defectors.
 The next corollary deals with such a condition.
 \\
 
-\begin{corollary}[Condition for cooperation to increase when initially rare]
+\begin{corollary}[Condition for cooperation to increase from rarity]
   If the initial frequency of cooperation is very close to zero, $\hat{p}_0 \approx 0$, then its frequency will increase if 
   \begin{equation} \label{eq:unequal_transmission_from_rarity_general_case}
   \begin{aligned}
@@ -776,35 +776,52 @@ The next corollary deals with such a condition.
   \end{equation} 
   \end{corollary}
 
-Note that the right-hand side equals $\hat\gamma_1$.
-This condition follows from combining the conditions for fixation of cooperation and for stable coexistence.
+%Note that the right-hand side equals $\hat\gamma_1$.
+This condition merges the conditions for fixation of cooperation and for stable coexistence, which both lead to the instability of $\hat{p}=0$, the fixation of defection.
+Importantly, increasing social association $\alpha$ increases maximum cost of cooperation $\hat\gamma_1$ that allows cooperation to increase from rarity (i.e. $\partial \hat\gamma_1 / \partial \alpha > 0$).
 
-In general, these conditions cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
+In general, this condition cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
 \\
-\begin{corollary}[Necessity condition for fixation of cooperation.]
-  Fixation of cooperation is possible only when
+\begin{corollary}[Necessary condition for fixation of cooperation]
+  Fixation of cooperation is possible only if the vertical transmission rate is high enough,
   \begin{equation} \label{eq:fixation_of_cooperation_vertical_transmission_condition}
     \begin{aligned}
       v>\hat{v} = \frac{T_B - T_A}{1-T_A} \;.
     \end{aligned}
     \end{equation} 
 \end{corollary}
-When there is horizontal transmission bias for cooperation, fixation can occured for every value of vertical transmission because $\hat{v}<0$.
-However, if the the horizontal bias favours defection, for fixation of cooperation to occur the vertical transmission must be higer than $\hat{v}$.
+%Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
+Note that this condition does not guarantee fixation of cooperation. Rather, if this condition does not apply then cooperation cannot fix.
+When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation can fix with any vertical transmission rate, i.e. $\hat{v}<0$.
+In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
-We already examine the effect of social association in the case of perfect vertical transmission ($v=1$). Now we'll move to the genral case where $0<v\leq 1$.
-We denote the social association boundaries of the general case by
+In corollary~\autoref{corollary:Intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
+A more general case can be stated for $0 < v \leq 1$.
+Consider the social association boundaries 
 \begin{equation}\begin{aligned}\label{eq:boundries_assortative_meeting_general_case}
   \hat{a}_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
   \hat{a}_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A} \;.
 \end{aligned}\end{equation}
+Then the following applies.
+\\
 
-Corollary~\autoref{corollary:Intermediate_association} is true for the general but with new boundaries coefficients $\hat{a}_1$, $\hat{a}_2$. \autoref{fig:result3}c and \autoref{fig:result3}d illustrate this result.
+\begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:Intermediate_association}
+Cooperation will increase from rarity if social association is high enough, specifically if
+  \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
+    \begin{aligned}
+    T_A > T_B &\;\; \text{and} \;\; \hat a_2 < \alpha, \quad \text{or} \\
+    T_A < T_B &\;\; \text{and} \;\; \hat a_1 < \alpha \,.
+    \end{aligned}
+    \end{equation} 
+\end{corollary}
+\autoref{fig:result3}cd illustrates this conditions.
+
+Interestingly, when $T_A>T_B$ then $\partial \hat a_2 / \partial v = b T_A (T_A-T_B) > 0$, and when $T_A<T_B$ then $\partial \hat a_1 / \partial v = b(1+b-c)T_B(T_A-T_B) < 0$.
+Therefore, when there is horizontal transmission bias for cooperation, $T_A>T_B$, then vertical transmission hinders the evolution of cooperation ($\partial \hat a_2 / \partial v = b T_A (T_A-T_B) > 0$). In contrast, when there is horizontal transmission bias for defection, vertical transmission facilitates the evolution of cooperation ($\partial \hat a_1 / \partial v = b(1+b-c)T_B(T_A-T_B) < 0$).
 
 
-%Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With population structure}
