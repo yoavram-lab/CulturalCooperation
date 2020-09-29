@@ -446,7 +446,7 @@ When unstable coexistence occurs, phenotype $A$ will fix if its initial frequenc
 \\
 
 \begin{corollary}[Symmetric horizontal transmission] 
-\label{sec:cor_equal_transmission}
+\label{corollary:equal_transmission}
 If $T=T_A=T_B$, then cooperation will take over the population if
 \begin{equation}
 \label{eq:equal_transmission}
@@ -505,7 +505,7 @@ We denote the social association boundaries by
 Applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition1}, and \ref{eq:vert_hori_global_condition2}, we have the following corollary.
 \\
 
-\begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:Intermediate_association}
+\begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:intermediate_association}
 Cooperation will increase from rarity if social association is high enough, specifically if
   \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
     \begin{aligned}
@@ -599,7 +599,7 @@ with
 	f'(1) &=	-\alpha bvT + cv(1-T).
 \end{aligned}
 \end{equation}
-Therefore with symmetric horizontal transmission ($T_A=T_B$), fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary \ref{sec:cor_equal_transmission}, namely inequality~\ref{eq:equal_transmission}.
+Therefore with symmetric horizontal transmission ($T_A=T_B$), fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary \ref{corollary:equal_transmission}, namely inequality~\ref{eq:equal_transmission}.
 
 
 In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
@@ -721,7 +721,7 @@ In general, this condition cannot be formulated in the form of Hamilton's rule d
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
 \\
 \begin{corollary}[Necessary condition for fixation of cooperation]
-\label{sec:cor_vhat}
+\label{corollary:vhat}
   Fixation of cooperation is possible only if the vertical transmission rate is high enough,
   \begin{equation} \label{eq:fixation_of_cooperation_vertical_transmission_condition}
     \begin{aligned}
@@ -735,7 +735,7 @@ When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation c
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
-In corollary~\autoref{corollary:Intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
+In Corollary~\autoref{corollary:intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
 A more general case can be stated for $0 < v \leq 1$.
 Consider the social association boundaries 
 \begin{equation}\begin{aligned}\label{eq:boundries_assortative_meeting_general_case}
@@ -745,7 +745,7 @@ Consider the social association boundaries
 Then the following applies.
 \\
 
-\begin{corollary}[Intermediate association of transmission and cooperation]\label{corollary:Intermediate_association}
+\begin{corollary}[Intermediate association of transmission and cooperation]
 Cooperation will increase from rarity if social association is high enough, specifically if
   \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
     \begin{aligned}
@@ -796,15 +796,15 @@ Under a combination of vertical, oblique, and horizontal transmission, cooperati
 Remarkably, stable coexistence between cooperation and defection can be maintained if horizontal transmission is biased for defection ($T_A<T_B$) and both the cost of cooperation and social association are intermediate (yellow areas in Figures~\ref{fig:result2}-\ref{fig:result3}).
 
 We find that increasing social association ($\alpha$) increases the opportunity for evolution of cooperation (corollary X, \autoref{fig:result2}c and \autoref{fig:result3}cd). 
-Similarly, a horizontal transmission bias for cooperation ($T_A-T_B$) will also facilitate its evolution (corollary X, \autoref{fig:result2}}.
-The situation with vertical/oblique transmission ($v$) is more complex. 
-When there is horizontal transmission bias for cooperation ($T_A>T_B$), increasing the rate of oblique transmission ($1-v$) will facilitate the evolution of cooperation (\autoref{fig:result3}ac). However, when the bias if for defection ($T_A<T_B$), high rates of vertical transmission ($v$) are advantageous for cooperation. 
-Nevertheless, to reach fixation of cooperation in the population, there must be a sufficient rate of vertical transmission ($v>\hat v$, Corollary~\autoref{sec:cor_vhat}).
+Similarly, a horizontal transmission bias for cooperation ($T_A-T_B$) will also facilitate its evolution (corollary X, \autoref{fig:result2}).
+The effect of vertical/oblique transmission is more complex. 
+When there is horizontal transmission bias for cooperation ($T_A>T_B$), increasing the rate of oblique transmission ($1-v$) will facilitate the evolution of cooperation (\autoref{fig:result3}ac). However, when the bias is for defection ($T_A<T_B$), high rates of vertical transmission ($v$) are advantageous for cooperation. 
+Nevertheless, to reach fixation of cooperation in the population, there must be a sufficient rate of vertical transmission ($v>\hat v$, Corollary~\autoref{corollary:vhat}).
 % TODO carry on summarizing corollaries here
 
-Our analytic conditions derived for a deterministic well-mixed model provides a good approximation to results of simulations of a complex spatial stochastic model  (\autoref{fig:spatial}).
-In this spatial model, individuals can only interact with and transmit to their neighbors on a grid.
-This demonstrates that social association between cooperation and transmission can arise in a structured population in which interactions are local.
+The results that we derived for a deterministic well-mixed model provide a good approximation to results of simulations of a complex stochastic spatial model  (\autoref{fig:spatial}).
+In this spatial model, individuals can only interact with and transmit to their neighbors.
+This model demonstrates that social association between cooperation and transmission can arise in a structured population in which both types of interactions are local.
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to incorporate such genetic modification of cultural transmission into our model.
