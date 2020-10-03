@@ -287,7 +287,7 @@ where fitness values are taken from \autoref{table:prisoner_payoff} and \autoref
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Oblique and Horizontal Transmission}
 
-With only oblique and horizontal transmission, i.e. $v = 0$, Eq.\ \ref{eq:horizontal} becomes $\hat{p}=p$ and Eq.\ \ref{eq:nextgen_adults_slimpify} becomes % TODO check this, I changed the ref from nextgen_parents_simplified to nextgen_adults_slimpify
+With only oblique and horizontal transmission, i.e. $v = 0$, Eq.\ \ref{eq:horizontal} becomes $\hat{p}=p$ and Eq.\ \ref{eq:nextgen_adults_slimpify} becomes 
 \begin{equation}  \label{eq:nextgen_parents_oblique_only}
 p' = p^2 (T_B-T_A) + p (1+T_A-T_B) \;,
 \end{equation}
@@ -512,15 +512,13 @@ Applying Eqs.~\ref{eq:vert_hori_equilibrium}, \ref{eq:vert_hori_global_condition
 Cooperation will increase from rarity if social association is high enough, specifically if
   \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
     \begin{aligned}
-    T_A > T_B &\;\; \text{and} \;\; a_2 < \alpha, \quad \text{or} \\
-    T_A < T_B &\;\; \text{and} \;\; a_1 < \alpha \,.
+     a_2 < \alpha
     \end{aligned}
     \end{equation} 
 \end{corollary}
 
 \autoref{fig:result2}c demonstrates these conditions.
 With horizontal transmission bias for cooperation ($T_A>T_B$), cooperation can fix from any initial frequency if $a_2<\alpha$ (green area in positive x-axis). 
-Otherwise, cooperation can also fix if the horizontal bias is strong, the initial frequency is high, and social association is high, $a_1 < \alpha$ (blue area).
 With horizontal bias favoring defection ($T_A<T_B$), cooperation can fix from any frequency if social association is high, $a_1<\alpha$ (green area with $T_A<T_B$), and can also increase when rare and reach stable coexistence with defection if social association is intermediate, $a_2<\alpha$ (yellow area).
 Without horizontal bias ($T_A=T_B$) fixation of cooperation occurs if social association is high enough; $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
 
@@ -728,6 +726,34 @@ However, increasing the horizontal transmission of defection can either increase
 In general, this condition cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
 \\
+
+In Corollary~\autoref{corollary:intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
+A more general case can be stated for $0 < v \leq 1$.
+Consider the social association boundaries 
+\begin{equation}\begin{aligned}\label{eq:boundries_assortative_meeting_general_case}
+  \hat{a}_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
+  \hat{a}_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A} \;.
+\end{aligned}\end{equation}
+
+Then the following applies.
+\\
+
+\begin{corollary}[Intermediate association of transmission and cooperation]
+\label{corollary:intermediate_association_res3}
+Cooperation will increase from rarity if social association is high enough, specifically if
+  \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
+    \begin{aligned}
+     \hat a_2 < \alpha.
+    \end{aligned}
+    \end{equation} 
+\end{corollary}
+\autoref{fig:result3}cd illustrates this conditions.
+
+Note that when $T_A>T_B$ then $\partial \hat a_2 / \partial v = b T_A (T_A-T_B) > 0$, and when $T_A<T_B$ then $\partial \hat a_1 / \partial v = b(1+b-c)T_B(T_A-T_B) < 0$. When $T_A>T_B$ and the vertical transmission $v$ increases the boundary $\hat{a}_2$ also increases
+and therefore, a greater value of social association is required for fixation of cooperation from rarity. When $T_B>T_A$ decreasing of $v$ increases the boundary $\hat{a}_2$ 
+and therefore, a greater value of social association is required for fixation of cooperation from rarity.
+\\
+
 \begin{corollary}[Necessary condition for fixation of cooperation]
 \label{corollary:vhat}
   Fixation of cooperation is possible only if the vertical transmission rate is high enough,
@@ -742,41 +768,6 @@ Note that this condition does not guarantee fixation of cooperation. Rather, if 
 When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation can fix with any vertical transmission rate, i.e. $\hat{v}<0$.
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
-
-In Corollary~\autoref{corollary:intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
-A more general case can be stated for $0 < v \leq 1$.
-Consider the social association boundaries 
-\begin{equation}\begin{aligned}\label{eq:boundries_assortative_meeting_general_case}
-  \hat{a}_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
-  \hat{a}_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A} \;.
-\end{aligned}\end{equation}
-Note that when $T_A>T_B$ then $\partial \hat a_2 / \partial v = b T_A (T_A-T_B) > 0$, and when $T_A<T_B$ then $\partial \hat a_1 / \partial v = b(1+b-c)T_B(T_A-T_B) < 0$.
-Similarly, $\partial \hat a_1 / \partial T_A < 0$, $\partial \hat a_2 / \partial T_A < 0$, $\partial \hat a_2 / \partial T_B > 0$, and $\text{sign}(\partial \hat a_1 / \partial T_B) = \text{sign}\big(T_A (1+b-c) - (1-T_A)cv\big)$.
-%TODO remove derivatives of a1
-
-Then the following applies.
-\\
-
-\begin{corollary}[Intermediate association of transmission and cooperation]
-\label{corollary:intermediate_association_res3}
-Cooperation will increase from rarity if social association is high enough, specifically if
-  \begin{equation} \label{eq:unequal_transmission_from_rarity_in_alpha_terms}
-    \begin{aligned}
-    T_A > T_B &\;\; \text{and} \;\; \hat a_2 < \alpha, \quad \text{or} \\
-    T_A < T_B &\;\; \text{and} \;\; \hat a_1 < \alpha \,.
-    \end{aligned}
-    \end{equation} 
-\end{corollary}
-\autoref{fig:result3}cd illustrates this conditions.
-%TODO fix for increasing from rarity, only using a2
-
-Note that increasing the horizontal transmission of cooperation, $T_A$, decreases both boundaries ($\partial \hat a_1 / \partial T_A, \partial \hat a_2 / \partial T_A < 0$), thus facilitating evolution of cooperation. 
-Increasing the horizontal transmission of defection, increases one boundary, ($\partial \hat a_2 / \partial T_B > 0$).
-So, if there is horizontal bias for cooperation ($T_A>T_B$), decreasing that bias will make it harder for cooperation to evolve.
-
-Interestingly, when there is horizontal transmission bias for cooperation ($T_A>T_B$), then vertical transmission hinders the evolution of cooperation ($\partial \hat a_2 / \partial v > 0$). In contrast, when there is horizontal transmission bias for defection ($T_A<T_B$), vertical transmission facilitates the evolution of cooperation ($\partial \hat a_1 / \partial v < 0$).
-\\
-%TODO switch corollary 7 and 6
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1143,9 +1134,9 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 %%% Figure: Spatial model
 \begin{figure}[h]
   \centering
-    \includegraphics[scale=0.5]{spatial1.png}
+%   \includegraphics[scale=0.5]{spatial1.png}
     ~
-    \includegraphics[scale=0.5]{spatial2.png} \\
+ %   \includegraphics[scale=0.5]{spatial2.png} \\
   \caption{
   \textbf{Evolution of cooperation in a spatial model.}
   The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
