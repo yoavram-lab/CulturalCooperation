@@ -775,13 +775,12 @@ In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$, 
 
 Social association may also emerge from a population's structure.
 Consider a  population colonizing a 2D grid of size 100-by-100, where each site is inhabited by one individual, similarly to \citet{lewin2020rockpaperscissors}.
-Each individual is characterized by its phenotype which is either cooperator, $A$, or defector $B$.
+Each individual is characterized by its phenotype which is either cooperator, $A$, or defector $B$. At the beginning, each cell in the grid is initialized with either cooperator or defecator with equal probability.
 In each generation individuals interact with their neighbors, i.e. individuals that inhabit adjacent sites, in a prisoner's dilemma game (\autoref{table:prisoner_payoff}) and with horizontal cultural transmission.
 As before, $T_A$ and $T_B$ are the probabilities of transmitting phenotypes $A$ and $B$ during horizontal transmission.
 At each generation, each individual is chosen to "initiate" interactions with probability 1/2.\ %TODO "with probability 1/2" not clear - MWF
 Initiators then interact with a random neighbor in a prisoners' dilemma game and a random neighbor (with replacement) for horizontal cultural transmission (as both the game and the transmission are symmetrical, the expected number of each of these interactions per individual per generation is 1).
 Therefore, the effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors. On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
-%TODO How are A, B initialized on the grid? – MWF
 
 The order of the interactions across the lattice at each generation is random.
 After all interactions take place, and individual's fitness is determined by
