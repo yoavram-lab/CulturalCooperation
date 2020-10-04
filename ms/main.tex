@@ -710,13 +710,20 @@ The next corollary deals with such a condition.
   \end{equation} 
   \end{corollary}
 
-%Note that the right-hand side equals $\hat\gamma_1$.
 This condition merges the conditions for fixation of cooperation and for stable coexistence, which both lead to the instability of $\hat{p}=0$, the fixation of defection.
 Importantly, increasing social association $\alpha$ increases the boundary cost ($\partial \hat\gamma_1 / \partial \alpha > 0$), making it easier for cooperation to increase from rarity.
 Similarly, increasing the horizontal transmission of cooperation increases the boundary ($\partial \hat\gamma_1 / \partial T_A > 0$), making it easier for cooperation to evolve.
 However, increasing the horizontal transmission of defection can either increase or decrease the boundary, making it easier or harder for cooperation to evolve, respectively, depending if $T_A$ is high or low (i.e. if $T_A>1/(1+bv\alpha)$ or below).
+%TODO I think the boundary on TA should be (2TB-1)/(alpha*b*v+1). DC
+Increasing the vertical transmission $v$ can either increase or decrease the boundary since $\partial \hat\gamma_1 / \partial v = \frac{(1-T_B)(T_B-T_a)}{v^2(1-T_B)^2}$ which can be both positive and negative depending on the sign of $T_B-T_A$.
+When $T_B>T_A$ we get $\partial \hat\gamma_1 / \partial v >0$ and therefore, as the vertical transmission increases the boundary on the cost increases making it easier for cooperation to evolve from rarity.
+Similarly, when $T_A > T_B$ we get $\partial \hat\gamma_1 / \partial v <0$ and therefore, as the vertical transmission increases the boundary on the cost decreases making it harder for cooperation to evolve from rarity.
+We got that when $T_A>T_B$ vertical transmission is interfering cooperation to evolve by decreasing the maximum cost that the cooperates can pay and stil evolve from rairty. 
+%TODO Is the last sentence requried ? Should we mention here we already saw result 1 - when $T_A > T_B$ we will have global fixation of cooperation 
+
 %($\text{sign}\big(\partial \hat\gamma_1 / \partial T_B \big)= \text{sign}\big(b v \alpha T_A - (1-T_A)\big)$).
 %TODO talk about partial gamma 1 / partial v = -(TA-TB)(1-TB)
+%TODO - do we need the command above ? DC
 
 In general, this condition cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
@@ -739,7 +746,8 @@ Cooperation will increase from rarity if social association is high enough, spec
 \end{corollary}
 \autoref{fig:result3}cd illustrates this conditions.
 
-Note that when $T_A>T_B$ then $\partial \hat a_2 / \partial v = b T_A (T_A-T_B) > 0$, and when $T_A<T_B$ then $\partial \hat a_1 / \partial v = b(1+b-c)T_B(T_A-T_B) < 0$. When $T_A>T_B$ and the vertical transmission $v$ increases the boundary $\hat{a}_2$ also increases and therefore, a greater value of social association is required for fixation of cooperation from rarity. When $T_B>T_A$ decreasing the vertical transmission rate, $v$, increases the boundary $\hat{a}_2$. Therefore, a greater value of social association is required for fixation of cooperation from rarity.
+Note that $\partial \hat a_2 / \partial v = b T_A (T_A-T_B)$. $\partial \hat a_2 / \partial v > 0$ when $T_A > T_B$ and therefore, as the vertical transmission $v$ \emph{increases} a greater value of social association is required for fixation of cooperation from rarity.
+Similarly, when $T_B>T_A$ $T_A > T_B$ we get $\partial \hat a_2 / \partial v < 0$ and therefore, as $v$ \emph{decreases} a greater value of social association is required for fixation of cooperation from rarity.
 \\
 
 \begin{corollary}[Necessary condition for fixation of cooperation]
@@ -896,9 +904,7 @@ eqs.~\ref{eq:general_case_polynomial}-\ref{eq:polynomial_coefficients}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{} \label{sec:appendixB}
 
-Let $f(p)=\lambda(p'-p)$, where $\lambda>0$, and assume $f(p^*)=0$; i.e., $p^*$ is an equilibrium.
-%TODO HOW DO YOU KNOW $p^*\in(0,1)$?--MWF
-We want a condition for $|p'-p^*| < |p-p^*|$.
+Let $f(p)=\lambda(p'-p)$, where $\lambda>0$, and we know that $f(0)=0$ and $f(1)=0$ since 0,1 are equilibrium.
 
 If $p>p^*=0$, we want a condition for $p'<p$, or
 $\frac{p'}{p}<1$, or
