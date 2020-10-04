@@ -775,12 +775,14 @@ In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$, 
 
 Social association may also emerge from a population's structure.
 Consider a  population colonizing a 2D grid of size 100-by-100, where each site is inhabited by one individual, similarly to \citet{lewin2020rockpaperscissors}.
-Each individual is characterized by its phenotype which is either cooperator, $A$, or defector $B$. At the beginning, each cell in the grid is initialized with either cooperator or defecator with equal probability.
+Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
+At the beginning, each cell in the grid is randomly colonized with either a cooperator or a defector, with equal probability.
 In each generation individuals interact with their neighbors, i.e. individuals that inhabit adjacent sites, in a prisoner's dilemma game (\autoref{table:prisoner_payoff}) and with horizontal cultural transmission.
 As before, $T_A$ and $T_B$ are the probabilities of transmitting phenotypes $A$ and $B$ during horizontal transmission.
-At each generation, each individual is chosen to "initiate" interactions with probability 1/2.\ %TODO "with probability 1/2" not clear - MWF
+At each generation, half of the individuals are randomly chosen to "initiate" interactions.
 Initiators then interact with a random neighbor in a prisoners' dilemma game and a random neighbor (with replacement) for horizontal cultural transmission (as both the game and the transmission are symmetrical, the expected number of each of these interactions per individual per generation is 1).
-Therefore, the effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors. On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
+Therefore, the effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors.
+On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
 
 The order of the interactions across the lattice at each generation is random.
 After all interactions take place, and individual's fitness is determined by
@@ -790,7 +792,8 @@ Then a new generation is generated, and sites can be settled by offspring of any
 The parent is randomly drawn with probability proportional to its fitness, divided by the average fitness of all potential parents.
 Offspring then have the same phenotype as their parents.
 
-\autoref{fig:spatial} shows that the highest cost of cooperation  ($c$) that permits the evolution of cooperation in simulations of the spatial model roughly agrees with the conditions derived in Result 2. Simulating a spatial model with local selection (i.e. sites can only be settled by offspring of neighbor parents) had only a minor affect, eliminating the stable coexistence. 
+\autoref{fig:spatial} shows that the highest cost of cooperation ($c$) that permits the evolution of cooperation in simulations of the spatial model roughly agrees with the conditions derived in Result 2.
+Simulating a spatial model with local selection (i.e. sites can only be settled by offspring of neighbor parents) had only a minor affect, eliminating the stable coexistence. 
 
 This comparison between the deterministic well-mixed model and the stochastic spatial model demonstrates that the derived conditions can be useful for predicting the dynamics of complex scenarios. 
 Moreover, our spatial model shows how social association ($\alpha$) can emerge from local interactions between individuals in a structured population.
