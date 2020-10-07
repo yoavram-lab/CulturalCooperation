@@ -528,7 +528,7 @@ To proceed,  note that
 \autoref{eq:horizontal} gives $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$.
 \autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\tilde{p}$, since $\hat{p}$ is given in Eq.\ \ref{eq:horizontal} as a function of $\tilde{p}$ and 
 \autoref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
-%TODO cleanup 
+%TODO YR cleanup  
 Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$ (shown in Appendix~\autoref{sec:appendixA}),
 determine the equilibria, namely, solutions of $\hat{p}' = \hat{p}$, and analyse their local stability.
 %: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
@@ -714,16 +714,15 @@ This condition merges the conditions for fixation of cooperation and for stable 
 Importantly, increasing social association $\alpha$ increases the boundary cost ($\partial \hat\gamma_1 / \partial \alpha > 0$), making it easier for cooperation to increase from rarity.
 Similarly, increasing the horizontal transmission of cooperation increases the boundary ($\partial \hat\gamma_1 / \partial T_A > 0$), making it easier for cooperation to evolve.
 However, increasing the horizontal transmission of defection can either increase or decrease the boundary, making it easier or harder for cooperation to evolve, respectively, depending if $T_A$ is high or low (i.e. if $T_A>1/(1+bv\alpha)$ or below).
+% TODO write sign(dgamma1/dTB) = sign(???)
 %TODO I think the boundary on TA should be (2TB-1)/(alpha*b*v+1). DC
-Increasing the vertical transmission $v$ can either increase or decrease the boundary since $\partial \hat\gamma_1 / \partial v = \frac{(1-T_B)(T_B-T_a)}{v^2(1-T_B)^2}$ which can be both positive and negative depending on the sign of $T_B-T_A$.
-When $T_B>T_A$ we get $\partial \hat\gamma_1 / \partial v >0$ and therefore, as the vertical transmission increases the boundary on the cost increases making it easier for cooperation to evolve from rarity.
+
+Increasing the vertical transmission $v$ can either increase or decrease the boundary, depending on the horizontal transmission bias, $T_A-T_B$ (because $\text{sign}(\partial \hat\gamma_1 / \partial v) = -\text{sign}(T_A-T_B)$.)
+When $T_A<T_B$ we get $\partial \hat\gamma_1 / \partial v >0$ and therefore, as the vertical transmission increases the boundary on the cost increases making it easier for cooperation to evolve from rarity. 
 Similarly, when $T_A > T_B$ we get $\partial \hat\gamma_1 / \partial v <0$ and therefore, as the vertical transmission increases the boundary on the cost decreases making it harder for cooperation to evolve from rarity.
 We got that when $T_A>T_B$ vertical transmission is interfering cooperation to evolve by decreasing the maximum cost that the cooperates can pay and stil evolve from rairty. 
-%TODO Is the last sentence requried ? Should we mention here we already saw result 1 - when $T_A > T_B$ we will have global fixation of cooperation 
+% TODO YR revise; note that without vertical transmission TA-TB determines the outcome
 
-%($\text{sign}\big(\partial \hat\gamma_1 / \partial T_B \big)= \text{sign}\big(b v \alpha T_A - (1-T_A)\big)$).
-%TODO talk about partial gamma 1 / partial v = -(TA-TB)(1-TB)
-%TODO - do we need the command above ? DC
 
 In general, this condition cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias $T_A-T_B$.
 Without horizontal transmission bias, i.e., with $T=T_A=T_B$, these conditions reduce to a form of Hamilton's rule.
@@ -746,7 +745,7 @@ Cooperation will increase from rarity if social association is high enough, spec
 \end{corollary}
 \autoref{fig:result3}cd illustrates this conditions.
 
-Note that $\partial \hat a_2 / \partial v = b T_A (T_A-T_B)$. $\partial \hat a_2 / \partial v > 0$ when $T_A > T_B$ and therefore, as the vertical transmission $v$ \emph{increases} a greater value of social association is required for fixation of cooperation from rarity.
+Note that $\partial \hat a_2 / \partial v = b T_A (T_A-T_B)$. $\partial \hat a_2 / \partial v > 0$ when $T_A > T_B$ and therefore, as the vertical transmission $v$ \emph{increases} a greater value of social association is required for fixation of cooperation from rarity. %TODO YR revise
 Similarly, when $T_B>T_A$ $T_A > T_B$ we get $\partial \hat a_2 / \partial v < 0$ and therefore, as $v$ \emph{decreases} a greater value of social association is required for fixation of cooperation from rarity.
 \\
 
@@ -760,14 +759,14 @@ Similarly, when $T_B>T_A$ $T_A > T_B$ we get $\partial \hat a_2 / \partial v < 0
     \end{equation} 
 \end{corollary}
 %Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
-Note that this condition does not guarantee fixation of cooperation. Rather, if this condition does not apply then cooperation cannot fix.
+This condition does not guarantee fixation of cooperation. Rather, if this condition does not apply then cooperation cannot fix.
 When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation can fix with any vertical transmission rate, i.e. $\hat{v}<0$.
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{With population structure}
+\subsection*{With Population Structure}
 
 Social association may also emerge from a population's structure.
 Consider a  population colonizing a 2D grid of size 100-by-100, where each site is inhabited by one individual, similarly to \citet{lewin2020rockpaperscissors}.
@@ -858,7 +857,7 @@ These conclusions highlight the importance of non-vertical cultural transmission
 % Acknowledgements
 {\small
 \section*{Acknowledgements}
-We thank Lilach Hadany and Ayelet Shavit for discussions and comments.
+We thank Lilach Hadany, Ayelet Shavit, and Kaleda Krebs Denton for discussions and comments.
 This work was supported in part by
 the Israel Science Foundation 552/19 (YR),
 and Minerva Stiftung Center for Lab Evolution (YR).
@@ -1026,6 +1025,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
 \end{figure}
 
 
+
 %%% Figure: coexistence map - without oblique transmission
 \begin{figure}[h]
 \centering
@@ -1065,6 +1065,7 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
     \label{fig:result2}
 \end{figure}
 %TODO add panel d?
+
 
 
 %%% Figure: Boundaries figure - vertical and oblique
@@ -1130,24 +1131,27 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 %%% Figure: Spatial model
 \begin{figure}[h]
   \centering
-   \includegraphics[scale=0.5]{Ta=Tb_b=1.3_globalSelection.pdf}
+   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_globalSelection}.pdf}
     ~
-    \includegraphics[scale=0.5]{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection.pdf} \\
+    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection}.pdf} \\
   \caption{
   \textbf{Evolution of cooperation in a spatial model.}
   The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
-  The population evolves on a 100-by-100 grid. Cooperation and horizontal cultural transmission are all local between adjacent sites, and each site had 8 neighbors.
+  The population evolves on a 100-by-100 grid.
+  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
+  Selection operates globally (see Fig X for results from a model with local selection).
   The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in (left) \autoref{eq:equal_transmission} and (right) \label{eq:cost_boundaries}.
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
-  Here, population size is $10,000$ (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
-  \textbf{(left)} Symmetric horizontal transmission, $T=T_A=T_B$. \textbf{(right)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
+  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
+  \textbf{(left)} Symmetric horizontal transmission, $T=T_A=T_B$.
+  \textbf{(right)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
   }
   \label{fig:spatial}
-  %TODO: What is the T in panel A ? DC
-  %TODO: Discuss with Yoav the fact that it is not rally alpha = 1/8 but alpha approx. 1/8 - DC
-  %TODO: Ohad choose to show the figures with local selection - DC
-
 \end{figure}
+
+
+% TODO add figure of fluctuations in spatial model
+% TODO add figure of local selection in spatial model
 
 %%%
 \end{document}
