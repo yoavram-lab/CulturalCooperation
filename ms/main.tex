@@ -749,7 +749,6 @@ Note that $\partial \hat a_2 / \partial v = b T_A (T_A-T_B)$. $\partial \hat a_2
 Similarly, when $T_B>T_A$ $T_A > T_B$ we get $\partial \hat a_2 / \partial v < 0$ and therefore, as $v$ \emph{decreases} a greater value of social association is required for fixation of cooperation from rarity.
 \\
 
-<<<<<<< HEAD
 \begin{corollary}[Necessary condition for fixation of cooperation]
 \label{corollary:vhat}
   Fixation of cooperation is possible only if the vertical transmission rate is high enough,
@@ -765,7 +764,6 @@ When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation c
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
-=======
 \subsection*{Invasion analysis} 
 
 In this section we assume perfect vertical transmission and stable coexistence of both cooperates and defector around equilibrium $p^*$.
@@ -780,19 +778,19 @@ For simplicity, we denote the orignal soical association with $\alpha_1$, and th
 We assume that $\alpha_2 > \alpha_1$. 
 
 Before we start the invasion analysis let's examine if mean fitness increases if social association $\alpha$ increases. 
-From \autoref{eq:mean_fitness} we know that the mean fitness $\bar{w} = 1 \hat{p}(b-c)$. In our case $\hat{p} = \hat{p}^*$ the equilibrium.
+From \autoref{eq:mean_fitness} we know that the mean fitness $\bar{w} = 1 + \hat{p}(b-c)$. In our case $\hat{p} = \hat{p}^*$ the equilibrium.
 Therefore, we get that the mean fitness in our scenario is
 \begin{equation} \label{eq:mean_fitness_stable_coexistence}
   \bar{w} = 1 + (b-c)\cdot \frac{c(1-T_B) - b \alpha T_A - (T_A-T_B)}{b (1-\alpha) (T_A-T_B)}.
 \end{equation} 
-We derive $\bar{w}$ by $alpha$
+We are interested in the sign of derivative $\bar{w}$ by $alpha$ which is the same as the derivative of $\hat{p}^*$ since $b>c$.
 \begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
   \begin{aligned}
-  \frac{d\bar{w}}{d\alpha} & = (b-c)\cdot \frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \\
-  &= (b-c)\cdot\frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2}
+  \frac{d\hat{p}^*}{d\alpha} & =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \\
+  &= \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2}
   \end{aligned}
 \end{equation} 
-Since $b>c$ and the denominator is always positive the derivative of mean fitness by alpha will be positive if the numerator is positive for every alpha.
+Since the denominator is always positive the derivative of mean fitness by alpha will be positive if the numerator is positive for every alpha.
 We get the numerator is positive if
 \begin{equation} \label{eq:mean_fitness_numerator_condition}
   \begin{aligned}
@@ -804,8 +802,25 @@ We get the numerator is positive if
 \autoref{eq:mean_fitness_numerator_condition} is always true for stable coexistence because we know from Result2 
 that the condition for coexistence is $c<\gamma_1$ and $ \gamma_1 \leq \frac{b(T_A-T_B) + (T_A-T_B)}{(1-T_B)}$. 
 Therefore, the mean fitness increases as social association $\alpha$ increases.
-%Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \hat\gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
->>>>>>> 3679cd1... invasion
+
+In case of invasion we will have 4 types, each type has unique combination of phenotype(A/B) and soical association value ($\alpha_1$/$\alpha_2$).
+Let's define their frequencies:
+\begin{enumerate}
+  \item $\hat{p}_1$ is the frequency of juveniles in next generation with phenotype A and probability of sical association $\alpha_1$
+  \item $\hat{p}_2$ is the frequency of juveniles in next generation with phenotype B and probability of sical association $\alpha_1$
+  \item $\hat{p}_3$ is the frequency of juveniles in next generation with phenotype A and probability of sical association $\alpha_2$
+  \item $\hat{p}_4$ is the frequency of juveniles in next generation with phenotype B and probability of sical association $\alpha_2$
+\end{enumerate}
+
+\begin{equation} \label{eq:next_gen_p_1}
+  \begin{aligned}
+  \bar{w}\hat{p}_1' & = \hat{p}_1(\hat{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_1)(\hat{p}_2 + \hat{p}_4)T_B) \\
+  &+ \hat{p}_1(\hat{p}_2 + \hat{p}_4)(1-c)(1-\alpha_1T_B(\hat{p_1}+\hat{p}_3) - T_B(\hat{p}_2+\hat{p}_4)) \\
+  &+ \hat{p}_2(\hat{p}_1 + \hat{p}_3)(1+b)T_A(\hat{p}_1 + \hat{p}_3 + \alpha_1(\hat{p}_2 + \hat{p_4})) \\
+  &+ \hat{p}_2(\hat{p}_2 + \hat{p}_4)(\hat{p}_1 + \hat{p}_3)(1-\alpha_1)T_A 
+  \end{aligned}
+\end{equation}
+Where the mean fitness $\bar{w} = 1 + (b-c)\cdot(\hat{p}_1 + \hat{p}_3)$. The equations describing $\hat{p}_2'$, $\hat{p}_3'$, $\hat{p}_4'$ is in \autoref{sec:appendixC}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Population Structure}
@@ -971,6 +986,37 @@ Using a linear approximation for $f(p)$ near $1$, we have
 f'(1) - O(1-p) &< 0.
 \end{aligned}\end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{} \label{sec:appendixC}
+
+\begin{equation} \label{eq:next_gen_p_2}
+  \begin{aligned}
+  \bar{w}\hat{p}_2' & = \hat{p}_2(\hat{p}_2+\hat{p_4})(1 - (1-\alpha_1)(\hat{p}_1 + \hat{p}_3)T_A) \\
+  &+ \hat{p}_2(\hat{p}_1 + \hat{p}_3)(1+b)(1-\alpha_1T_A(\hat{p}_2 + \hat{p}_4)-T_A(\hat{p}_1 + \hat{p}_3))\\
+  &+ \hat{p}_1(\hat{p}_2 + \hat{p}_4)(1-c)(\alpha_1T_B + (1-\alpha_1)(\hat{p}_2+\hat{p}_4)T_B) \\
+  &+ \hat{p}_1(\hat{p}_1 + \hat{p}_3)(1-\alpha_1)(\hat{p}_2+\hat{p}_4)T_B 
+  \end{aligned}
+\end{equation}
+
+\begin{equation} \label{eq:next_gen_p_3}
+  \begin{aligned}
+  \bar{w}\hat{p}_3' & = \hat{p}_3(\hat{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_2)(\hat{p}_2 + \hat{p}_4)T_B) \\
+  &+ \hat{p}_3(\hat{p}_2 + \hat{p}_4)(1-c)(1-\alpha_2T_B(\hat{p_1}+\hat{p}_3) - T_B(\hat{p}_2+\hat{p}_4)) \\
+  &+ \hat{p}_4(\hat{p}_1 + \hat{p}_3)(1+b)T_A(\hat{p}_1 + \hat{p}_3 + \alpha_2(\hat{p}_2 + \hat{p_4})) \\
+  &+ \hat{p}_4(\hat{p}_2 + \hat{p}_4)(\hat{p}_1 + \hat{p}_3)(1-\alpha_2)T_A 
+  \end{aligned}
+\end{equation}
+
+\begin{equation} \label{eq:next_gen_p_4}
+  \begin{aligned}
+  \bar{w}\hat{p}_4' & = \hat{p}_4(\hat{p}_2+\hat{p_4})(1 - (1-\alpha_2)(\hat{p}_1 + \hat{p}_3)T_A) \\
+  &+ \hat{p}_4(\hat{p}_1 + \hat{p}_3)(1+b)(1-\alpha_2T_A(\hat{p}_2 + \hat{p}_4)-T_A(\hat{p}_1 + \hat{p}_3))\\
+  &+ \hat{p}_3(\hat{p}_2 + \hat{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\hat{p}_2+\hat{p}_4)T_B) \\
+  &+ \hat{p}_3(\hat{p}_1 + \hat{p}_3)(1-\alpha_2)(\hat{p}_2+\hat{p}_4)T_B 
+  \end{aligned}
+\end{equation}
+
 \end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
