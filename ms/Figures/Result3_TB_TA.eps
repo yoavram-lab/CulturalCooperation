@@ -1,12 +1,12 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: Figures/Result3_TB_TA.eps
 %%Creator: matplotlib version 3.3.1, http://matplotlib.org/
-%%CreationDate: Sun Sep 27 11:06:24 2020
+%%CreationDate: Sat Oct 17 17:40:57 2020
 %%Orientation: portrait
 %%BoundingBox: 90.0 180.0 522.0 612.0
 %%EndComments
 %%BeginProlog
-/mpldict 9 dict def
+/mpldict 10 dict def
 mpldict begin
 /m { moveto } bind def
 /l { lineto } bind def
@@ -707,6 +707,77 @@ _cl}_d
 123 547 _l
 187 547 223 518 233 461 _c
 _cl}_d
+end readonly def
+
+/BuildGlyph
+ {exch begin
+ CharStrings exch
+ 2 copy known not{pop /.notdef}if
+ true 3 1 roll get exec
+ end}_d
+
+/BuildChar {
+ 1 index /Encoding get exch get
+ 1 index /BuildGlyph get exec
+}_d
+
+FontName currentdict end definefont pop
+%!PS-Adobe-3.0 Resource-Font
+%%Title: DejaVu Sans Bold
+%%Copyright: Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved. DejaVu changes are in public domain 
+%%Creator: Converted from TrueType to type 3 by PPR
+25 dict begin
+/_d{bind def}bind def
+/_m{moveto}_d
+/_l{lineto}_d
+/_cl{closepath eofill}_d
+/_c{curveto}_d
+/_sc{7 -1 roll{setcachedevice}{pop pop pop pop pop pop}ifelse}_d
+/_e{exec}_d
+/FontName /DejaVuSans-Bold def
+/PaintType 0 def
+/FontMatrix[.001 0 0 .001 0 0]def
+/FontBBox[-1069 -415 1975 1174]def
+/FontType 3 def
+/Encoding [ /b ] def
+/FontInfo 10 dict dup begin
+/FamilyName (DejaVu Sans) def
+/FullName (DejaVu Sans Bold) def
+/Notice (Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved. DejaVu changes are in public domain ) def
+/Weight (Bold) def
+/Version (Version 2.35) def
+/ItalicAngle 0.0 def
+/isFixedPitch false def
+/UnderlinePosition -130 def
+/UnderlineThickness 90 def
+end readonly def
+/CharStrings 2 dict dup begin
+/.notdef 0 def
+/b{{716 0 84 -13 671 760 _sc
+375 113 _m
+412 113 440 126 460 154 _c
+480 181 490 221 490 273 _c
+490 325 480 364 460 392 _c
+440 419 412 433 375 433 _c
+337 433 309 419 289 392 _c
+269 364 259 325 259 273 _c
+259 221 269 181 289 154 _c
+309 126 337 113 375 113 _c
+259 467 _m
+283 499 309 522 339 537 _c
+368 552 402 560 440 560 _c
+507 560 562 533 606 479 _c
+649 425 671 357 671 273 _c
+}_e{671 188 649 119 606 66 _c
+562 13 507 -13 440 -13 _c
+402 -13 368 -5 339 9 _c
+309 23 283 47 259 79 _c
+259 0 _l
+84 0 _l
+84 760 _l
+259 760 _l
+259 467 _l
+_cl}_e}_d
 end readonly def
 
 /BuildGlyph
@@ -7367,8 +7438,8 @@ setfont
 /two glyphshow
 
 grestore
-/DejaVuSans findfont
-20.000 scalefont
+/DejaVuSans-Bold findfont
+28.000 scalefont
 setfont
 gsave
 3.780000 363.852000 translate
