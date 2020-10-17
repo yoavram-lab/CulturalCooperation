@@ -442,7 +442,7 @@ These conditions are illustrated in \autoref{fig:result2}.
 
 Cooperation and defection can coexist stably at frequencies $\tilde{p}^*$ and $1-\tilde{p}^*$ (\autoref{eq:vert_hori_equilibrium}) if there is horizontal transmission bias for defection, $T_A<T_B$, and the cost of cooperation is intermediate, $\gamma_2 < c < \gamma_1$; see yellow area in \autoref{fig:result2}b.
 When unstable coexistence occurs, phenotype $A$ will fix if its initial frequency is $p>\tilde{p}^*$, and phenotype $B$ will fix if its initial frequency is $1-p>1-\tilde{p}^*$; this occurs when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
-\autoref{fig:coexistence_without_oblique} shows the mapping $\tilde p \to \tilde p'$; see blue areas in \autoref{fig:result2}a and \autoref{fig:result2}b.
+\autoref{fig:coexistence_recursive}a shows the mapping $\tilde p \to \tilde p'$; see blue areas in \autoref{fig:result2}a and \autoref{fig:result2}b.
 \\
 
 \begin{corollary}[Symmetric horizontal transmission] 
@@ -1026,26 +1026,6 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
 \end{figure}
 
 
-
-%%% Figure: coexistence map - without oblique transmission
-\begin{figure}[h]
-\centering
-\includegraphics[scale = 0.55]{coexistence_without_oblique.pdf}
-\caption{\textbf{Stable and unstable coexistence between cooperation and defection without oblique transmission.}
-  The curves show the frequency of the cooperative phenotype $A$ among parents in the next generation, $\tilde{p}'$, vs.\ that in the current generation $\tilde{p}$ (\autoref{eq:nextgen_parents_vertical_only}).
-  The dashed black line is $\tilde{p}'=\tilde{p}$.
-  The curves and the dashed line intersect at the polymorphic equilibrium $\tilde{p}^*$ (black circle).
-  When the curves are above the dashed line, $\tilde{p}'>\tilde{p}$, and $\tilde{p}$ increases.
-  When the curves are below the dashed line, $\tilde{p}'<\tilde{p}$, and $\tilde{p}$ decreases.
-  The orange curve, for which the polymorphic equilibrium is stable, is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$, which give $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries})
-  The blue curve, for which the equilibrium is unstable, is given by $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, and $\alpha = 0.4$, which give $\gamma_1<c<\gamma_2$.
-  In both cases there is no oblique transmission, $v=1$; see \autoref{fig:coexistence_with_oblique} for $v<1$.
-  }
-\label{fig:coexistence_without_oblique}
-\end{figure}
-
-
-
 %%% Figure: Boundaries figure - only vertical
 
 \begin{figure}[h]
@@ -1094,20 +1074,25 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 
 
 
-%%% Figure: coexistence map - with oblique transmission
+%%% Figure: coexistence map
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=0.55]{coexistence_with_oblique.pdf}
-  \caption{\textbf{Stable and unstable coexistence between cooperation and defection with oblique transmission.}
+    \includegraphics[scale=0.5]{coexistence_without_oblique.pdf}~
+    \includegraphics[scale=0.5]{coexistence_with_oblique.pdf}
+  \caption{\textbf{Stable and unstable coexistence between cooperation and defection.}
   The curves show the frequency $\hat{p}'$ of the cooperative phenotype $A$ among juveniles in the next generation vs. that in current generation $\hat{p}$ (\autoref{eq:horizontal}).
   The dashed black line is $\hat{p}'=\hat{p}$.
   The curves and the dashed line intersect at the stable equilibrium $\hat{p}^*$ (black circle).
   When $\hat{p} < \hat{p}^*$ the curve is above the dashed line, $\hat{p}' > \hat{p}$, and $\hat{p}$ increases towards $\hat{p}^*$.
-  When $\hat{p} > \hat{p}^*$ the curve is below the dashed line, $\hat{p}' < \hat{p}$, and $\hat{p}$ decreases towards $\hat{p}^*$.
+  When $\hat{p} > \hat{p}^*$ the curve is below the dashed line, $\hat{p}' < \hat{p}$, and $\hat{p}$ decreases towards $\hat{p}^*$.\\
+  \textbf{(a)} There is no oblique transmission, $v=1$.
+  The orange curve, for which the polymorphic equilibrium is stable, is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$, which give $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries}).
+  The blue curve, for which the equilibrium is unstable, is given by $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, and $\alpha = 0.4$, which give $\gamma_1<c<\gamma_2$.\\
+  \textbf{(b)} Oblique transmission exists. 
   The orange curve is parameterized by $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, and $v=0.4$, which give $0<\beta_3<\beta_1$ (\autoref{eq:polynomial_coefficients}).
   The blue curve is parameterized by $T_A = 0.5$, $T_B = 0.4$, $b=1.2$, $c=0.487$, $\alpha = 0.09$ and $v=0.6$, which give $\beta_1<\beta_3<0$.
   }
-  \label{fig:coexistence_with_oblique}
+  \label{fig:coexistence_recursive}
   \end{figure}
 
 
@@ -1177,10 +1162,10 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
    \includegraphics[scale=0.75]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions}.pdf}
    \caption{
     \textbf{Stable coexistence of both phenotypes in spatial model.}
-    The dyanmics of the frequancy of cooperators (green) and the frequency of defactors in the spatial model. 
-    Both groups has the same initial frequency (0.5) and there are no fixation of one of the groups through the simulation.
-    The frequency of cooperators oscillate around the initial frequency. Here, population size is 10,000 (100-by-100 grid), selection operates globally, benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$,
-    horizontal transmission of cooperators $T_A = 0.4$, horizontal transmission of defactors $T_B = 0.435$ and cost $c=0.02$.
+    The frequancy of cooperators (green) and defactors (red) in the spatial model. 
+    Both phenotypes have initial frequency of 50 precent. The figure shows that there are no fixation of nither phenotype through out the simulation.
+    The frequency of both cooperators and defactors oscillates around the initial frequency. Here, population size is 10,000 (100-by-100 grid), selection operates globally, 
+    benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$, horizontal transmission of cooperators $T_A = 0.4$, horizontal transmission of defactors $T_B = 0.435$ and cost $c=0.02$.
     }
     \label{fig:spatial_fluctuations}
   \end{figure}
