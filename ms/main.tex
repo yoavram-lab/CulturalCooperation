@@ -764,63 +764,74 @@ When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation c
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
-\subsection*{Invasion analysis} 
+\subsection*{Modifier model} 
 
-In this section we assume perfect vertical transmission and stable coexistence of both cooperates and defector around equilibrium $p^*$.
-We saw in result 2 that such situation is possible if there is horizontal bias for defection, $T_B > T_A$ and $\gamma_2 < c < \gamma_1$ 
-where c is the cost and $\gamma_1$, $\gamma_2$ is defined in \autoref{eq:cost_boundaries}. The equilibrium $p^*$ is define in \autoref{eq:vert_hori_equilibrium}.
+We now analyze the evolution of social association under perfect vertical transmission, $v=1$.
+We assume a population at a stable coexistence of the two phenotypes, cooperation $A$ and defection $B$, such that the frequency of $A$ among parents is $\tilde{p}^*$ (
+\autoref{eq:vert_hori_equilibrium}).
+Note that for stable coexistence to occur, we assume horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_boundaries})
 
-Even though we describe a stable system, in which the frequency of each phenotype does not change, 
-it is safe to assume that in reality there are changes that can cause a change in the system parameters. 
-For example, a reduction in the cost $c$ that cooperator "pays" for its cooperation will favor cooperation. 
-We would like to make invasion analysis for invasion of new kind of individual with different soical association.
-For simplicity, we denote the orignal soical association with $\alpha_1$, and the new social association with $\alpha_2$. 
-We assume that $\alpha_2 > \alpha_1$. 
-
-Before we start the invasion analysis let's examine if mean fitness increases if social association $\alpha$ increases. 
-From \autoref{eq:mean_fitness} we know that the mean fitness $\bar{w} = 1 + \hat{p}(b-c)$. In our case $\hat{p} = \hat{p}^*$ the equilibrium.
-Therefore, we get that the mean fitness in our scenario is
-\begin{equation} \label{eq:mean_fitness_stable_coexistence}
-  \bar{w} = 1 + (b-c)\cdot \frac{c(1-T_B) - b \alpha T_A - (T_A-T_B)}{b (1-\alpha) (T_A-T_B)}.
-\end{equation} 
-We are interested in the sign of derivative $\bar{w}$ by $alpha$ which is the same as the derivative of $\hat{p}^*$ since $b>c$.
+The stable population mean fitness is $\bar{w}^* = 1 + \tilde{p}^*(b-c)$ (\autoref{eq:mean_fitness}), which is increasing in $\tilde{p}^*$. 
+Therefore, to determine the effect of increasing $\alpha$ on the stable population mean fitness, we must analyze its effect on $\tilde{p}^*$, 
 \begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
-  \begin{aligned}
-  \frac{d\hat{p}^*}{d\alpha} & =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \\
-  &= \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2}
-  \end{aligned}
+  \frac{\partial \tilde{p}^*}{\partial \alpha} 
+%  =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} 
+%  = \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \;.
+  = \frac{b T_A - c(1-T_B) + (T_A-T_B)}{b (1-\alpha)^2 (T_B-T_A)} \;.
 \end{equation} 
-Since the denominator is always positive the derivative of mean fitness by alpha will be positive if the numerator is positive for every alpha.
-We get the numerator is positive if
-\begin{equation} \label{eq:mean_fitness_numerator_condition}
-  \begin{aligned}
-  &  0 < b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2  \\
-  & c(1-T_B) < b(T_A-T_B) + (T_A-T_B)  \\
-  & c < \frac{b(T_A-T_B) + (T_A-T_B)}{(1-T_B)}.
-  \end{aligned}
+Note that stable coexistence implies $c<\gamma_1$, and because $\alpha<1$, we have
+\begin{equation}
+c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}{1-T_B}.
 \end{equation} 
-\autoref{eq:mean_fitness_numerator_condition} is always true for stable coexistence because we know from Result2 
-that the condition for coexistence is $c<\gamma_1$ and $ \gamma_1 \leq \frac{b(T_A-T_B) + (T_A-T_B)}{(1-T_B)}$. 
-Therefore, the mean fitness increases as social association $\alpha$ increases.
+Therefore, $b T_A - c(1-T_B) - (T_B-T_A)>0$, and since $T_A<T_B$, the derivative $\partial \tilde{p}^* / \partial \alpha$ is positive, and the population mean fitness increases as social association $\alpha$ increases.
 
-In case of invasion we will have 4 types, each type has unique combination of phenotype(A/B) and soical association value ($\alpha_1$/$\alpha_2$).
-Let's define their frequencies:
-\begin{enumerate}
-  \item $\hat{p}_1$ is the frequency of juveniles in next generation with phenotype A and probability of sical association $\alpha_1$
-  \item $\hat{p}_2$ is the frequency of juveniles in next generation with phenotype B and probability of sical association $\alpha_1$
-  \item $\hat{p}_3$ is the frequency of juveniles in next generation with phenotype A and probability of sical association $\alpha_2$
-  \item $\hat{p}_4$ is the frequency of juveniles in next generation with phenotype B and probability of sical association $\alpha_2$
-\end{enumerate}
+Therefore, if a modifier allele that increases social association invades the population, the population mean fitness will increase. But can such a modifier allele invade the population?
+We assume that social association is determined by a genetically transmitted locus with alleles $m$ and $M$, which induce association probabilities $\alpha_1$ and $\alpha_2$, respectively.
 
+We define the frequencies of the pheno-genotypes $Am$, $Bm$, $AM$, and $BM$ as $\hat{p}_1$, $\hat{p}_2$, $\hat{p}_3$, and $\hat{p}_4$, respectively. 
+Then the following recursion system defines the frequencies of the pheno-genotypes in the next generation,
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
-  \bar{w}\hat{p}_1' & = \hat{p}_1(\hat{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_1)(\hat{p}_2 + \hat{p}_4)T_B) \\
-  &+ \hat{p}_1(\hat{p}_2 + \hat{p}_4)(1-c)(1-\alpha_1T_B(\hat{p_1}+\hat{p}_3) - T_B(\hat{p}_2+\hat{p}_4)) \\
-  &+ \hat{p}_2(\hat{p}_1 + \hat{p}_3)(1+b)T_A(\hat{p}_1 + \hat{p}_3 + \alpha_1(\hat{p}_2 + \hat{p_4})) \\
-  &+ \hat{p}_2(\hat{p}_2 + \hat{p}_4)(\hat{p}_1 + \hat{p}_3)(1-\alpha_1)T_A 
+	% p1
+  \bar{w}\tilde{p}_1' & = \tilde{p}_1(\tilde{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\hat{p_1}+\tilde{p}_3) - T_B(\tilde{p}_2+\tilde{p}_4)) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \hat{p_4})) \\
+  &+ \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A 
+\\
+	% p2
+  \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\hat{p_4})(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1T_B + (1-\alpha_1)(\tilde{p}_2+\tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)(\tilde{p}_2+\tilde{p}_4)T_B 
+\\
+	% p3
+  \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\hat{p_1}+\tilde{p}_3) - T_B(\tilde{p}_2+\tilde{p}_4)) \\
+  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \hat{p_4})) \\
+  &+ \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A 
+\\
+	% p4
+  \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2+\hat{p_4})(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2+\tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)(\tilde{p}_2+\tilde{p}_4)T_B \;,
   \end{aligned}
 \end{equation}
-Where the mean fitness $\bar{w} = 1 + (b-c)\cdot(\hat{p}_1 + \hat{p}_3)$. The equations describing $\hat{p}_2'$, $\hat{p}_3'$, $\hat{p}_4'$ is in \autoref{sec:appendixC}.
+where $\bar{w} = 1 + (b-c)\cdot(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.
+
+Denote this system by $\bar{w} \vec{\tilde{p}} = f(\vec{\tilde{p}})$, where $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+We are interested in the invasion of allele $M$ to a population at equilibrium with allele $m$, that is, with equilibrium frequencies $\vec{\tilde{p}}^*=(\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, with $\tilde{p}^*$ defined in
+\autoref{eq:vert_hori_equilibrium}.
+The success of the invasion of allele $M$ is determined by the external stability matrix $\mathbf{L}^*_{ex}$~\citep{Liberman1988}, which is derived from \autoref{eq:next_gen_p_1} as
+\begin{equation}
+\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{bmatrix}
+	 \frac{\partial \tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+	 \frac{\partial \tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
+	 \frac{\partial \tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+	 \frac{\partial \tilde{p}_4'}{\partial \tilde{p}_4} (\vec{\tilde{p}}^*)
+\end{bmatrix} \;.
+\end{equation}
+If the leading eigenvalue of $\mathbf{L}^*_{ex}$ is less than 1, then the equilibrium $\vec{\tilde{p}}$ is locally stable and allele $M$ cannot invade the population of allele $m$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Population Structure}
@@ -987,35 +998,6 @@ f'(1) - O(1-p) &< 0.
 \end{aligned}\end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixC}
-
-\begin{equation} \label{eq:next_gen_p_2}
-  \begin{aligned}
-  \bar{w}\hat{p}_2' & = \hat{p}_2(\hat{p}_2+\hat{p_4})(1 - (1-\alpha_1)(\hat{p}_1 + \hat{p}_3)T_A) \\
-  &+ \hat{p}_2(\hat{p}_1 + \hat{p}_3)(1+b)(1-\alpha_1T_A(\hat{p}_2 + \hat{p}_4)-T_A(\hat{p}_1 + \hat{p}_3))\\
-  &+ \hat{p}_1(\hat{p}_2 + \hat{p}_4)(1-c)(\alpha_1T_B + (1-\alpha_1)(\hat{p}_2+\hat{p}_4)T_B) \\
-  &+ \hat{p}_1(\hat{p}_1 + \hat{p}_3)(1-\alpha_1)(\hat{p}_2+\hat{p}_4)T_B 
-  \end{aligned}
-\end{equation}
-
-\begin{equation} \label{eq:next_gen_p_3}
-  \begin{aligned}
-  \bar{w}\hat{p}_3' & = \hat{p}_3(\hat{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_2)(\hat{p}_2 + \hat{p}_4)T_B) \\
-  &+ \hat{p}_3(\hat{p}_2 + \hat{p}_4)(1-c)(1-\alpha_2T_B(\hat{p_1}+\hat{p}_3) - T_B(\hat{p}_2+\hat{p}_4)) \\
-  &+ \hat{p}_4(\hat{p}_1 + \hat{p}_3)(1+b)T_A(\hat{p}_1 + \hat{p}_3 + \alpha_2(\hat{p}_2 + \hat{p_4})) \\
-  &+ \hat{p}_4(\hat{p}_2 + \hat{p}_4)(\hat{p}_1 + \hat{p}_3)(1-\alpha_2)T_A 
-  \end{aligned}
-\end{equation}
-
-\begin{equation} \label{eq:next_gen_p_4}
-  \begin{aligned}
-  \bar{w}\hat{p}_4' & = \hat{p}_4(\hat{p}_2+\hat{p_4})(1 - (1-\alpha_2)(\hat{p}_1 + \hat{p}_3)T_A) \\
-  &+ \hat{p}_4(\hat{p}_1 + \hat{p}_3)(1+b)(1-\alpha_2T_A(\hat{p}_2 + \hat{p}_4)-T_A(\hat{p}_1 + \hat{p}_3))\\
-  &+ \hat{p}_3(\hat{p}_2 + \hat{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\hat{p}_2+\hat{p}_4)T_B) \\
-  &+ \hat{p}_3(\hat{p}_1 + \hat{p}_3)(1-\alpha_2)(\hat{p}_2+\hat{p}_4)T_B 
-  \end{aligned}
-\end{equation}
 
 \end{appendices}
 
