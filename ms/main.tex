@@ -454,9 +454,8 @@ If $T=T_A=T_B$, then cooperation will take over the population if
 c < b \cdot \alpha \frac{T}{1-T} \;.
 \end{equation}
 \end{corollary}
-Note that the right-hand side equals $\gamma_1$ when $T=T_A=T_B$.
 This condition is obtained by setting $T=T_A=T_B$ in inequality \ref{eq:vert_hori_global_condition} and can be interpreted as a version of Hamilton's rule  ($c<b\cdot r$, inequality~\ref{eq:hamilton_rule}) or as a version of inequality~\ref{eq:fletcher2009}, where $\alpha T/(1-T)$ can be regarded as the \emph{effective relatedness} or \emph{effective assortment}, respectively.
-\autoref{fig:results}a illustrates this condition. 
+\autoref{fig:results}a illustrates this condition. Note that the right-hand side equals $\gamma_1$ when $T=T_A=T_B$.
 
 The condition in inequality~\ref{eq:equal_transmission} demonstrates the importance of the social association $\alpha$. The following corollaries provide additional demonstrations.
 \\
@@ -472,10 +471,13 @@ c < \frac{T_A-T_B}{1-T_B}
 \end{equation}
 \end{corollary}
 
-\autoref{fig:result2}a illustrates these conditions, which are obtained by setting $\alpha=0$ in Eqs.\ \ref{eq:vert_hori_equilibrium} and \ref{eq:cost_boundaries}. If there is horizontal transmission bias for cooperation ($T_A>T_B$) then cooperation can evolve from any initial frequency if the cost is low enough, $c<\gamma_1$ (green area below solid line). If the cost is not low enough, cooperation can also evolve if its initial frequency is high enough and the cost is not too high, $c<\gamma_2$ (blue area between solid and dashed lines). 
+\autoref{fig:result2}a illustrates these conditions, which are obtained by setting $\alpha=0$ in Eqs.\ \ref{eq:vert_hori_equilibrium} and \ref{eq:cost_boundaries}. If there is horizontal transmission bias for cooperation ($T_A>T_B$) then cooperation can evolve from any initial frequency if the cost is low enough, $c<\gamma_1$ (green area below solid line).
+If the cost is not low enough, cooperation can still evolve if its initial frequency is high enough and the cost is not too high, $c<\gamma_2$ (blue area between solid and dashed lines). 
 
-We can interpret these condition as follows. First, when cooperators are rare, they will mostly interact with defectors. Therefore, for cooperation to increase in frequency and fix, the \emph{effective cost of cooperation} must be lower than the horizontal transmission of cooperation, $1-(1-c)(1-T_B) < T_A$, which is equivalent to the first of the two inequalities in \autoref{eq:vert_hori_alpha0}.
-Second, if $T_A$ is not large enough, cooperation will fix if the initial frequency is higher than the threshold $\tilde{p}^*$; thus, this threshold must be below one, which entails $1-(1-c)(1-T_B) < T_A + b(T_A-T_B)$. That is, the effective cost of cooperation must be lower than the combined effect of horizontal transmission of cooperation, $T_A$, and the benefit of cooperation multiplied by the transmission bias, $b(T_A-T_B)$. 
+We can interpret these condition as follows. First, when cooperators are rare, they will mostly interact with defectors.
+Therefore, for cooperation to increase in frequency and fix, the \emph{effective cost of cooperation} must be lower than the horizontal transmission of cooperation, $1-(1-c)(1-T_B) < T_A$, which is equivalent to the first of the two inequalities in \autoref{eq:vert_hori_alpha0}.
+Second, if $T_A$ is not large enough, cooperation will fix if the initial frequency is higher than the threshold $\tilde{p}^*$; thus, this threshold must be below one, which entails $1-(1-c)(1-T_B) < T_A + b(T_A-T_B)$.
+That is, the effective cost of cooperation must be lower than the combined effect of horizontal transmission of cooperation, $T_A$, and the benefit of cooperation multiplied by the transmission bias, $b(T_A-T_B)$. 
 \\
 
 
@@ -487,7 +489,7 @@ c < \frac{b \cdot T_A + (T_A - T_B)}{1-T_B}.
 \end{equation}
 \end{corollary}
 This condition is obtained from inequality \ref{eq:vert_hori_alpha1_condition_proof}, and the right-hand side equals $\gamma_1$ when $\alpha=1$ (\autoref{eq:cost_boundaries}).
-Perfect social association (horizontal transmission always occurs during the cooperative interaction) is also assumed in the model studied by \citet{lewin2017microbes}, and therefore this corollary is equivalent to the result in their eq.~1.
+Perfect social association (horizontal transmission always occurs during the social interaction) is also assumed in the model studied by \citet{lewin2017microbes}, and therefore this corollary is equivalent to their eq.~1.
 
 %In terms of the cost boundaries, inequality~\ref{eq:vert_hori_alpha1} is equivalent to $c<\gamma_1$, and if $T_A>T_B$ then that suffices for fixation of cooperation. If $T_B>T_A$ then $\gamma_2(\alpha=1)<0$ and again, inequality~\ref{eq:vert_hori_alpha1} is sufficient for increase in the frequency of $A$.
 Inequality~\ref{eq:vert_hori_alpha1} can also be written as
@@ -516,7 +518,7 @@ Cooperation will increase from rarity if social association is high enough, spec
 \autoref{fig:result2}c demonstrates these conditions.
 With horizontal transmission bias for cooperation ($T_A>T_B$), cooperation can fix from any initial frequency if $a_2<\alpha$ (green area in positive x-axis). 
 With horizontal bias favoring defection ($T_A<T_B$), cooperation can fix from any frequency if social association is high, $a_1<\alpha$ (green area with $T_A<T_B$), and can also increase when rare and reach stable coexistence with defection if social association is intermediate, $a_2<\alpha$ (yellow area).
-Without horizontal bias ($T_A=T_B$) fixation of cooperation occurs if social association is high enough; $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
+Without horizontal bias ($T_A=T_B$) fixation of cooperation occurs if social association is high enough, $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
 
 
 
@@ -525,47 +527,23 @@ Without horizontal bias ($T_A=T_B$) fixation of cooperation occurs if social ass
 
 With both vertical and oblique transmission, $0<v<1$, the recursion system is more complex
 and we focus on local rather than on global stability.
-To proceed,  note that 
-\autoref{eq:horizontal} gives $\hat{p}'$ as a function of both $p'$ and $\tilde{p}'$.
-\autoref{eq:nextgen_adults_slimpify} gives $p'$ as a function of $\tilde{p}$, since $\hat{p}$ is given in Eq.\ \ref{eq:horizontal} as a function of $\tilde{p}$ and 
-\autoref{eq:nextgen_parents_simplified} gives $\tilde{p}'$ as a function of $\hat{p}$. 
-%TODO YR cleanup  
-Combining these equations, we find an equation for $\hat{p}'$ as a function of $\hat{p}$ (shown in Appendix~\autoref{sec:appendixA}),
+In the following, we find an equation for the frequency of phenotype $A$ among juveniles in the next generation $\hat{p}'$ as a function of the frequency in the current generation,
 determine the equilibria, namely, solutions of $\hat{p}' = \hat{p}$, and analyse their local stability.
-%: an equilibrium $\hat{p}^*$ is locally stable when the derivative of $f(\hat{p})=\bar{w}(\hat{p}'-\hat{p})$ at the equilibrium is negative, $f'(\hat{p}^*)<0$. 
 
-%We start with the simple case of symmetrical horizontal transmission, $T=T_A=T_B$ and apply \autoref{eq:horizontal}, \autoref{eq:nextgen_adults_slimpify}, and \autoref{eq:nextgen_parents_simplified} to obtain 
-%\begin{equation} \label{eq:equal_horizontal_transmission}
-%\begin{aligned}
-%  f(\hat{p}) &= 
-%  \bar{w}(\hat{p}' - \hat{p}) = \\
-%  &\hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big].\end{aligned}
-%\end{equation}
-%A detailed explain of how we get eq.~\ref{eq:equal_horizontal_transmission} can be found in appendix B.
-%The equilibria are solutions of $f(\hat{p})=0$, or $\hat{p}' = \hat{p}$.
-%It is easy to verify that fixation of either phenotype, $\hat{p} =  0$ and $\hat{p} = 1$, is an equilibrium.
-%Since the derivative of $f'(\hat{p}$ is 
-%\begin{equation}
-%f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
-%\end{equation}
-%then the condition for local stability of $\hat{p}=1$ is
-%\begin{equation} \label{eq:derivative_of_phattag-phat}
-%	f'(1) =	-\alpha bvT + cv(1-T) < 0,
-%\end{equation}
-%which gives the following result.
-%
-%\textbf{Result 3: Oblique and vertical transmission with symmetric horizontal transmission.}
-%If horizontal transmission is symmetric, $T = T_A = T_B$, and if
-%\begin{equation} \label{eq:oblique_and_vertic_result2}
-%  %\frac{b}{c}>\frac{1-T}{\alpha T}
-%	c < b \cdot \frac{\alpha T}{1-T},
-%\end{equation}
-%then fixation of the cooperator phenotype $A$ is locally stable.
-%The same condition was given in Corollary 1.1, \autoref{eq:equal_transmission}.
-
-%We now turn to the general case where $T_A \neq T_B$. 
-Applying Eqs.\ \ref{eq:horizontal}, \ref{eq:nextgen_adults_slimpify}, and \ref{eq:nextgen_parents_simplified} gives the function $f(\hat{p})$ (see Appendix~\autoref{sec:appendixA}):
-
+Starting from \autoref{eq:horizontal}, we substitute \autoref{eq:nextgen_adults_slimpify} for $p'$ and  \autoref{eq:nextgen_parents_simplified} for $\tilde{p}'$.
+We therefore have
+\begin{equation}
+  \begin{aligned}
+  \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
+  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1-c)\left[ \hat{p}(1-\alpha)T_B + 1 - T_B \right] \right\} \\
+  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1+b)\left[\hat{p}(1-\alpha) + \alpha \right]T_A \right\} \\
+  & + \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \\
+  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B),
+\end{aligned}
+\end{equation}
+where $\bar{w} = 1 + \hat{p}(b-c)$. 
+We define $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics,  this simplifies to
 \begin{equation} \label{eq:general_case_polynomial}
   f(\hat{p}) = \bar{w}(\hat{p}'-\hat{p}) =
   \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p},
@@ -579,17 +557,14 @@ where
 \end{aligned}
 \end{equation}
 
-If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$, 
-and $f(\hat{p})$ becomes a quadratic polynomial:
+If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$. 
+Thus, $f(\hat{p})$ becomes a quadratic polynomial,
 \begin{equation} \label{eq:equal_horizontal_transmission}
   f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big].
 \end{equation}
 Clearly the only two equilibria are the fixations  $\hat{p} =  0$ and $\hat{p} = 1$.
-These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\autoref{sec:appendixB}), where
-\begin{equation}
-f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big],
-\end{equation}
-with
+These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\autoref{sec:appendixA}), where
+$f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
 \begin{equation} \label{eq:derivative_of_phattag-phat}
 \begin{aligned}
 	f'(0) &=	\alpha bvT - cv(1-T), \\
@@ -874,36 +849,10 @@ and Minerva Stiftung Center for Lab Evolution (YR).
 \renewcommand{\theequation}{\thesection\arabic{equation}}
 \counterwithin*{equation}{section}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixA}
-We want to find the frequency of juveniles with phenotype $A$ in next generation $\hat{p}'$ as a function of frequency
-of juveniles with phenotype $A$ in the current generation $\hat{p}$.
-Starting from \autoref{eq:horizontal},
-\begin{equation}\label{eq:appendix_b_1}
-  \hat{p}' = v \tilde{p}' + (1-v) p',
-\end{equation}
- substitute for $p'$ using \autoref{eq:nextgen_adults_slimpify} and for $\tilde{p}'$ using \autoref{eq:nextgen_parents_simplified}, we have
-\begin{equation}\label{eq:appendix_b_2}
-  \begin{aligned}
-  \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
-  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1-c)\left[ \hat{p}(1-\alpha)T_B + 1 - T_B \right] \right\} \\
-  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1+b)\left[\hat{p}(1-\alpha) + \alpha \right]T_A \right\} \\
-  & + \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \\
-  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B),
-\end{aligned}
-\end{equation}
-where $\bar{w} = 1 + \hat{p}(b-c)$. 
-Define $g(\hat{p})$ as
-\begin{equation} \label{eq:appendix_define_f}
-\begin{aligned}
-      g(\hat{p}) &= \bar{w}(\hat{p}' - \hat{p})
-\end{aligned}
-\end{equation}
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics,  \autoref{eq:appendix_define_f} simplifies to 
-eqs.~\ref{eq:general_case_polynomial}-\ref{eq:polynomial_coefficients}.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixB}
+\section{} \label{sec:appendixA}
 
 Let $f(p)=\lambda(p'-p)$, where $\lambda>0$, and we know that $f(0)=0$ and $f(1)=0$ since 0,1 are equilibrium.
 
