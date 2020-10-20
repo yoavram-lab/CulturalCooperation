@@ -785,7 +785,7 @@ c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}
 \end{equation} 
 Therefore, $b T_A - c(1-T_B) - (T_B-T_A)>0$, and since $T_A<T_B$, the derivative $\partial \tilde{p}^* / \partial \alpha$ is positive, and the population mean fitness increases as social association $\alpha$ increases.
 
-Therefore, if the social association increases, the population mean fitness will increase.
+We found that if the social association increases, the population mean fitness will increase.
 But can an allele that increases the social association evolve? 
 To answer this question, we extend our model to include a ``modifier locus''~\citep{Liberman1986,Liberman1988}.
 The function of this modifier locus is to determine the social association.
@@ -794,7 +794,7 @@ We assume that the modifier locus has two alleles, $M$ and $m$, which induce ass
 Suppose that the population evolves to a stable equilibrium when only $M$ is present; we check the local stability of this equilibrium to the introduction of the allele $m$ at the modifier locus. This is called ``external stability''; For more details on external stability, see \citet{Altenberg2017}.
 
 We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
-Then the following recursion system defines the frequencies of the pheno-genotypes in the next generation,
+The frequencies of the pheno-genotypes in the next generation are defined by the recursion system 
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
 	% p1
@@ -842,9 +842,16 @@ $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability m
 \end{equation}
 If the eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
 
+%\begin{equation} \label{eq:partial_derivatives}
+%  \begin{aligned}
+%  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b(\tilde{p}^*-(1-\alpha_2)T_B(\tilde{p}^*-\tilde{p}^{*2}))+(1-c)(1-\tilde{p}^*T_B-T_B)\\
+%  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = bT_A\tilde{p}^*(\tilde{p}^*+\alpha_2(1-\tilde{p}^*))+\tilde{p}^*T_A)\\
+%  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = T_B(1-\tilde{p}^*)-cT_B(\alpha_2+(1-\alpha_2)(1-\tilde{p}^*))\\
+%  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1-\tilde{p}^*T_A+ b\tilde{p}^*(1-\alpha_2T_A(1-\tilde{p}^*)-T_A\tilde{p}^*)\\
+%  \end{aligned}
+%\end{equation}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Population Structure}
 
 Social association may also emerge from a population's structure.
