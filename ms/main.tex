@@ -833,6 +833,15 @@ The success of the invasion of allele $M$ is determined by the external stabilit
 \end{equation}
 If the leading eigenvalue of $\mathbf{L}^*_{ex}$ is less than 1, then the equilibrium $\vec{\tilde{p}}$ is locally stable and allele $M$ cannot invade the population of allele $m$.
 
+\begin{equation} \label{eq:partial_derivatives}
+  \begin{aligned}
+  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b(\tilde{p}^*-(1-\alpha_2)T_B(\tilde{p}^*-\tilde{p}^{*2}))+(1-c)(1-\tilde{p}^*T_B-T_B)\\
+  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = bT_A\tilde{p}^*(\tilde{p}^*+\alpha_2(1-\tilde{p}^*))+\tilde{p}^*T_A)\\
+  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = T_B(1-\tilde{p}^*)-cT_B(\alpha_2+(1-\alpha_2)(1-\tilde{p}^*))\\
+  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1-\tilde{p}^*T_A+ b\tilde{p}^*(1-\alpha_2T_A(1-\tilde{p}^*)-T_A\tilde{p}^*)\\
+  \end{aligned}
+\end{equation}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Population Structure}
 
