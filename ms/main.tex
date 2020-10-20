@@ -764,7 +764,7 @@ When horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation c
 In contrast, if the horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation, see \autoref{fig:result3}bd.
 \\
 
-\subsection*{Modifier model} 
+\subsection*{Modifiers of social association} 
 
 We now analyze the evolution of social association under perfect vertical transmission, $v=1$.
 We assume a population at a stable coexistence of the two phenotypes, cooperation $A$ and defection $B$, such that the frequency of $A$ among parents is $\tilde{p}^*$ (
@@ -785,44 +785,53 @@ c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}
 \end{equation} 
 Therefore, $b T_A - c(1-T_B) - (T_B-T_A)>0$, and since $T_A<T_B$, the derivative $\partial \tilde{p}^* / \partial \alpha$ is positive, and the population mean fitness increases as social association $\alpha$ increases.
 
-Therefore, if a modifier allele that increases social association invades the population, the population mean fitness will increase. But can such a modifier allele invade the population?
-We assume that social association is determined by a genetically transmitted locus with alleles $m$ and $M$, which induce association probabilities $\alpha_1$ and $\alpha_2$, respectively.
+Therefore, if the social association increases, the population mean fitness will increase.
+But can an allele that increases the social association evolve? 
+To answer this question, we extend our model to include a ``modifier locus''~\citep{Liberman1986,Liberman1988}.
+The function of this modifier locus is to determine the social association.
+It has no direct effect on fitness.
+We assume that the modifier locus has two alleles, $M$ and $m$, which induce association probabilities $\alpha_1$ and $\alpha_2$, respectively, and that initially only $M$ is present.
+Suppose that the population evolves to a stable equilibrium when only $M$ is present; we check the local stability of this equilibrium to the introduction of the allele $m$ at the modifier locus. This is called ``external stability''; For more details on external stability, see \citet{Altenberg2017}.
 
-We define the frequencies of the pheno-genotypes $Am$, $Bm$, $AM$, and $BM$ as $\hat{p}_1$, $\hat{p}_2$, $\hat{p}_3$, and $\hat{p}_4$, respectively. 
+We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
 Then the following recursion system defines the frequencies of the pheno-genotypes in the next generation,
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
 	% p1
-  \bar{w}\tilde{p}_1' & = \tilde{p}_1(\tilde{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\hat{p_1}+\tilde{p}_3) - T_B(\tilde{p}_2+\tilde{p}_4)) \\
-  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \hat{p_4})) \\
+  \bar{w}\tilde{p}_1' & = \tilde{p}_1(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \tilde{p}_4)) \\
   &+ \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A 
 \\
 	% p2
-  \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\hat{p_4})(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
-  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
-  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1T_B + (1-\alpha_1)(\tilde{p}_2+\tilde{p}_4)T_B) \\
-  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)(\tilde{p}_2+\tilde{p}_4)T_B 
+  \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3))\\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B 
 \\
 	% p3
-  \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\hat{p_3})(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\hat{p_1}+\tilde{p}_3) - T_B(\tilde{p}_2+\tilde{p}_4)) \\
-  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \hat{p_4})) \\
+  \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \tilde{p}_4)) \\
   &+ \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A 
 \\
 	% p4
-  \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2+\hat{p_4})(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
   &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
-  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2+\tilde{p}_4)T_B) \\
-  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)(\tilde{p}_2+\tilde{p}_4)T_B \;,
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
   \end{aligned}
 \end{equation}
-where $\bar{w} = 1 + (b-c)\cdot(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.
+%which we can write as 
+%\begin{equation}
+%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
+%\end{equation}
+where $\bar{w} = 1 + (b-c)\cdot(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
 
-Denote this system by $\bar{w} \vec{\tilde{p}} = f(\vec{\tilde{p}})$, where $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
-We are interested in the invasion of allele $M$ to a population at equilibrium with allele $m$, that is, with equilibrium frequencies $\vec{\tilde{p}}^*=(\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, with $\tilde{p}^*$ defined in
-\autoref{eq:vert_hori_equilibrium}.
-The success of the invasion of allele $M$ is determined by the external stability matrix $\mathbf{L}^*_{ex}$~\citep{Liberman1988}, which is derived from \autoref{eq:next_gen_p_1} as
+The local stability of $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, the equilibrium when only allele $M$ is present (see \autoref{eq:vert_hori_equilibrium}), to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+$\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the phono-genotypes $Am$ and $Bm$. Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, which is derived from \autoref{eq:next_gen_p_1} as
 \begin{equation}
 \mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{bmatrix}
 	 \frac{\partial \tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
@@ -831,9 +840,11 @@ The success of the invasion of allele $M$ is determined by the external stabilit
 	 \frac{\partial \tilde{p}_4'}{\partial \tilde{p}_4} (\vec{\tilde{p}}^*)
 \end{bmatrix} \;.
 \end{equation}
-If the leading eigenvalue of $\mathbf{L}^*_{ex}$ is less than 1, then the equilibrium $\vec{\tilde{p}}$ is locally stable and allele $M$ cannot invade the population of allele $m$.
+If the eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
 \subsection*{With Population Structure}
 
 Social association may also emerge from a population's structure.
