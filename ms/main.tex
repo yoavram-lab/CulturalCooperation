@@ -834,22 +834,35 @@ The latter is the external stability matrix: the linear approximation to the tra
 $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, which is derived from \autoref{eq:next_gen_p_1} as
 \begin{equation}
 \mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{bmatrix}
-	 \frac{\partial \tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-	 \frac{\partial \tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
-	 \frac{\partial \tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-	 \frac{\partial \tilde{p}_4'}{\partial \tilde{p}_4} (\vec{\tilde{p}}^*)
+	 \frac{\partial \bar{w} \tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+	 \frac{\partial \bar{w}  \tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
+	 \frac{\partial \bar{w}  \tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+	 \frac{\partial \bar{w}  \tilde{p}_4'}{\partial \tilde{p}_4} (\vec{\tilde{p}}^*)
 \end{bmatrix} \;.
 \end{equation}
 If the eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
 
 \begin{equation} \label{eq:partial_derivatives}
   \begin{aligned}
-  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b(\tilde{p}^*-(1-\alpha_2)T_B(\tilde{p}^*-\tilde{p}^{*2}))+(1-c)(1+\tilde{p}^*T_B-T_B)\\
-  &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = bT_A\tilde{p}^*(\tilde{p}^*+\alpha_2(1-\tilde{p}^*))+\tilde{p}^*T_A\\
-  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1-\tilde{p}^*)(1-c)T_B+b\tilde{p}^*(1-\alpha_2)(1-\tilde{p}^*)T_B\\
-  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1-\tilde{p}^*T_A+ b\tilde{p}^*(1-\alpha_2T_A(1-\tilde{p}^*)-T_A\tilde{p}^*)\\
+  &D_{33} = \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b(\tilde{p}^*-(1-\alpha_2)T_B(\tilde{p}^*-\tilde{p}^{*2}))+(1-c)(1+\tilde{p}^*T_B-T_B)\\
+  &D_{34} = \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = bT_A\tilde{p}^*(\tilde{p}^*+\alpha_2(1-\tilde{p}^*))+\tilde{p}^*T_A\\
+  &D_{43} =\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1-\tilde{p}^*)(1-c)T_B+b\tilde{p}^*(1-\alpha_2)(1-\tilde{p}^*)T_B\\
+  &D_{44} =\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1-\tilde{p}^*T_A+ b\tilde{p}^*(1-\alpha_2T_A(1-\tilde{p}^*)-T_A\tilde{p}^*)\\
   \end{aligned}
 \end{equation}
+Looking on the greater eigenvalue of $\mathbf{L}^*_{ex}$ $\lambda_1$:
+\begin{equation} \label{eq:eigenvalues}
+  \lambda_1 = \frac{D_{33} + D_{44} + \sqrt{(D_{33}+D_{44})^2-4*(D_{33}+D_{44}-D_{43}D_{34})}}{2} 
+\end{equation}
+Using SymPy \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics we get that $\lambda_1 > 1$ when:
+\begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
+ \alpha_2 > \frac{b\tilde{p}^*(T_B-T_A) + T_B - T_A  + c (1-T_B)}{b*(T_A(1-\tilde{p}^*) + T_B\tilde{p}^*)}
+\end{equation}
+Using \autoref{eq:vert_hori_equilibrium} we get that $\lambda_1 > 1$ when:
+\begin{equation} \label{eq:eigenvalues_greater_than_1_final_condition}
+  \alpha_2 > \alpha_1
+ \end{equation}
+ % TODO: make this result
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{With Population Structure}
