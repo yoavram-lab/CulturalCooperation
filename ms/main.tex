@@ -807,7 +807,7 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
   \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
   &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3))\\
   &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B 
+  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B 
 \\
 	% p3
   \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
@@ -819,7 +819,7 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
   \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
   &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
   &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
+  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
   \end{aligned}
 \end{equation}
 %which we can write as 
@@ -846,7 +846,7 @@ If the eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium 
   \begin{aligned}
   &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b(\tilde{p}^*-(1-\alpha_2)T_B(\tilde{p}^*-\tilde{p}^{*2}))+(1-c)(1+\tilde{p}^*T_B-T_B)\\
   &\frac{\partial\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = bT_A\tilde{p}^*(\tilde{p}^*+\alpha_2(1-\tilde{p}^*))+\tilde{p}^*T_A\\
-  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = T_B(1-\tilde{p}^*)-cT_B(1-\tilde{p}^*)(\alpha_2+(1-\alpha_2)(1-\tilde{p}^*))\\
+  &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1-\tilde{p}^*)(1-c)T_B+b\tilde{p}^*(1-\alpha_2)(1-\tilde{p}^*)T_B\\
   &\frac{\partial\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1-\tilde{p}^*T_A+ b\tilde{p}^*(1-\alpha_2T_A(1-\tilde{p}^*)-T_A\tilde{p}^*)\\
   \end{aligned}
 \end{equation}
