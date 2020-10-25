@@ -308,117 +308,27 @@ Finally, we compare derived conditions to outcomes of stochastic simulations wit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Evolution of cooperation}
 
-To determine the equilibria in our model, we analyze the fixed points of \autoref{eq:nextgen_juveniles}.
-We define $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
-Then, using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, this simplifies to
-\begin{equation} \label{eq:general_case_polynomial}
-\begin{aligned}
-  f(\hat{p}) &= \bar{w}(\hat{p}'-\hat{p}) =
-  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} \;,
-\end{aligned}
-\end{equation}
-where 
-\begin{equation} \label{eq:polynomial_coefficients}
-\begin{aligned}
-  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \;, \\
-  \beta_2 &= -\beta_1 -\beta_3 \;, \\
-  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \;.
-\end{aligned}
-\end{equation}
-
-If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$. 
-Thus, $f(\hat{p})$ becomes a quadratic polynomial,
-\begin{equation} \label{eq:equal_horizontal_transmission}
-  f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big] \;.
-\end{equation}
-Clearly the only two equilibria are the fixations  $\hat{p} =  0$ and $\hat{p} = 1$.
-These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\autoref{sec:appendixA}), where
-$f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
-\begin{equation} \label{eq:derivative_of_phattag-phat}
-\begin{aligned}
-	f'(0) &=	\alpha bvT - cv(1-T) \;, \\
-	f'(1) &=	-\alpha bvT + cv(1-T) \;.
-\end{aligned}
-\end{equation}
-%Therefore with symmetric horizontal transmission ($T_A=T_B$), fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary \ref{remark:equal_transmission}, namely inequality~\ref{eq:equal_transmission}.
-
-In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
-Therefore, three equilibria may exist, two of which are
-$\hat{p} = 0 $ and $\hat{p} = 1$, and the third is
+We determined the equilibria of our model, i.e. the fixed points of \autoref{eq:nextgen_juveniles}, and their local stability.
+The equilibria are $\hat p=0$, $\hat p=1$, and (see \autoref{eq:general_equilibrium_appendix})
 \begin{equation} \label{eq:general_equilibrium}
   \hat{p}^* =  
-  \frac{\beta_3}{\beta_1} =
   \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
 \end{equation}
 
-Note that the sign of the  cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
-If $T_A>T_B$, then 
-\begin{equation} \label{eq:beta1}
-   \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
-   = (1-\alpha v)(c-b)(T_A-T_B) < 0 \;,
- \end{equation}
-since $c<b$ and $\alpha v < 1$. Hence the signs of the cubic at positive and negative infinity are negative and positive, respectively.
-First, if $\beta_3<\beta_1$ then 
-$1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
-Second, if $\beta_1<\beta_3<0$ then 
-$0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$ so that both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
-Third, if $0<\beta_3$ then 
-$\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$; that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
-
-Similarly, if $T_A<T_B$, then
-\begin{equation} \label{eq:beta1_rev}
-   \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
-   = (1-\alpha v)(c-b)(T_A-T_B) > 0 \;,
- \end{equation}
-since $c<b$ and $\alpha v < 1$, and the signs of the cubic at positive and negative infinity are positive and negative, respectively. 
-First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $A$ is the only locally stable legitimate equilibrium.
-Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
-Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
-
-To present this analysis in terms of conditions on the cost of cooperation $c$, we define the cost boundaries, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$,
-
+To find conditions on the cost of cooperation, $c$, we define the following cost boundaries, $\gamma_1$ and $\gamma_2$, vertical transmission threshold, $\hat v$,
 \begin{equation} \label{eq:cost_boundaries_v_threshold} 
 \gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)}, \quad
 \gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)}, \quad
 \hat v = \frac{T_B - T_A}{1-T_A} \;.
 \end{equation}
 
-First, assume $T_A<T_B$.
-$\beta_3<0$ requires $\gamma_1<c$.
-For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
-Note that the expression in the square brackets is positive if and only if $v > \hat v$.
-Thus, for $\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c$ or $v < \hat v$ and $c < \gamma_2$,
-and for $0<\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c < \gamma_1$, or $v < \hat v$ and $c < \min(\gamma_1, \gamma_2)$. For $\beta_1<\beta_3$ we need $v > \hat v$ and $c<\gamma_2$ or $v < \hat v$ and $\gamma_2<c$.
-However, some of these conditions cannot be met, since $v < \hat v$ implies $c<1<\gamma_2$.
-
-Second, assume $T_A>T_B$.
-$\beta_3>0$ requires $\gamma_1 > c$. 
-For $\beta_1<\beta_3$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] < bv\alpha T_B + (1+b)(T_A-T_B)$.
-Thus for $\beta_1<\beta_3$ we need $v > \hat v$ and $c < \gamma_2 $ or $v < \hat v$ and $c > \gamma_2$.
-But $\hat{v}<0$ when $T_A > T_B$, and therefore we have $\beta_1<\beta_3$ if $c < \gamma_2$. Similarly, we have $\beta_3<\beta_1$ if $c > \hat{\gamma_2}$.
-
-The following result summarizes the possible outcomes of the model (\autoref{eq:nextgen_juveniles}).
+The full analysis is given in Appendix~\ref{sec:appendixB}.
+The following result summarizes the possible outcomes.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}[Equilibria and stability] \label{result:vert_obli_hori}
 With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios depending on the cost boundaries $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_boundaries_v_threshold}) :
-
-% in beta
-%\begin{enumerate}
-%\item \emph{Fixation of cooperation}: 
-%	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
-%	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
-%	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
-%\item \emph{Fixation of the defection}: 
-%	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
-%	if \emph{(v)} $T_A>T_B$ and $\beta_3<\beta_1<0$; or 
-%	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
-%\item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
-%	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
-%\item \emph{Fixation of either phenotype depending on initial frequency}:
-%	if \emph{(viii)}  $T_A>T_B$ and $\beta_1<\beta_3<0$.
-%\end{enumerate}
 
 % in gamma
 \begin{enumerate}
@@ -603,119 +513,20 @@ When unstable coexistence occurs, cooperation will fix if its initial frequency 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Evolution of social association} 
 
-We now analyze the evolution of social association under perfect vertical transmission, $v=1$.
-We assume a population at a stable coexistence of the two phenotypes, cooperation $A$, and defection $B$, such that the frequency of $A$ among parents is $\tilde{p}^*$ (\autoref{eq:general_equilibrium}).
+We now analyze the evolution of social association under perfect vertical transmission, $v=1$. 
+We assume a population at a stable coexistence of the two phenotypes, cooperation $A$, and defection $B$, such that the frequency of $A$ among juveniles is $\hat{p}^*$ (\autoref{eq:general_equilibrium}).
 Note that for stable coexistence to occur, we assume horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_boundaries_v_threshold})
 
-The stable population mean fitness is $\bar{w}^* = 1 + \tilde{p}^*(b-c)$, which is increasing in $\tilde{p}^*$. 
-Therefore, to determine the effect of increasing $\alpha$ on the stable population mean fitness, we must analyze its effect on $\tilde{p}^*$, 
-\begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
-  \frac{\partial \tilde{p}^*}{\partial \alpha} 
-%  =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} 
-%  = \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \;.
-  = \frac{b T_A - c(1-T_B) + (T_A-T_B)}{b (1-\alpha)^2 (T_B-T_A)} \;.
-\end{equation} 
-Note that stable coexistence implies $c<\gamma_1$, and because $\alpha<1$, we have
-\begin{equation}
-c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}{1-T_B}.
-\end{equation} 
-Therefore, the numerator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is positive.
-Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is also positive, and hence the derivative $\partial \tilde{p}^* / \partial \alpha$ is positive.
-Thus, the population mean fitness increases as social association $\alpha$ increases.
-
-We found that if social association increases, the population mean fitness also increases.
+The stable population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$. 
+In turn, $\hat{p}^*$ is also increasing in $\alpha$ (Appendix~\ref{sec:appendixC}).
+Therefore, if social association increases, the population mean fitness also increases.
 But can an allele that increases social association evolve? 
 To answer this question, we extend our model to include a ``modifier locus''~\citep{Liberman1986,Liberman1988} that determines social association, but has no direct effect on fitness.
-We assume that the modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
-Suppose that the population evolves to a stable equilibrium when only allele $M$ is present; we check the local stability of this equilibrium to the introduction of allele $m$ at the modifier locus; This is called ``external stability'', see \citet{Altenberg2017}.
+Assume that the modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
+Suppose that the population evolves to a stable equilibrium when only allele $M$ is present.
+We check the local stability of this equilibrium to the invasion of the modifier allele $m$; this stablity is called ``external stability'', see \citet{Altenberg2017}.
 
-We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
-The frequencies of the pheno-genotypes in the next generation are defined by the recursion system 
-\begin{equation} \label{eq:next_gen_p_1}
-  \begin{aligned}
-	% p1
-  \bar{w}\tilde{p}_1' & = \tilde{p}_1(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
-  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \tilde{p}_4)) \\
-  &+ \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A \;,
-\\
-	% p2
-  \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
-  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3))\\
-  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B \;, 
-\\
-	% p3
-  \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
-  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \tilde{p}_4)) \\
-  &+ \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A \;, 
-\\
-	% p4
-  \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
-  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
-  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
-  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
-  \end{aligned}
-\end{equation}
-%which we can write as 
-%\begin{equation}
-%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
-%\end{equation}
-where $\bar{w} = 1 + (b-c)(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
-
-The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
-\begin{equation} \label{eq:p_tilde_star_alpha_1}
-\tilde{p}^*=
-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
-\end{equation}
-which we get by setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
-The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
-$\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
-The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the phono-genotypes $Am$ and $Bm$.
-Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
-$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
-\begin{equation}
-\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{pmatrix}
-	 X &
-	 Y \\
-	 Z &
-	 Q 
-\end{pmatrix} \;.
-\end{equation}
-
-The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
-\begin{equation} \label{eq:partial_derivatives}
-  \begin{aligned}
-%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
-  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
-%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
-  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
-% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
-  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - c) T_B (1 - \tilde{p}^*) + b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) \;,\\
-%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
-  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - T_A \tilde{p}^* + b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* \;.
-  \end{aligned}
-\end{equation}
-
-If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
-These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda (X+Q) + XQ - YZ$; the leading eigenvalue $\lambda_1$ is the largest of them,
-\begin{equation} \label{eq:eigenvalues}
-  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2} \;.
-\end{equation}
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $\lambda_1 > 1$ if 
-\begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
-\begin{aligned}
- \alpha_2 > 
- \frac{-b (T_A-T_B) \tilde{p}^* - (T_A - T_B)  + c (1-T_B)}{bT_A - b (T_A-T_B) \tilde{p}^*} = %\\
-% \frac{-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1} - (T_A - T_B)  + c (1-T_B)}{bT_A - \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1}} = \\
-% \frac{\frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{1-\alpha_1}}{\frac{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)}{1-\alpha_1}} = \\
-%  \frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)} = \\
-%\frac{\alpha_1 b  T_A + \alpha_1 (T_A - T_B)  - \alpha_1 c (1-T_B)}{bT_A - c(1-T_B) + (T_A - T_B)} = 
-\alpha_1 \;,
-\end{aligned}
-\end{equation}
-which gives the following result.
+The full analysis is given in Appendix~\ref{sec:appendixD}, and following result summarizes the outcomes of such invasions.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -842,9 +653,8 @@ and Minerva Stiftung Center for Lab Evolution (YR).
 \counterwithin*{equation}{section}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{} \label{sec:appendixA}
+\section{Local stability criterion} \label{sec:appendixA}
 
 Let $f(p)=\lambda \cdot (p'-p)$, where $\lambda>0$, and $0$ and $1$ are equilibria, that is, $f(0)=0$ and $f(1)=0$.
 
@@ -867,6 +677,226 @@ Using a linear approximation for $f(p)$ near $1$, we have
 f'(1) - O(1-p) < 0 \;.
 \end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Equilibria and stability} \label{sec:appendixB}
+
+We define $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
+Then, using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, this simplifies to
+\begin{equation} \label{eq:general_case_polynomial}
+\begin{aligned}
+  f(\hat{p}) &= \bar{w}(\hat{p}'-\hat{p}) =
+  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} \;,
+\end{aligned}
+\end{equation}
+where 
+\begin{equation} \label{eq:polynomial_coefficients}
+\begin{aligned}
+  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \;, \\
+  \beta_2 &= -\beta_1 -\beta_3 \;, \\
+  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \;.
+\end{aligned}
+\end{equation}
+
+If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$. 
+Thus, $f(\hat{p})$ becomes a quadratic polynomial,
+\begin{equation} \label{eq:equal_horizontal_transmission}
+  f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big] \;.
+\end{equation}
+Clearly the only two equilibria are the fixations  $\hat{p} =  0$ and $\hat{p} = 1$.
+These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\autoref{sec:appendixA}), where
+$f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
+\begin{equation} \label{eq:derivative_of_phattag-phat}
+\begin{aligned}
+	f'(0) &=	\alpha bvT - cv(1-T) \;, \\
+	f'(1) &=	-\alpha bvT + cv(1-T) \;.
+\end{aligned}
+\end{equation}
+%Therefore with symmetric horizontal transmission ($T_A=T_B$), fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary \ref{remark:equal_transmission}, namely inequality~\ref{eq:equal_transmission}.
+
+In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
+Therefore, three equilibria may exist, two of which are
+$\hat{p} = 0 $ and $\hat{p} = 1$, and the third is
+\begin{equation} \label{eq:general_equilibrium_appendix}
+  \hat{p}^* =  
+  \frac{\beta_3}{\beta_1} =
+  \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
+\end{equation}
+
+Note that the sign of the  cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
+If $T_A>T_B$, then 
+\begin{equation} \label{eq:beta1}
+   \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) < 0 \;,
+ \end{equation}
+since $c<b$ and $\alpha v < 1$. Hence the signs of the cubic at positive and negative infinity are negative and positive, respectively.
+First, if $\beta_3<\beta_1$ then 
+$1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
+Second, if $\beta_1<\beta_3<0$ then 
+$0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$ so that both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
+Third, if $0<\beta_3$ then 
+$\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$; that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+
+Similarly, if $T_A<T_B$, then
+\begin{equation} \label{eq:beta1_rev}
+   \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) > 0 \;,
+ \end{equation}
+since $c<b$ and $\alpha v < 1$, and the signs of the cubic at positive and negative infinity are positive and negative, respectively. 
+First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $A$ is the only locally stable legitimate equilibrium.
+Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
+Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+
+This analysis can be summarized with the following conditions:
+% in beta
+\begin{enumerate}
+\item \emph{Fixation of cooperation}: 
+	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
+	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
+	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
+\item \emph{Fixation of the defection}: 
+	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
+	if \emph{(v)} $T_A>T_B$ and $\beta_3<\beta_1<0$; or 
+	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
+\item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
+	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
+\item \emph{Fixation of either phenotype depending on initial frequency}:
+	if \emph{(viii)}  $T_A>T_B$ and $\beta_1<\beta_3<0$.
+\end{enumerate}
+
+We now proceed to use the cost boundaries, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$ (\autoref{eq:cost_boundaries_v_threshold}).
+First, assume $T_A<T_B$.
+$\beta_3<0$ requires $\gamma_1<c$.
+For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
+Note that the expression in the square brackets is positive if and only if $v > \hat v$.
+Thus, for $\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c$ or $v < \hat v$ and $c < \gamma_2$,
+and for $0<\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c < \gamma_1$, or $v < \hat v$ and $c < \min(\gamma_1, \gamma_2)$. For $\beta_1<\beta_3$ we need $v > \hat v$ and $c<\gamma_2$ or $v < \hat v$ and $\gamma_2<c$.
+However, some of these conditions cannot be met, since $v < \hat v$ implies $c<1<\gamma_2$.
+
+Second, assume $T_A>T_B$.
+$\beta_3>0$ requires $\gamma_1 > c$. 
+For $\beta_1<\beta_3$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] < bv\alpha T_B + (1+b)(T_A-T_B)$.
+Thus for $\beta_1<\beta_3$ we need $v > \hat v$ and $c < \gamma_2 $ or $v < \hat v$ and $c > \gamma_2$.
+But $\hat{v}<0$ when $T_A > T_B$, and therefore we have $\beta_1<\beta_3$ if $c < \gamma_2$. Similarly, we have $\beta_3<\beta_1$ if $c > \hat{\gamma_2}$.
+
+This analysis is summarized in Result~\ref{result:vert_obli_hori}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Effect of social association on mean fitness} \label{sec:appendixC}
+
+To determine the effect of increasing $\alpha$ on the stable population mean fitness, $\bar{w}^*=1+(b-c)\hat{p}^*$, we must analyze its effect on $\hat{p}^*$, 
+\begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
+  \frac{\partial \hat{p}^*}{\partial \alpha} 
+%  =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} 
+%  = \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \;.
+  = \frac{b T_A - c(1-T_B) + (T_A-T_B)}{b (1-\alpha)^2 (T_B-T_A)} \;.
+\end{equation} 
+Note that stable coexistence implies $c<\gamma_1$, and because $\alpha<1$, we have
+\begin{equation}
+c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}{1-T_B}.
+\end{equation} 
+Therefore, the numerator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is positive.
+Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is also positive, and hence the derivative $\partial \hat{p}^* / \partial \alpha$ is positive.
+Thus, the population mean fitness increases as social association $\alpha$ increases.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{External stability of $\tilde{p}^*$} \label{sec:appendixD}
+
+We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
+We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
+The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
+\begin{equation} \label{eq:next_gen_p_1}
+  \begin{aligned}
+	% p1
+  \bar{w}\tilde{p}_1' = 
+  & \tilde{p}_1(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
+  & \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) + \\
+  & \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \tilde{p}_4)) + \\
+  & \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A \;,
+\\
+	% p2
+  \bar{w}\tilde{p}_2' = 
+  & \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) + \\
+  & \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3)) + \\
+  & \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
+  & \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B \;, 
+\\
+	% p3
+  \bar{w}\tilde{p}_3' =
+  & \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
+  & \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) + \\
+  & \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \tilde{p}_4)) + \\
+  & \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A \;, 
+\\
+	% p4
+  \bar{w}\tilde{p}_4' =
+  & \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) + \\
+  & \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3)) + \\
+  & \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
+  & \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
+  \end{aligned}
+\end{equation}
+%which we can write as 
+%\begin{equation}
+%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
+%\end{equation}
+where $\bar{w} = 1 + (b-c)(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+
+The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
+\begin{equation} \label{eq:p_tilde_star_alpha_1}
+\tilde{p}^*=
+\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
+\end{equation}
+which we get by setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
+The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+$\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the phono-genotypes $Am$ and $Bm$.
+Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
+\begin{equation}
+\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{pmatrix}
+	 X &
+	 Y \\
+	 Z &
+	 Q 
+\end{pmatrix} \;.
+\end{equation}
+
+The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
+\begin{equation} \label{eq:partial_derivatives}
+  \begin{aligned}
+%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
+  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
+%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
+  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
+% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
+  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - c) T_B (1 - \tilde{p}^*) + b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) \;,\\
+%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
+  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - T_A \tilde{p}^* + b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* \;.
+  \end{aligned}
+\end{equation}
+
+If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
+These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda (X+Q) + XQ - YZ$; the leading eigenvalue $\lambda_1$ is the largest of them,
+\begin{equation} \label{eq:eigenvalues}
+  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2} \;.
+\end{equation}
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $\lambda_1 > 1$ if 
+\begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
+\begin{aligned}
+ \alpha_2 > 
+ \frac{-b (T_A-T_B) \tilde{p}^* - (T_A - T_B)  + c (1-T_B)}{bT_A - b (T_A-T_B) \tilde{p}^*} = %\\
+% \frac{-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1} - (T_A - T_B)  + c (1-T_B)}{bT_A - \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1}} = \\
+% \frac{\frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{1-\alpha_1}}{\frac{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)}{1-\alpha_1}} = \\
+%  \frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)} = \\
+%\frac{\alpha_1 b  T_A + \alpha_1 (T_A - T_B)  - \alpha_1 c (1-T_B)}{bT_A - c(1-T_B) + (T_A - T_B)} = 
+\alpha_1 \;.
+\end{aligned}
+\end{equation}
+
 
 
 \end{appendices}
@@ -897,7 +927,7 @@ $\phi_1=B$ & $1+b$   & $1$
 \end{tabular}
 \label{table:prisoner_payoff}
 \caption*{
-The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ is a cooperative phenotype, $B$ is a defector phenotype, $b$ is the benefit gained by an individual interacting with a cooperator, and $c$ is the cost of cooperation. $0<b<c$.
+The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ is a cooperative phenotype, $B$ is a defector phenotype, $b$ is the benefit gained by an individual interacting with a cooperator, and $c$ is the cost of cooperation. $0<c<1$ and $c<b$.
 }
 \end{table}
 \bigskip
@@ -1014,6 +1044,69 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 
 
 
+%%% Figure: Spatial model - global selection
+\begin{figure}[h]
+  \centering
+   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_globalSelection}.pdf}
+    ~
+    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection}.pdf} \\
+  \caption{
+  \textbf{Evolution of cooperation in a structured population.}
+  The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
+  The population evolves on a 100-by-100 grid.
+  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
+  Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
+  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
+  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
+  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
+  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
+  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
+  }
+  \label{fig:spatial}
+\end{figure}
+
+
+
+%%% Figure: Spatial model - local selection
+\begin{figure}[h]
+  \centering
+   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_localSelection}.pdf}
+    ~
+    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_localSelection}.pdf} \\
+  \caption{
+  \textbf{Evolution of cooperation in a structured population with local selection.}
+  The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
+  The population evolves on a 100-by-100 grid.
+  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
+  Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
+  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
+  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
+  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
+  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
+  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
+  }
+  \label{fig:spatial_local_selection}
+\end{figure}
+
+
+
+% Fluctuations in spatial model
+\begin{figure}[h]
+  \centering
+   \includegraphics[scale=0.75]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions}.pdf}
+   \caption{
+    \textbf{Stable coexistence of both phenotypes in a structured population.}
+    The frequency of cooperators (green) and defectors (red) in a structured finite population.
+    Both phenotypes start at 50\% frequency.
+    The figure shows that neither phenotype is fixed throughout the simulation, maintaining stochastic coexistence.
+    Here, population size is 10,000 (100-by-100 grid), selection operates globally, 
+    benefit and cost of cooperation $b=1.3$ and $c=0.02$, perfect vertical transmission $v=1$, horizontal transmission rates $T_A = 0.4 < T_B = 0.435$.
+    }
+    \label{fig:spatial_fluctuations}
+  \end{figure}
+
+
+
 %%% Figure: coexistence map
 \begin{figure}[h]
   \centering
@@ -1055,64 +1148,6 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 \end{figure}
 
 
-
-%%% Figure: Spatial model - global selection
-\begin{figure}[h]
-  \centering
-   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_globalSelection}.pdf}
-    ~
-    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection}.pdf} \\
-  \caption{
-  \textbf{Evolution of cooperation in a structured population.}
-  The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
-  The population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
-  Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
-  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
-  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
-  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
-  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
-  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
-  }
-  \label{fig:spatial}
-\end{figure}
-
-%%% Figure: Spatial model - local selection
-\begin{figure}[h]
-  \centering
-   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_localSelection}.pdf}
-    ~
-    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_localSelection}.pdf} \\
-  \caption{
-  \textbf{Evolution of cooperation in a structured population with local selection.}
-  The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
-  The population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
-  Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
-  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
-  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
-  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
-  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
-  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
-  }
-  \label{fig:spatial_local_selection}
-\end{figure}
-
-% Fluctuations in spatial model
-\begin{figure}[h]
-  \centering
-   \includegraphics[scale=0.75]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions}.pdf}
-   \caption{
-    \textbf{Stable coexistence of both phenotypes in a structured population.}
-    The frequency of cooperators (green) and defectors (red) in a structured finite population.
-    Both phenotypes start at 50\% frequency.
-    The figure shows that neither phenotype is fixed throughout the simulation, maintaining stochastic coexistence.
-    Here, population size is 10,000 (100-by-100 grid), selection operates globally, 
-    benefit and cost of cooperation $b=1.3$ and $c=0.02$, perfect vertical transmission $v=1$, horizontal transmission rates $T_A = 0.4 < T_B = 0.435$.
-    }
-    \label{fig:spatial_fluctuations}
-  \end{figure}
-  %TODO: edit this caption. DC
 
 %%%
 \end{document}
