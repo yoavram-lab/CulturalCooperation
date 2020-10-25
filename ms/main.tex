@@ -578,6 +578,130 @@ When unstable coexistence occurs, phenotype $A$ will fix if its initial frequenc
 
 % TODO - consider adding v=1 case?
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Evolution of social association} 
+
+We now analyze the evolution of social association under perfect vertical transmission, $v=1$.
+We assume a population at a stable coexistence of the two phenotypes, cooperation $A$, and defection $B$, such that the frequency of $A$ among parents is $\tilde{p}^*$ (
+\autoref{eq:vert_hori_equilibrium}).
+Note that for stable coexistence to occur, we assume horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_boundaries})
+
+The stable population mean fitness is $\bar{w}^* = 1 + \tilde{p}^*(b-c)$ (\autoref{eq:mean_fitness}), which is increasing in $\tilde{p}^*$. 
+Therefore, to determine the effect of increasing $\alpha$ on the stable population mean fitness, we must analyze its effect on $\tilde{p}^*$, 
+\begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
+  \frac{\partial \tilde{p}^*}{\partial \alpha} 
+%  =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} 
+%  = \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \;.
+  = \frac{b T_A - c(1-T_B) + (T_A-T_B)}{b (1-\alpha)^2 (T_B-T_A)} \;.
+\end{equation} 
+Note that stable coexistence implies $c<\gamma_1$, and because $\alpha<1$, we have
+\begin{equation}
+c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}{1-T_B}.
+\end{equation} 
+Therefore, the numerator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is positive.
+Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is also positive, and hence the derivative $\partial \tilde{p}^* / \partial \alpha$ is positive.
+Thus, the population mean fitness increases as social association $\alpha$ increases.
+
+We found that if social association increases, the population mean fitness also increases.
+But can an allele that increases social association evolve? 
+To answer this question, we extend our model to include a ``modifier locus''~\citep{Liberman1986,Liberman1988} that determines social association, but has no direct effect on fitness.
+We assume that the modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
+Suppose that the population evolves to a stable equilibrium when only allele $M$ is present; we check the local stability of this equilibrium to the introduction of allele $m$ at the modifier locus; This is called ``external stability'', see \citet{Altenberg2017}.
+
+We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
+The frequencies of the pheno-genotypes in the next generation are defined by the recursion system 
+\begin{equation} \label{eq:next_gen_p_1}
+  \begin{aligned}
+	% p1
+  \bar{w}\tilde{p}_1' & = \tilde{p}_1(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A \;,
+\\
+	% p2
+  \bar{w}\tilde{p}_2' & = \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  &+ \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3))\\
+  &+ \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B \;, 
+\\
+	% p3
+  \bar{w}\tilde{p}_3' & = \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \tilde{p}_4)) \\
+  &+ \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A \;, 
+\\
+	% p4
+  \bar{w}\tilde{p}_4' & = \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) \\
+  &+ \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3))\\
+  &+ \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) \\
+  &+ \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
+  \end{aligned}
+\end{equation}
+%which we can write as 
+%\begin{equation}
+%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
+%\end{equation}
+where $\bar{w} = 1 + (b-c)(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+
+The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
+\begin{equation} \label{eq:p_tilde_star_alpha_1}
+\tilde{p}^*=
+\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
+\end{equation}
+which we get by setting $\alpha=\alpha_1$ in \autoref{eq:vert_hori_equilibrium}.
+Its local stability to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+$\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the phono-genotypes $Am$ and $Bm$.
+Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
+\begin{equation}
+\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{pmatrix}
+	 X &
+	 Y \\
+	 Z &
+	 Q 
+\end{pmatrix} \;.
+\end{equation}
+
+The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
+\begin{equation} \label{eq:partial_derivatives}
+  \begin{aligned}
+%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
+  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
+%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
+  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
+% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
+  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - c) T_B (1 - \tilde{p}^*) + b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) \;,\\
+%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
+  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - T_A \tilde{p}^* + b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* \;.
+  \end{aligned}
+\end{equation}
+
+If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
+These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda (X+Q) + XQ - YZ$; the leading eigenvalue $\lambda_1$ is the largest of them,
+\begin{equation} \label{eq:eigenvalues}
+  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2} \;.
+\end{equation}
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $\lambda_1 > 1$ if 
+\begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
+\begin{aligned}
+ \alpha_2 > 
+ \frac{-b (T_A-T_B) \tilde{p}^* - (T_A - T_B)  + c (1-T_B)}{bT_A - b (T_A-T_B) \tilde{p}^*} = %\\
+% \frac{-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1} - (T_A - T_B)  + c (1-T_B)}{bT_A - \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1}} = \\
+% \frac{\frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{1-\alpha_1}}{\frac{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)}{1-\alpha_1}} = \\
+%  \frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)} = \\
+%\frac{\alpha_1 b  T_A + \alpha_1 (T_A - T_B)  - \alpha_1 c (1-T_B)}{bT_A - c(1-T_B) + (T_A - T_B)} = 
+\alpha_1 \;,
+\end{aligned}
+\end{equation}
+which gives the following result.
+\\
+
+\begin{result}[Evolution of social association] 
+In a population at a stable coexistence between cooperation and defection, a modifier allele can successfully invade the population if it increases the social association.
+Such an invasion will, in turn, increase the population mean fitness.
+\end{result}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Population Structure}
 
@@ -718,6 +842,8 @@ Using a linear approximation for $f(p)$ near $1$, we have
 f'(1) - O(1-p) &< 0.
 \end{aligned}\end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
+
+
 \end{appendices}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
