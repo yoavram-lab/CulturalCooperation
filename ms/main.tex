@@ -68,7 +68,7 @@ headheight=12pt
 % Yoav & Lee commands
 \newcommand*{\tr}{^\intercal}
 \let\vec\mathbf
-\newcommand{\matrx}[1]{{\left[ \stackrel{}{#1}\right]}}
+\newcommand{\matrx}[1]{{\Big[ \stackrel{}{#1}\Big]}}
 \newcommand{\diag}[1]{\mbox{diag}\matrx{#1}}
 \newcommand{\goesto}{\rightarrow}
 \newcommand{\dspfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2} }
@@ -219,9 +219,9 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 
 \begin{equation}\label{eq:horizontal}
 \begin{aligned}
-\hat{p}
-& = \tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] \\
-& = v \tilde{p} + (1-v) p \;.
+\hat{p} =
+& \tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] = \\
+& v \tilde{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
 
@@ -239,26 +239,26 @@ However, horizontal transmission is not always successful, as one partner may re
 Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
-p'
-& = \hat{p}^2 [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
-& + \hat{p}(1-\hat{p}) [\alpha(1-T_B) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
-& + (1-\hat{p})\hat{p} [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
-& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
+p' = 
+& \hat{p}^2 \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
+& \hat{p}(1-\hat{p}) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
+& (1-\hat{p})\hat{p} \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] + \\
+& (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
 which simplifies to
 \begin{equation}\label{eq:nextgen_adults_slimpify}
-p' = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) .
+p' = \hat{p}^2(T_B-T_A) + \hat{p}(1+T_A-T_B) \;.
 \end{equation}
 
 The frequency of $A$ among parents (i.e. after selection) follows a similar dynamic, but also includes the effect of natural selection, and is therefore
 \begin{equation}\label{eq:nextgen_parents}
 \begin{aligned}
-\bar{w} \tilde{p}'
-& = \hat{p}^2 (1+b-c) [\alpha + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
-& + \hat{p}(1-\hat{p}) (1-c) [\alpha(1-T_B) + (1-\alpha)(\hat{p} + (1-\hat{p})(1-T_B))] \\
-& + (1-\hat{p})\hat{p} (1+b) [\alpha T_A + (1-\alpha) \hat{p} T_A ] \\
-& + (1-\hat{p})^2 [(1-\alpha) \hat{p} T_A] \;,
+\bar{w} \tilde{p}' =
+& \hat{p}^2 (1+b-c) \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
+& \hat{p}(1-\hat{p}) (1-c) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
+& (1-\hat{p})\hat{p} (1+b) \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] + \\
+& (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
 where fitness values are taken from \autoref{table:prisoner_payoff} and \autoref{table:interactions}, and the population mean fitness is
@@ -269,11 +269,11 @@ where fitness values are taken from \autoref{table:prisoner_payoff} and \autoref
 \autoref{eq:nextgen_parents} can be simplified to
 \begin{equation}\label{eq:nextgen_parents_simplified}
 \begin{aligned}
-\bar{w} \tilde{p}'
-& = \hat{p}^2 (1+b-c) \big(1-(1-\hat{p})(1-\alpha)T_B)\big) \\
-& + \hat{p}(1-\hat{p}) (1-c) \big(\hat{p}(1-\alpha)T_B+1-T_B\big) \\
-& + (1-\hat{p})\hat{p} (1+b) \big(\hat{p}(1-\alpha) + \alpha\big) T_A \\
-& + (1-\hat{p})^2 \hat{p} (1-\alpha) T_A \;.
+\bar{w} \tilde{p}' =
+& \hat{p}^2 (1+b-c) \big[1-(1-\hat{p})(1-\alpha)T_B)\big] + \\
+& \hat{p}(1-\hat{p}) (1-c) \big[\hat{p}(1-\alpha)T_B+1-T_B \big] + \\
+& (1-\hat{p})\hat{p} (1+b) \big[\hat{p}(1-\alpha) + \alpha \big] T_A + \\
+& (1-\hat{p})^2 \hat{p} (1-\alpha) T_A \;.
 \end{aligned}
 \end{equation}
 %where $\hat{p}=v\tilde{p}+(1-v)p$.
@@ -282,12 +282,13 @@ Finally, we find an equation for the frequency of phenotype $A$ among juveniles 
 Starting from \autoref{eq:horizontal}, we substitute \autoref{eq:nextgen_adults_slimpify} for $p'$ and  \autoref{eq:nextgen_parents_simplified} for $\tilde{p}'$.
 We therefore have
 \begin{equation} \label{eq:nextgen_juveniles}
-  \begin{aligned}
-  \hat{p}'  = & \frac{v}{\bar{w}}\left\{\hat{p}^2(1+b-c)\left[1-(1-\hat{p})(1-\alpha)T_B)\right]\right\} \\
-  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1-c)\left[ \hat{p}(1-\alpha)T_B + 1 - T_B \right] \right\} \\
-  & + \frac{v}{\bar{w}}\left\{ \hat{p}(1-\hat{p})(1+b)\left[\hat{p}(1-\alpha) + \alpha \right]T_A \right\} \\
-  & + \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \\
-  & + (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B),
+\begin{aligned}
+\hat{p}' =
+& \frac{v}{\bar{w}}\Big[\hat{p}^2(1+b-c)\Big[1-(1-\hat{p})(1-\alpha)T_B)\Big]\Big] + \\
+& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1-c)\big( \hat{p}(1-\alpha)T_B + 1 - T_B \big) \Big] + \\
+& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1+b)\big(\hat{p}(1-\alpha) + \alpha \big) T_A \Big] + \\
+& \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A + \\
+& (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B) \;,
 \end{aligned}
 \end{equation}
 where $\bar{w} = 1 + \hat{p}(b-c)$. 
@@ -647,7 +648,7 @@ They therefore suggested that to explain the evolution of altruism, we should se
 Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and partner for transmission.
 This mechanism does not require population structure, repeated interactions, or individual recognition.
 We show that high levels of such social association greatly increase the potential for evolution of cooperation (\autoref{fig:result2}).
-With enough social association ($\alpha > \big(c(1-T_B) + (T_B-T_A)\big) / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$, see Result~\autoref{result:vert_hori}).
+With enough social association ($\alpha > \Big[c(1-T_B) + (T_B-T_A)\Big] / b T_A$), cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$, see Result~\autoref{result:vert_hori}).
 
 How does non-vertical transmission generate assortment? 
 \citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors} 
@@ -713,7 +714,7 @@ $-\frac{f(p)}{1-p} < 0$.
 Using a linear approximation for $f(p)$ near $1$, we have
 \begin{equation}\begin{aligned}
 1-p' &< 1-p  \Leftrightarrow \\
-\frac{f'(1)(p-1) + O\big((p-1)^2\big)}{p-1} &< 0 \Leftrightarrow \\
+\frac{f'(1)(p-1) + O\Big[(p-1)^2\Big]}{p-1} &< 0 \Leftrightarrow \\
 f'(1) - O(1-p) &< 0.
 \end{aligned}\end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
