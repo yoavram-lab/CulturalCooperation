@@ -875,9 +875,9 @@ The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
 \end{equation}
 
 If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
-These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda (X+Q) + XQ - YZ$; the leading eigenvalue $\lambda_1$ is the largest of them,
+These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda \frac{(X+Q)}{\bar{w}} + \frac{XQ - YZ}{\bar{w}^2}$; the leading eigenvalue $\lambda_1$ is the largest of them,
 \begin{equation} \label{eq:eigenvalues}
-  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2} \;.
+  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2\bar{w}} \;.
 \end{equation}
 Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $\lambda_1 > 1$ if 
 \begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
