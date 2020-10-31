@@ -875,26 +875,33 @@ The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
 \end{equation}
 
 If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
-These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda \frac{(X+Q)}{\bar{w}} + \frac{XQ - YZ}{\bar{w}^2}$; the leading eigenvalue $\lambda_1$ is the largest of them,
-\begin{equation} \label{eq:eigenvalues}
-  \lambda_1 = \frac{X+Q + \sqrt{(X+Q)^2 - 4(XQ-YZ)}}{2\bar{w}} \;.
+These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda \frac{(X+Q)}{\bar{w}} + \frac{XQ - YZ}{\bar{w}^2}$; At $\lambda = 1$ the characteristic polynomial is equal to:
+\begin{equation} \label{eq:characteristic_at_1}
+  1-\frac{X+Q}{\bar{w}} + \frac{XQ-YZ}{\bar{w}^2}.
 \end{equation}
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $\lambda_1 > 1$ if 
-\begin{equation} \label{eq:eigenvalues_greater_than_1_condition}
+This polynomial has at least one real root since 
+\begin{equation} \label{eq:delta}
+  \Delta = \frac{(X+Q)^2}{\bar{w}^2}-\frac{4XQ-4YZ}{\bar{w}^2}=\frac{(X-Q)^2+4YZ}{\bar{w}^2} > 0.
+\end{equation}
+Since the characteristic polynomial is second order polynomial with leading positive coefficient, if the value at 1 is greater than zero, we know that both roots can be either greater or smaller than 1.
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that the characteristic polynomial is positive at $\lambda = 1$ if 
+\begin{equation} \label{eq:both_roots_greater_or_smaller_than_1_condition}
 \begin{aligned}
- \alpha_2 > 
- \frac{-b (T_A-T_B) \tilde{p}^* - (T_A - T_B)  + c (1-T_B)}{bT_A - b (T_A-T_B) \tilde{p}^*} = %\\
-% \frac{-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1} - (T_A - T_B)  + c (1-T_B)}{bT_A - \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{1-\alpha_1}} = \\
-% \frac{\frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{1-\alpha_1}}{\frac{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)}{1-\alpha_1}} = \\
-%  \frac{-c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)- (1-\alpha_1)(T_A - T_B)  + (1-\alpha_1)c (1-T_B)}{(1-\alpha_1)bT_A - c(1-T_B) + b \alpha_1 T_A + (T_A - T_B)} = \\
-%\frac{\alpha_1 b  T_A + \alpha_1 (T_A - T_B)  - \alpha_1 c (1-T_B)}{bT_A - c(1-T_B) + (T_A - T_B)} = 
-\alpha_1 \;.
+ \alpha_2 < \alpha_1 \;.
 \end{aligned}
 \end{equation}
-
-
-
+Now we know when all the roots are either smaller or greather than 1. We would like to know when all the roots are smaller than 1.
+All the roots are smaller than 1 when the slope at 1 is positive. 
+Using SymPy we get that the slope is positive when:
+\begin{equation} \label{eq:eigenvalues_smaller_than_1_condition}
+  \begin{aligned}
+   c < &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \\
+   OR \\
+   c > &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \, AND\, c<\frac{-g}{h}
+  \end{aligned}
+  \end{equation}
 \end{appendices}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
