@@ -563,7 +563,7 @@ The parent is randomly drawn with probability proportional to its fitness, divid
 Offspring then have the same phenotype as their parents (i.e. $v=1$).
 
 The outcomes of stochastic simulations with a structured population are shown in \autoref{fig:spatial}. The figure demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for a model without population structure or stochasticity.
-An example for stable coexistence is shown in \autoref{fig:spatial_fluctuations}.
+An example for stable coexistence is shown in \autoref{fig:spatial}c.
 Simulating a structured population with local selection (i.e. sites can only be settled by offspring of neighbor parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
 These comparisons between the deterministic unstructured model and the stochastic structured model show that the derived conditions can be useful for predicting the dynamics of complex scenarios. 
@@ -802,43 +802,43 @@ Thus, the population mean fitness increases as social association $\alpha$ incre
 
 We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
 We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
-The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
+The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, where $x=\tilde{p}_1+\tilde{p}_3$ is the cooperator frequency, 
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
 	% p1
   \bar{w}\tilde{p}_1' = 
-  & \tilde{p}_1(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
-  & \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_1T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) + \\
-  & \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_1(\tilde{p}_2 + \tilde{p}_4)) + \\
-  & \tilde{p}_2(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_1)T_A \;,
+  & \tilde{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) + \\
+  & \tilde{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) + \\
+  & \tilde{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) + \\
+  & \tilde{p}_2(1-x)x(1-\alpha_1)T_A \;,
 \\
 	% p2
   \bar{w}\tilde{p}_2' = 
-  & \tilde{p}_2(\tilde{p}_2+\tilde{p}_4)(1 - (1-\alpha_1)(\tilde{p}_1 + \tilde{p}_3)T_A) + \\
-  & \tilde{p}_2(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_1 T_A(\tilde{p}_2 + \tilde{p}_4) - T_A(\tilde{p}_1 + \tilde{p}_3)) + \\
-  & \tilde{p}_1(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_1 T_B + (1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
-  & \tilde{p}_1(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_1)(\tilde{p}_2 + \tilde{p}_4)T_B \;, 
+  & \tilde{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \\
+  & \tilde{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) + \\
+  & \tilde{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) + \\
+& \tilde{p}_2(1-x)(1 - (1-\alpha_1) x T_A) \;, 
 \\
 	% p3
   \bar{w}\tilde{p}_3' =
-  & \tilde{p}_3(\tilde{p}_1+\tilde{p}_3)(1+b-c)(1 - (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
-  & \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(1-\alpha_2T_B(\tilde{p}_1 + \tilde{p}_3) - T_B(\tilde{p}_2 + \tilde{p}_4)) + \\
-  & \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)T_A(\tilde{p}_1 + \tilde{p}_3 + \alpha_2(\tilde{p}_2 + \tilde{p}_4)) + \\
-  & \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(\tilde{p}_1 + \tilde{p}_3)(1-\alpha_2)T_A \;, 
+  & \tilde{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) + \\
+  & \tilde{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) + \\
+  & \tilde{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) + \\
+  & \tilde{p}_4(1-x) x (1-\alpha_2)T_A \;, 
 \\
 	% p4
   \bar{w}\tilde{p}_4' =
-  & \tilde{p}_4(\tilde{p}_2 + \tilde{p}_4)(1 - (1-\alpha_2)(\tilde{p}_1 + \tilde{p}_3)T_A) + \\
-  & \tilde{p}_4(\tilde{p}_1 + \tilde{p}_3)(1+b)(1-\alpha_2T_A(\tilde{p}_2 + \tilde{p}_4)-T_A(\tilde{p}_1 + \tilde{p}_3)) + \\
-  & \tilde{p}_3(\tilde{p}_2 + \tilde{p}_4)(1-c)(\alpha_2T_B + (1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B) + \\
-  & \tilde{p}_3(\tilde{p}_1 + \tilde{p}_3)(1+b-c)(1-\alpha_2)(\tilde{p}_2 + \tilde{p}_4)T_B \;,
+  & \tilde{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B + \\
+  & \tilde{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) + \\
+  & \tilde{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) + \\
+  & \tilde{p}_4(1-x)(1 - (1-\alpha_2) x T_A) \;,
   \end{aligned}
 \end{equation}
 %which we can write as 
 %\begin{equation}
 %\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
 %\end{equation}
-where $\bar{w} = 1 + (b-c)(\tilde{p}_1 + \tilde{p}_3)$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+where $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
 
 The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
@@ -852,26 +852,73 @@ The latter is the external stability matrix: the linear approximation to the tra
 Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
 $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
 \begin{equation}
-\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{pmatrix}
+\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{bmatrix}
 	 X &
 	 Y \\
 	 Z &
 	 Q 
-\end{pmatrix} \;.
+\end{bmatrix} \;.
 \end{equation}
 
 The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
 \begin{equation} \label{eq:partial_derivatives}
   \begin{aligned}
 %  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
-  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
+  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
+  b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
 %  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
-  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
+  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
+  b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
 % Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
-  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - c) T_B (1 - \tilde{p}^*) + b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) \;,\\
+  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
+  b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) + (1 - c) T_B (1 - \tilde{p}^*) \;,\\
 %  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
-  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - T_A \tilde{p}^* + b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* \;.
+  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
+  b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* + 1 - T_A \tilde{p}^* \;.
   \end{aligned}
+\end{equation}
+
+Reorganizing these equations, we get,
+\begin{equation} 
+  \begin{aligned}
+  	&\bar{w}^* L^*_{ex} = \\
+	&\begin{bmatrix}
+		(1+b \tilde{p}^* -c)(1-T_B(1-\tilde{p}^*)) + b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) & 
+		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
+		(1+b \tilde{p}^* - c) T_B(1-\tilde{p}^*) - b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) &
+		(1+b \tilde{p}^*) (1-T_A \tilde{p}^*) - b \tilde{p}^* \alpha_2 T_A (1-\tilde{p}^*) \\
+  	\end{bmatrix} \;,
+  \end{aligned}
+\end{equation}
+which can be rearranges as
+\begin{equation} 
+  \begin{aligned}
+  	\bar{w}^* L^*_{ex} = 
+	\Big[
+	\ci 
+	-\vec{T}	
+	\cdot
+	\vec{P}
+	\Big] 
+	\cdot
+	\begin{bmatrix}
+	1+b\tilde{p}^*-c & 0 \\ 0 & 1+b\tilde{p}^*
+	\end{bmatrix}
+	+ 
+	\alpha_2 \cdot b \cdot \tilde{p}^* (1-\tilde{p}^*)
+	\cdot \vec{T} \;,
+  \end{aligned}
+\end{equation}
+where
+\begin{equation} 
+\begin{aligned}
+\vec{T} &= \begin{bmatrix}
+	T_B & T_A \\ -T_B & -T_A
+\end{bmatrix} \;,
+\vec{P} &= \begin{bmatrix}
+	1-\tilde{p}^* & 0 \\ 0 & -\tilde{p}^*
+\end{bmatrix} \;.
+\end{aligned}
 \end{equation}
 
 If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
