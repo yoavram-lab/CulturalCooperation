@@ -802,7 +802,7 @@ Thus, the population mean fitness increases as social association $\alpha$ incre
 
 We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
 We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
-The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, where $x=\tilde{p}_1+\tilde{p}_3$ is the cooperator frequency, 
+The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
 	% p1
@@ -838,7 +838,7 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
 %\begin{equation}
 %\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
 %\end{equation}
-where $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+where $x=\tilde{p}_1+\tilde{p}_3$ is the cooperator frequency, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
 
 The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
@@ -852,101 +852,87 @@ The latter is the external stability matrix: the linear approximation to the tra
 Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
 $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
 \begin{equation}
-\mathbf{L}^*_{ex} = \frac{1}{\bar{w}^*} \begin{bmatrix}
+\begin{aligned}
+&\mathbf{L}^*_{ex} = 
+ \frac{1}{\bar{w}^*} \begin{bmatrix}
 	 X &
 	 Y \\
 	 Z &
 	 Q 
-\end{bmatrix} \;.
-\end{equation}
-
-The elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1},
-\begin{equation} \label{eq:partial_derivatives}
-  \begin{aligned}
-%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
-  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
-  b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
-%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
-  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
-  b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
-% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
-  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
-  b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) + (1 - c) T_B (1 - \tilde{p}^*) \;,\\
-%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
-  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
-  b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* + 1 - T_A \tilde{p}^* \;.
-  \end{aligned}
-\end{equation}
-
-Reorganizing these equations, we get,
-\begin{equation} 
-  \begin{aligned}
-  	&\bar{w}^* L^*_{ex} = \\
-	&\begin{bmatrix}
+\end{bmatrix} = \\
+& \frac{1}{\bar{w}^*} \begin{bmatrix}
+\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
+\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
+\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) 
+\end{bmatrix} = \\
+& \frac{1}{\bar{w}^*} \begin{bmatrix}
 		(1+b \tilde{p}^* -c)(1-T_B(1-\tilde{p}^*)) + b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) & 
 		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
 		(1+b \tilde{p}^* - c) T_B(1-\tilde{p}^*) - b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) &
 		(1+b \tilde{p}^*) (1-T_A \tilde{p}^*) - b \tilde{p}^* \alpha_2 T_A (1-\tilde{p}^*) \\
   	\end{bmatrix} \;,
-  \end{aligned}
-\end{equation}
-which can be rearranges as
-\begin{equation} 
-  \begin{aligned}
-  	\bar{w}^* L^*_{ex} = 
-	\Big[
-	\ci 
-	-\vec{T}	
-	\cdot
-	\vec{P}
-	\Big] 
-	\cdot
-	\begin{bmatrix}
-	1+b\tilde{p}^*-c & 0 \\ 0 & 1+b\tilde{p}^*
-	\end{bmatrix}
-	+ 
-	\alpha_2 \cdot b \cdot \tilde{p}^* (1-\tilde{p}^*)
-	\cdot \vec{T} \;,
-  \end{aligned}
-\end{equation}
-where
-\begin{equation} 
-\begin{aligned}
-\vec{T} &= \begin{bmatrix}
-	T_B & T_A \\ -T_B & -T_A
-\end{bmatrix} \;,
-\vec{P} &= \begin{bmatrix}
-	1-\tilde{p}^* & 0 \\ 0 & -\tilde{p}^*
-\end{bmatrix} \;.
 \end{aligned}
 \end{equation}
 
-If both eigenvalues of $\mathbf{L}^*_{ex}$ are less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
-These eigenvalues are the root of the characteristic polynomial $\lambda^2 -\lambda \frac{(X+Q)}{\bar{w}} + \frac{XQ - YZ}{\bar{w}^2}$; At $\lambda = 1$ the characteristic polynomial is equal to:
-\begin{equation} \label{eq:characteristic_at_1}
-  1-\frac{X+Q}{\bar{w}} + \frac{XQ-YZ}{\bar{w}^2}.
+where the elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1}.
+%\begin{equation} \label{eq:partial_derivatives}
+%  \begin{aligned}
+%%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
+%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
+%  b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
+%%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
+%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
+%  b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
+%% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
+%  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
+%  b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) + (1 - c) T_B (1 - \tilde{p}^*) \;,\\
+%%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
+%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
+%  b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* + 1 - T_A \tilde{p}^* \;.
+%  \end{aligned}
+%\end{equation}
+
+Note that $\mathbf{L}^*_{ex}$ is positive, and due to the Perron-Frobenius theorem, its leading eigenvalue is real and positive.
+If the leading eigenvalue is less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
+The eigenvalues of $\mathbf{L}^*_{ex}$ are the roots of the characteristic polynomial 
+\begin{equation}\label{char_poly}
+R(\lambda) = 
+\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;.
 \end{equation}
-This polynomial has at least one real root since 
-\begin{equation} \label{eq:delta}
-  \Delta = \frac{(X+Q)^2}{\bar{w}^2}-\frac{4XQ-4YZ}{\bar{w}^2}=\frac{(X-Q)^2+4YZ}{\bar{w}^2} > 0.
-\end{equation}
-Since the characteristic polynomial is second order polynomial with leading positive coefficient, if the value at 1 is greater than zero, we know that both roots can be either greater or smaller than 1.
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that the characteristic polynomial is positive at $\lambda = 1$ if 
-\begin{equation} \label{eq:both_roots_greater_or_smaller_than_1_condition}
-\begin{aligned}
- \alpha_2 < \alpha_1 \;.
-\end{aligned}
-\end{equation}
-Now we know when all the roots are either smaller or greather than 1. We would like to know when all the roots are smaller than 1.
-All the roots are smaller than 1 when the slope at 1 is positive. 
-Using SymPy we get that the slope is positive when:
-\begin{equation} \label{eq:eigenvalues_smaller_than_1_condition}
-  \begin{aligned}
-   c < &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \\
-   OR \\
-   c > &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \, AND\, c<\frac{-g}{h}
-  \end{aligned}
-  \end{equation}
+%At $\lambda = 1$ the characteristic polynomial is equal to:
+%\begin{equation} \label{eq:characteristic_at_1}
+%  1-\frac{X+Q}{\bar{w}} + \frac{XQ-YZ}{\bar{w}^2}.
+%\end{equation}
+%Because the discriminant of $R(\lambda)$ is positive, 
+%\begin{equation} \label{eq:delta}
+%  \Delta = 
+%  %\frac{(X+Q)^2}{\bar{w}^2}-\frac{4XQ-4YZ}{\bar{w}^2}=
+%  \frac{(X-Q)^2+4YZ}{\bar{w}^2} > 0 \;,
+%\end{equation}
+%it has two real roots.
+
+The characteristic polynomial $R(\lambda)$ is a quadratic with a positive leading coefficient. Therefore, $R(\infty)=R(-\infty)>0$.
+Hence, the leading eigenvalue is greater than one, implying external stability, if and only if $R(1)>0$ and $R'(1)>0$.
+Thus, a sufficient condition for instability is $R(1)<0$.
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $R(1)<0$ if and only if $\alpha_2 < \alpha_1$.
+That is, if the social association $\alpha_2$ of the invading modifier allele $m$ is less than $\alpha_1$ of the resident $M$, then invasion will be successful.
+
+Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
+
+%Now we know when all the roots are either smaller or greather than 1. We would like to know when all the roots are smaller than 1.
+%All the roots are smaller than 1 when the slope at 1 is positive. 
+%Using SymPy we get that the slope is positive when:
+%\begin{equation} \label{eq:eigenvalues_smaller_than_1_condition}
+%  \begin{aligned}
+%   c < &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \\
+%   OR \\
+%   c > &\gamma_1 - \frac{(T_B-T_A)b(1-\alpha_1)}{2-T_B} \, AND\, c<\frac{-g}{h}
+%  \end{aligned}
+%\end{equation}
+  
+  
+  
 \end{appendices}
 
 
