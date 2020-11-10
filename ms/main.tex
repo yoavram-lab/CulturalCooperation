@@ -525,16 +525,15 @@ The full analysis is given in Appendix~\ref{sec:appendixD}, and following result
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{result}[Evolution of social association] 
+\begin{result}[Reduction principle for social association] 
 \label{result:evol_social_association}
-In a population at a stable coexistence between cooperation and defection, a modifier allele can successfully invade the population if it increases the social association.
-Such an invasion will, in turn, increase the frequency of cooperator as well as the population mean fitness.
+Under perfect vertical transmission ($v=1$), in a population at a stable coexistence between cooperation and defection, a modifier allele can successfully invade the population if it decreases the social association $\alpha$.
 \end{result}
 
-Let us assume that modifier alleles with increased and decreased social association can appear in the population from time to time.
-Then, this results suggests that social association will continue to (slowly) increase as long as cooperation and defection coexist.
-This coexistence requires $a_2 < \alpha < a_1$ (\autoref{fig:result2}c), and so this process will proceed until $\alpha=a_1$ and cooperation takes over the population.
-%TODO - This process is demonstrated in \autoref{fig:evolution_alpha}.
+Note that this reduction principle entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
+Furthermore, if we assume that modifier alleles with decreased social association appear and invade the population from time to time, then, social association will continue to decrease, further reducing the frequency of cooperation and the population mean fitness. This evolution will proceed as long as stable polymorphism occurs, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}
+, \autoref{fig:result2}c). 
+Thus, we can expect social association to eventually drop to $a_2$, the frequency of cooperation to drop to zero, and the population mean fitness to drop to one.
 \\
 
 
@@ -798,7 +797,7 @@ Thus, the population mean fitness increases as social association $\alpha$ incre
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{External stability of $\tilde{p}^*$} \label{sec:appendixD}
+\section{Reduction principle} \label{sec:appendixD}
 
 We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
 We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
@@ -838,7 +837,7 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
 %\begin{equation}
 %\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
 %\end{equation}
-where $x=\tilde{p}_1+\tilde{p}_3$ is the cooperator frequency, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+where $x=\tilde{p}_1+\tilde{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
 
 The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
@@ -846,12 +845,12 @@ The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde
 \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
 \end{equation}
 which we get by setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
+When $v=1$, this equilibrium is polymorphic ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\autoref{result:vert_obli_hori}).
+
 The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
 $\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
-The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the phono-genotypes $Am$ and $Bm$.
-Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
-$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$, 
-\begin{equation}
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1} as
+\begin{equation} \label{eq:external_stability_matrix}
 \begin{aligned}
 &\mathbf{L}^*_{ex} = 
  \frac{1}{\bar{w}^*} \begin{bmatrix}
@@ -859,8 +858,8 @@ $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability m
 	 Y \\
 	 Z &
 	 Q 
-\end{bmatrix} = \\
-& \frac{1}{\bar{w}^*} \begin{bmatrix}
+\end{bmatrix} = 
+\frac{1}{\bar{w}^*} \begin{bmatrix}
 \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
 \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
 \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
@@ -871,11 +870,10 @@ $\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability m
 		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
 		(1+b \tilde{p}^* - c) T_B(1-\tilde{p}^*) - b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) &
 		(1+b \tilde{p}^*) (1-T_A \tilde{p}^*) - b \tilde{p}^* \alpha_2 T_A (1-\tilde{p}^*) \\
-  	\end{bmatrix} \;,
+  	\end{bmatrix} \;.
 \end{aligned}
 \end{equation}
 
-where the elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_p_1}.
 %\begin{equation} \label{eq:partial_derivatives}
 %  \begin{aligned}
 %%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
@@ -893,13 +891,16 @@ where the elements of $\mathbf{L}^*_{ex}$ are derived from \autoref{eq:next_gen_
 %  \end{aligned}
 %\end{equation}
 
-Note that $\mathbf{L}^*_{ex}$ is positive, and due to the Perron-Frobenius theorem, its leading eigenvalue is real and positive.
-If the leading eigenvalue is less than 1, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable and allele $m$ cannot invade the population of allele $M$. 
-The eigenvalues of $\mathbf{L}^*_{ex}$ are the roots of the characteristic polynomial 
+Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$.
+This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\mathbf{L}^*_{ex}$ is real and positive.
+Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
+The eigenvalues of $\mathbf{L}^*_{ex}$ are the roots of the characteristic polynomial, 
 \begin{equation}\label{char_poly}
 R(\lambda) = 
-\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;.
+\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;,
 \end{equation}
+where $X$, $Y$, $Z$, and $Q$ are defined in \autoref{eq:external_stability_matrix}.
 %At $\lambda = 1$ the characteristic polynomial is equal to:
 %\begin{equation} \label{eq:characteristic_at_1}
 %  1-\frac{X+Q}{\bar{w}} + \frac{XQ-YZ}{\bar{w}^2}.
@@ -911,12 +912,33 @@ R(\lambda) =
 %  \frac{(X-Q)^2+4YZ}{\bar{w}^2} > 0 \;,
 %\end{equation}
 %it has two real roots.
-
-The characteristic polynomial $R(\lambda)$ is a quadratic with a positive leading coefficient. Therefore, $R(\infty)=R(-\infty)>0$.
-Hence, the leading eigenvalue is greater than one, implying external stability, if and only if $R(1)>0$ and $R'(1)>0$.
-Thus, a sufficient condition for instability is $R(1)<0$.
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that $R(1)<0$ if and only if $\alpha_2 < \alpha_1$.
-That is, if the social association $\alpha_2$ of the invading modifier allele $m$ is less than $\alpha_1$ of the resident $M$, then invasion will be successful.
+The characteristic polynomial $R(\lambda)$ is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
+Thus, a sufficient condition for external instability of $\vec{\tilde{p}^*}$ is
+\begin{equation} \label{eq:R1_negative}
+\begin{aligned}
+R(1) < 0 \Leftrightarrow 
+1 - \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} < 0 \Leftrightarrow 
+\bar{w^*}^2 - \bar{w^*} (X+Q) + XQ - YZ < 0 \;.
+\end{aligned}
+\end{equation}
+Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that inequality~\ref{eq:R1_negative} is true if and only if
+\begin{equation} \label{eq:alpha2_alpha1_intermediate}
+\begin{aligned}
+\alpha_2 \big(b T_{A} + (T_A-T_B) - c(1-T_B)\big) <
+\alpha_1 \big(b T_{A} + (T_A-T_B) - c(1-T_B)\big) \;.
+\end{aligned}
+\end{equation}
+We assumed $c<\gamma_1$, that is,
+\begin{equation} \label{eq:c_gamma1_utility}
+\begin{aligned}
+c < \gamma_1 = \frac{b \alpha_1 T_A + (T_A-T_B)}{1-T_B} \Leftrightarrow \\
+%c(1-T_B) < b \alpha_1 T_A + (T_A-T_B) \Leftrightarrow \\
+0 < b \alpha_1 T_A + (T_A-T_B) - c(1-T_B) \Rightarrow \\
+0 < b T_A + (T_A-T_B) - c(1-T_B) \;,
+\end{aligned}
+\end{equation}
+since $0 \le \alpha_1 \le 1$.
+Therefore, combining inequalities \ref{eq:R1_negative}, \ref{eq:alpha2_alpha1_intermediate}, and \ref{eq:c_gamma1_utility}, we find that $R(1)<0$ if and only if $\alpha_2 < \alpha_1$. This is a sufficient condition for external instability, so, if the social association $\alpha_2$ of the invading modifier allele $m$ is less than $\alpha_1$ of the resident $M$, then invasion will be successful.
 
 Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
 
