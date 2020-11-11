@@ -219,7 +219,7 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 \begin{equation}\label{eq:horizontal}
 \begin{aligned}
 \hat{p} =
-& \tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] = \\
+& \tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] \;= \\
 & v \tilde{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
@@ -240,9 +240,9 @@ Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generati
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
 p' = 
-& \hat{p}^2 \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
-& \hat{p}(1-\hat{p}) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
-& (1-\hat{p})\hat{p} \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] + \\
+& \hat{p}^2 \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
+& \hat{p}(1-\hat{p}) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
+& (1-\hat{p})\hat{p} \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] \;+ \\
 & (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
@@ -255,9 +255,9 @@ The frequency of $A$ among parents (i.e. after selection) follows a similar dyna
 \begin{equation}\label{eq:nextgen_parents}
 \begin{aligned}
 \bar{w} \tilde{p}' =
-& \hat{p}^2 (1+b-c) \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
-& \hat{p}(1-\hat{p}) (1-c) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] + \\
-& (1-\hat{p})\hat{p} (1+b) \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] + \\
+& \hat{p}^2 (1+b-c) \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
+& \hat{p}(1-\hat{p}) (1-c) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
+& (1-\hat{p})\hat{p} (1+b) \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] \;+ \\
 & (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
@@ -269,9 +269,9 @@ $\bar{w} =  1 + \hat{p}(b-c)$.
 \begin{equation}\label{eq:nextgen_parents_simplified}
 \begin{aligned}
 \bar{w} \tilde{p}' =
-& \hat{p}^2 (1+b-c) \big[1-(1-\hat{p})(1-\alpha)T_B)\big] + \\
-& \hat{p}(1-\hat{p}) (1-c) \big[\hat{p}(1-\alpha)T_B+1-T_B \big] + \\
-& (1-\hat{p})\hat{p} (1+b) \big[\hat{p}(1-\alpha) + \alpha \big] T_A + \\
+& \hat{p}^2 (1+b-c) \big[1-(1-\hat{p})(1-\alpha)T_B)\big] \;+ \\
+& \hat{p}(1-\hat{p}) (1-c) \big[\hat{p}(1-\alpha)T_B+1-T_B \big] \;+ \\
+& (1-\hat{p})\hat{p} (1+b) \big[\hat{p}(1-\alpha) + \alpha \big] T_A \;+ \\
 & (1-\hat{p})^2 \hat{p} (1-\alpha) T_A \;.
 \end{aligned}
 \end{equation}
@@ -280,11 +280,12 @@ Starting from \autoref{eq:horizontal} with $\hat{p}'=v\tilde{p}'+(1-v)p'$, we su
 \begin{equation} \label{eq:nextgen_juveniles}
 \begin{aligned}
 \hat{p}' =
-& \frac{v}{\bar{w}}\Big[\hat{p}^2(1+b-c)\Big[1-(1-\hat{p})(1-\alpha)T_B)\Big]\Big] + \\
-& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1-c)\big( \hat{p}(1-\alpha)T_B + 1 - T_B \big) \Big] + \\
-& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1+b)\big(\hat{p}(1-\alpha) + \alpha \big) T_A \Big] + \\
-& \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A + \\
-& (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B) \;.
+& \frac{v}{\bar{w}}\Big[\hat{p}^2(1+b-c)\Big(1-(1-\hat{p})(1-\alpha)T_B)\Big)\Big] \;+ \\
+& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1-c)\big( \hat{p}(1-\alpha)T_B + 1 - T_B \big) \Big] \;+ \\
+& \frac{v}{\bar{w}}\Big[ \hat{p}(1-\hat{p})(1+b)\big(\hat{p}(1-\alpha) + \alpha \big) T_A \Big] \;+ \\
+& \frac{v}{\bar{w}}(1-\hat{p})^2\hat{p}(1-\alpha)T_A \;+ \\
+& (1-v)\hat{p}^2(T_B-T_A) \;+ \\
+& (1-v)\hat{p}(1+T_A-T_B) \;.
 \end{aligned}
 \end{equation}
 \autoref{table:vars_params} lists the model variables and parameters.
@@ -794,30 +795,30 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
   \begin{aligned}
 	% p1
   \bar{w}\tilde{p}_1' = 
-  & \tilde{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) + \\
-  & \tilde{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) + \\
-  & \tilde{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) + \\
+  & \tilde{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) \;+ \\
+  & \tilde{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) \;+ \\
+  & \tilde{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) \;+ \\
   & \tilde{p}_2(1-x)x(1-\alpha_1)T_A \;,
 \\
 	% p2
   \bar{w}\tilde{p}_2' = 
-  & \tilde{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \\
-  & \tilde{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) + \\
-  & \tilde{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) + \\
+  & \tilde{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \;+ \\
+  & \tilde{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) \;+ \\
+  & \tilde{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) \;+ \\
 & \tilde{p}_2(1-x)(1 - (1-\alpha_1) x T_A) \;, 
 \\
 	% p3
   \bar{w}\tilde{p}_3' =
-  & \tilde{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) + \\
-  & \tilde{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) + \\
-  & \tilde{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) + \\
+  & \tilde{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) \;+ \\
+  & \tilde{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) \;+ \\
+  & \tilde{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) \;+ \\
   & \tilde{p}_4(1-x) x (1-\alpha_2)T_A \;, 
 \\
 	% p4
   \bar{w}\tilde{p}_4' =
-  & \tilde{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B + \\
-  & \tilde{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) + \\
-  & \tilde{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) + \\
+  & \tilde{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B \;+ \\
+  & \tilde{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) \;+ \\
+  & \tilde{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) \;+ \\
   & \tilde{p}_4(1-x)(1 - (1-\alpha_2) x T_A) \;,
   \end{aligned}
 \end{equation}
@@ -830,7 +831,7 @@ where $x=\tilde{p}_1+\tilde{p}_3$ is the total frequency of the cooperative phen
 The equilibrium where only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
 \tilde{p}^*=
-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
+\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)} \;,
 \end{equation}
 which we get by setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
 When $v=1$, this equilibrium is polymorphic ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
@@ -852,7 +853,7 @@ The latter is the external stability matrix: the linear approximation to the tra
 \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
 \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
 \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) 
-\end{bmatrix} = \\
+\end{bmatrix} \;= \\
 & \frac{1}{\bar{w}^*} \begin{bmatrix}
 		(1+b \tilde{p}^* -c)(1-T_B(1-\tilde{p}^*)) + b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) & 
 		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
@@ -919,10 +920,10 @@ Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics
 We assumed $c<\gamma_1$, that is,
 \begin{equation} \label{eq:c_gamma1_utility}
 \begin{aligned}
-c < \gamma_1 = \frac{b \alpha_1 T_A + (T_A-T_B)}{1-T_B} \Leftrightarrow \\
+c &< \gamma_1 = \frac{b \alpha_1 T_A + (T_A-T_B)}{1-T_B} \; \Leftrightarrow \\
 %c(1-T_B) < b \alpha_1 T_A + (T_A-T_B) \Leftrightarrow \\
-0 < b \alpha_1 T_A + (T_A-T_B) - c(1-T_B) \Rightarrow \\
-0 < b T_A + (T_A-T_B) - c(1-T_B) \;,
+0 &< b \alpha_1 T_A + (T_A-T_B) - c(1-T_B) \; \Rightarrow \\
+0 &< b T_A + (T_A-T_B) - c(1-T_B) \;,
 \end{aligned}
 \end{equation}
 since $0 \le \alpha_1 \le 1$.
