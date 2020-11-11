@@ -126,10 +126,10 @@ headheight=12pt
 % Abstract
 \begin{abstract}
 We study the cultural evolution of cooperation under vertical and non-vertical cultural transmission.
-Conditions are found for fixation and coexistence of cooperation and defection. 
+Conditions are found for fixation and polymorphism of cooperation and defection. 
 The evolution of cooperation is facilitated by horizontal transmission and by an association between social interactions and horizontal transmission.
 The effect of oblique transmission depends on the horizontal transmission bias.
-A stable coexistence between cooperation and defection can occur.
+Stable polymorphism of cooperation and defection can occur.
 When it does, selection favors the evolution of higher association between social interactions and horizontal transmission, which leads to an increased frequency of cooperation and higher population mean fitness.
 The derived conditions are compared to outcomes of stochastic simulations of structured populations.
 Comparisons are drawn with Hamilton's rule and the concepts of relatedness and assortment.
@@ -164,7 +164,7 @@ In their model, cooperative behavior can evolve if\footnote{In an extended model
 c < b \cdot m \,,
 \end{equation}
 where $b$ and $c$ are the benefit and cost of cooperation. 
-Here $m$ in inequality~\ref{eq:eshel1982} takes the role of the relatedness coefficient $r$ in inequality~\ref{eq:hamilton_rule}.
+%Here $m$ in inequality~\ref{eq:eshel1982} takes the role of the relatedness coefficient $r$ in inequality~\ref{eq:hamilton_rule}.
 
 The role of assortment in the evolution of altruism was emphasized by \citet{Fletcher2009assortment}.
 They found that in a \emph{public-goods} game, altruism will evolve if cooperative individuals experience more cooperation, on average, than defecting individuals, and ``thus, the evolution of altruism requires (positive) assortment between focal \emph{cooperative} players and cooperative acts in their interaction environment.''
@@ -172,13 +172,12 @@ With some change in parameters, this condition is summarized by \citep[eq.~2.3]{
 \begin{equation} \label{eq:fletcher2009}
 c < b \cdot (p_C - p_D ) \,,
 \end{equation}
-where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help.\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequality~\ref{eq:hamilton_rule} and inequality~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}
-See \citet{Bijma2010assortment} for treatment of non-public-goods games.
+where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help.\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequalities~\ref{eq:hamilton_rule} and~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}
+\citet{Bijma2010assortment} gave a result related to inequality~\ref{eq:fletcher2009} for other types of games.
 
 
 In this paper we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
-\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission.
-They demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
+\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
@@ -190,7 +189,7 @@ Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated
 Some of the analyses by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
 
 Here, we study cultural-evolution models of cooperation that include both vertical and non-vertical transmission. 
-We investigate these models using mathematical analysis and simulations.  
+%We investigate these models using mathematical analysis and simulations.  
 In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
 For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission.
 As another example, when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
@@ -204,7 +203,7 @@ This further emphasizes that treatment of cooperation as a cultural trait, rathe
 
 Consider a large population whose members can be one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
-Following~\citet{ram2018evolution}, given that the parent phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
+Following~\citet{ram2018evolution}, given that the parent's phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 
 \begin{equation} \label{eq:vertical_oblique_transmission}
 P(\phi'=A \mid \phi) = \begin{cases}
@@ -234,7 +233,8 @@ two juvenile individuals with phenotype $A$ interact with probability $\hat{p}^2
 Horizontal cultural transmission occurs between pairs of individuals from the same generation. 
 It occurs between socially interacting partners with probability $\alpha$, or between a random pair with probability $1-\alpha$ (see~\autoref{fig:horizontal}).
 %The social association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
-However, horizontal transmission is not always successful, as one partner may reject the other's phenotype. The probability for successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}).
+However, horizontal transmission is not always successful, as one partner may reject the other's phenotype.
+The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}).
 
 Therefore, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
@@ -276,9 +276,7 @@ $\bar{w} =  1 + \hat{p}(b-c)$.
 \end{aligned}
 \end{equation}
 %where $\hat{p}=v\tilde{p}+(1-v)p$.
-Finally, we find an equation for the frequency of phenotype $A$ among juveniles in the next generation $\hat{p}'$ as a function of the frequency in the current generation.
-Starting from \autoref{eq:horizontal}, we substitute \autoref{eq:nextgen_adults_slimpify} for $p'$ and  \autoref{eq:nextgen_parents_simplified} for $\tilde{p}'$.
-We therefore have
+Starting from \autoref{eq:horizontal} with $\hat{p}'=v\tilde{p}'+(1-v)p'$, we substitute \autoref{eq:nextgen_adults_slimpify} for $p'$ and \autoref{eq:nextgen_parents_simplified} for $\tilde{p}'$ and obtain
 \begin{equation} \label{eq:nextgen_juveniles}
 \begin{aligned}
 \hat{p}' =
@@ -289,7 +287,7 @@ We therefore have
 & (1-v)\hat{p}^2(T_B-T_A) + (1-v)\hat{p}(1+T_A-T_B) \;.
 \end{aligned}
 \end{equation}
-\autoref{table:vars_params} summarizes the model variables and parameters.
+\autoref{table:vars_params} lists the model variables and parameters.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -303,15 +301,14 @@ Finally, we compare derived conditions to outcomes of stochastic simulations wit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Evolution of cooperation}
 
-We determined the equilibria of our model, i.e. the fixed points of \autoref{eq:nextgen_juveniles}, and their local stability.
-The equilibria are $\hat p=0$, $\hat p=1$, and (see \autoref{eq:general_equilibrium_appendix})
+The equilibria of our model, i.e. the fixed points of \autoref{eq:nextgen_juveniles}, are $\hat p=0$, $\hat p=1$, and (see \autoref{eq:general_equilibrium_appendix})
 \begin{equation} \label{eq:general_equilibrium}
   \hat{p}^* =  
   \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
 \end{equation}
 
-To find conditions on the cost of cooperation, $c$, we define the following cost boundaries, $\gamma_1$ and $\gamma_2$, vertical transmission threshold, $\hat v$,
-\begin{equation} \label{eq:cost_boundaries_v_threshold} 
+To find conditions on the cost of cooperation, $c$, define the following cost thresholds, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$,
+\begin{equation} \label{eq:cost_thresholds_v_threshold} 
 \gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)}, \quad
 \gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)}, \quad
 \hat v = \frac{T_B - T_A}{1-T_A} \;.
@@ -323,7 +320,7 @@ The following result summarizes the possible outcomes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}[Equilibria and stability] \label{result:vert_obli_hori}
-With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperator phenotype will follow one of the following scenarios depending on the cost boundaries $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_boundaries_v_threshold}) :
+With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperation follows one of the following scenarios in terms of the cost thresholds $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}) :
 
 % in gamma
 \begin{enumerate}
@@ -333,18 +330,18 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \item \emph{Fixation of defection}: 
     if \emph{(iii)} $T_A \ge T_B$ and $\gamma_2 < c$; or 
 	if \emph{(iv)} $T_A < T_B$ and $\gamma_1 < c$.
-\item \emph{Stable coexistence}: 
+\item \emph{Stable polymorphism}: 
     if \emph{(v)} $T_A < T_B$ and $v<\hat{v}$ and $c < \gamma_1$; or 
     if \emph{(vi)} $T_A < T_B$ and $v>\hat{v}$ and $\gamma_2 < c < \gamma_1$.
-\item \emph{Unstable coexistence}:
+\item \emph{Unstable polymorphism}:
     if \emph{(vii)} $T_A > T_B$ and $\gamma_1 < c < \gamma_2$.
 \end{enumerate}
 
 \end{result}
-These conditions are illustrated in \autoref{fig:result3}ab.
+These conditions are illustrated in \autoref{fig:result3}a and \autoref{fig:result3}b.
 
 Much of the literature on evolution of cooperation focuses on conditions for  an initially rare cooperative phenotype to invade a population of defectors.
-The following remarks on such a condition.
+The following remarks address this condition.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,18 +353,18 @@ c < \gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation} 
 \end{remark}
 
-This unites the conditions for fixation of cooperation and for stable coexistence, which both lead to instability of the fixation state associated with defection, $\hat{p}=0$.
+This unites the conditions for fixation of cooperation and for stable polymorphism, both of which lead to instability of the fixation state associated with defection, $\hat{p}=0$.
 
-Importantly, increasing social association $\alpha$ increases the boundary cost ($\partial \gamma_1 / \partial \alpha > 0$), making it easier for cooperation to increase from rarity.
-Similarly, increasing the horizontal transmission of cooperation, $T_A$, increases the boundary ($\partial \gamma_1 / \partial T_A > 0$), facilitating the evolution of cooperation.
-However, increasing the horizontal transmission of defection, $T_B$, can increase or decrease the cost boundary, but it increases the cost boundary when it is already above one ($c<1<\gamma_1$): $\partial\gamma_1/\partial T_B$ is positive when $T_A > \frac{1}{1+\alpha b v}$, which gives $\gamma_1>1/v$. 
-Therefore, increasing $T_B$ decreases the cost boundary and limits the evolution of cooperation, but only if $T_A < \frac{1}{1+\alpha b v}$.
+Importantly, increasing social association $\alpha$ increases the cost threshold ($\partial \gamma_1 / \partial \alpha > 0$), making it easier for cooperation to increase from rarity.
+Similarly, increasing the horizontal transmission of cooperation, $T_A$, increases the threshold ($\partial \gamma_1 / \partial T_A > 0$), facilitating the evolution of cooperation.
+However, increasing the horizontal transmission of defection, $T_B$, can increase or decrease the cost threshold, but it increases the cost threshold when it is already above one ($c<1<\gamma_1$): $\partial\gamma_1/\partial T_B$ is positive when $T_A > \frac{1}{1+\alpha b v}$, which gives $\gamma_1>1/v$. 
+Therefore, increasing $T_B$ decreases the cost threshold and limits the evolution of cooperation, but only if $T_A < \frac{1}{1+\alpha b v}$.
 
-Increasing the vertical transmission rate, $v$, can either increase or decrease the boundary, depending on the horizontal transmission bias, $T_A-T_B$, because $\text{sign}(\partial \gamma_1 / \partial v) = -\text{sign}(T_A-T_B)$.
-When $T_A<T_B$ we get $\partial \gamma_1 / \partial v >0$, and therefore as the vertical transmission rate increases, the cost boundary increases, making it easier for cooperation to evolve from rarity. 
-In contrast, when $T_A > T_B$ we get $\partial \gamma_1 / \partial v <0$, and therefore as the vertical transmission rate increases, the cost boundary decreases, making it harder for cooperation to evolve from rarity.
+Increasing the vertical transmission rate, $v$, can either increase or decrease the cost threshold, depending on the horizontal transmission bias, $T_A-T_B$, because $\text{sign}(\partial \gamma_1 / \partial v) = -\text{sign}(T_A-T_B)$.
+When $T_A<T_B$ we get $\partial \gamma_1 / \partial v >0$, and therefore as the vertical transmission rate increases, the cost threshold increases, making it easier for cooperation to evolve from rarity. 
+In contrast, when $T_A > T_B$ we get $\partial \gamma_1 / \partial v <0$, and therefore as the vertical transmission rate increases, the cost threshold decreases, making it harder for cooperation to evolve from rarity.
 
-In general, this condition cannot be formulated in the form of Hamilton's rule due to the horizontal transmission bias term, $T_A-T_B$.
+In general, this condition cannot be formulated in the form of Hamilton's rule due to the bias in horizontal transmission, represented by $T_A-T_B$.
 When there is no horizontal transmission bias, $T_A=T_B$, the next remark applies.
 \\
 
@@ -380,10 +377,10 @@ If horizontal transmission is unbiased, $T=T_A=T_B$, then cooperation will take 
 c < b \cdot \frac{v \alpha T}{1-T} \;.
 \end{equation}
 \end{remark}
-This condition is obtained by setting $T=T_A=T_B$ in inequality \ref{eq:unequal_transmission_from_rarity_general_case} and can be interpreted as a version of Hamilton's rule  ($c<b\cdot r$, inequality~\ref{eq:hamilton_rule}) or as a version of inequality~\ref{eq:fletcher2009}, where $v \alpha T/(1-T)$ can be regarded as the \emph{effective relatedness} or \emph{effective assortment}, respectively.
+This condition is obtained by setting $T=T_A=T_B$ in inequality (\ref{eq:unequal_transmission_from_rarity_general_case}) and can be interpreted as a version of Hamilton's rule  ($c<b\cdot r$, inequality~\ref{eq:hamilton_rule}) or as a version of inequality~(\ref{eq:fletcher2009}), where $v \alpha T/(1-T)$ can be regarded as the \emph{effective relatedness} or \emph{effective assortment}, respectively.
 \autoref{fig:results}a illustrates this condition for $v=1$. Note that the right-hand side equals $\gamma_1$ when $T=T_A=T_B$.
 
-%In Corollary~\autoref{remark:intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
+%In Corollary~\ref{remark:intermediate_association}, we examined the effect of social association on evolution of cooperation in the case of perfect vertical transmission ($v=1$).
 %A more general case can be stated for $0 < v \leq 1$.
 In the next remarks we examine the effect of social association on the evolution of cooperation.
 \\
@@ -391,32 +388,33 @@ In the next remarks we examine the effect of social association on the evolution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[No social association]
 \label{remark:alpha0}
-Without social association ($\alpha=0$), cooperation will increase from rarity if there is horizontal transmission bias for cooperation, $T_A>T_B$, and
+Without social association ($\alpha=0$), cooperation will increase when it is rare if there is horizontal transmission bias for cooperation, $T_A>T_B$, and
 \begin{equation}
 \label{eq:vert_hori_alpha0}
 c < \frac{T_A - T_B}{v(1-T_B)} \;.
 \end{equation}
 \end{remark}
 
-\autoref{fig:result2}a illustrates this condition, which is obtained by setting $\alpha=0$ in inequality~\ref{eq:unequal_transmission_from_rarity_general_case}.
+\autoref{fig:result2}a illustrates this condition, which is obtained by setting $\alpha=0$ in inequality~(\ref{eq:unequal_transmission_from_rarity_general_case}).
 Importantly, the benefit of cooperation, $b$, does not affect the evolution of cooperation in the absence of social association, and the outcome is determined only by  cultural transmission.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[Perfect social association]
 \label{remark:alpha1}
-With perfect social association ($\alpha=1$), cooperation will increase from rarity if
+With perfect social association ($\alpha=1$), cooperation will increase when it is rare if
 \begin{equation}\label{eq:vert_hori_alpha1}
 c < \frac{b v T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation}
 \end{remark}
-This condition is obtained by setting $\alpha=1$ in inequality~\ \ref{eq:unequal_transmission_from_rarity_general_case}.
+This condition is obtained by setting $\alpha=1$ in inequality~\ (\ref{eq:unequal_transmission_from_rarity_general_case}).
+% TODO fig 2b?
 
-Moreover, without oblique transmission, $v=1$, the only equilibria are the fixation states, $\tilde{p}=0$ and $\tilde{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\tilde{p}'>\tilde{p}$) if inequality \ref{eq:vert_hori_alpha1} applies.
-This is similar to case of microbe-associated cooperation studied by \citet{lewin2017microbes}, and therefore when $v=1$, this remark is equivalent to their eq.~1.
+In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\tilde{p}=0$ and $\tilde{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\tilde{p}'>\tilde{p}$) if inequality \ref{eq:vert_hori_alpha1} applies.
+This is similar to case of microbe-associated cooperation studied by \citet{lewin2017microbes}, and therefore when $v=1$, this remark is equivalent to their eq.~(1).
 
-Given the previous two remarks for no association and perfect association ($\alpha=0$ and $\alpha=1$), it is interesting to examine the general effect of social association on the evolution of cooperation.
-Consider the social association boundaries, $a_1$ and $a_2$,
+In light of Remarks~\ref{remark:alpha0} and \ref{remark:alpha1}, it is interesting to examine the general effect of social association on the evolution of cooperation.
+Define the social association thresholds, $a_1$ and $a_2$, as 
 \begin{equation} \label{eq:boundries_assortative_meeting_general_case}
   a_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
   a_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A} \;.
@@ -427,18 +425,18 @@ Then the following applies.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[Condition for cooperation to increase from rarity: social association]
 \label{remark:intermediate_association_res3}
-Cooperation will increase from rarity if social association is high enough, specifically if $a_2 < \alpha$.
+Cooperation will increase when rare if social association is high enough, specifically if $a_2 < \alpha$.
 \end{remark}
-Figures~\ref{fig:result2}c and \ref{fig:result3}cd illustrate this condition.
+Figures~\ref{fig:result2}c, \ref{fig:result3}c, and \ref{fig:result3}d illustrate this condition.
 With horizontal transmission bias for cooperation, $T_A>T_B$, cooperation can fix from any initial frequency if $a_2<\alpha$ (green area in positive x-axis). 
-With horizontal bias favoring defection, $T_A<T_B$, cooperation can fix from any frequency if social association is high, $a_1<\alpha$ (green area with $T_A<T_B$), and can also increase when rare and reach stable coexistence with defection if social association is intermediate, $a_2<\alpha$ (yellow area).
+With horizontal bias favoring defection, $T_A<T_B$, cooperation can fix from any frequency if social association is high, $a_1<\alpha$ (green area with $T_A<T_B$), and can also increase when rare and reach stable polymorphism with defection if social association is intermediate, $a_2<\alpha$ (yellow area).
 Without horizontal bias, $T_A=T_B$, fixation of cooperation occurs if social association is high enough, $\frac{c}{b \cdot v} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
 
-Interestingly, because $\text{sign} (\partial a_2 / \partial v) = \text{sign} (T_A-T_B)$, the effect of the vertical transmission rate $v$ on this condition depends on the horizontal transmission bias. 
+Interestingly, because $\text{sign} (\partial a_2 / \partial v) = \text{sign} (T_A-T_B)$, the effect of the vertical transmission rate $v$ on $a_1$ and $a_2$ depends on the horizontal transmission bias. 
 That is, with horizontal bias for cooperation, $T_A>T_B$, evolution of cooperation is facilitated by oblique transmission, whereas with horizontal bias for defection, $T_A<T_B$, evolution of cooperation is facilitated by vertical transmission.
-This is demonstrated in \autoref{fig:result3}cd.
+This is demonstrated in Figures~\ref{fig:result3}c and~\ref{fig:result3}d.
 
-The next remarks further inspect the roles of vertical and oblique transmission in the evolution of cooperation.
+The next remarks explain the roles of vertical and oblique transmission in the evolution of cooperation.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,17 +450,17 @@ The next remarks further inspect the roles of vertical and oblique transmission 
     \end{equation} 
 \end{remark}
 %Note that $\sigma \frac{\partial \gamma_1}{\partial v} = \sigma (T_B-T_A)$ and $\sigma \frac{\partial \gamma_2}{\partial v} = \sigma (T_A-T_B)(b \alpha T_B - (1+b)(1-T_A))$
-This condition does not guarantee fixation of cooperation. Rather, if this condition does not apply then cooperation cannot fix.
+This condition does not guarantee fixation of cooperation; rather, if this condition does not apply then cooperation cannot fix.
 If horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation can fix with any vertical transmission rate (because $\hat{v}<0$).
-In contrast, if horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation (see \autoref{fig:result3}bd).
+In contrast, if horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation (see Figures~\ref{fig:result3}b and \autoref{fig:result3}d).
 
-Without oblique transmission, the following applies.
+With only vertical transmission ($v=1$), the following applies.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[Condition for cooperation to increase from rarity: vertical and horizontal transmission]
 \label{remark:vert_hori}
-Without oblique transmission ($v=1$) cooperation will increase from rarity if
+In the absence of oblique transmission ($v=1$) cooperation will increase when rare if
 \begin{equation} \label{eq:vert_hori}
 c < \frac{b \alpha T_A + (T_A - T_B)}{1-T_B} \;,
 \end{equation} 
@@ -472,14 +470,14 @@ which can also be written as
 \end{equation}
 \end{remark}
 
-These conditions is obtained by setting $v=1$ in inequalities~\ref{eq:unequal_transmission_from_rarity_general_case} and \ref{eq:boundries_assortative_meeting_general_case}
+These conditions are obtained by setting $v=1$ in inequalities~(\ref{eq:unequal_transmission_from_rarity_general_case}) and (\ref{eq:boundries_assortative_meeting_general_case}).
 
-Without vertical transmission we have the following result.
+In the absence of vertical transmission ($v=0$) we have the following.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}[Condition for global fixation of cooperation: oblique and horizontal transmission] \label{result:obli_hori}
-Without vertical transmission ($v=0$), the frequency of the cooperator phenotype among adults increases every generation, $p'>p$ if there is a horizontal transmission bias in favor of cooperation, namely
+In the absence of vertical transmission ($v=0$), the frequency of the cooperator phenotype among adults increases every generation, i.e. $p'>p$, if there is a horizontal transmission bias in favor of cooperation, namely
 \begin{equation} \label{eq:oblique_only_result}
 T_A > T_B \;.
 \end{equation}
@@ -489,45 +487,43 @@ This condition is found by setting $v = 0$ in \autoref{eq:horizontal}, which bec
 $p' = p^2 (T_B-T_A) + p (1+T_A-T_B)$. 
 That is, in the absence of vertical transmission, selection plays no role in the evolution of cooperation (i.e. $b$ and $c$ do not affect $p'$).
 The dynamics are determined solely by differential horizontal transmission of the two phenotypes, namely, the relative tendency of each phenotype to be horizontally transmitted to peers.
-Note that without bias in horizontal transmission, $T_A = T_B$, phenotype frequencies are static, $p'=p$.
+Note that with no bias in horizontal transmission, $T_A = T_B$, phenotype frequencies are static, $p'=p$.
 
-Finally, the last remark focuses on the coexistence of cooperation and defection.
+Finally, the last remark focuses on the polymorphism of cooperation and defection.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{remark}[Coexistence of cooperation and defection]
+\begin{remark}[polymorphism of cooperation and defection]
 Cooperation and defection can coexist at frequencies $\tilde{p}^*$ and $1-\tilde{p}^*$ (\autoref{eq:general_equilibrium}). 
-When it occurs, the coexistence is stable if there is horizontal transmission bias for defection, $T_A<T_B$, and unstable if there is horizontal bias for cooperation, $T_A>T_B$.
+When it is feasible, this equilibrium is stable if there is horizontal transmission bias for defection, $T_A<T_B$, and unstable if there is horizontal bias for cooperation, $T_A>T_B$.
 \end{remark}
 
-See yellow and blue area in \autoref{fig:result2} and \autoref{fig:result3} for cases of stable and unstable coexistence, respectively.
-When unstable coexistence occurs, cooperation will fix if its initial frequency is $p>\tilde{p}^*$, and defection will fix if its initial frequency is $1-p>1-\tilde{p}^*$; this occurs when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
-\autoref{fig:coexistence_recursive}a shows the mapping $\tilde p \to \tilde p'$.
+The yellow and blue areas in Figures~\ref{fig:result2} and \ref{fig:result3} show cases of stable and unstable polymorphism, respectively.
+When $\tilde{p}^*$ is unstable, cooperation will fix if its initial frequency is $p>\tilde{p}^*$, and defection will fix $p<\tilde{p}^*$; this occurs when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
+\autoref{fig:polymorphism_recursive}a shows the mapping $\tilde p \to \tilde p'$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Evolution of social association} 
 
-We now analyze the evolution of social association under perfect vertical transmission, $v=1$. 
-We assume a population at a stable coexistence of the two phenotypes, cooperation $A$, and defection $B$, such that the frequency of $A$ among juveniles is $\hat{p}^*$ (\autoref{eq:general_equilibrium}).
-Note that for stable coexistence to occur, we assume horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_boundaries_v_threshold})
+We now focus on the evolution of social association under perfect vertical transmission, $v=1$ assuming that the population is initially at a stable polymorphism of the two phenotypes, cooperation $A$ and defection $B$, where the frequency of $A$ among juveniles is $\hat{p}^*$ (\autoref{eq:general_equilibrium}).
+Note that for stable polymorphism to occur, there must be horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_thresholds_v_threshold})
 
-The stable population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$. 
-In turn, $\hat{p}^*$ is also increasing in $\alpha$ (Appendix~\ref{sec:appendixC}).
+The equilibrium population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$, and $\hat{p}^*$ is increasing in $\alpha$ (Appendix~\ref{sec:appendixC}).
 Therefore, if social association increases, the population mean fitness also increases.
 But can an allele that increases social association evolve? 
 
 To answer this question, we extend our model to include a ``modifier locus''~\citep{Liberman1986,Liberman1988} that determines social association, but has no direct effect on fitness.
-We assume that the modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
-Suppose that the population evolves to a stable equilibrium when only allele $M$ is present.
-We check the local stability of this equilibrium to the invasion of the modifier allele $m$; this stablity is called ``external stability'', see \citet{Altenberg2017}.
-The full analysis is given in Appendix~\ref{sec:appendixD}, and the following result summarizes the outcomes of such invasions.
+The modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
+Suppose that the population has evolved to a stable equilibrium $\hat{p}^*$ where when only allele $M$ is present.
+We study the local stability of this equilibrium to invasion by the modifier allele $m$; this is called ``external stability'', see \citet{Altenberg2017}.
+The full analysis is given in Appendix~\ref{sec:appendixD}, and the following result summarizes the condition for this.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}[Reduction principle for social association] 
 \label{result:evol_social_association}
-Under perfect vertical transmission ($v=1$), in a population at a stable coexistence between cooperation and defection, a modifier allele can successfully invade the population if it decreases the social association $\alpha$.
+From a stable polymorphism between cooperation and defection, a modifier allele can successfully invade the population if it decreases the social association $\alpha$.
 \end{result}
 
 Note that this reduction principle entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
@@ -539,73 +535,72 @@ Thus, we can expect social association to eventually drop to $a_2$, the frequenc
 \subsection*{Population structure}
 
 Social association may also emerge from population structure.
-Consider a  population colonizing a 2D grid of size 100-by-100, where each site is inhabited by one individual, similarly to \citet{lewin2020rockpaperscissors}.
+Consider a  population colonizing a two-dimensional grid of size 100-by-100, where each site is inhabited by one individual, similarly to the model of \citet{lewin2020rockpaperscissors}.
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
-Initially, each site in the grid is randomly colonized with either a cooperator or a defector, with equal probability.
-%In each generation individuals interact with their neighbors, i.e. individuals that inhabit adjacent sites, in a prisoner's dilemma game (\autoref{table:prisoner_payoff}) and in horizontal cultural transmission (\autoref{fig:horizontal}).
-%As before, $T_A$ and $T_B$ are the probabilities of transmitting phenotypes $A$ and $B$ during horizontal transmission.
+Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions.
-Initiators then interact with a random neighbor (i.e. individual in an adjacent site) in a prisoners' dilemma game (\autoref{table:prisoner_payoff}) and a random neighbor (with replacement) in horizontal cultural transmission (\autoref{fig:horizontal}).
+Initiators then interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{table:prisoner_payoff}) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:horizontal}).
 The expected number of each of these interactions per individual per generation is one.
 The effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors.
 On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
 As before, $T_A$ and $T_B$ are the probability for successful horizontal transmission of phenotypes $A$ and $B$, respectively.
 
 The order the interactions across the grid at each generation is random.
-After all interactions take place, individual fitness is determined by
+After all interactions take place, an individual's fitness is determined by
 $w = 1 + b \cdot n_b - c \cdot n_c$,
 where $n_b$ is the number interactions of that individual with cooperative neighbors, and $n_c$ is the total number of interactions that that individual  had ($n_b \le n_c$).
 Then, a new generation is generated, and sites can be settled by offspring of any parent, not just neighbor parents. Thus, selection is global, rather than local, in accordance with our deterministic model.
 The parent is randomly drawn with probability proportional to its fitness, divided by the average fitness of all potential parents.
 Offspring then have the same phenotype as their parents (i.e. $v=1$).
 
-The outcomes of stochastic simulations with a structured population are shown in \autoref{fig:spatial}. The figure demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for a model without population structure or stochasticity.
-An example for stable coexistence is shown in \autoref{fig:spatial}c.
-Simulating a structured population with local selection (i.e. sites can only be settled by offspring of neighbor parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
+The outcomes of stochastic simulations with a structured population are shown in \autoref{fig:spatial}, which demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for a model without population structure or stochasticity.
+An example of a case with stable polymorphism is shown in \autoref{fig:spatial}.
+Changing the simulation so that the population is structured to allow local selection (i.e. sites could only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
-These comparisons between the deterministic unstructured model and the stochastic structured model show that the derived conditions can be useful for predicting the dynamics of complex scenarios. 
-Moreover, our structured populations demonstrate how social association ($\alpha$) can emerge from local interactions between individuals.
+These comparisons between the deterministic unstructured model and the stochastic structured model show that the derived conditions can be useful for predicting the dynamics under complex scenarios. 
+Moreover, our structured populations demonstrate how our parameter for social association ($\alpha$) can represent local interactions between individuals.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
 \section*{Discussion}
-We studied the evolution of cooperation under non-vertical transmission using deterministic discrete-time evolutionary models with fitnesses in the form of payoffs from a prisoner's dilemma game. 
-Under a combination of vertical, oblique, and horizontal transmission, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\autoref{result:vert_obli_hori}).
-Importantly, cooperation can increase from rarity (i.e. invade a population of defectors) if and only if (inequality~\ref{eq:unequal_transmission_from_rarity_general_case}),
+Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of payoffs from a prisoner's dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}).
+Importantly, cooperation can increase when initially rare (i.e. invade a population of defectors) if and only if (inequality~\ref{eq:unequal_transmission_from_rarity_general_case}),
 \begin{equation}
-c \cdot v (1-T_B) < b \cdot v \alpha T_A + (T_A - T_B) \;.
+c \cdot v (1-T_B) < b \cdot v \alpha T_A + (T_A - T_B) \;,
 \end{equation}
-That is, if the effective cost of cooperation (left-hand side) is smaller then the effective benefit plus the horizontal transmission bias (right-hand side).
-This condition cannot be formulates in the form of Hamilton's rule, $c<b \cdot r$, due to the effect of biased horizontal transmission.
+namely, if the effective cost of cooperation (left-hand side) is smaller then the effective benefit plus the horizontal transmission bias (right-hand side).
+This condition cannot be formulated in the form of Hamilton's rule, $c<b \cdot r$, due to the effect of biased horizontal transmission.
 
-Remarkably, stable coexistence between cooperation and defection can be stable if horizontal transmission is biased for defection ($T_A<T_B$) and both the cost of cooperation and social association are intermediate (yellow areas in Figures~\ref{fig:result2}-\ref{fig:result3}).
+Remarkably, stable polymorphism between cooperation and defection can be stable if horizontal transmission is biased for defection ($T_A<T_B$) and both the cost of cooperation and social association are intermediate (yellow areas in Figures~\ref{fig:result2} and~\ref{fig:result3}).
 
-We find that higher social association $\alpha$ leads to evolution of higher frequencies of cooperation (Remark~\autoref{remark:intermediate_association_res3}, Figures~\ref{fig:result2}c and \ref{fig:result3}cd), and that when both cooperation and defection coexist, higher social association is expected to evolve (Result~\ref{result:evol_social_association}).
-Without social association, the benefit of cooperation cannot facilitate its evolution; cooperation can only succeed under horizontal transmission bias ($T_A>T_B$, Remark~\ref{remark:alpha0}). 
+We find that stronger social association $\alpha$ leads to evolution of higher frequency of cooperation and increased population mean fitness.
+Nevertheless, when cooperation and defection coexist, social association is expected to be reduced by natural selection, leading to extinction of cooperation and decreased population mean fitness.
+Without social association, the benefit of cooperation cannot facilitate its evolution; cooperation can only succeed if horizontal transmission is biased in its favor. 
 
-Indeed, horizontal transmission plays a major role in the evolution of cooperation: increasing the transmission of cooperation, $T_A$, or decreasing the transmission of defection, $T_B$, facilitates the evolution of cooperation (Remarks~\ref{remark:rarity} and~\ref{remark:intermediate_association_res3}, Figures~\ref{fig:result2}-\ref{fig:result3}). 
-The effect of oblique transmission is more complex (Corollary~\ref{remark:intermediate_association_res3}). 
-When there is horizontal transmission bias for cooperation, $T_A>T_B$, increasing the rate of oblique transmission, $1-v$, will facilitate the evolution of cooperation (\autoref{fig:result3}ac).
-In contrast, when the bias is for defection, $T_A<T_B$, high rates of vertical transmission, $v$, are advantageous for cooperation, and there must be sufficient rate of vertical transmission for cooperation to fix in the population ($v>\hat v$, see Remark~\autoref{remark:vhat}, \autoref{fig:result3}bd).
+Horizontal transmission plays a major role in the evolution of cooperation: increasing the transmission of cooperation, $T_A$, or decreasing the transmission of defection, $T_B$, facilitates the evolution of cooperation. 
+However, the effect of oblique transmission is more complicated.
+When there is horizontal transmission bias for cooperation, $T_A>T_B$, increasing the rate of oblique transmission, $1-v$, will facilitate the evolution of cooperation.
+In contrast, when the bias is in favor of defection, $T_A<T_B$, high rates of vertical transmission, $v$, are advantageous for cooperation, and the rate of vertical transmission must be high enough ($v>\hat v$) for cooperation to fix in the population.
 
-The conditions derived from our deterministic model provide a good approximation to outcomes of simulations of a complex stochastic model with structured populations, in which individuals can only interact with and transmit to their neighbors (\autoref{fig:spatial}).
+The conditions derived from our deterministic model provide a good approximation to outcomes of simulations of a complex stochastic model with population structurein which individuals can only interact with and transmit to their neighbors.
 In these structured populations social association arises due to both social interactions and horizontal cultural transmission being local.
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to incorporate such genetic modification of cultural transmission into our model.
 
-\citet{woodcock2006significance} stressed the significance of non-vertical transmission for the evolution of cooperation. He executed simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$). Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
-Our results provide strong evidence for his hypothesis that horizontal transmission can have an important role in the evolution of cooperation. 
+\citet{woodcock2006significance} stressed the significance of non-vertical transmission for the evolution of cooperation.
+He carried out simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$). Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
+Our results provide strong evidence for his hypothesis that horizontal transmission can play an important role in the evolution of cooperation. 
 
 To understand the role of horizontal transmission, we first review the role of \emph{assortment}.
-\citet{Eshel1982} showed that altruism can evolve when there is enough \emph{assortative meeting}, namely, a tendency for individuals to interact within their phenotypic group.
+\citet{Eshel1982} showed that altruism can evolve when there is enough \emph{assortative meeting}, namely, a tendency for individuals to interact with others of their own phenotype.
 \citet{Fletcher2009assortment}  further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group (see also \citet{Bijma2010assortment}).
 They therefore suggested that to explain the evolution of altruism, we should seek mechanisms that generate  assortment, such as population structure, repeated interactions, and individual recognition.
-Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and partner for transmission.
+Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and the partner for transmission.
 This mechanism does not require population structure, repeated interactions, or individual recognition.
-We show that high levels of such social association greatly increase the potential for evolution of cooperation (Figures~\ref{fig:result2}-\ref{fig:result3}).
-With enough social association, cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$, see Remark~\ref{remark:intermediate_association_res3}).
+We show that high levels of such social association greatly increase the potential for evolution of cooperation.
+With enough social association, cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$).
 
 How does non-vertical transmission generate assortment? 
 \citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors} 
@@ -616,13 +611,10 @@ From the kin selection point-of-view, if microbes can be transmitted \emph{horiz
 even when the two hosts are (genetically) unrelated. 
 From the assortment point-of-view,
 infection by behavior-determining microbes during interactions effectively generates assortment because a recipient of help may be infected by a behavior-determining microbe and consequently become a helper.
-Cultural horizontal transmission can similarly generate assortment between the cooperative phenotype and the benefit of cooperation if cultural transmission and helping interactions occur between the same individuals, i.e. when there is social association, because the recipient of help may be also the recipient of the cultural trait for cooperation. 
+Cultural horizontal transmission can similarly generate assortment between cooperators and enhance benefit of cooperation if cultural transmission and helping interactions occur between the same individuals, i.e. when there is social association; the recipient of help may also be the recipient of the cultural trait for cooperation. 
 Thus, with horizontal transmission, ``assortment between focal cooperative players and cooperative acts in their interaction
 environment''~\citep{Fletcher2009assortment} is generated not because \emph{the helper is likely to be helped}, but rather because \emph{the helped is likely to become a helper}.
 
-These conclusions highlight the importance of non-vertical cultural transmission in explaining complex evolutionary phenomena, and  furthers our understating of the cultural evolution of cooperation. 
-
-% Javarone MA, Atzeni AE, Galam S. Emergence of Cooperation in the Prisoner ’ s Dilemma Driven by Conformity. 2:155-163. doi:10.1007/978-3-319-16549-3
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -658,7 +650,7 @@ f(p)/p < 0 \Leftrightarrow
 \frac{f'(0) \cdot p + O(p^2)}{p} < 0 \Leftrightarrow 
 f'(0) + O(p) < 0 \;.
 \end{equation}
-Therefore, by definition of big-O notation, if $f'(0)<0$ then there exists $\epsilon>0$ such that for any $0<p<\epsilon$, it is guaranteed that $0<p'<p$; that is, $p'$ is closer to zero than $p$.
+Therefore, by definition of big-O notation, if $f'(0)<0$ then there exists $\epsilon>0$ such that for any local perturbation $0<p<\epsilon$, it is guaranteed that $0<p'<p$; that is, $p'$ is closer to zero than $p$.
 
 Set $p<p^*=1$
 Using a linear approximation for $f(p)$ near $1$, we have
@@ -674,7 +666,7 @@ Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\eps
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Equilibria and stability} \label{sec:appendixB}
 
-We define $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
+Let $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
 Then, using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, this simplifies to
 \begin{equation} \label{eq:general_case_polynomial}
 \begin{aligned}
@@ -691,13 +683,11 @@ where
 \end{aligned}
 \end{equation}
 
-If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$. 
-Thus, $f(\hat{p})$ becomes a quadratic polynomial,
+If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$, and $f(\hat{p})$ becomes a quadratic polynomial,
 \begin{equation} \label{eq:equal_horizontal_transmission}
   f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big] \;.
 \end{equation}
-Clearly the only two equilibria are the fixations  $\hat{p} =  0$ and $\hat{p} = 1$.
-These equilibria are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\autoref{sec:appendixA}), where
+Clearly the only two equilibria are the fixations $\hat{p} =  0$ and $\hat{p} = 1$, which are are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\ref{sec:appendixA}), where
 $f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
 \begin{equation} \label{eq:derivative_of_phattag-phat}
 \begin{aligned}
@@ -724,7 +714,7 @@ If $T_A>T_B$, then
  \end{equation}
 since $c<b$ and $\alpha v < 1$. Hence the signs of the cubic at positive and negative infinity are negative and positive, respectively.
 First, if $\beta_3<\beta_1$ then 
-$1<\hat{p}^*$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable legitimate (i.e. between 0 and 1) equilibrium.
+$1<\hat{p}^*$. Also, $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable feasible equilibrium.
 Second, if $\beta_1<\beta_3<0$ then 
 $0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$ so that both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
 Third, if $0<\beta_3$ then 
@@ -738,7 +728,7 @@ Similarly, if $T_A<T_B$, then
 since $c<b$ and $\alpha v < 1$, and the signs of the cubic at positive and negative infinity are positive and negative, respectively. 
 First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $A$ is the only locally stable legitimate equilibrium.
 Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
-Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable feasible equilibrium.
 
 This analysis can be summarized with the following conditions:
 % in beta
@@ -751,13 +741,13 @@ This analysis can be summarized with the following conditions:
 	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
 	if \emph{(v)} $T_A>T_B$ and $\beta_3<\beta_1<0$; or 
 	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
-\item \emph{Coexistence of both phenotypes at $\hat{p}^*$}: 
+\item \emph{polymorphism of both phenotypes at $\hat{p}^*$}: 
 	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
 \item \emph{Fixation of either phenotype depending on initial frequency}:
 	if \emph{(viii)}  $T_A>T_B$ and $\beta_1<\beta_3<0$.
 \end{enumerate}
 
-We now proceed to use the cost boundaries, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$ (\autoref{eq:cost_boundaries_v_threshold}).
+We now proceed to use the cost thresholds, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}).
 First, assume $T_A<T_B$.
 $\beta_3<0$ requires $\gamma_1<c$.
 For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
@@ -778,18 +768,18 @@ This analysis is summarized in Result~\ref{result:vert_obli_hori}.
 \section{Effect of social association on mean fitness} \label{sec:appendixC}
 
 To determine the effect of increasing $\alpha$ on the stable population mean fitness, $\bar{w}^*=1+(b-c)\hat{p}^*$, we must analyze its effect on $\hat{p}^*$, 
-\begin{equation} \label{eq:mean_fitness_stable_coexistence_derivative}
+\begin{equation} \label{eq:mean_fitness_stable_polymorphism_derivative}
   \frac{\partial \hat{p}^*}{\partial \alpha} 
 %  =\frac{-b^2T_A (1-\alpha) (T_A-T_B) + b(T_A-T_B)(c(1-T_B) - b \alpha T_A - (T_A-T_B))}{b^2 (1-\alpha)^2 (T_A-T_B)^2} 
 %  = \frac{b^2T_A(T_B-T_A)-bc(1-T_B)(T_B-T_A) - b(T_B-T_A)^2}{b^2 (1-\alpha)^2 (T_A-T_B)^2} \;.
   = \frac{b T_A - c(1-T_B) + (T_A-T_B)}{b (1-\alpha)^2 (T_B-T_A)} \;.
 \end{equation} 
-Note that stable coexistence implies $c<\gamma_1$, and because $\alpha<1$, we have
+Note that stable polymorphism implies $c<\gamma_1$, and because $\alpha<1$, we have
 \begin{equation}
 c < \gamma_1 = \frac{b \alpha T_A + (T_A-T_B)}{1-T_B} < \frac{b T_A + (T_A-T_B)}{1-T_B}.
 \end{equation} 
-Therefore, the numerator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is positive.
-Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_coexistence_derivative} is also positive, and hence the derivative $\partial \hat{p}^* / \partial \alpha$ is positive.
+Therefore, the numerator in \autoref{eq:mean_fitness_stable_polymorphism_derivative} is positive.
+Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_polymorphism_derivative} is also positive, and hence the derivative $\partial \hat{p}^* / \partial \alpha$ is positive.
 Thus, the population mean fitness increases as social association $\alpha$ increases.
 
 
@@ -798,7 +788,7 @@ Thus, the population mean fitness increases as social association $\alpha$ incre
 \section{Reduction principle} \label{sec:appendixD}
 
 We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
-We define the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ as $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
+Denote the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ by $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
 The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
@@ -837,13 +827,13 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
 %\end{equation}
 where $x=\tilde{p}_1+\tilde{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
 
-The equilibrium when only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
+The equilibrium where only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
 \tilde{p}^*=
 \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)},
 \end{equation}
 which we get by setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
-When $v=1$, this equilibrium is polymorphic ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\autoref{result:vert_obli_hori}).
+When $v=1$, this equilibrium is polymorphic ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
 
 The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
 $\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$.
@@ -1051,7 +1041,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
 \end{figure}
 
 
-%%% Figure: Boundaries figure - only vertical
+%%% Figure: thresholds figure - only vertical
 
 \begin{figure}[p]
   \centering       
@@ -1062,10 +1052,10 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
     \includegraphics[width=0.45\textwidth]{Result2_alpha.eps}
 
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission.} 
-The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
+The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 In all cases the horizontal bias ($T_A-T_B$) is on the x-axis.
-(\textbf{a-b})~The cost of cooperation $c$ is on the y-axis; the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries_v_threshold}) are the solid and dashed lines, respectively. 
-(\textbf{c})~social association $\alpha$ is on the y-axis; the social association boundaries $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
+(\textbf{a-b})~The cost of cooperation $c$ is on the y-axis; the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are the solid and dashed lines, respectively. 
+(\textbf{c})~social association $\alpha$ is on the y-axis; the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
 Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$. (\textbf{c})~$c = 0.35$.
   	}
     \label{fig:result2}
@@ -1074,7 +1064,7 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 
 
 
-%%% Figure: Boundaries figure - vertical and oblique
+%%% Figure: thresholds figure - vertical and oblique
 
 \begin{figure}[p]
   \centering       
@@ -1083,10 +1073,10 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
     \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TA_TB.eps}~
     \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TB_TA.eps}
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
-    The figure shows the global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable coexistence (blue), and stable coexistence of cooperation and defection (yellow).
+    The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 	In all cases the vertical transmission rate $v$ is on the x-axis.
-	(\textbf{a-b}) The cost of cooperation $c$ is on the y-axis and the cost boundaries $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_boundaries_v_threshold}) are represented by the solid and dashed lines, respectively. 
-    (\textbf{c-d}) The social association $\alpha$ is on the y-axis and the social association boundaries $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines, respectively. 
+	(\textbf{a-b}) The cost of cooperation $c$ is on the y-axis and the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are represented by the solid and dashed lines, respectively. 
+    (\textbf{c-d}) The social association $\alpha$ is on the y-axis and the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines, respectively. 
     Horizontal transmission is biased in (\textbf{a,c}) for cooperation, $T_A>T_B$, and in (\textbf{b,d}) for defection, $T_A<T_B$.    
     Here, $T_A = 0.5$, and
     (\textbf{a}) $b=1.2$, , $T_B = 0.4$, $\alpha = 0.4$;
@@ -1109,12 +1099,12 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
     \includegraphics[scale=0.65]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions_c}.pdf}
   \caption{
   \textbf{Evolution of cooperation in a structured population.}
-  Figures \textbf{(a)} and \textbf{(b)} describes the expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel \textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of the right panel \textbf{(b)}.
+	The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel \textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of the right panel \textbf{(b)}.
   The population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
+  Cooperation and horizontal transmission are both local between neighboring sites, and each site had 8 neighbors.
   Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
-  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
-  Figure \textbf{(b)} emphasizes an area in which neither phenotype is fixed throughout the simulation, maintaining stochastic coexistence. 
+  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_thresholds_v_threshold}.
+  Figure \textbf{(b)} emphasizes an area in which neither phenotype is fixed throughout the simulation, maintaining stochastic polymorphism. 
   Figure \textbf{(c)} describes the frequency of cooperators and defactors over time
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
   Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
@@ -1132,7 +1122,7 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
    \includegraphics[scale=0.5]{Frequency_of_invadors.eps}~
    \includegraphics[scale=0.5]{mean_fitness_of_invadors.eps}
   \caption{
-  \textbf{Evolution of social association.} successful invasion of new modifier allele m; starting from stable coexistence of cooperators and defactors with soical association $\alpha_1$. 
+  \textbf{Evolution of social association.} successful invasion of new modifier allele m; starting from stable polymorphism of cooperators and defactors with soical association $\alpha_1$. 
   The invadors have modifier allele m which cause different soical association value, $\alpha_2$ where $\alpha_2<\alpha_1$.
   \textbf{(a)} The blue curve describes the frequency of the invadors, starting from initial frequency of 1\%.
   The orange curve describes the frequency of cooperators after invasion. The frequency of cooperators decreases towards new stable frequency which is described by the black dashed line. 
@@ -1150,11 +1140,11 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 %  \centering
 %   \includegraphics[scale=0.65]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions}.pdf}
 %   \caption{
-%    \textbf{Stable coexistence of both phenotypes in a structured population.}
-%    Figure \textbf{(a)} emphasizes the coexistence shown in \autoref{fig:spatial}b in a structured finite population. 
+%    \textbf{Stable polymorphism of both phenotypes in a structured population.}
+%    Figure \textbf{(a)} emphasizes the polymorphism shown in \autoref{fig:spatial}b in a structured finite population. 
 %    Figure \textbf{(b)} is a further zoom in which shows the frequency of cooperators (green) and defectors (red).
 %    Both phenotypes start at 50\% frequency.
-%    The figure shows that neither phenotype is fixed throughout the simulation, maintaining stochastic coexistence.
+%    The figure shows that neither phenotype is fixed throughout the simulation, maintaining stochastic polymorphism.
 %    Here, population size is 10,000 (100-by-100 grid), selection operates globally, 
 %    benefit and cost of cooperation $b=1.3$ and $c=0.02$, perfect vertical transmission $v=1$, horizontal transmission rates $T_A = 0.4 < T_B = 0.435$.
 %    }
@@ -1179,9 +1169,9 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
   \textbf{Evolution of cooperation in a structured population with local selection.}
   The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel, or the transmission bias $T_A-T_B$ on the x-axis of the right panel.
   The population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between adjacent sites, and each site had 8 neighbors.
+  Cooperation and horizontal transmission are both local between neighboring sites, and each site had 8 neighbors.
   Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
-  The black curves represent the cost boundaries for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_boundaries_v_threshold}.
+  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_thresholds_v_threshold}.
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
   Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
   \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
@@ -1191,25 +1181,25 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 \end{figure}
 
 
-%%% Figure: coexistence map
+%%% Figure: polymorphism map
 \begin{figure}[p]
   \centering
     \includegraphics[scale=0.4]{coexistence_without_oblique.eps}
     \includegraphics[scale=0.4]{coexistence_with_oblique.eps}
-  \caption{\textbf{Stable and unstable coexistence between cooperation and defection.}
-  The curves show the diffrence of $\hat{p}'-\hat{p}$ vs $\hat{p}$ where $\hat{p}'$ abd $\hat{p}$ are the frequency of the cooperative phenotype $A$ among juveniles in the next generation and current generations (\autoref{eq:horizontal}).
+  \caption{\textbf{Stable and unstable polymorphism of cooperation and defection.}
+  The curves show the difference of $\hat{p}'-\hat{p}$ vs $\hat{p}$ where $\hat{p}'$ abd $\hat{p}$ are the frequency of the cooperative phenotype $A$ among juveniles in the next generation and current generations (\autoref{eq:horizontal}).
   The dashed black line is $\hat{p}'-\hat{p}=0$.
   The curves and the dashed line intersect at the stable equilibrium $\hat{p}^*$ (red circle).
   When $\hat{p}' - \hat{p} > 0 $,  $\hat{p}$ increases towards $\hat{p}^*$.
   When $\hat{p}' - \hat{p} < 0$, $\hat{p}$ decreases towards $\hat{p}^*$.
   \textbf{(a)} There is no oblique transmission, $v=1$.
-  The orange curve, for which the polymorphic equilibrium is stable, is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$, which give $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_boundaries_v_threshold}).
+  The orange curve, for which the polymorphic equilibrium is stable, is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$, which give $\gamma_2<c<\gamma_1$ (\autoref{eq:cost_thresholds_v_threshold}).
   The blue curve, for which the equilibrium is unstable, is given by $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, and $\alpha = 0.4$, which give $\gamma_1<c<\gamma_2$.
   \textbf{(b)} Oblique transmission exists. 
   The orange curve is parameterized by $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, and $v=0.4$, which give $0<\beta_3<\beta_1$ (\autoref{eq:polynomial_coefficients}).
   The blue curve is parameterized by $T_A = 0.5$, $T_B = 0.4$, $b=1.2$, $c=0.487$, $\alpha = 0.09$ and $v=0.6$, which give $\beta_1<\beta_3<0$.
   }
-  \label{fig:coexistence_recursive}
+  \label{fig:polymorphism_recursive}
   \end{figure}
 
 
@@ -1224,8 +1214,8 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
     \includegraphics[scale=0.45]{Time_Figure_No_Vertical.pdf}
   \caption{
   \textbf{Dynamics of the frequency of cooperation.}
-  The frequency $\tilde{p}$ of parents with cooperative phenotype $A$ in \textbf{(a-b)} and the frequency $p$ of adults with cooperative phenotype $A$ in \textbf{(c)}.
-  The different lines correspond to parameter values that lead to fixation of cooperation (green), extinction of cooperation (red), or stable coexistence of cooperators and defectors (yellow).
+  The frequency $\tilde{p}$ of cooperator parents in \textbf{(a-b)} and the frequency $p$ of adults cooperators in \textbf{(c)}.
+  The different lines correspond to parameter values that lead to fixation of cooperation (green), extinction of cooperation (red), or stable polymorphism of cooperators and defectors (yellow).
   \textbf{(a)} $v=1$, $T_A=T_B=T = 0.2$, $\alpha = 0.5 \neq 0$, $\tilde{p}_0 = 0.5$ and $c=0.1$; \textbf{(b)} $v=1$, $\alpha = 0$, $\tilde{p}^* \approx 0.35$, $T_A = 0.65$, $T_B = 0.1$, $b=1.3$ and $c=0.65$; \textbf{(c)} $v=0$, $\alpha =0.5$, $p_0 = 0.5$, $T_A = 0.5$, $b=1.3$ and $c = 0.5$.
   }
   \label{fig:results}
