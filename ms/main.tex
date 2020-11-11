@@ -955,6 +955,8 @@ Determining a necessary and sufficient condition for successful invasion is more
 
 \newpage
 
+%%%%%%%%%% Tables %%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section*{Tables}
 
 %%% Table: payoff matrix
@@ -1029,6 +1031,8 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
 
 \newpage
 
+%%%%%%%%%% Figures %%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section*{Figures}
 %%% Figure: model illustration
 \begin{figure}[h]
@@ -1053,9 +1057,9 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission.} 
 The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 In all cases the horizontal bias ($T_A-T_B$) is on the x-axis.
-(\textbf{a-b})~The cost of cooperation $c$ is on the y-axis; the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are the solid and dashed lines, respectively. 
-(\textbf{c})~social association $\alpha$ is on the y-axis; the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
-Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$. (\textbf{c})~$c = 0.35$.
+(\textbf{a-b})~Cost of cooperation $c$ is on the y-axis; the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are the solid and dashed lines, respectively. 
+(\textbf{c})~Social association $\alpha$ is on the y-axis; the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
+Here, $b=1.3$, $T_A=0.4$, (\textbf{a})~$\alpha = 0$,(\textbf{b})~$\alpha = 0.7$, (\textbf{c})~$c = 0.35$.
   	}
     \label{fig:result2}
 \end{figure}
@@ -1074,9 +1078,9 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
     The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 	In all cases the vertical transmission rate $v$ is on the x-axis.
-	(\textbf{a-b}) The cost of cooperation $c$ is on the y-axis and the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are represented by the solid and dashed lines, respectively. 
-    (\textbf{c-d}) The social association $\alpha$ is on the y-axis and the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines, respectively. 
-    Horizontal transmission is biased in (\textbf{a,c}) for cooperation, $T_A>T_B$, and in (\textbf{b,d}) for defection, $T_A<T_B$.    
+	(\textbf{a-b})~Cost of cooperation $c$ is on the y-axis and the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are represented by the solid and dashed lines, respectively. 
+    (\textbf{c-d})~Social association $\alpha$ is on the y-axis and the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines, respectively. 
+    Horizontal transmission is biased in favor of cooperation, $T_A>T_B$, in (\textbf{a}) and (\textbf{c}), or defection, $T_A<T_B$, in (\textbf{b}) and (\textbf{d}).    
     Here, $T_A = 0.5$, and
     (\textbf{a}) $b=1.2$, , $T_B = 0.4$, $\alpha = 0.4$;
     (\textbf{b}) $b=2$, $T_B = 0.7$, $\alpha = 0.7$;
@@ -1092,23 +1096,23 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 \begin{figure}[p]
   \centering
    \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_globalSelection_a}.pdf}
+    ~\\
+    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection_withSmallBox_b}.pdf} 
     ~
-    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection_withSmallBox_b}.pdf} \\
-    ~
-    \includegraphics[scale=0.65]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions_c}.pdf}
+    \includegraphics[scale=0.5]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions_c}.pdf}
   \caption{
   \textbf{Evolution of cooperation in a structured population.}
-	The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of the left panel \textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of the right panel \textbf{(b)}.
-  The population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between neighboring sites, and each site had 8 neighbors.
+	\textbf{(a-b)}~The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation, $c$, on the y-axis, and either the symmetric horizontal transmission rate, $T=T_A=T_B$, on the x-axis of panel~(a), or the transmission bias, $T_A-T_B$, on the x-axis of panel~(b).
+  Black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \autoref{eq:equal_transmission} for  panel~(a) and in \autoref{eq:cost_thresholds_v_threshold} for~(b).
+	\textbf{(b)}~The inset focuses on an area of the parameter range in which neither phenotype is fixed throughout the simulation, maintaining a stochastic locally stable polymorphism~\citep{Karlin1975}.
+  \textbf{(c)}~Frequency of cooperators (green) and defectors (red) over time for the parameter set marked by an~\textit{x} in panel~(b).
+  In all cases, the population evolves on a 100-by-100 grid.
+  Cooperation and horizontal transmission are both local between neighboring sites, and each site has 8 neighbors.
   Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
-  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with social association where $\alpha=1/8$ in \textbf{(a)} \autoref{eq:equal_transmission} and \textbf{(b)} \autoref{eq:cost_thresholds_v_threshold}.
-  Figure \textbf{(b)} emphasizes an area in which neither phenotype is fixed throughout the simulation, maintaining stochastic polymorphism. 
-  Figure \textbf{(c)} describes the frequency of cooperators and defactors over time
-  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed and 50 simulations were executed for each parameter set.
-  Here, population size is 10,000 (100-by-100 grid), benefit of cooperation, $b=1.3$, perfect vertical transmission $v=1$.
-  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
-  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$.
+  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed. 50 simulations were executed for each parameter set.
+  Benefit of cooperation, $b=1.3$; perfect vertical transmission $v=1$;
+  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$;
+  \textbf{(b)} Horizontal transmission rates $T_A=0.4$, $0.3<T_B<0.5$;
   \textbf{(c)} Horizontal transmission rates $T_A = 0.4 < T_B = 0.435$ and cost of cooperation $c=0.02$.
   }
   \label{fig:spatial}
@@ -1116,23 +1120,18 @@ Here, $b=1.3$, $T_A=0.4$. (\textbf{a})~$\alpha = 0$.(\textbf{b})~$\alpha = 0.7$.
 %TODO: could you revisit figure 4 caption ? I didn't know how to describe the x sign in figure b. DC
 
 %%% Figure: invasion
-\begin{figure}[b]
+\begin{figure}[p]
   \centering
-   \includegraphics[scale=0.5]{Frequency_of_invadors.eps}~
-   \includegraphics[scale=0.5]{mean_fitness_of_invadors.eps}
+   \includegraphics[scale=0.5]{Figures/invasion.eps}
   \caption{
-  \textbf{Evolution of social association.} successful invasion of new modifier allele m; starting from stable polymorphism of cooperators and defactors with soical association $\alpha_1$. 
-  The invadors have modifier allele m which cause different soical association value, $\alpha_2$ where $\alpha_2<\alpha_1$.
-  \textbf{(a)} The blue curve describes the frequency of the invadors, starting from initial frequency of 1\%.
-  The orange curve describes the frequency of cooperators after invasion. The frequency of cooperators decreases towards new stable frequency which is described by the black dashed line. 
-  The frequency of cooperators after the fixation of the invadors is the equilibrium described in \autoref{eq:general_equilibrium} with soical association $\alpha=\alpha_2$.\\
-  \textbf{(b)} describes the mean fitness as a function of time (generations). 
-  As the frequency of the invadors increases the mean fitness decreases. \\
-  In both panels $T_A = 0.4$, $T_B = 0.7$, $b=1.3$, $c=0.05$, $\alpha_1 = 0.7$ and $\alpha_2 = 0.65$.
+  \textbf{Reduction principle for social association.} 
+  Consecutive fixation of modifier alleles that reduce social association in numerical simulations of evolution with two modifier alleles (\autoref{eq:next_gen_p_1}).
+  When a modifier allele fixes (frequency > 99.95\%), a new modifier allele that reduces social association by 5\% is introduced. \textbf{(a)} The frequency of the cooperative phenotype $A$ in the population over time. \textbf{(b)} The frequency of the invading modifier allele $m$ over time. \textbf{(c)} The population mean fitness over time. Invading alleles are introduced at frequency 0.5\%.
+  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial social association $\alpha_1=0.7$.  
   }
   \label{fig:invasion}
 \end{figure}
-%TDODO: revisit this caption
+
 
 % Fluctuations in spatial model
 %\begin{figure}[p]
