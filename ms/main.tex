@@ -928,6 +928,8 @@ since $0 \le \alpha_1 \le 1$.
 Therefore, combining inequalities \ref{eq:R1_negative}, \ref{eq:alpha2_alpha1_intermediate}, and \ref{eq:c_gamma1_utility}, we find that $R(1)<0$ if and only if $\alpha_2 < \alpha_1$. This is a sufficient condition for external instability, so, if the social association $\alpha_2$ of the invading modifier allele $m$ is less than $\alpha_1$ of the resident $M$, then invasion will be successful.
 
 Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
+However, we validate using numerical simultations that $R(1)>0$ when $\alpha_2<\alpha_1$ for different values of $b$, $TA$, $TB$, $c$ and $\alpha_1>\alpha_2$.
+In addition, we also validate that $R(1)<0$ when $\alpha_2 > \alpha_1$ for different values of $b$, $TA$, $TB$, $c$ and $\alpha_1<\alpha_2$.
 
 %Now we know when all the roots are either smaller or greather than 1. We would like to know when all the roots are smaller than 1.
 %All the roots are smaller than 1 when the slope at 1 is positive. 
@@ -1037,7 +1039,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
 %%% Figure: model illustration
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=1]{figure1.pdf}
+  \includegraphics[scale=1]{figure1a.pdf}
   \caption{\textbf{Cultural horizontal transmission with assortment.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$, where $\alpha$ is the \emph{social association} parameter.
   }
   \label{fig:horizontal}
