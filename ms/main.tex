@@ -154,7 +154,7 @@ c < b \cdot r,
 where the relatedness coefficient $r$ measures the probability that an allele sampled from the cooperator is identical by descent to one at the same locus in the recipient.
 
 \citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
-Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  
+Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact specifically with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  
 Such assortative meeting may be due, for example, to population structure or active partner choice.
 In their model, cooperative behavior can evolve if
 \citep[eq.~3.2]{Eshel1982}
@@ -176,7 +176,7 @@ where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the
 
 
 In this paper we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
-\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
+\citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission with kin selection and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
@@ -192,7 +192,7 @@ Here, we study models for the cultural evolution of cooperation that include bot
 In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
 For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
 or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
-Our results demonstrate that cultural transmission can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because non-vertical transmission can diminish the effect of natural selection \citep{ram2018evolution}.
+Our results demonstrate that cultural transmission can enhance the evolution of cooperation even when genetic transmission cannot, partly because it can facilitate the generation of assortment \citep{Fletcher2009assortment}, and partly because it can diminish the effect of natural selection \citep{ram2018evolution}.
 This further emphasizes that treatment of cooperation as a cultural trait, rather than a genetic one, can lead to a broader understanding of its evolutionary dynamics.
 
 
@@ -354,7 +354,7 @@ This unites the conditions for fixation of cooperation and for stable polymorphi
 
 Importantly, increasing social association $\alpha$ increases the cost threshold ($\partial \gamma_1 / \partial \alpha > 0$), making it easier for cooperation to increase from rarity.
 Similarly, increasing the horizontal transmission of cooperation, $T_A$, increases the threshold ($\partial \gamma_1 / \partial T_A > 0$), facilitating the evolution of cooperation ((\autoref{fig:equilibria_v1}a and \ref{fig:equilibria_v1}b).
-However, increasing the horizontal transmission of defection, $T_B$, can increase or decrease the cost threshold, but it increases the cost threshold when it is already above one ($c<1<\gamma_1$): $\partial\gamma_1/\partial T_B$ is positive when $T_A > \frac{1}{1+\alpha b v}$, which gives $\gamma_1>1/v$. 
+However, increasing the horizontal transmission of defection, $T_B$, can increase or decrease the cost threshold, but it increases the cost threshold when the threshold is already above one ($c<1<\gamma_1$): $\partial\gamma_1/\partial T_B$ is positive when $T_A > \frac{1}{1+\alpha b v}$, which gives $\gamma_1>1/v$. 
 Therefore, increasing $T_B$ decreases the cost threshold and limits the evolution of cooperation, but only if $T_A < \frac{1}{1+\alpha b v}$.
 
 Increasing the vertical transmission rate, $v$, can either increase or decrease the cost threshold, depending on the horizontal transmission bias, $T_A-T_B$, because $\text{sign}(\partial \gamma_1 / \partial v) = -\text{sign}(T_A-T_B)$.
@@ -368,10 +368,11 @@ When there is no horizontal transmission bias, $T_A=T_B$, the following applies.
 From Result \ref{result:vert_obli_hori} and inequality~\ref{eq:unequal_transmission_from_rarity_general_case}, if horizontal transmission is unbiased, $T=T_A=T_B$, then cooperation will take over the population from any initial frequency if the cost is low enough,
 \begin{equation}
 \label{eq:equal_transmission}
-c < b \cdot \frac{v \alpha T}{1-T} \;.
+c < b \cdot \frac{\alpha T}{1-T} \;,
 \end{equation}
-This condition can be interpreted as a version of Hamilton's rule  ($c<b\cdot r$, inequality~\ref{eq:hamilton_rule}) or as a version of inequality~\ref{eq:fletcher2009}, where $v \alpha T/(1-T)$ can be regarded as the \emph{effective relatedness} or \emph{effective assortment}, respectively.
-\autoref{fig:results}a illustrates this condition for $v=1$.
+and regardless of the vertical transmission rate, $v$.
+This condition can be interpreted as a version of Hamilton's rule  ($c<b\cdot r$, inequality~\ref{eq:hamilton_rule}) or as a version of inequality~\ref{eq:fletcher2009}, where $\alpha T/(1-T)$ can be regarded as the \emph{effective relatedness} or \emph{effective assortment}, respectively.
+\autoref{fig:results}a illustrates this condition.
 Note that the right-hand side of inequality~\ref{eq:equal_transmission} equals $\gamma_1$ when $T=T_A=T_B$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -387,7 +388,6 @@ Further, inequality~\ref{eq:unequal_transmission_from_rarity_general_case} shows
 \begin{equation}\label{eq:vert_hori_alpha1}
 c < \frac{b v T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation}
-% TODO fig 2b?
 
 In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\tilde{p}=0$ and $\tilde{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\tilde{p}'>\tilde{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
 This is similar to case of microbe-associated cooperation studied by \citet{lewin2017microbes}; therefore when $v=1$, this remark is equivalent to their eq.~1.
@@ -953,7 +953,7 @@ $v$ & Vertical transmission rate & $[0,1]$ \\
 $c$ & Cost of cooperation & $(0,1)$ \\
 $b$ & Benefit of cooperation & $c<b$ \\
 $\alpha$ & Probability of social association & $[0,1]$ \\
-$T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $[0,1]$ \\
+$T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \\ \bottomrule
 \end{tabular}
 \label{table:vars_params}
@@ -1020,7 +1020,7 @@ Here, $b=1.3$, $T_A=0.4$, (\textbf{a})~$\alpha = 0$,(\textbf{b})~$\alpha = 0.7$,
     \label{fig:equilibria_v1}
 \end{figure}
 %TODO add panel d?
-
+% maybe show cost vs alpha ?
 
 
 %%% Figure: invasion
