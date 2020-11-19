@@ -96,9 +96,8 @@ headheight=12pt
 % autoref
 \def\equationautorefname{Eq.}
 
-
 % NatBib
-\usepackage[round,colon]{natbib}
+\usepackage[numbers,square,comma,sort]{natbib}
 
 % Title page
 \title{Non-Vertical Cultural Transmission, Assortment, \\and the Evolution of Cooperation}
@@ -141,8 +140,8 @@ Parallels are drawn with Hamilton's rule incorporating assortment and effective 
 %%% Introduction
 \section*{Introduction}
 Cooperative behavior can reduce an individual's fitness and increase the fitness of its conspecifics or competitors~\citep{axelrod1981evolution}.
-Nevertheless, cooperative behavior appears to occur in many non-human animals~\citep{dugatkin1997cooperation}, including primates~\citep{jaeggi2013natural},  rats~\citep{rice1962altruism}, birds~\citep{stacey1990cooperative,krams2008experimental}, and lizards~\citep{sinervo2006self}.
-Evolution of cooperative behavior remains an important conundrum in evolutionary biology~\citep[Appendix]{Haldane1932book}.
+Nevertheless, cooperative behavior appears to occur in many animals~\citep{dugatkin1997cooperation}, including humans, primates~\citep{jaeggi2013natural},  rats~\citep{rice1962altruism}, birds~\citep{stacey1990cooperative,krams2008experimental}, and lizards~\citep{sinervo2006self}.
+Evolution of cooperative behavior has been an important focus of research in evolutionary theory since at least the 1930s~\citep[Appendix]{Haldane1932book}.
 
 Since the work of  \citet{hamilton1964genetical} and \citet{axelrod1981evolution}, theories for the evolution of cooperative and altruistic behaviors have been intertwined often under the rubric of \emph{kin selection}.
 Kin selection theory posits that natural selection is more likely to favor cooperation between more closely related individuals.
@@ -174,25 +173,25 @@ c < b \cdot (p_C - p_D ) \,,
 where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help.\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequalities~\ref{eq:hamilton_rule} and~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}
 \citet{Bijma2010assortment} obtained a result related to inequality~\ref{eq:fletcher2009} for other types of games.
 
-
-In this paper we study the evolution of a cooperative behavior that is subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
+Cooperative behavior can be subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission with kin selection and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
-In inequality~\ref{eq:feldman1985}, $\varphi$ takes the role of relatedness ($r$ in inequality~\ref{eq:hamilton_rule}) or assortment ($m$ in inequality~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is  reduced by $(1-\varphi)/\varphi$. This shows that under a combination of genetic and cultural transmission, the condition for the evolutionary success of altruism entails a modification of Hamilton's rule (inequality~\ref{eq:hamilton_rule}).
+In inequality~\ref{eq:feldman1985}, $\varphi$ takes the role of relatedness ($r$ in inequality~\ref{eq:hamilton_rule}) or assortment ($m$ in inequality~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is  reduced by $(1-\varphi)/\varphi$.
+This shows that under a cultural transmission, the condition for the evolutionary success of altruism entails a modification of Hamilton's rule (inequality~\ref{eq:hamilton_rule}).
 
 Cultural transmission may be  modeled as vertical, horizontal, or oblique:  vertical transmission occurs between parents and offspring, horizontal transmission occurs between individuals from the same generation, and oblique transmission occurs  to offspring from the generation to which their parents belong (i.e. from non-parental adults). 
 Evolution under either of these transmission models can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,lycett2008questions,ram2018evolution}.
-Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated that non-vertical transmission can help explain the evolution of cooperative behavior (the former using simulations with cultural transmission, the latter using a model where cooperation is mediated by microbes that manipulate their host's behavior.) 
-Some of the analyses by \citet{lewin2017microbes} can be applied to cultural transmission, because models of cultural transmission are mathematically similar to those for transmission of infectious diseases~\citep{cavalli1981cultural}.
+Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated that non-vertical transmission can help explain the evolution of cooperative behavior, the former using simulations with cultural transmission, the latter using a model where cooperation is mediated by host-associated microbes.
+Indeed, models in which microbes affect their host's behavior~\citep{lewin2017microbes,lewin2020rockpaperscissors,gurevich2020parental} are mathematically similar to models of cultural transmission, and they also emphasize the role of non-vertical transmission~\citep{cavalli1981cultural}.
 
 Here, we study models for the cultural evolution of cooperation that include both vertical and non-vertical transmission. 
 %We investigate these models using mathematical analysis and simulations.  
 In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
 For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
 or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
-Our results demonstrate that cultural transmission can enhance the evolution of cooperation even when genetic transmission cannot, partly because it can facilitate the generation of assortment \citep{Fletcher2009assortment}, and partly because it can diminish the effect of natural selection \citep{ram2018evolution}.
+Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it can facilitate the generation of assortment \citep{Fletcher2009assortment}, and partly because it can diminish the effect of natural selection \citep{ram2018evolution}.
 This further emphasizes that treatment of cooperation as a cultural trait, rather than a genetic one, can lead to a broader understanding of its evolutionary dynamics.
 
 
@@ -212,7 +211,7 @@ v + (1-v)p, & \text{if } \phi=A \\
 \end{equation}
 where $p=P(\phi=A)$ is the frequency of $A$ among all adults in the parental generation.  
 
-Not all adults become parents due to natural selection, and we denote the frequency of phenotype $A$ among parents by $\tilde{p}$.
+Not all adults become parents, and we denote the frequency of phenotype $A$ among parents by $\tilde{p}$.
 Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after selection and vertical and oblique transmission) is
 
 \begin{equation}\label{eq:horizontal}
@@ -335,7 +334,7 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{enumerate}
 
 \end{result}
-These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b, and full analysis is in Appendix~\ref{sec:appendixB}.
+These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b, and the full analysis is in Appendix~\ref{sec:appendixB}.
 
 Much of the literature on evolution of cooperation focuses on conditions for  an initially rare cooperative phenotype to invade a population of defectors.
 The following remarks address this condition.
@@ -390,7 +389,7 @@ c < \frac{b v T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation}
 
 In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\tilde{p}=0$ and $\tilde{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\tilde{p}'>\tilde{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
-This is similar to case of microbe-associated cooperation studied by \citet{lewin2017microbes}; therefore when $v=1$, this remark is equivalent to their eq.~1.
+This is similar to case of microbe-induced cooperation studied by \citet{lewin2017microbes}; therefore when $v=1$, this remark is equivalent to their eq.~1.
 
 It is interesting to examine the general effect of social association $\alpha$ on the evolution of cooperation.
 Define the social association thresholds, $a_1$ and $a_2$, as 
@@ -422,7 +421,7 @@ Fixation of cooperation is possible only if the vertical transmission rate is hi
       v>\hat{v} = \frac{T_B - T_A}{1-T_A} \;.
     \end{aligned}
     \end{equation} 
-This condition does not guarantee fixation of cooperation; rather, if this condition does not apply then cooperation cannot fix.
+This condition is necessary for fixation of cooperation, but it is not sufficient.
 If horizontal transmission is biased for cooperation, $T_A>T_B$, cooperation can fix with any vertical transmission rate (because $\hat{v}<0$).
 In contrast, if horizontal transmission is biased for defection, $T_A<T_B$,  cooperation can fix only if the vertical transmission rate is high enough: in this case oblique transmission can prevent fixation of cooperation (see Figures~\ref{fig:equilibria}b and \ref{fig:equilibria}d).
 
@@ -492,14 +491,16 @@ As before, $T_A$ and $T_B$ are the probabilities of successful horizontal transm
 The order of the interactions across the grid at each generation is random.
 After all interactions take place, an individual's fitness is determined by
 $w = 1 + b \cdot n_b - c \cdot n_c$,
-where $n_b$ is the number of interactions that individual had with cooperative neighbors, and $n_c$ is the total number of interactions that that individual  had ($n_b \le n_c$).
-Then, a new generation is produced, and the sites can be settled by offspring of any parent, not just the neighboring parents. Thus, selection is global, rather than local, in accordance with our deterministic model.
-The parent is randomly drawn with probability proportional to its fitness, divided by the average fitness of all potential parents.
+where $n_b$ is the number of interactions that individual had with cooperative neighbors,
+and $n_c$ is the number of interactions in which that individual cooperated (note that the phenotype may change between consecutive interactions due to horizontal transmission).
+Then, a new generation is produced, and the sites can be settled by offspring of any parent, not just the neighboring parents.
+Selection is global, rather than local, in accordance with our deterministic model:
+The parent is randomly drawn with probability proportional to its fitness, divided by the sum of the fitness values of all potential parents.
 Offspring are assumed to have the same phenotype as their parents (i.e. $v=1$).
 
 The outcomes of stochastic simulations with such a structured population are shown in \autoref{fig:spatial}, which demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for our model without population structure or stochasticity.
 An example of stochastic stable polymorphism is shown in \autoref{fig:spatial}c.
-Changing the simulation so that the population is structured to allow local selection (i.e., sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
+Changing the simulation so that selection is local (i.e., sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
 These comparisons between the deterministic unstructured model and the stochastic structured model show that the conditions derived for the deterministic model can be useful for predicting the dynamics under complex scenarios. 
 Moreover, this structured population model demonstrates that our parameter for social association ($\alpha$) can represent local interactions between individuals.
@@ -546,7 +547,7 @@ With enough social association, cooperation can increase in frequency when initi
 
 How does non-vertical transmission generate assortment? 
 \citet{lewin2017microbes} and \citet{lewin2020rockpaperscissors} 
-suggested that microbes that manipulate their hosts to act altruistically can be favored by selection, which may help to explain the evolution of cooperation. 
+suggested that microbes that induce their hosts to act altruistically can be favored by selection, which may help to explain the evolution of cooperation. 
 %Indeed, it has been shown that microbes can mediate behavioral changes in their  hosts~\citep{dobson1988population,poulin2010parasite}. 
 %Therefore, natural selection on microbes may favor manipulation of the host so that it cooperates with others. 
 From the kin selection point-of-view, if microbes can be transmitted \emph{horizontally} from one host to another during host interactions, then following horizontal transmission the recipient host will carry microbes that are closely related to those of the donor host, 
@@ -566,9 +567,10 @@ environment''~\citep{Fletcher2009assortment} is generated not because the helper
 \section*{Acknowledgements}
 We thank Lilach Hadany, Ayelet Shavit, and Kaleda Krebs Denton for discussions and comments.
 This work was supported in part by
+the Clore Foundation Scholars Programme (OLE),
+the Morrison Institute for Population and Resources Studies at Stanford University (MWF),
 the Israel Science Foundation 552/19 (YR),
-Minerva Stiftung Center for Lab Evolution (YR),
-and the Morrison Institute for Population and Resources Studies at Stanford University (MWF).
+and Minerva Stiftung Center for Lab Evolution (YR).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -878,7 +880,7 @@ However, we numerically validated that the leading eigenvalue is greater than on
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
-\bibliographystyle{plainnat}
+\bibliographystyle{rsnat}
 \bibliography{bib}
 
 
