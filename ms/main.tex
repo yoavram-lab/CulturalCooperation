@@ -988,7 +988,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
     \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TA_TB.eps}~
     \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TB_TA.eps}
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
-    The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
+    The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 	In all cases the vertical transmission rate $v$ is on the x-axis.
 	(\textbf{a-b})~Cost of cooperation $c$ is on the y-axis and the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are represented by the solid and dashed lines, respectively. 
     (\textbf{c-d})~Social association $\alpha$ is on the y-axis and the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are represented by the solid and dashed lines, respectively. 
@@ -1009,23 +1009,29 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \begin{figure}[p]
   \centering       
     \includegraphics[width=0.45\textwidth]{Result2_c_zero_alpha.eps}
-	~
+	  ~
     \includegraphics[width=0.45\textwidth]{Result2_c_non_zero_alpha.eps}
     ~
-    \includegraphics[width=0.45\textwidth]{Result2_alpha.eps}    \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission (v=1).} 
-The figure shows the parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
-In all cases the horizontal bias ($T_A-T_B$) is on the x-axis.
-(\textbf{a-b})~Cost of cooperation $c$ is on the y-axis; the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are the solid and dashed lines, respectively. 
-(\textbf{c})~Social association $\alpha$ is on the y-axis; the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
-Here, $b=1.3$, $T_A=0.4$, (\textbf{a})~$\alpha = 0$,(\textbf{b})~$\alpha = 0.7$, (\textbf{c})~$c = 0.35$.
+    \includegraphics[width=0.45\textwidth]{Result2_alpha.eps}   
+    ~
+    \includegraphics[width=0.48\textwidth]{coexistence_without_oblique.eps}
+    \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission (v=1).} 
+    The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
+    (\textbf{a-c})~The horizontal transmission bias ($T_A-T_B$) is on the x-axis.
+    In panels (a) and (b), the cost of cooperation $c$ is on the y-axis and the cost thresholds $\gamma_1$ and $\gamma_2$ (\autoref{eq:cost_thresholds_v_threshold}) are the solid and dashed lines, respectively. 
+	In panel (c), social association $\alpha$ is on the y-axis and the social association thresholds $a_1$ and $a_2$ (\autoref{eq:boundries_assortative_meeting_general_case}) are the solid and dashed lines, respectively.
+    Here, $b=1.3$, $T_A=0.4$, $v=1$, (a)~$\alpha = 0$, (b)~$\alpha = 0.7$, (c)~$c = 0.35$.    
+    \textbf{(d)} Change in frequency of cooperation among juveniles ($\hat{p}'-\hat{p}$) as a function of the frequency ($\hat{p}$), see \autoref{eq:nextgen_juveniles}.
+    The orange curve shows convergence to a stable polymorphism ($T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, $v=1$, and $\alpha = 0.45$).
+    The blue curve shows fixation of either cooperation or defection, depending on the initial frequency ($T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, $v=1$, and $\alpha = 0.4$).
+    Markers show the three equilibria.
   	}
     \label{fig:equilibria_v1}
 \end{figure}
-%TODO add panel d?
-% maybe show cost vs alpha ?
 
 
-%%% Figure: invasion
+
+%%% Figure: Invasion
 \begin{figure}[p]
   \centering
    \includegraphics[scale=0.5]{Figures/invasion.eps}
@@ -1081,18 +1087,14 @@ Here, $b=1.3$, $T_A=0.4$, (\textbf{a})~$\alpha = 0$,(\textbf{b})~$\alpha = 0.7$,
 %%% Figure: polymorphism map
 \begin{figure}[p]
   \centering
-    \includegraphics[scale=0.4]{coexistence_without_oblique.eps}
-    \includegraphics[scale=0.4]{coexistence_with_oblique.eps}
+   % \includegraphics[scale=0.4]{coexistence_without_oblique.eps}
+    \includegraphics[scale=0.6]{coexistence_with_oblique.eps}
   \caption{\textbf{Stable and unstable polymorphism of cooperation and defection.}
   The curves show the change in cooperators frequency, $\hat{p}'-\hat{p}$, as a function of the current frequency of cooperators among juveniles, $\hat{p}$ (\autoref{eq:nextgen_juveniles}).
   The dashed black line is $\hat{p}'-\hat{p}=0$.
   The curves and the dashed line intersect at the polymorphic equilibrium $\hat{p}^*$ (red circle).
   %When $\hat{p}' - \hat{p} > 0 $,  $\hat{p}$ increases towards $\hat{p}^*$.
   %When $\hat{p}' - \hat{p} < 0$, $\hat{p}$ decreases towards $\hat{p}^*$.
-  \textbf{(a)} Without oblique transmission, $v=1$.
-  A stable polymorphism (orange curve) is given by $T_A = 0.4$, $T_B = 0.9$, $b = 12$, $c=0.35$, and $\alpha = 0.45$.
-  An unstable polymorphism (blue curve) is given by $T_A = 0.5$, $T_B = 0.1$, $b = 1.3$, $c=0.904$, and $\alpha = 0.4$.
-  \textbf{(b)} With oblique transmission. 
   A stable polymorphism (orange curve) is given by $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, and $v=0.4$.
   An unstable polymorphism (blue curve) is given by $T_A = 0.5$, $T_B = 0.4$, $b=1.2$, $c=0.487$, $\alpha = 0.09$ and $v=0.6$.
   }

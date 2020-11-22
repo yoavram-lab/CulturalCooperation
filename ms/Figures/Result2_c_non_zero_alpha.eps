@@ -1,7 +1,7 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: Figures/Result2_c_non_zero_alpha.eps
-%%Creator: matplotlib version 3.3.1, http://matplotlib.org/
-%%CreationDate: Sat Oct 17 17:37:34 2020
+%%Creator: matplotlib version 3.3.2, http://matplotlib.org/
+%%CreationDate: Sun Nov 22 10:01:59 2020
 %%Orientation: portrait
 %%BoundingBox: 90.0 180.0 522.0 612.0
 %%EndComments
@@ -42,7 +42,7 @@ mpldict begin
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-1021 -463 1793 1232]def
 /FontType 3 def
-/Encoding [ /space /comma /period /zero /one /two /four /six /eight /C /D /H /S /U /a /b /c /e /f /i /l /m /n /o /p /r /s /t /x /z /minus ] def
+/Encoding [ /space /comma /period /zero /one /two /four /six /eight /greater /C /D /H /S /U /a /b /c /e /f /i /l /m /n /o /p /r /s /t /x /z /minus ] def
 /FontInfo 10 dict dup begin
 /FamilyName (DejaVu Sans) def
 /FullName (DejaVu Sans) def
@@ -54,7 +54,7 @@ mpldict begin
 /UnderlinePosition -130 def
 /UnderlineThickness 90 def
 end readonly def
-/CharStrings 32 dict dup begin
+/CharStrings 33 dict dup begin
 /.notdef 0 def
 /space{318 0 0 0 0 0 _sc
 }_d
@@ -216,6 +216,16 @@ _cl}_e}_d
 275 664 242 653 218 632 _c
 194 611 183 582 183 544 _c
 _cl}_e}_d
+/greater{838 0 106 46 732 581 _sc
+106 492 _m
+106 581 _l
+732 354 _l
+732 273 _l
+106 46 _l
+106 135 _l
+609 313 _l
+106 492 _l
+_cl}_d
 /C{{698 0 56 -13 644 742 _sc
 644 673 _m
 644 569 _l
@@ -690,7 +700,7 @@ FontName currentdict end definefont pop
 /FontMatrix[.001 0 0 .001 0 0]def
 /FontBBox[-1016 -350 1659 1068]def
 /FontType 3 def
-/Encoding [ /A /B /T /c /gamma ] def
+/Encoding [ /A /B /T /c /alpha /gamma ] def
 /FontInfo 10 dict dup begin
 /FamilyName (DejaVu Sans) def
 /FullName (DejaVu Sans Oblique) def
@@ -702,7 +712,7 @@ FontName currentdict end definefont pop
 /UnderlinePosition -130 def
 /UnderlineThickness 90 def
 end readonly def
-/CharStrings 6 dict dup begin
+/CharStrings 7 dict dup begin
 /.notdef 0 def
 /A{684 0 -52 0 615 729 _sc
 368 729 _m
@@ -784,6 +794,36 @@ _cl}_d
 299 553 340 560 384 560 _c
 409 560 434 557 459 551 _c
 484 545 510 537 536 526 _c
+_cl}_e}_d
+/alpha{{659 0 55 -11 645 559 _sc
+409 254 _m
+410 367 _l
+410 443 381 482 323 483 _c
+279 483 244 465 218 429 _c
+184 384 161 332 150 273 _c
+136 201 137 148 155 114 _c
+173 79 202 62 242 62 _c
+285 62 325 96 362 166 _c
+409 254 _l
+338 559 _m
+440 561 490 509 489 404 _c
+489 404 514 451 565 547 _c
+645 547 _l
+487 250 _l
+486 144 _l
+486 128 490 113 499 100 _c
+509 84 519 76 530 76 _c
+}_e{573 76 _l
+559 0 _l
+504 0 _l
+473 0 447 13 425 41 _c
+415 55 409 76 409 104 _c
+387 69 359 37 323 8 _c
+305 -5 273 -11 227 -11 _c
+151 -10 99 14 71 62 _c
+43 112 37 183 55 273 _c
+73 369 108 440 158 484 _c
+213 533 273 558 338 559 _c
 _cl}_e}_d
 /gamma{592 0 74 -207 635 547 _sc
 233 461 _m
@@ -7735,6 +7775,23 @@ setfont
 setfont
 8.285156 -1.953125 moveto
 /two glyphshow
+
+grestore
+gsave
+204.660000 396.468000 translate
+0.000000 rotate
+/DejaVuSans-Oblique findfont
+20.0 scalefont
+setfont
+0.000000 0.156250 moveto
+/alpha glyphshow
+/DejaVuSans findfont
+20.0 scalefont
+setfont
+17.080078 0.156250 moveto
+/greater glyphshow
+37.734375 0.156250 moveto
+/zero glyphshow
 
 grestore
 /DejaVuSans-Bold findfont
