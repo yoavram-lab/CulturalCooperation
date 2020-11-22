@@ -201,7 +201,7 @@ This further emphasizes that treatment of cooperation as a cultural trait, rathe
 \section*{Models}
 
 Consider a large population whose members can be one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
-An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$. 
+An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}a). 
 Following~\citet{ram2018evolution}, given that the parent's phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 
 \begin{equation} \label{eq:vertical_oblique_transmission}
@@ -224,15 +224,15 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 \end{equation}
 
 Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{table:prisoner_payoff} shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}a shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
 
 Social interactions occur randomly:
 two juvenile individuals with phenotype $A$ interact with probability~$\hat{p}^2$, two juveniles with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two juveniles with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
 Horizontal cultural transmission occurs between pairs of individuals from the same generation. 
-It occurs between socially interacting partners with probability~$\alpha$, or between a random pair with probability~$1-\alpha$ (see~\autoref{fig:horizontal}).
+It occurs between socially interacting partners with probability~$\alpha$, or between a random pair with probability~$1-\alpha$ (see~\autoref{fig:illustration}b).
 %The social association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
 However, horizontal transmission is not always successful, as one partner may reject the other's phenotype.
-The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}).
+The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}, \autoref{fig:illustration}c).
 Then, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
@@ -258,7 +258,7 @@ The frequency of $A$ among parents (i.e. after selection) follows a similar dyna
 & (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
-where fitness values are taken from \autoref{table:prisoner_payoff} and \autoref{table:interactions}, and the population mean fitness is
+where fitness values are taken from \autoref{fig:illustration}a and \autoref{table:interactions}, and the population mean fitness is
 %\begin{equation} \label{eq:mean_fitness}
 $\bar{w} =  1 + \hat{p}(b-c)$.
 %\end{equation}
@@ -407,7 +407,7 @@ Cooperation will increase when rare if social association is high enough, specif
 Figures~\ref{fig:equilibria}c and \ref{fig:equilibria}d illustrate this condition.
 With horizontal transmission bias for cooperation, $T_A>T_B$, cooperation can fix from any initial frequency if $a_2<\alpha$ (green area in the figures). 
 With horizontal bias favoring defection, $T_A<T_B$, cooperation can fix from any frequency if social association is high, $a_1<\alpha$ (green area with $T_A<T_B$), and can also increase when rare and reach stable polymorphism if social association is intermediate, $a_2<\alpha<a_1$ (yellow area).
-Without horizontal bias, $T_A=T_B$, fixation of cooperation occurs if social association is high enough, $\frac{c}{b \cdot v} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
+Without horizontal bias, $T_A=T_B$, fixation of cooperation occurs if social association is high enough, $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
 
 Interestingly, because $\text{sign} (\partial a_2 / \partial v) = \text{sign} (T_A-T_B)$, the effect of the vertical transmission rate $v$ on $a_1$ and $a_2$ depends on the horizontal transmission bias. 
 That is, with horizontal bias for cooperation, $T_A>T_B$, evolution of cooperation is facilitated by oblique transmission, whereas with horizontal bias for defection, $T_A<T_B$, evolution of cooperation is facilitated by vertical transmission.
@@ -444,8 +444,9 @@ With no bias in horizontal transmission, $T_A = T_B$, phenotype frequencies do n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 Cooperation and defection can coexist at frequencies $\hat{p}^*$ and $1-\hat{p}^*$ (\autoref{eq:general_equilibrium}). 
 When it is feasible, this equilibrium is stable or unstable under the conditions of Result \ref{result:vert_obli_hori}, parts 3 and 4, respectively. The yellow and blue areas in Figures~\ref{fig:equilibria_v1} and \ref{fig:equilibria} show cases of stable and unstable polymorphism, respectively.
-When $\hat{p}^*$ is unstable, cooperation will fix if its initial frequency is $\hat{p}>\hat{p}^*$, and defection will fix if $\hat{p}<\hat{p}^*$; this occurs when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
-\autoref{fig:polymorphism_recursive} shows the mapping $\hat{p} \to \hat{p}'-\hat{p}$.
+When $\hat{p}^*$ is unstable, cooperation will fix if its initial frequency is $\hat{p}>\hat{p}^*$, and defection will fix if $\hat{p}<\hat{p}^*$.
+$\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
+\autoref{fig:equilibria_v1}d shows the mapping $\hat{p} \to \hat{p}'-\hat{p}$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -455,7 +456,7 @@ We now focus on the evolution of social association under perfect vertical trans
 Note that for a stable polymorphism, there must be horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_thresholds_v_threshold}), see \autoref{fig:equilibria_v1}b.
 The equilibrium population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$, and $\hat{p}^*$ is increasing in $\alpha$ (Appendix~\ref{sec:appendixC}).
 Therefore, if social association increases, the population mean fitness also increases.
-But can an allele that increases social association evolve? 
+But can this population-level advantage lead to the evolution of social association? 
 
 To answer this question, we extend our model to include a ``modifier locus''~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines social association, but has no direct effect on fitness.
 The modifier locus has two alleles, $M$ and $m$, which induce social associations $\alpha_1$ and $\alpha_2$, respectively.
@@ -485,8 +486,8 @@ Initially, each site in the grid is randomly colonized by either a cooperator or
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
 initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{table:prisoner_payoff}) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:horizontal}).
 The expected number of each of these interactions per individual per generation is one.
-The effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/m$, where $m$ is the number of neighbors.
-On an infinite grid, $m=8$, but on a finite grid $m$ can be lower in edge neighborhoods close to the grid border.
+The effective social association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
+On an infinite grid, $M=8$, but on a finite grid $M$ can be lower in edge neighborhoods close to the grid border.
 As before, $T_A$ and $T_B$ are the probabilities of successful horizontal transmission of phenotypes $A$ and $B$, respectively.
 
 The order of the interactions across the grid at each generation is random.
@@ -534,8 +535,9 @@ In these structured populations social association arises due to both social int
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to incorporate such genetic modification of cultural transmission into our model.
 \citet{woodcock2006significance} stressed the significance of non-vertical transmission for the evolution of cooperation and
-carried out simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$). Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
-Our results provide strong evidence for his hypothesis that horizontal transmission can play an important role in the evolution of cooperation. 
+carried out simulations with prisoner's dilemma payoffs but without horizontal transmission or social association ($\alpha=0$).
+Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
+He further hypothesized that horizontal transmission can play an important role in the evolution of cooperation, and our results provide strong evidence for this hypothesis. 
 
 To understand the role of horizontal transmission, we first review the role of \emph{assortment}.
 \citet{Eshel1982} showed that altruism can evolve when the tendency for \emph{assortative meeting}, i.e., for individuals to interact with others of their own phenotype, is strong enough.
@@ -570,7 +572,7 @@ We thank Lilach Hadany, Ayelet Shavit, and Kaleda Krebs Denton for discussions a
 This work was supported in part by
 the Clore Foundation Scholars Programme (OLE),
 the Morrison Institute for Population and Resources Studies at Stanford University (MWF),
-the Israel Science Foundation 552/19 (YR),
+Israel Science Foundation (YR 552/19),
 and Minerva Stiftung Center for Lab Evolution (YR).
 
 
@@ -893,25 +895,25 @@ However, we numerically validated that the leading eigenvalue is greater than on
 
 \section*{Tables}
 
-%%% Table: payoff matrix
-\bigskip
-\begin{table}[h]
-\centering
-\caption{\textbf{Payoff matrix for prisoner's dilemma.}}
-\begin{tabular}{lll}
-\toprule
-           & $\phi_2=A$ & $\phi_2=B$ \\ \cmidrule(r){1-3}
-$\phi_1=A$ & $1+b-c$ & $1-c$ \\
-$\phi_1=B$ & $1+b$   & $1$
-\\ \bottomrule
-\end{tabular}
-\label{table:prisoner_payoff}
-\caption*{
-The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ is a cooperative phenotype, $B$ is a defector phenotype, $b$ is the benefit gained by an individual interacting with a cooperator, and $c$ is the cost of cooperation. $0<c<1$ and $c<b$.
-}
-\end{table}
-\bigskip
-%%%
+%%%% Table: payoff matrix
+%\bigskip
+%\begin{table}[h]
+%\centering
+%\caption{\textbf{Payoff matrix for prisoner's dilemma.}}
+%\begin{tabular}{lll}
+%\toprule
+%           & $\phi_2=A$ & $\phi_2=B$ \\ \cmidrule(r){1-3}
+%$\phi_1=A$ & $1+b-c$ & $1-c$ \\
+%$\phi_1=B$ & $1+b$   & $1$
+%\\ \bottomrule
+%\end{tabular}
+%\label{table:prisoner_payoff}
+%\caption*{
+%The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$. $A$ is a cooperative phenotype, $B$ is a defector phenotype, $b$ is the benefit gained by an individual interacting with a cooperator, and $c$ is the cost of cooperation. $0<c<1$ and $c<b$.
+%}
+%\end{table}
+%\bigskip
+%%%%
 
  
 %%% Table: interactions
@@ -971,10 +973,10 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 %%% Figure: model illustration
 \begin{figure}[h]
   \centering
-  \includegraphics[scale=1]{figure1.pdf}
+  \includegraphics[width=0.7\textwidth]{Illustration.pdf}
   \caption{\textbf{Cultural horizontal transmission with assortment.} Transmission occurs between interacting partners with probability $\alpha$ (left) or between two random peers with probability $1-\alpha$, where $\alpha$ is the \emph{social association} parameter.
   }
-  \label{fig:horizontal}
+  \label{fig:illustration}
 \end{figure}
 
 
@@ -1081,25 +1083,6 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \newpage
 %\section*{Supplementary Material}
 \beginsupplement % https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
-
-
-
-%%% Figure: polymorphism map
-\begin{figure}[p]
-  \centering
-   % \includegraphics[scale=0.4]{coexistence_without_oblique.eps}
-    \includegraphics[scale=0.6]{coexistence_with_oblique.eps}
-  \caption{\textbf{Stable and unstable polymorphism of cooperation and defection.}
-  The curves show the change in cooperators frequency, $\hat{p}'-\hat{p}$, as a function of the current frequency of cooperators among juveniles, $\hat{p}$ (\autoref{eq:nextgen_juveniles}).
-  The dashed black line is $\hat{p}'-\hat{p}=0$.
-  The curves and the dashed line intersect at the polymorphic equilibrium $\hat{p}^*$ (red circle).
-  %When $\hat{p}' - \hat{p} > 0 $,  $\hat{p}$ increases towards $\hat{p}^*$.
-  %When $\hat{p}' - \hat{p} < 0$, $\hat{p}$ decreases towards $\hat{p}^*$.
-  A stable polymorphism (orange curve) is given by $T_A = 0.4$, $T_B = 0.9$, $b = 20$, $c=0.1$, $\alpha = 1$, and $v=0.4$.
-  An unstable polymorphism (blue curve) is given by $T_A = 0.5$, $T_B = 0.4$, $b=1.2$, $c=0.487$, $\alpha = 0.09$ and $v=0.6$.
-  }
-  \label{fig:polymorphism_recursive}
-  \end{figure}
 
 
 
