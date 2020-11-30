@@ -80,7 +80,8 @@ headheight=12pt
 \renewcommand\qedsymbol{} % no square at end of proof
 \newcommand{\cl}{\mathbf{L}}
 \newcommand{\cj}{\mathbf{J}}
-\newcommand{\ci}{I}
+\newcommand{\ci}{\mathbf{I}}
+\DeclareMathOperator{\sign}{sign}
 
 % Supplementary
 % https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
@@ -778,17 +779,17 @@ The equilibrium where only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tild
 setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
 When $v=1$, $\tilde p^*$ is a feasible polymorphism ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
 
-The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\vec{L}^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
-$\vec{L}^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\vec{L}^*_{in}$ and $\vec{L}^*_{ex}$ \citep{Liberman1986modifiers,Altenberg2017} .
-The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1} as
+The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+$\cl^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\cl^*_{in}$ and $\cl^*_{ex}$ \citep{Liberman1986modifiers,Altenberg2017} .
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1}, with $\bar{w}^*=1+(b-c)\tilde{p}^*$ as the stable population mean fitness,
 \begin{equation} \label{eq:external_stability_matrix}
 \begin{aligned}
-&\mathbf{L}^*_{ex} = 
+&\cl^*_{ex} = 
  \frac{1}{\bar{w}^*} \begin{bmatrix}
-	 X &
-	 Y \\
-	 Z &
-	 Q 
+	 l_{1 1} &
+	 l_{1 2} \\
+	 l_{2 1} &
+	 l_{2 2} 
 \end{bmatrix} = 
 \frac{1}{\bar{w}^*} \begin{bmatrix}
 \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
@@ -805,75 +806,103 @@ The latter is the external stability matrix: the linear approximation to the tra
 \end{aligned}
 \end{equation}
 
-%\begin{equation} \label{eq:partial_derivatives}
-%  \begin{aligned}
-%%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = b \big(\tilde{p}^*-(1 - \alpha_2) T_B (\tilde{p}^* - \tilde{p}^{*2})\big) + (1 - c) (1 + \tilde{p}^* T_B - T_B) \;,\\
-%  X &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
-%  b \big(1-(1 - \alpha_2) T_B (1 - \tilde{p}^*)\big) \tilde{p}^* + (1 - c) \big(1 - T_B (1 - \tilde{p}^*)\big) \;,\\
-%%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = b T_A \tilde{p}^* \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) + \tilde{p}^* T_A \;,\\
-%  Y &= \frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
-%  b T_A \big(\tilde{p}^* + \alpha_2 (1 - \tilde{p}^*)\big) \tilde{p}^* + T_A \tilde{p}^* \;,\\
-%% Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = (1 - \tilde{p}^*) (1 - c) T_B + b \tilde{p}^* (1 - \alpha_2)(1 - \tilde{p}^*) T_B \;,\\
-%  Z &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) = 
-%  b T_B (1 - \alpha_2) \tilde{p}^*(1 - \tilde{p}^*) + (1 - c) T_B (1 - \tilde{p}^*) \;,\\
-%%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 1 - \tilde{p}^*T_A+ b\tilde{p}^*\big(1 - \alpha_2 T_A (1 - \tilde{p}^*) - T_A \tilde{p}^* \big) \;.
-%  Q &= \frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) = 
-%  b \big(1 - T_A \tilde{p}^* - \alpha_2 T_A (1 - \tilde{p}^*) \big) \tilde{p}^* + 1 - T_A \tilde{p}^* \;.
-%  \end{aligned}
+Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\cl^*_{ex}$.
+This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\cl^*_{ex}$ is real and positive.
+Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
+The eigenvalues of $\cl^*_{ex}$ are the roots of the characteristic polynomial, $R(\lambda)$,
+%\begin{equation}\label{char_poly}
+%R(\lambda) = 
+%\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;,
+%\end{equation}
+%where $X$, $Y$, $Z$, and $Q$ are defined in \autoref{eq:external_stability_matrix}.
+which is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
+Thus, a sufficient condition for external instability of $\vec{\tilde{p}^*}$ is $R(1) < 0$.
+%\begin{equation} \label{eq:R1_negative}
+%\begin{aligned}
+%R(1) < 0 \Leftrightarrow 
+%1 - \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} < 0 \Leftrightarrow 
+%\bar{w^*}^2 - \bar{w^*} (X+Q) + XQ - YZ < 0 \;.
+%\end{aligned}
 %\end{equation}
 
-Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
-$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\vec{L}^*_{ex}$.
-This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\mathbf{L}^*_{ex}$ is real and positive.
-Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
-The eigenvalues of $\mathbf{L}^*_{ex}$ are the roots of the characteristic polynomial, 
-\begin{equation}\label{char_poly}
-R(\lambda) = 
-\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;,
-\end{equation}
-where $X$, $Y$, $Z$, and $Q$ are defined in \autoref{eq:external_stability_matrix}.
-%At $\lambda = 1$ the characteristic polynomial is equal to:
-%\begin{equation} \label{eq:characteristic_at_1}
-%  1-\frac{X+Q}{\bar{w}} + \frac{XQ-YZ}{\bar{w}^2}.
-%\end{equation}
-%Because the discriminant of $R(\lambda)$ is positive, 
-%\begin{equation} \label{eq:delta}
-%  \Delta = 
-%  %\frac{(X+Q)^2}{\bar{w}^2}-\frac{4XQ-4YZ}{\bar{w}^2}=
-%  \frac{(X-Q)^2+4YZ}{\bar{w}^2} > 0 \;,
-%\end{equation}
-%it has two real roots.
-The characteristic polynomial $R(\lambda)$ is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
-Thus, a sufficient condition for external instability of $\vec{\tilde{p}^*}$ is
-\begin{equation} \label{eq:R1_negative}
+$R(\lambda)$ is defined as a determinant, $R(\lambda)=\det(\cl^*_{ex} - \lambda \ci)$, where $\ci$ is the 2-by-2 identify matrix. 
+Since multiplication by a positive doesn't change the sign, and using the properties of the determinant, 
+\begin{equation} \label{eq:signR1}
 \begin{aligned}
-R(1) < 0 \Leftrightarrow 
-1 - \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} < 0 \Leftrightarrow 
-\bar{w^*}^2 - \bar{w^*} (X+Q) + XQ - YZ < 0 \;.
+\sign R(1) =
+& \sign\det(\cl^*_{ex} - \ci) =
+  \sign (\bar{w}^*)^2 \det(\cl^*_{ex} - \ci) = \\
+& \sign \det(\bar{w}^*\cl^*_{ex} - \bar{w}^* \ci) =
+  \sign \det\begin{bmatrix} l_{1 1} - \bar{w}^* & l_{1 2} \\ l_{2 1} & l_{2 2} - \bar{w}^* \end{bmatrix} \;,
 \end{aligned}
 \end{equation}
-Using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, we find that inequality~\ref{eq:R1_negative} is true if and only if
-\begin{equation} \label{eq:alpha2_alpha1_intermediate}
+where $l_{i j}$ are defined in \autoref{eq:external_stability_matrix}.
+Adding the second row in \autoref{eq:signR1} to the first row,  which does not change the determinant, and substituting $\bar{w}^*=1+(b-c)\tilde{p}^*$, we get
+\begin{equation} 
 \begin{aligned}
-\alpha_2 \big(b T_{A} + (T_A-T_B) - c(1-T_B)\big) <
-\alpha_1 \big(b T_{A} + (T_A-T_B) - c(1-T_B)\big) \;.
+\sign R(1) =
+& \sign\det\begin{bmatrix}
+	 -c(1-\tilde{p}^*) &&
+	 c \tilde{p}^* \\
+	 (1-\tilde{p}^*)\big[(1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* \big] &&
+	 \tilde{p}^*\big[-(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c\big]
+\end{bmatrix} = \\
+& \sign \Bigg[c \tilde{p}^* (1-\tilde{p}^*) \cdot \det\begin{bmatrix}
+	 -1 &&
+	 1 \\
+	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
+	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
+\end{bmatrix}\Bigg] = \\
+& \sign\det\begin{bmatrix}
+	 -1 &&
+	 1 \\
+	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
+	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
+\end{bmatrix} \;,
 \end{aligned}
 \end{equation}
-We assumed $c<\gamma_1$, that is,
+since $c>0$, $0<\tilde{p}^*<1$.
+That is, 
+\begin{equation}
+\begin{aligned}
+\sign R(1) = 
+&\sign\Big[
+(1+b\tilde{p}^*)T_A + b\alpha_2 T_A (1-\tilde{p}^*) - c - 
+(1+b\tilde{p}^*-c)T_B + b\tilde{p}^* \alpha_2 T_B \Big]
+= \\
+&\sign\Big[(1+b(1-\alpha_2)\tilde{p}^*)(T_A-T_B) + b\alpha_2 T_A - c (1-T_B) \Big]\;.
+\end{aligned}
+\end{equation}
+Substituting $\tilde{p}^*$ from \autoref{eq:p_tilde_star_alpha_1}, we get
+\begin{equation} \label{eq:R1_less}
+\begin{aligned}
+R(1)<0 \Leftrightarrow
+&\big[c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)\big] \frac{1-\alpha_2}{1-\alpha_1} - c (1-T_B) + b\alpha_2 T_A  + (T_A-T_B) < 0 \Leftrightarrow \\
+&(1-\alpha_2)\big[c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)\big] < (1-\alpha_1)\big[c (1-T_B) - b\alpha_2 T_A  - (T_A-T_B) \big] \Leftrightarrow \\
+& - b \alpha_1 T_A -\alpha_2 c(1-T_B) +\alpha_2(T_A - T_B) < 
+  - b\alpha_2 T_A -\alpha_1 c (1-T_B) +\alpha_1 (T_A-T_B)  \Leftrightarrow \\
+& \alpha_1 \big[c (1-T_B) - b T_A-(T_A-T_B)\big]  < 
+  \alpha_2 \big[c(1-T_B)-b T_A -(T_A - T_B)\big] \Leftrightarrow \\
+& \alpha_1 \big[b T_A + (T_A-T_B) - c (1-T_B)\big]  > 
+  \alpha_2 \big[b T_A + (T_A-T_B) - c (1-T_B)\big] \;.
+\end{aligned}
+\end{equation}
+We assumed $c<\gamma_1$, and since $0 \le \alpha_1 \le 1$,
 \begin{equation} \label{eq:c_gamma1_utility}
 \begin{aligned}
 c &< \gamma_1 = \frac{b \alpha_1 T_A + (T_A-T_B)}{1-T_B} \; \Leftrightarrow \\
 %c(1-T_B) < b \alpha_1 T_A + (T_A-T_B) \Leftrightarrow \\
 0 &< b \alpha_1 T_A + (T_A-T_B) - c(1-T_B) \; \Rightarrow \\
-0 &< b T_A + (T_A-T_B) - c(1-T_B) \;,
+0 &< b T_A + (T_A-T_B) - c(1-T_B) \;.
 \end{aligned}
 \end{equation}
-since $0 \le \alpha_1 \le 1$.
-Therefore, combining inequalities \ref{eq:R1_negative}, \ref{eq:alpha2_alpha1_intermediate}, and \ref{eq:c_gamma1_utility}, we find that $R(1)<0$ if and only if $\alpha_2 < \alpha_1$. This is a sufficient condition for external instability. 
-So, if $\alpha_2$, the interaction-transmission association of the invading modifier allele $m$, is less than $\alpha_1$, the interaction-transmission association of the resident allele $M$, then invasion will be successful.
+
+Combining inequalities~\ref{eq:R1_less} and~\ref{eq:c_gamma1_utility}, we find that $R(1)<0$ if and only if $\alpha_1 > \alpha_2$. This is a sufficient condition for external instability. 
+Therefore, if $\alpha_2$, the interaction-transmission association of the invading modifier allele $m$, is less than $\alpha_1$, the interaction-transmission association of the resident allele $M$, then invasion will be successful.
 
 Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
-However, we numerically validated that the leading eigenvalue is greater than one if and only if $\alpha_2<\alpha_1$.
+However, we numerically validated that the leading eigenvalue is greater than one if and only if $\alpha_1>\alpha_2$.
   
 \end{appendices}
 
