@@ -448,33 +448,6 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
 \autoref{fig:equilibria_v1}d shows $\hat{p}'-\hat{p}$ as a function of $\hat{p}$.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Evolution of interaction-transmission association} 
-
-We now focus on the evolution of interaction-transmission association under perfect vertical transmission, $v=1$, assuming that the population is initially at a stable polymorphism of the two phenotypes, cooperation $A$ and defection $B$, where the frequency of $A$ among juveniles is $\hat{p}^*$ (\autoref{eq:general_equilibrium}).
-Note that for a stable polymorphism, there must be horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_thresholds_v_threshold}), see \autoref{fig:equilibria_v1}b.
-The equilibrium population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$, and $\hat{p}^*$ is increasing in $\alpha$ (Appendix~\ref{sec:appendixC}).
-Therefore, if interaction-transmission association increases, the population mean fitness also increases.
-But can this population-level advantage lead to the evolution of interaction-transmission association? 
-
-To answer this question, we extend our model to include a ``modifier locus''~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines interaction-transmission association, but has no direct effect on fitness.
-The modifier locus has two alleles, $M$ and $m$, which induce interaction-transmission associations $\alpha_1$ and $\alpha_2$, respectively.
-Suppose that the population has evolved to a stable equilibrium $\hat{p}^*$  when only allele $M$ is present.
-We study the local stability of this equilibrium to invasion by the modifier allele $m$; this is called ``external stability'' \citep{Liberman1986modifiers,Altenberg2017} and obtain the following result.
-\\
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{result}[Reduction principle for interaction-transmission association] 
-\label{result:evol_social_association}
-From a stable polymorphism between cooperation and defection, a modifier allele can successfully invade the population if it decreases the interaction-transmission association $\alpha$.
-\end{result}
-
-The full analysis is in Appendix~\ref{sec:appendixD}. Note that this reduction principle entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
-Furthermore, if we assume that modifier alleles with decreased interaction-transmission association appear and invade the population from time to time, then interaction-transmission association will continue to decrease, further reducing the frequency of cooperation and the population mean fitness. This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
-Thus, we can expect interaction-transmission association to eventually approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Population structure}
 Interaction-transmission association may also emerge from population structure.
@@ -517,10 +490,6 @@ c \cdot v (1-T_B) < b \cdot v \alpha T_A + (T_A - T_B) \;,
 namely, the effective cost of cooperation (left-hand side) is smaller then the effective benefit plus the horizontal transmission bias (right-hand side).
 This condition cannot be formulated in the form of Hamilton's rule, $c<b \cdot r$, due to the effect of biased horizontal transmission, represented by $(T_A-T_B)$.
 Remarkably, a polymorphism of cooperation and defection can be stable if horizontal transmission is biased in favor of defection ($T_A<T_B$) and both the cost of cooperation and interaction-transmission association are intermediate (yellow areas in Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
-
-We find that stronger interaction-transmission association $\alpha$ leads to evolution of higher frequency of cooperation and increased population mean fitness.
-Nevertheless, when cooperation and defection coexist, interaction-transmission association is expected to be reduced by natural selection, leading to extinction of cooperation and decreased population mean fitness (Result~\ref{result:evol_social_association}, \autoref{fig:invasion}).
-Without interaction-transmission association, the benefit of cooperation cannot facilitate its evolution, and cooperation can only succeed if horizontal transmission is biased in its favor. 
 
 Indeed, in our model, horizontal transmission plays a major role in the evolution of cooperation: increasing the transmission of cooperation, $T_A$, or decreasing the transmission of defection, $T_B$, facilitates the evolution of cooperation. 
 However, the effect of oblique transmission is more complicated.
@@ -726,183 +695,6 @@ Therefore, the numerator in \autoref{eq:mean_fitness_stable_polymorphism_derivat
 Since $T_A<T_B$, the denominator in \autoref{eq:mean_fitness_stable_polymorphism_derivative} is also positive, and hence the derivative $\partial \hat{p}^* / \partial \alpha$ is positive.
 Thus, the population mean fitness increases as interaction-transmission association $\alpha$ increases.
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Reduction principle} \label{sec:appendixD}
-
-We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
-Denote the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ by $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
-The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
-\begin{equation} \label{eq:next_gen_p_1}
-  \begin{aligned}
-	% p1
-  \bar{w}\tilde{p}_1' = 
-  & \tilde{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) \;+ \\
-  & \tilde{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) \;+ \\
-  & \tilde{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) \;+ \\
-  & \tilde{p}_2(1-x)x(1-\alpha_1)T_A \;,
-\\
-	% p2
-  \bar{w}\tilde{p}_2' = 
-  & \tilde{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \;+ \\
-  & \tilde{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) \;+ \\
-  & \tilde{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) \;+ \\
-& \tilde{p}_2(1-x)(1 - (1-\alpha_1) x T_A) \;, 
-\\
-	% p3
-  \bar{w}\tilde{p}_3' =
-  & \tilde{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) \;+ \\
-  & \tilde{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) \;+ \\
-  & \tilde{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) \;+ \\
-  & \tilde{p}_4(1-x) x (1-\alpha_2)T_A \;, 
-\\
-	% p4
-  \bar{w}\tilde{p}_4' =
-  & \tilde{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B \;+ \\
-  & \tilde{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) \;+ \\
-  & \tilde{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) \;+ \\
-  & \tilde{p}_4(1-x)(1 - (1-\alpha_2) x T_A) \;,
-  \end{aligned}
-\end{equation}
-%which we can write as 
-%\begin{equation}
-%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
-%\end{equation}
-where $x=\tilde{p}_1+\tilde{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
-
-The equilibrium where only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
-\begin{equation} \label{eq:p_tilde_star_alpha_1}
-\tilde{p}^*=
-\frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)} \;,
-\end{equation}
-setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
-When $v=1$, $\tilde p^*$ is a feasible polymorphism ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
-
-The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
-$\cl^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\cl^*_{in}$ and $\cl^*_{ex}$ \citep{Liberman1986modifiers,Altenberg2017} .
-The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1}, with $\bar{w}^*=1+(b-c)\tilde{p}^*$ as the stable population mean fitness,
-\begin{equation} \label{eq:external_stability_matrix}
-\begin{aligned}
-&\cl^*_{ex} = 
- \frac{1}{\bar{w}^*} \begin{bmatrix}
-	 l_{1 1} &
-	 l_{1 2} \\
-	 l_{2 1} &
-	 l_{2 2} 
-\end{bmatrix} = 
-\frac{1}{\bar{w}^*} \begin{bmatrix}
-\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
-\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) 
-\end{bmatrix} \;= \\
-& \frac{1}{\bar{w}^*} \begin{bmatrix}
-		(1+b \tilde{p}^* -c)(1-T_B(1-\tilde{p}^*)) + b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) & 
-		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
-		(1+b \tilde{p}^* - c) T_B(1-\tilde{p}^*) - b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) &
-		(1+b \tilde{p}^*) (1-T_A \tilde{p}^*) - b \tilde{p}^* \alpha_2 T_A (1-\tilde{p}^*) \\
-  	\end{bmatrix} \;.
-\end{aligned}
-\end{equation}
-
-Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
-$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\cl^*_{ex}$.
-This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\cl^*_{ex}$ is real and positive.
-Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
-The eigenvalues of $\cl^*_{ex}$ are the roots of the characteristic polynomial, $R(\lambda)$,
-%\begin{equation}\label{char_poly}
-%R(\lambda) = 
-%\lambda^2 -\lambda \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} \;,
-%\end{equation}
-%where $X$, $Y$, $Z$, and $Q$ are defined in \autoref{eq:external_stability_matrix}.
-which is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
-Thus, a sufficient condition for external instability of $\vec{\tilde{p}^*}$ is $R(1) < 0$.
-%\begin{equation} \label{eq:R1_negative}
-%\begin{aligned}
-%R(1) < 0 \Leftrightarrow 
-%1 - \frac{(X+Q)}{\bar{w^*}} + \frac{XQ - YZ}{\bar{w^*}^2} < 0 \Leftrightarrow 
-%\bar{w^*}^2 - \bar{w^*} (X+Q) + XQ - YZ < 0 \;.
-%\end{aligned}
-%\end{equation}
-
-$R(\lambda)$ is defined as a determinant, $R(\lambda)=\det(\cl^*_{ex} - \lambda \ci)$, where $\ci$ is the 2-by-2 identity matrix. 
-Since multiplication by a positive factor doesn't change the sign, and using the properties of the determinant,  we have
-\begin{equation} \label{eq:signR1}
-\begin{aligned}
-\sign R(1) =
-& \sign\det(\cl^*_{ex} - \ci) =
-  \sign (\bar{w}^*)^2 \det(\cl^*_{ex} - \ci) = \\
-& \sign \det(\bar{w}^*\cl^*_{ex} - \bar{w}^* \ci) =
-  \sign \det\begin{bmatrix} l_{1 1} - \bar{w}^* & l_{1 2} \\ l_{2 1} & l_{2 2} - \bar{w}^* \end{bmatrix} \;,
-\end{aligned}
-\end{equation}
-where $l_{i j}$ are defined in \autoref{eq:external_stability_matrix}.
-Adding the second row in \autoref{eq:signR1} to the first row,  which does not change the determinant, and substituting $\bar{w}^*=1+(b-c)\tilde{p}^*$, we get
-\begin{equation} 
-\begin{aligned}
-\sign R(1) =
-& \sign\det\begin{bmatrix}
-	 -c(1-\tilde{p}^*) &&
-	 c \tilde{p}^* \\
-	 (1-\tilde{p}^*)\big[(1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* \big] &&
-	 \tilde{p}^*\big[-(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c\big]
-\end{bmatrix} = \\
-& \sign \Bigg[c \tilde{p}^* (1-\tilde{p}^*) \cdot \det\begin{bmatrix}
-	 -1 &&
-	 1 \\
-	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
-	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
-\end{bmatrix}\Bigg] = \\
-& \sign\det\begin{bmatrix}
-	 -1 &&
-	 1 \\
-	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
-	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
-\end{bmatrix} \;,
-\end{aligned}
-\end{equation}
-since $c>0$, $0<\tilde{p}^*<1$.
-That is, 
-\begin{equation}
-\begin{aligned}
-\sign R(1) = 
-&\sign\Big[
-(1+b\tilde{p}^*)T_A + b\alpha_2 T_A (1-\tilde{p}^*) - c - 
-(1+b\tilde{p}^*-c)T_B + b\tilde{p}^* \alpha_2 T_B \Big]
-= \\
-&\sign\Big[(1+b(1-\alpha_2)\tilde{p}^*)(T_A-T_B) + b\alpha_2 T_A - c (1-T_B) \Big]\;.
-\end{aligned}
-\end{equation}
-Substituting $\tilde{p}^*$ from \autoref{eq:p_tilde_star_alpha_1}, we get
-\begin{equation} \label{eq:R1_less}
-\begin{aligned}
-R(1)<0 \Leftrightarrow
-&\big[c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)\big] \frac{1-\alpha_2}{1-\alpha_1} - c (1-T_B) + b\alpha_2 T_A  + (T_A-T_B) < 0 \Leftrightarrow \\
-&(1-\alpha_2)\big[c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)\big] < (1-\alpha_1)\big[c (1-T_B) - b\alpha_2 T_A  - (T_A-T_B) \big] \Leftrightarrow \\
-& - b \alpha_1 T_A -\alpha_2 c(1-T_B) +\alpha_2(T_A - T_B) < 
-  - b\alpha_2 T_A -\alpha_1 c (1-T_B) +\alpha_1 (T_A-T_B)  \Leftrightarrow \\
-& \alpha_1 \big[c (1-T_B) - b T_A-(T_A-T_B)\big]  < 
-  \alpha_2 \big[c(1-T_B)-b T_A -(T_A - T_B)\big] \Leftrightarrow \\
-& \alpha_1 \big[b T_A + (T_A-T_B) - c (1-T_B)\big]  > 
-  \alpha_2 \big[b T_A + (T_A-T_B) - c (1-T_B)\big] \;.
-\end{aligned}
-\end{equation}
-We assumed $c<\gamma_1$, and since $0 \le \alpha_1 \le 1$,
-\begin{equation} \label{eq:c_gamma1_utility}
-\begin{aligned}
-c &< \gamma_1 = \frac{b \alpha_1 T_A + (T_A-T_B)}{1-T_B} \; \Leftrightarrow \\
-%c(1-T_B) < b \alpha_1 T_A + (T_A-T_B) \Leftrightarrow \\
-0 &< b \alpha_1 T_A + (T_A-T_B) - c(1-T_B) \; \Rightarrow \\
-0 &< b T_A + (T_A-T_B) - c(1-T_B) \;.
-\end{aligned}
-\end{equation}
-
-Combining inequalities~\ref{eq:R1_less} and~\ref{eq:c_gamma1_utility}, we find that $R(1)<0$ if and only if $\alpha_1 > \alpha_2$, which is a sufficient condition for external instability. 
-Therefore, if $\alpha_2$, the interaction-transmission association of the invading modifier allele $m$, is less than $\alpha_1$, the interaction-transmission association of the resident allele $M$, then invasion will be successful.
-
-Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
-However, we have numerically validated that the leading eigenvalue is greater than one if and only if $\alpha_1>\alpha_2$.
   
 \end{appendices}
 
@@ -1060,25 +852,6 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
   	}
     \label{fig:equilibria_v1}
 \end{figure}
-
-
-
-%%% Figure: Invasion
-\begin{figure}[p]
-  \centering
-   \includegraphics[scale=0.5]{Figures/invasion.eps}
-  \caption{
-  \textbf{Reduction principle for interaction-transmission association.} 
-  Consecutive fixation of modifier alleles that reduce interaction-transmission association $\alpha$ in numerical simulations of evolution with two modifier alleles (\autoref{eq:next_gen_p_1}).
-  When an invading modifier allele is established in the population (frequency > 99.95\%), a new modifier allele that reduces interaction-transmission association by 5\% is introduced (at initial frequency 0.5\%).
-  \textbf{(a)}~The frequency of the cooperative phenotype $A$ over time.
-  \textbf{(b)}~The frequency of the invading modifier allele $m$ over time. 
-  \textbf{(c)}~The population mean fitness ($\bar{w}$) over time.
-  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
-  }
-  \label{fig:invasion}
-\end{figure}
-
 
 
 %%% Figure: Spatial model - global selection
