@@ -197,7 +197,7 @@ Our results demonstrate that cultural transmission, when associated with social 
 \section*{Models}
 
 Consider a large population whose members can be one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
-An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}a). 
+An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}d). 
 Following~\citet{ram2018evolution}, given that the parent's phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 \begin{equation} \label{eq:vertical_oblique_transmission}
 P(\phi'=A \mid \phi) = \begin{cases}
@@ -309,7 +309,7 @@ Then we have the following result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}%[Equilibria and stability]
 \label{result:vert_obli_hori}
-With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperation follows one of the following scenarios in terms of the cost thresholds $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}) :
+With vertical, horizontal, and oblique transmission, the cultural evolution of cooperation follows one of the following scenarios in terms of the cost thresholds $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}) :
 
 % in gamma
 \begin{enumerate}
@@ -319,10 +319,10 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \item \emph{Fixation of defection}: 
     if \emph{(iii)} $T_A \ge T_B$ and $\gamma_2 < c$; or 
 	if \emph{(iv)} $T_A < T_B$ and $\gamma_1 < c$.
-\item \emph{Stable polymorphism}: 
+\item \emph{Stable polymorphism (coexistence)}: 
     if \emph{(v)} $T_A < T_B$ and $v<\hat{v}$ and $c < \gamma_1$; or 
     if \emph{(vi)} $T_A < T_B$ and $v>\hat{v}$ and $\gamma_2 < c < \gamma_1$.
-\item \emph{Unstable polymorphism}:
+\item \emph{Unstable polymorphism (bistable competition)}:
     if \emph{(vii)} $T_A > T_B$ and $\gamma_1 < c < \gamma_2$.
 \end{enumerate}
 
@@ -397,7 +397,7 @@ With horizontal transmission bias for cooperation, $T_A>T_B$, cooperation can fi
 With horizontal bias favoring defection, $T_A<T_B$, cooperation can fix from any frequency if $\alpha$ is large enough, $a_1<\alpha$ (green area with $T_A<T_B$), and can reach stable polymorphism if $\alpha$ is intermediate, $a_2<\alpha<a_1$ (yellow area).
 Without horizontal bias, $T_A=T_B$, fixation of cooperation occurs if $\alpha$ is high enough, $\frac{c}{b} \cdot \frac{1-T}{T} < \alpha$ (inequality~\ref{eq:equal_transmission}; in this case $a_1=a_2$).
 
-Interestingly, because $\text{sign} (\partial a_2 / \partial v) = \text{sign} (T_A-T_B)$, the effect of the vertical transmission rate $v$ on $a_1$ and $a_2$ depends on the horizontal transmission bias. 
+Interestingly, because the sign of $\partial a_2 / \partial v$  is equal to the sign of $T_A-T_B$, the effect of the vertical transmission rate $v$ on $a_1$ and $a_2$ depends on the horizontal transmission bias. 
 That is, if $T_A>T_B$, then evolution of cooperation is facilitated by oblique transmission, whereas if $T_A<T_B$, then evolution of cooperation is facilitated by vertical transmission (Figures~\ref{fig:equilibria}c and~\ref{fig:equilibria}d).
 \\
 
@@ -471,7 +471,7 @@ Consider a  population colonizing a two-dimensional grid of size 100-by-100, whe
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
-initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{fig:illustration}a) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
+initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoner's dilemma game (\autoref{fig:illustration}a) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
 The expected number of each of these interactions per individual per generation is one.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
 On an infinite grid, $M=8$, but on a finite grid $M$ can be lower in edge neighborhoods close to the grid border.
@@ -658,8 +658,8 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
   \centering
   \includegraphics[width=0.7\textwidth]{Illustration.pdf}
   \caption{\textbf{Model illustration.} 
-  \textbf{(a)}~Prisoners' dilemma payoff matrix, showing The fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
-  \textbf{(b)}~Individuals socially interact in pairs in a prisoners' dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
+  \textbf{(a)}~Prisoner's dilemma payoff matrix, showing the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
+  \textbf{(b)}~Individuals socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
   \textbf{(c)}~The probabilities of successful horizontal  cultural transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
   \textbf{(d)}~Offspring inherit their parent's phenotype with probability $v$, or the phenotype of a random non-parental adult with probability $1-v$.
     }
