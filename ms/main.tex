@@ -203,7 +203,7 @@ Our results demonstrate that cultural transmission, when associated with social 
 \section*{Models}
 
 Consider a very large well-mixed population whose members can be one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
-An offspring inherits its phenotype from its parent via cultural vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}d). 
+An offspring inherits its phenotype from its parent via cultural vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}a). 
 Following~\citet{ram2018evolution}, given that the parent's phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 \begin{equation} \label{eq:vertical_oblique_transmission}
 P(\phi'=A \mid \phi) = \begin{cases}
@@ -223,15 +223,15 @@ v \dot{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
 Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}a shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}d shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
 
 Social interactions occur randomly:
 two juvenile individuals with phenotype $A$ interact with probability~$\hat{p}^2$, two juveniles with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two juveniles with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
 Horizontal cultural transmission occurs between pairs of individuals from the same generation. 
-It occurs between socially interacting partners with probability~$\alpha$, or between a random pair with probability~$1-\alpha$ (see~\autoref{fig:illustration}b).
+It occurs between socially interacting partners with probability~$\alpha$, or between a random pair with probability~$1-\alpha$ (see~\autoref{fig:illustration}c).
 %The interaction-transmission association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
 However, horizontal transmission is not always successful, as one partner may reject the other's phenotype.
-The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}, \autoref{fig:illustration}c).
+The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}, \autoref{fig:illustration}b).
 Then, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
@@ -244,7 +244,7 @@ p' \;= \;
 \end{aligned}
 \end{equation}
 The right-hand terms in \autoref{eq:nextgen_adults} give the frequencies of the different interactions that produce cooperator adults~(\autoref{table:interactions}).
-The frequency of $A$ among parents follows a similar dynamic but must also include the effect of natural selection. Therefore, each right-hand term from \autoref{eq:nextgen_adults} is multiplied by the corresponding fitness value (\autoref{table:interactions}, \autoref{fig:illustration}a), which depends on the phenotypes of the two interaction partners.
+The frequency of $A$ among parents follows a similar dynamic but must also include the effect of natural selection. Therefore, each right-hand term from \autoref{eq:nextgen_adults} is multiplied by the corresponding fitness value (\autoref{table:interactions}, \autoref{fig:illustration}d), which depends on the phenotypes of the two interaction partners.
 Therefore, the frequency of phenotype $A$ among parents is
 \begin{equation}\label{eq:nextgen_parents}
 \begin{aligned}
@@ -255,7 +255,7 @@ Therefore, the frequency of phenotype $A$ among parents is
 (1-\hat{p})^2 \big[(1-\alpha) \hat{p} T_A \big] \;,
 \end{aligned}
 \end{equation}
-where fitness values are taken from \autoref{fig:illustration}a and \autoref{table:interactions}, and the population mean fitness is
+where fitness values are taken from \autoref{fig:illustration}d and \autoref{table:interactions}, and the population mean fitness is
 %\begin{equation} \label{eq:mean_fitness}
 $\bar{w} =  1 + \hat{p}(b-c)$.
 %\end{equation}
@@ -485,7 +485,7 @@ Consider a  population colonizing a two-dimensional grid of size 100-by-100, whe
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
-initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoner's dilemma game (\autoref{fig:illustration}a) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
+initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoner's dilemma game (\autoref{fig:illustration}d) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}c).
 The expected number of each of these interactions per individual per generation is one.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
 On an infinite grid, $M=8$ (i.e. Moore neighborhood), but on a finite grid $M$ can be lower in edge neighborhoods close to the grid border.
@@ -672,10 +672,10 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
   \centering
   \includegraphics[width=0.7\textwidth]{Illustration.pdf}
   \caption{\textbf{Model illustration.} 
-  \textbf{(a)}~Prisoner's dilemma payoff matrix, showing the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
-  \textbf{(b)}~Individuals socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
-  \textbf{(c)}~The probabilities of successful horizontal  cultural transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
-  \textbf{(d)}~Offspring inherit their parent's phenotype with probability $v$, or the phenotype of a random non-parental adult with probability $1-v$.
+  \textbf{(a)}~Offspring inherit their parent's phenotype with probability $v$, or the phenotype of a random non-parental adult with probability $1-v$.
+  \textbf{(b)}~The probabilities of successful horizontal  cultural transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
+  \textbf{(c)}~Individuals socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
+  \textbf{(d)}~Prisoner's dilemma payoff matrix, showing the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
     }
   \label{fig:illustration}
 \end{figure}
