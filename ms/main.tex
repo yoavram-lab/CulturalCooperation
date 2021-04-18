@@ -128,7 +128,7 @@ The effect of oblique transmission depends on the horizontal transmission bias.
 Stable polymorphism of cooperation and defection can occur, and
 when it does, reduced association between social interactions and horizontal transmission evolves, which leads to a decreased frequency of cooperation and lower population mean fitness.
 The deterministic conditions are compared to outcomes of stochastic simulations of structured populations.
-Parallels are drawn with Hamilton's rule incorporating assortment and effective relatedness.
+Parallels are drawn with Hamilton's rule incorporating relatedness and assortment.
 \end{abstract}
 
 \pagebreak
@@ -458,10 +458,10 @@ The equilibrium population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, whi
 Therefore, $\bar{w}^*$ increases as $\alpha$ increases.
 But can this population-level advantage lead to the evolution of $\alpha$? 
 
-To answer this question, we add a ``modifier locus''~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines the value of $\alpha$ but has no direct effect on fitness.
+To answer this question, we add a \emph{modifier locus}~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines the value of $\alpha$ but has no direct effect on fitness.
 This locus has two alleles, $M$ and $m$, which induce interaction-transmission associations $\alpha_1$ and $\alpha_2$, respectively.
 Suppose that the population has evolved to a stable equilibrium $\hat{p}^*$  when only allele $M$ is present.
-We study the local stability of this equilibrium to invasion by the modifier allele $m$; this is called ``external stability'' \citep{Liberman1986modifiers,Altenberg2017} and obtain the following result.
+We study the local stability of this equilibrium to invasion by the modifier allele $m$ (this is called \emph{external stability} \citep{Liberman1986modifiers,Altenberg2017}) and obtain the following result.
 \\
 
 
@@ -472,10 +472,11 @@ From a stable polymorphism between cooperation and defection, a modifier allele 
 \end{result}
 
 The analysis is in Appendix~\ref{sec:appendixD}.
-This reduction principle entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
-Furthermore, if we a modifier allele that decreases $\alpha$ appears and invades the population from time to time, then the value of $\alpha$ will continue to decrease, further reducing the frequency of cooperation and the population mean fitness.
+This \emph{reduction principle}~\citep{Feldman1972,Altenberg2017} entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
+Furthermore, if a modifier allele that decreases $\alpha$ appears and invades the population from time to time, then the value of $\alpha$ will continue to decrease, further reducing the frequency of cooperation and the population mean fitness.
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
 Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
+Note that $\alpha$ controls how often an individual \emph{learns} from its interaction partner. However, from the \emph{phenotype-centered view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -505,7 +506,7 @@ The outcomes of stochastic simulations with such a structured population are sho
 An example of stochastic stable polymorphism is shown in \autoref{fig:spatial}c.
 Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
-These comparisons between the deterministic unstructured model and the stochastic structured model show that the conditions derived for the deterministic model can be useful for predicting the dynamics under complex scenarios. 
+These comparisons show that the conditions derived for the deterministic unstructured model can be useful for predicting the dynamics in stochastic and structured models. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
 
 
@@ -530,7 +531,7 @@ However, the effect of oblique transmission is more complicated.
 When there is horizontal transmission bias in favor of cooperation, $T_A>T_B$, increasing the rate of oblique transmission, $1-v$, will facilitate the evolution of cooperation.
 In contrast, when the bias is in favor of defection, $T_A<T_B$, higher rates of vertical transmission, $v$, are advantageous for cooperation, and the rate of vertical transmission must be high enough ($v>\hat v$) for cooperation to fix in the population.
 
-Our deterministic model provides a good approximation to outcomes of simulations of a complex stochastic model with population structure in which individuals can only interact with and transmit to their neighbors.
+Our deterministic model provides a good approximation to outcomes of simulations of a stochastic model with population structure in which individuals can only interact with and transmit to their neighbors.
 In these structured populations interaction-transmission association arises due to both social interactions and horizontal cultural transmission being local (\autoref{fig:spatial}).
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
@@ -545,7 +546,7 @@ To understand the role of horizontal transmission, we first review the role of \
 \citet{Fletcher2009assortment}  further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group (see also \citet{Bijma2010assortment}).
 They suggested that to explain the evolution of altruism, we should seek mechanisms that generate  assortment, such as spatial structure, repeated interactions, and individual recognition.
 Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and the partner for transmission.
-This mechanism does not require repeated interactions, population structure, or individual recognition.
+This mechanism does not require repeated interactions, spatial structure, or individual recognition.
 We show that high levels of such interaction-transmission association greatly increase the potential for evolution of cooperation.
 With enough interaction-transmission association, cooperation can increase in frequency when initially rare even when there is horizontal transmission bias against it ($T_A<T_B$).
 
@@ -586,7 +587,7 @@ and Minerva Stiftung Center for Lab Evolution (YR).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
+%\newpage
 
 %%%%%%%%%% Tables %%%%%%%%%%%%%%%%%%%%%%%%%%
 
