@@ -171,7 +171,7 @@ c < b \cdot (p_C - p_D ) \,,
 where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequalities~\ref{eq:hamilton_rule} and~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}.
 \citet{Bijma2010assortment} obtained a result related to inequality~\ref{eq:fletcher2009} for other games.
 
-Cooperation can also evolve when interactions are determined by population structure. For example, \citet{Ohtsuki2006} studied populations on graphs with average degree $k$, that is, the average individual has $k$ potential interaction partners. Assuming that selection is weak and that the population size is much larger than $k$ (i.e. sparse structure), they found that cooperative behaviour can evolve if~\citep{Ohtsuki2006}
+Cooperation can also evolve when interactions are determined by population structure. For example, \citet{Ohtsuki2006} studied populations on graphs with average degree $k$, that is, the average individual has $k$ potential interaction partners. Assuming that selection is weak and that the population size is much larger than $k$ (i.e. sparse structure), they found that cooperative behaviour can evolve if
 \begin{equation} \label{eq:ohtsuki2006}
 c < b \cdot \frac{1}{k} \,.
 \end{equation}
@@ -476,7 +476,7 @@ This \emph{reduction principle}~\citep{Feldman1972,Altenberg2017} entails that s
 Furthermore, if a modifier allele that decreases $\alpha$ appears and invades the population from time to time, then the value of $\alpha$ will continue to decrease, further reducing the frequency of cooperation and the population mean fitness.
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
 Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
-Note that $\alpha$ controls how often an individual \emph{learns} from its interaction partner. However, from the \emph{phenotype-centred view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
+Note that $\alpha$ controls how often an individual learns from its interaction partner. However, from the \emph{phenotype-centred view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -486,7 +486,7 @@ Consider a  population colonizing a two-dimensional grid of size 100-by-100, whe
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions. 
-These initiators interact (i) in a prisoner's dilemma game (\autoref{fig:illustration}d) with a random neighbour (i.e. individual in a neighbouring site); and (ii) in horizontal cultural transmission (\autoref{fig:illustration}c) with a random neighbour (with replacement, i.e. possibly the same neighbour).
+These initiators interact (i) in a prisoner's dilemma game with a random neighbour (i.e. individual in a neighbouring site); and (ii) in horizontal cultural transmission with a random neighbour (with replacement, i.e. possibly the same neighbour).
 The expected number of each of these interactions per individual per generation is one, and in every interaction both individuals are affected, not just the initiator.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbour is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbours.
 On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in edge neighbourhoods close to the grid border.
