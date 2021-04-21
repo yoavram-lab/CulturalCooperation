@@ -223,7 +223,7 @@ v \dot{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
 Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
-Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}d shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
+Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$ (i.e. donation game). \autoref{fig:illustration}d shows the payoff matrix: the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
 
 Social interactions occur randomly:
 two juvenile individuals with phenotype $A$ interact with probability~$\hat{p}^2$, two juveniles with phenotype $B$ interact with probability $(1-\hat{p})^2$, and two juveniles with different phenotypes interact with probability $2\hat{p}(1-\hat{p})$. 
@@ -476,7 +476,7 @@ This \emph{reduction principle}~\citep{Feldman1972,Altenberg2017} entails that s
 Furthermore, if a modifier allele that decreases $\alpha$ appears and invades the population from time to time, then the value of $\alpha$ will continue to decrease, further reducing the frequency of cooperation and the population mean fitness.
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
 Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
-Note that $\alpha$ controls how often an individual \emph{learns} from its interaction partner. However, from the \emph{phenotype-centered view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
+Note that $\alpha$ controls how often an individual \emph{learns} from its interaction partner. However, from the \emph{phenotype-centred view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -485,26 +485,26 @@ Interaction-transmission association may also emerge from population structure.
 Consider a  population colonizing a two-dimensional grid of size 100-by-100, where each site is inhabited by one individual, similarly to the model of \citet{lewin2020rockpaperscissors}.
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
-In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
-initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoner's dilemma game (\autoref{fig:illustration}d) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}c).
-The expected number of each of these interactions per individual per generation is one.
-The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
-On an infinite grid, $M=8$ (i.e. Moore neighborhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in edge neighborhoods close to the grid border.
+In each generation, half of the individuals are randomly chosen to "initiate" interactions. 
+These initiators interact (i) in a prisoner's dilemma game (\autoref{fig:illustration}d) with a random neighbour (i.e. individual in a neighbouring site); and (ii) in horizontal cultural transmission (\autoref{fig:illustration}c) with a random neighbour (with replacement, i.e. possibly the same neighbour).
+The expected number of each of these interactions per individual per generation is one, and in every interaction both individuals are affected, not just the initiator.
+The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbour is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbours.
+On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in edge neighbourhoods close to the grid border.
 As before, $T_A$ and $T_B$ are the probabilities of successful horizontal transmission of phenotypes $A$ and $B$, respectively.
 
 The order of the interactions across the grid at each generation is random.
 After all interactions take place, an individual's fitness is determined by
 $w = 1 + b \cdot n_b - c \cdot n_c$,
-where $n_b$ is the number of interactions that individual had with cooperative neighbors,
+where $n_b$ is the number of interactions that individual had with cooperative neighbours,
 and $n_c$ is the number of interactions in which that individual cooperated (note that the phenotype may change between consecutive interactions due to horizontal transmission).
-Then, a new generation is produced, and the sites can be settled by offspring of any parent, not just the neighboring parents.
+Then, a new generation is produced, and the sites can be settled by offspring of any parent, not just the neighbouring parents.
 Selection is global, rather than local, in accordance with our deterministic model:
 The parent is randomly drawn with probability proportional to its fitness, divided by the sum of the fitness values of all potential parents.
 Offspring are assumed to have the same phenotype as their parents (i.e. $v=1$).
 
 The outcomes of stochastic simulations with such a structured population are shown in \autoref{fig:spatial}, which demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for our model without population structure or stochasticity.
 An example of stochastic stable polymorphism is shown in \autoref{fig:spatial}c.
-Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
+Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighbouring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
 These comparisons show that the conditions derived for the deterministic unstructured model can be useful for predicting the dynamics in stochastic and structured models. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
@@ -531,7 +531,7 @@ However, the effect of oblique transmission is more complicated.
 When there is horizontal transmission bias in favor of cooperation, $T_A>T_B$, increasing the rate of oblique transmission, $1-v$, will facilitate the evolution of cooperation.
 In contrast, when the bias is in favor of defection, $T_A<T_B$, higher rates of vertical transmission, $v$, are advantageous for cooperation, and the rate of vertical transmission must be high enough ($v>\hat v$) for cooperation to fix in the population.
 
-Our deterministic model provides a good approximation to outcomes of simulations of a stochastic model with population structure in which individuals can only interact with and transmit to their neighbors.
+Our deterministic model provides a good approximation to outcomes of simulations of a stochastic model with population structure in which individuals can only interact with and transmit to their neighbours.
 In these structured populations interaction-transmission association arises due to both social interactions and horizontal cultural transmission being local (\autoref{fig:spatial}).
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
@@ -673,10 +673,10 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
   \centering
   \includegraphics[width=0.7\textwidth]{Illustration.pdf}
   \caption{\textbf{Model illustration.} 
-  \textbf{(a)}~Offspring inherit their parent's phenotype with probability $v$, or the phenotype of a random non-parental adult with probability $1-v$.
-  \textbf{(b)}~The probabilities of successful horizontal  cultural transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively.
-  \textbf{(c)}~Individuals socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
-  \textbf{(d)}~Prisoner's dilemma payoff matrix, showing the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
+  \textbf{(a)}~First, offspring inherit their parent's phenotype via vertical cultural transmission with probability $v$, or the phenotype of a random non-parental adult via oblique cultural transmission with probability $1-v$.
+  \textbf{(b)}~Second, adults socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
+  \textbf{(c)}~The prisoner's dilemma payoff matrix shows the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
+    \textbf{(d)}~The probabilities of successful horizontal cultural transmission of phenotypes $A$ (cooperator) and $B$ (defector) are $T_A$ and $T_B$, respectively.
     }
   \label{fig:illustration}
 \end{figure}
@@ -752,7 +752,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 	The inset in panel~\textbf{(b)} focuses on an area of the parameter range in which neither phenotype is fixed throughout the simulation, maintaining a stochastic locally stable polymorphism~\citep{Karlin1975}.
 	This stochastic polymorphism is illustrated in panel~\textbf{(c)}, which shows the frequency of cooperators (green) and defectors (red) over time for the parameter set marked by an~\textit{x} in panel~\textbf{(b)}.
   In all cases, the population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between neighboring sites, and each site has 8 neighbors.
+  Cooperation and horizontal transmission are both local between neighbouring sites, and each site has 8 neighbours.
   Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed. 50 simulations were executed for each parameter set.
   Benefit of cooperation, $b=1.3$; perfect vertical transmission $v=1$.
@@ -1134,7 +1134,7 @@ However, we have numerically validated that the leading eigenvalue is greater th
   \caption{
   \textbf{Evolution of cooperation in a structured population with local selection.}
   The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of panel~\textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of panel~\textbf{(b)}.
-  Cooperation and horizontal transmission are both local between neighboring sites, and each site had 8 neighbors.
+  Cooperation and horizontal transmission are both local between neighbouring sites, and each site had 8 neighbours.
   Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
   The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with interaction-transmission association, where $\alpha=1/8$ in inequality~\ref{eq:equal_transmission} for panel~\textbf{(a)} and in Eqs.~\ref{eq:cost_thresholds_v_threshold} for panel~\textbf{(b)}.
   The population evolves on a 100-by-100 grid.
