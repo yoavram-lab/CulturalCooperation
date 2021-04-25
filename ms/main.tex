@@ -232,7 +232,7 @@ It occurs between socially interacting partners with probability~$\alpha$, or be
 %The interaction-transmission association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
 However, horizontal transmission is not always successful, as one partner may reject the other's phenotype.
 The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}, \autoref{fig:illustration}d).
-Then, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
+Thus, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
 p' \;= \;
@@ -243,7 +243,7 @@ p' \;= \;
 =\; & \hat{p}^2(T_B-T_A) \;+\; \hat{p}(1+T_A-T_B) \;.
 \end{aligned}
 \end{equation}
-The right-hand terms in \autoref{eq:nextgen_adults} give the frequencies of the different interactions that produce cooperator adults~(\autoref{table:interactions}).
+For example, the first term in \autoref{eq:nextgen_adults} describes the case where two juveniles with phenotype $A$ interact with probability $\hat{p}^2$. In this case, the focal individual will retain its phenotype if (i) its social interaction partner is also its horizontal transmission partner, with probability $\alpha$; or (ii) its horizontal transmission partner is another individual, with probability $(1-\alpha)$, and (ii.a) that individual also has phenotype $A$, with probability $\hat{p}$, or (ii.b) that individual has phenotype $B$, with probability $(1-\hat{p})$, but horizontal transmission is unsuccessful, with probability $(1-T_B)$.
 The frequency of $A$ among parents follows a similar dynamic but must also include the effect of natural selection. Therefore, each right-hand term from \autoref{eq:nextgen_adults} is multiplied by the corresponding fitness value (\autoref{table:interactions}, \autoref{fig:illustration}c), which depends on the phenotypes of the two interaction partners.
 Therefore, the frequency of phenotype $A$ among parents is
 \begin{equation}\label{eq:nextgen_parents}
@@ -336,10 +336,10 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of c
 
 \end{result}
 
-Thus, cooperation can take over the population if it either has a horizontal transmission advantage, or it has a horizontal transmission disadvantage, but the vertical transmission rate is high enough.
+Thus, cooperation can take over the population if it has either a horizontal transmission advantage, or if it has a horizontal transmission disadvantage but the vertical transmission rate is high enough.
 In either case, the cost of cooperation must be small enough.
 A stable polymorphism can exist between cooperation and defection only if defection has a horizontal transmission advantage.
-In this case, the existence of a stable polymorphism depends on an interplay between the benefit and cost of cooperation and the vertical transmission rate.
+In this case, the existence of a stable polymorphism depends on the interplay between the benefit and cost of cooperation and the vertical transmission rate.
 These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b, and the analysis is in Appendix~\ref{sec:appendixB}.
 Note that \emph{stable} and {unstable polymorphism} are also called, respectively, \emph{coexistence} and \emph{bistable competition}.
 
@@ -487,9 +487,9 @@ Each individual is characterized by its phenotype: either cooperator, $A$, or de
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions. 
 These initiators interact (i) in a prisoner's dilemma game with a random neighbour (i.e. individual in a neighbouring site); and (ii) in horizontal cultural transmission with a random neighbour (with replacement, i.e. possibly the same neighbour).
-The expected number of each of these interactions per individual per generation is one, and in every interaction both individuals are affected, not just the initiator.
+The expected number of each of these interactions per individual per generation is one, but the realized number of interactions can be zero, one, or even more than one, and in every interaction both individuals are affected, not just the initiator.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbour is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbours.
-On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in edge neighbourhoods close to the grid border.
+On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in neighbourhoods close to the grid border.
 As before, $T_A$ and $T_B$ are the probabilities of successful horizontal transmission of phenotypes $A$ and $B$, respectively.
 
 The order of the interactions across the grid at each generation is random.
