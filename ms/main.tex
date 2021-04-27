@@ -470,10 +470,10 @@ From a stable polymorphism between cooperation and defection, a modifier allele 
 \end{result}
 
 The analysis is in Appendix~\ref{sec:appendixD}.
-This \emph{reduction principle}~\citep{Feldman1972,Altenberg2017} entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (\autoref{fig:invasion}).
+This \emph{reduction principle}~\citep{Feldman1972,Altenberg2017} entails that successful invasions will reduce the frequency of cooperation, as well as the population mean fitness (Figure S1).
 Furthermore, if a modifier allele that decreases $\alpha$ appears and invades the population from time to time, then the value of $\alpha$ will continue to decrease, further reducing the frequency of cooperation and the population mean fitness.
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
-Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
+Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (Figure S1).
 Note that $\alpha$ controls how often an individual learns from its interaction partner. However, from the \emph{phenotype-centred view}, there is no incentive to do so: a cooperator interacting with a defector will not only pay the cost of cooperation but will also risk being "converted" to defection (with probability $T_B$), whereas a defector interacting with a cooperator will forfeit (with probability $T_A$) the benefit it received.
 
 
@@ -502,7 +502,7 @@ Offspring are assumed to have the same phenotype as their parents (i.e. $v=1$).
 
 The outcomes of stochastic simulations with such a structured population are shown in \autoref{fig:spatial}, which demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for our model without population structure or stochasticity.
 An example of stochastic stable polymorphism is shown in \autoref{fig:spatial}c.
-Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighbouring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
+Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighbouring parents) had only a minor effect on the agreement with the derived conditions (Figure S2).
 
 These comparisons show that the conditions derived for the deterministic unstructured model can be useful for predicting the dynamics in stochastic and structured models. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
@@ -521,7 +521,7 @@ This condition cannot be formulated in the form of Hamilton's rule, $c<b \cdot r
 Remarkably, a polymorphism of cooperation and defection can be stable if horizontal transmission is biased in favor of defection ($T_A<T_B$) and both $c$ and $\alpha$ are intermediate (yellow areas in Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
 
 We find that stronger interaction-transmission association $\alpha$ leads to evolution of higher frequency of cooperation and increased population mean fitness.
-Nevertheless, when cooperation and defection coexist, $\alpha$ is expected to be reduced by natural selection, leading to extinction of cooperation and decreased population mean fitness (Result~\ref{result:evol_social_association}, \autoref{fig:invasion}).
+Nevertheless, when cooperation and defection coexist, $\alpha$ is expected to be reduced by natural selection, leading to extinction of cooperation and decreased population mean fitness (Result~\ref{result:evol_social_association}, Figure S1).
 With $\alpha=0$, the benefit of cooperation cannot facilitate its evolution; it can only succeed if horizontal transmission is biased in its favor. 
 
 Indeed, in our model, horizontal transmission plays a major role in the evolution of cooperation: increasing the transmission of cooperation, $T_A$, or decreasing the transmission of defection, $T_B$, facilitates the evolution of cooperation. 
@@ -736,7 +736,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 	This stochastic polymorphism is illustrated in panel~\textbf{(c)}, which shows the frequency of cooperators (green) and defectors (red) over time for the parameter set marked by an~\textit{x} in panel~\textbf{(b)}.
   In all cases, the population evolves on a 100-by-100 grid.
   Cooperation and horizontal transmission are both local between neighbouring sites, and each site has 8 neighbours.
-  Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
+  Selection operates globally (see Figure S2 for results from a model with local selection).
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed. 50 simulations were executed for each parameter set.
   Benefit of cooperation, $b=1.3$; perfect vertical transmission $v=1$.
   \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$;
@@ -1081,52 +1081,6 @@ Determining a necessary and sufficient condition for successful invasion is more
 However, we have numerically validated that the leading eigenvalue is greater than one if and only if $\alpha_1>\alpha_2$.
   
 \end{appendices}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-
-\section*{\huge{Supplementary material}}
-\beginsupplement % https://support.authorea.com/en-us/article/how-to-create-an-appendix-section-or-supplementary-information-1g25i5a/
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%% Figure: Invasion
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=1\textwidth]{PRSB_figures/fig_s1.pdf}
-  \caption{
-  \textbf{Reduction principle for interaction-transmission association.} 
-  Consecutive fixation of modifier alleles that reduce interaction-transmission association $\alpha$ in numerical simulations of evolution with two modifier alleles (\autoref{eq:next_gen_p_1}).
-  When an invading modifier allele is established in the population (frequency > 99.95\%), a new modifier allele that reduces interaction-transmission association by 5\% is introduced (at initial frequency 0.5\%).
-  \textbf{(a)}~The frequency of the cooperative phenotype $A$ over time.
-  \textbf{(b)}~The frequency of the invading modifier allele $m$ over time. 
-  \textbf{(c)}~The population mean fitness ($\bar{w}$) over time.
-  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
-  }
-  \label{fig:invasion}
-\end{figure}
-
-
-
-%%% Figure: Spatial model - local selection
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=1\textwidth]{PRSB_figures/fig_s2.pdf}
-  \caption{
-  \textbf{Evolution of cooperation in a structured population with local selection.}
-  The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of panel~\textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of panel~\textbf{(b)}.
-  Cooperation and horizontal transmission are both local between neighbouring sites, and each site had 8 neighbours.
-  Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
-  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with interaction-transmission association, where $\alpha=1/8$ in inequality~\ref{eq:equal_transmission} for panel~\textbf{(a)} and in Eqs.~\ref{eq:cost_thresholds_v_threshold} for panel~\textbf{(b)}.
-  The population evolves on a 100-by-100 grid.
-  Simulations were stopped at generation 10,000 or if one of the phenotypes fixed.
-  50 simulations were executed for each parameter set.
-  Here, benefit of cooperation, $b=1.3$; perfect vertical transmission $v=1$.
-  \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$.
-  \textbf{(b)} Horizontal transmission rate $T_A$ is fixed at $0.4$, and $T_B$ varies, $0.3<T_B<0.5$.
-  }
-  \label{fig:spatial_local_selection}
-\end{figure}
 
 
 
