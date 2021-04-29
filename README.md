@@ -1,5 +1,4 @@
 # Non-Vertical Cultural Transmission, Assortment, and the Evolution of Cooperation
-# Stress-Induced Mutagenesis and Complex Adaptation
 ## Dor Cohen, Ohad Lewin-Epstein, Marcus Feldman, and Yoav Ram
 
 This is the repository for the manuscript:
