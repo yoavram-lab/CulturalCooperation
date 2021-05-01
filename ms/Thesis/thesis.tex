@@ -122,8 +122,6 @@ Parallels are drawn with Hamilton's rule incorporating assortment and effective 
 \tableofcontents
 \pagebreak
 
-% TODO change "scoail association" to "interaction-transmission association"
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Introduction
@@ -180,7 +178,7 @@ Here, we study models for the cultural evolution of cooperation that include bot
 In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
 For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
 or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
-Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it can facilitate the generation of assortment \citep{Fletcher2009assortment}, and partly because it can diminish the effect of natural selection \citep{ram2018evolution}.
+Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because it diminishes the effect of selection (due to non-vertical transmission from non-reproducing individuals~\citep{ram2018evolution}).
 
 \newpage
 \section{Related Work}
@@ -203,15 +201,21 @@ With some change in parameters, this condition is summarized by \citep[eq.~2.3]{
 \begin{equation} \label{eq:fletcher2009}
 c < b \cdot (p_C - p_D ) \,,
 \end{equation}
-where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help.\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequalities~\ref{eq:hamilton_rule} and~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}
-\citet{Bijma2010assortment} obtained a result related to inequality~\ref{eq:fletcher2009} for other types of games.
+where $p_C$ is the probability that a cooperator receives help, and $p_D$ is the probability that a defector receives help\footnote{Inequality~\ref{eq:fletcher2009} generalizes inequalities~\ref{eq:hamilton_rule} and~\ref{eq:eshel1982} by substituting $p_C=r + p$, $p_D=p$ and $p_C=m + (1-m)p$, $p_D=(1-m)p$, respectively, where $p$ is the frequency of cooperators.}.
+\citet{Bijma2010assortment} obtained a result related to inequality~\ref{eq:fletcher2009} for other games.
+
+Cooperation can also evolve when interactions are determined by population structure. For example, \citet{Ohtsuki2006} studied populations on graphs with average degree $k$, that is, the average individual has $k$ potential interaction partners. Assuming that selection is weak and that the population size is much larger than $k$ (i.e. sparse structure), they found that cooperative behaviour can evolve if~\citep{Ohtsuki2006}
+\begin{equation} \label{eq:ohtsuki2006}
+c < b \cdot \frac{1}{k} \,.
+\end{equation}
+They thus interpret $1/k$ as \emph{social relatedness} or \emph{social viscosity}~\citep{Ohtsuki2006}.
 
 
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission with kin selection and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
 c < b \cdot \varphi - \frac{1-\varphi}{\varphi} \,.
 \end{equation}
-In inequality~\ref{eq:feldman1985}, $\varphi$ takes the role of relatedness ($r$ in inequality~\ref{eq:hamilton_rule}) or assortment ($m$ in inequality~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is  reduced by $(1-\varphi)/\varphi$.
+In inequality~\ref{eq:feldman1985}, $\varphi$ replaces relatedness ($r$ in inequality~\ref{eq:hamilton_rule}) or assortment ($m$ in inequality~\ref{eq:eshel1982}), but the effective benefit $b\cdot \varphi$ is  reduced by $(1-\varphi)/\varphi$.
 This shows that under a cultural transmission, the condition for the evolutionary success of altruism entails a modification of Hamilton's rule (inequality~\ref{eq:hamilton_rule}).
 
 Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated that non-vertical transmission can help explain the evolution of cooperative behavior, the former using simulations with cultural transmission, the latter using a model where cooperation is mediated by host-associated microbes.
@@ -265,7 +269,7 @@ It occurs between socially interacting partners with probability~$\alpha$, or be
 %The interaction-transmission association $\alpha$ is therefore the fraction of population that receives (horizontal transmission) from the social interaction partner, and $1-\alpha$ receives randomly.
 However, horizontal transmission is not always successful, as one partner may reject the other's phenotype.
 The probability of successful horizontal transmission of phenotypes $A$ and $B$ are $T_A$ and $T_B$, respectively (\autoref{table:interactions}, \autoref{fig:illustration}c).
-Then, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
+Thus, the frequency $p'$ of phenotype $A$ among adults in the next generation, after horizontal transmission, is 
 \begin{equation}\label{eq:nextgen_adults}
 \begin{aligned}
 p' \;= \;
@@ -399,15 +403,19 @@ With vertical, horizontal, and oblique transmission, the cultural evolution of a
 \end{enumerate}
 
 \end{result}
+Thus, cooperation can take over the population if it has either a horizontal transmission advantage, or if it has a horizontal transmission disadvantage, but the vertical transmission rate is high enough.
+In either case, the cost of cooperation must be small enough.
+A stable polymorphism can exist between cooperation and defection only if defection has a horizontal transmission advantage.
+In this case, the existence of a stable polymorphism depends on the interplay between the benefit and cost of cooperation and the vertical transmission rate.
 These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b, and the analysis is in Appendix~\ref{sec:appendixB}.
-Note that “stable polymorphism” is sometimes called “coexistence” and “unstable polymorphism” is “bistable competition.
+Note that \emph{stable} and {unstable polymorphism} are also called, respectively, \emph{coexistence} and \emph{bistable competition}.
 
 Much of the literature on evolution of cooperation focuses on conditions for  an initially rare cooperative phenotype to invade a population of defectors.
 The following remarks address this condition.
 \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{remark}%[Condition on $c$ for cooperation to increase when rare, i.e., $\hat{p}'>p$ near $p=0$]
+\begin{remark}%[Condition on $c$ for cooperation to increase when rare, i.e. $\hat{p}'>p$ near $p=0$]
 \label{remark:rarity}
 If the initial frequency of cooperation is very close to zero, then its frequency will increase if the cost of cooperation is low enough,
 \begin{equation} \label{eq:unequal_transmission_from_rarity_general_case}
@@ -450,7 +458,7 @@ Further, inequality~\ref{eq:unequal_transmission_from_rarity_general_case} shows
 c < \frac{b v T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation}
 
-In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\dot{p}=0$ and $\dot{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\dot{p}'>\dot{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
+In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\dot{p}=0$ and $\dot{p}=1$, and cooperation will evolve from any initial frequency (i.e. $\dot{p}'>\dot{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
 This is similar to case of microbe-induced cooperation studied by \citet{lewin2017microbes}; therefore when $v=1$, this remark is equivalent to their eq.~1.
 
 It is interesting to examine the general effect of interaction-transmission association $\alpha$ on the evolution of cooperation.
@@ -496,7 +504,7 @@ which can also be written as
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 In the absence of vertical transmission ($v=0$), from recursion~\ref{eq:nextgen_juveniles} we see that the frequency of the cooperator phenotype among adults increases every generation, i.e. $p'>p$, if there is a horizontal transmission bias in favor of cooperation, namely $T_A > T_B$.  
-That is, if $v=0$, then selection plays no role in the evolution of cooperation (i.e., $b$ and $c$ do not affect $\hat p'$).
+That is, if $v=0$, then selection plays no role in the evolution of cooperation (i.e. $b$ and $c$ do not affect $\hat p'$).
 The dynamics are determined solely by differential horizontal transmission of the two phenotypes.
 With no bias in horizontal transmission, $T_A = T_B$, phenotype frequencies do not change, $\hat p'=\hat p$.
 
@@ -597,9 +605,9 @@ Each individual is characterized by its phenotype: either cooperator, $A$, or de
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
 initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{fig:illustration}a) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
-The expected number of each of these interactions per individual per generation is one.
+The expected number of each of these interactions per individual per generation is one, but the realized number of interactions can be zero, one, or even more than one, and in every interaction both individuals are affected, not just the initiator.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
-On an infinite grid, $M=8$, but on a finite grid $M$ can be lower in edge neighborhoods close to the grid border.
+On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in neighbourhoods close to the grid border.
 As before, $T_A$ and $T_B$ are the probabilities of successful horizontal transmission of phenotypes $A$ and $B$, respectively.
 
 The order of the interactions across the grid at each generation is random.
@@ -614,7 +622,7 @@ Offspring are assumed to have the same phenotype as their parents (i.e. $v=1$).
 
 The outcomes of stochastic simulations with such a structured population are shown in \autoref{fig:spatial}, which demonstrates that the highest cost of cooperation $c$ that permits the evolution of cooperation agrees with the conditions derived above for our model without population structure or stochasticity.
 An example of stochastic stable polymorphism is shown in \autoref{fig:spatial}c.
-Changing the simulation so that selection is local (i.e., sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
+Changing the simulation so that selection is local (i.e. sites can only be settled by offspring of neighboring parents) had only a minor effect on the agreement with the derived conditions (\autoref{fig:spatial_local_selection}).
 
 These comparisons between the deterministic unstructured model and the stochastic structured model show that the conditions derived for the deterministic model can be useful for predicting the dynamics under complex scenarios. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
@@ -723,7 +731,7 @@ Nevertheless, his results demonstrated that it is possible to sustain altruistic
 He further hypothesized that horizontal transmission can play an important role in the evolution of cooperation, and our results provide strong evidence for this hypothesis. 
 
 To understand the role of horizontal transmission, we first review the role of \emph{assortment}.
-\citet{Eshel1982} showed that altruism can evolve when the tendency for \emph{assortative meeting}, i.e., for individuals to interact with others of their own phenotype, is strong enough.
+\citet{Eshel1982} showed that altruism can evolve when the tendency for \emph{assortative meeting}, i.e. for individuals to interact with others of their own phenotype, is strong enough.
 \citet{Fletcher2009assortment}  further argued that a general explanation for the evolution of altruism is given by \emph{assortment}: the correlation between individuals that carry an altruistic trait and the amount of altruistic behavior in their interaction group (see also \citet{Bijma2010assortment}).
 They suggested that to explain the evolution of altruism, we should seek mechanisms that generate  assortment, such as population structure, repeated interactions, and individual recognition.
 Our results highlight another mechanism for generating assortment: an association between social interactions and horizontal transmission that creates a correlation between one's partner for interaction and the partner for transmission.
@@ -748,7 +756,7 @@ environment''~\citep{Fletcher2009assortment} is generated not because the helper
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
-\bibliographystyle{rsnat}
+\bibliographystyle{unsrtnat}
 \bibliography{bib}
 
 
@@ -973,7 +981,7 @@ The equilibrium where only allele $M$ is present is  $\vec{\dot{p}^*} = (\dot{p}
 setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
 When $v=1$, $\dot p^*$ is a feasible polymorphism ($0 < \dot{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
 
-The local stability of $\vec{\dot{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\dot{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+The local stability of $\vec{\dot{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\dot{p}^*}$ (i.e. the Jacobian of the transformation at the equilibrium).
 $\cl^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\cl^*_{in}$ and $\cl^*_{ex}$ \citep{Liberman1986modifiers,Altenberg2017} .
 The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\dot{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1}, with $\bar{w}^*=1+(b-c)\dot{p}^*$ as the stable population mean fitness,
 \begin{equation} \label{eq:external_stability_matrix}
