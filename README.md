@@ -10,7 +10,7 @@ A preprint was posted on bioRvix, [doi:10.1101/2020.12.08.416560](http://doi.org
 ## Figure reproduction
 
 Figures were produced with Python.
-The code is available as an [IPython (Jupyter) notebook](URL HERE).
+The code is available as an [IPython (Jupyter) notebook](ms/figures.ipynb).
 
 ### License
 
