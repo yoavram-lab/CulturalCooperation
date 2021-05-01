@@ -517,10 +517,7 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
 
 \begin{figure}[p]
   \centering       
-    \includegraphics[width=0.45\textwidth]{Result3_TA_TB.eps}~
-    \includegraphics[width=0.45\textwidth]{Result3_TB_TA.eps}
-    \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TA_TB.eps}~
-    \includegraphics[width=0.45\textwidth]{Result3_alpha_Vs_v_TB_TA.eps}
+    \includegraphics[width=1\textwidth]{../PRSB_figures/fig_2.pdf}
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
     The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 	In all cases the vertical transmission rate $v$ is on the x-axis.
@@ -534,20 +531,13 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
     (\textbf{d}) $b=2$, $T_B = 0.7$, $c=0.5$.
     }
     \label{fig:equilibria}
-    %TODO update y label on c d
 \end{figure}
 
 %%% Figure: thresholds figure - only vertical
 
 \begin{figure}[p]
   \centering       
-    \includegraphics[width=0.45\textwidth]{Result2_c_zero_alpha.eps}
-	  ~
-    \includegraphics[width=0.45\textwidth]{Result2_c_non_zero_alpha.eps}
-    ~
-    \includegraphics[width=0.45\textwidth]{Result2_alpha.eps}   
-    ~
-    \includegraphics[width=0.48\textwidth]{coexistence_without_oblique.eps}
+	\includegraphics[width=1\textwidth]{../PRSB_figures/fig_3.pdf}
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission (v=1).} 
     The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
     (\textbf{a-c})~The horizontal transmission bias ($T_A-T_B$) is on the x-axis.
@@ -560,9 +550,7 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
     Black circles show the three equilibria.
   	}
     \label{fig:equilibria_v1}
-    %TODO update y label on c d
 \end{figure}
-
 \newpage
 
 
@@ -595,7 +583,22 @@ Furthermore, if we a modifier allele that decreases $\alpha$ appears and invades
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
 Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
 
-
+%%% Figure: Invasion
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=1\textwidth]{../PRSB_figures/fig_s1.pdf}
+  \caption{
+  \textbf{Reduction principle for interaction-transmission association.} 
+  Consecutive fixation of modifier alleles that reduce interaction-transmission association $\alpha$ in numerical simulations of evolution with two modifier alleles (Eq.~D1).
+  When an invading modifier allele is established in the population (frequency > 99.95\%), a new modifier allele that reduces interaction-transmission association by 5\% is introduced (at initial frequency 0.5\%).
+  \textbf{(a)}~The frequency of the cooperative phenotype $A$ over time.
+  \textbf{(b)}~The frequency of the invading modifier allele $m$ over time. 
+  \textbf{(c)}~The population mean fitness ($\bar{w}$) over time.
+  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
+  }
+  \label{fig:invasion}
+\end{figure}
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Population structure}
 All the simulations in this section were made by Ohad Lewin-Epstein from Tel Aviv University.
@@ -627,33 +630,12 @@ Changing the simulation so that selection is local (i.e. sites can only be settl
 These comparisons between the deterministic unstructured model and the stochastic structured model show that the conditions derived for the deterministic model can be useful for predicting the dynamics under complex scenarios. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
 
-%%% Figure: Invasion
-\begin{figure}[h]
-  \centering
-   \includegraphics[scale=0.5]{../Figures/invasion.eps}
-  \caption{
-  \textbf{Reduction principle for interaction-transmission association.} 
-  Consecutive fixation of modifier alleles that reduce interaction-transmission association $\alpha$ in numerical simulations of evolution with two modifier alleles (\autoref{eq:next_gen_p_1}).
-  When an invading modifier allele is established in the population (frequency > 99.95\%), a new modifier allele that reduces interaction-transmission association by 5\% is introduced (at initial frequency 0.5\%).
-  \textbf{(a)}~The frequency of the cooperative phenotype $A$ over time.
-  \textbf{(b)}~The frequency of the invading modifier allele $m$ over time. 
-  \textbf{(c)}~The population mean fitness ($\bar{w}$) over time.
-  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
-  }
-  \label{fig:invasion}
-\end{figure}
-
-
 \newpage
 
 %%% Figure: Spatial model - global selection
 \begin{figure}[h]
   \centering
-	\includegraphics[width=0.3\textwidth]{{Ta=Tb_b=1.3_globalSelection_a}.pdf}
-    ~
-	\includegraphics[width=0.3\textwidth]{{Ta=0.4_Tb=0.3-0.5_b=1.3_globalSelection_withSmallBox_b}.pdf} 
-    ~
-    \includegraphics[width=0.36\textwidth]{{timeSereis_b=1.3_TA=0.4_TB=0.435_c=0.02_globalSelection_normalizeByNumInteractions_c}.pdf}
+  \includegraphics[width=1\textwidth]{../PRSB_figures/fig_4.pdf}
   \caption{
   \textbf{Evolution of cooperation in a structured population.}
 	\textbf{(a-b)}~The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation, $c$, on the y-axis, and either the symmetric horizontal transmission rate, $T=T_A=T_B$, on the x-axis of panel~\textbf{(a)}, or the transmission bias, $T_A-T_B$, on the x-axis of panel~\textbf{(b)}.
@@ -661,8 +643,8 @@ Moreover, this structured population model demonstrates that our parameter for i
 	The inset in panel~\textbf{(b)} focuses on an area of the parameter range in which neither phenotype is fixed throughout the simulation, maintaining a stochastic locally stable polymorphism~\citep{Karlin1975}.
 	This stochastic polymorphism is illustrated in panel~\textbf{(c)}, which shows the frequency of cooperators (green) and defectors (red) over time for the parameter set marked by an~\textit{x} in panel~\textbf{(b)}.
   In all cases, the population evolves on a 100-by-100 grid.
-  Cooperation and horizontal transmission are both local between neighboring sites, and each site has 8 neighbors.
-  Selection operates globally (see \autoref{fig:spatial_local_selection} for results from a model with local selection).
+  Cooperation and horizontal transmission are both local between neighbouring sites, and each site has 8 neighbours.
+  Selection operates globally (see Figure S2 for results from a model with local selection).
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed. 50 simulations were executed for each parameter set.
   Benefit of cooperation, $b=1.3$; perfect vertical transmission $v=1$.
   \textbf{(a)} Symmetric horizontal transmission, $T=T_A=T_B$;
@@ -672,20 +654,19 @@ Moreover, this structured population model demonstrates that our parameter for i
   \label{fig:spatial}
 \end{figure}
 
+
 \newpage
 
 %%% Figure: Spatial model - local selection
 \begin{figure}[h]
   \centering
-   \includegraphics[scale=0.5]{{Ta=Tb_b=1.3_localSelection}.pdf}
-    ~
-    \includegraphics[scale=0.5]{{Ta=0.4_Tb=0.3-0.5_b=1.3_localSelection}.pdf} \\
+  \includegraphics[width=1\textwidth]{../PRSB_figures/fig_s2.pdf}
   \caption{
   \textbf{Evolution of cooperation in a structured population with local selection.}
   The expected frequency of cooperators in a structured population after 10,000 generations is shown (red for 0\%, green for 100\%) as a function of both the cost of cooperation ($c$) on the y-axis, and the symmetric horizontal transmission rate ($T=T_A=T_B$) on the x-axis of panel~\textbf{(a)}, or the transmission bias $T_A-T_B$ on the x-axis of panel~\textbf{(b)}.
-  Cooperation and horizontal transmission are both local between neighboring sites, and each site had 8 neighbors.
-  Selection operates locally (see \autoref{fig:spatial} for results from a model with global selection).
-  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with interaction-transmission association, where $\alpha=1/8$ in inequality~\ref{eq:equal_transmission} for panel~\textbf{(a)} and in Eqs.~\ref{eq:cost_thresholds_v_threshold} for panel~\textbf{(b)}.
+  Cooperation and horizontal transmission are both local between neighbouring sites, and each site had 8 neighbours.
+  Selection operates locally (see Figure 4 for results from a model with global selection).
+  The black curves represent the cost thresholds for the evolution of cooperation in a well-mixed population with interaction-transmission association, where $\alpha=1/8$ in inequality~14 for panel~\textbf{(a)} and in Eqs.~12 for panel~\textbf{(b)}.
   The population evolves on a 100-by-100 grid.
   Simulations were stopped at generation 10,000 or if one of the phenotypes fixed.
   50 simulations were executed for each parameter set.
@@ -695,6 +676,7 @@ Moreover, this structured population model demonstrates that our parameter for i
   }
   \label{fig:spatial_local_selection}
 \end{figure}
+
 
 
 
