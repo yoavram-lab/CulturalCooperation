@@ -232,13 +232,13 @@ v + (1-v)p, & \text{if } \phi=A \\
 \end{equation}
 where $p=P(\phi=A)$ is the frequency of $A$ among all adults in the parental generation.  
 
-Not all adults become parents, and we denote the frequency of phenotype $A$ among parents by $\tilde{p}$.
+Not all adults become parents, and we denote the frequency of phenotype $A$ among parents by $\dot{p}$.
 Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after selection and vertical and oblique transmission) is
 \begin{equation}\label{eq:horizontal}
 \begin{aligned}
 \hat{p} \;=
-\tilde{p} [v + (1-v)p] + (1-\tilde{p}) [(1-v)p] \;= 
-v \tilde{p} + (1-v) p \;.
+\dot{p} [v + (1-v)p] + (1-\dot{p}) [(1-v)p] \;= 
+v \dot{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
 Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
@@ -279,7 +279,7 @@ p' \;= \;
 The frequency of $A$ among parents (i.e. after selection) follows a similar dynamic, but also includes the effect of natural selection, and is therefore
 \begin{equation}\label{eq:nextgen_parents}
 \begin{aligned}
-\bar{w} \tilde{p}' =
+\bar{w} \dot{p}' =
 & \hat{p}^2 (1+b-c) \big[\alpha + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
 & \hat{p}(1-\hat{p}) (1-c) \big[\alpha(1-T_B) + (1-\alpha)\big(\hat{p} + (1-\hat{p})(1-T_B)\big)\big] \;+ \\
 & (1-\hat{p})\hat{p} (1+b) \big[\alpha T_A + (1-\alpha) \hat{p} T_A \big] \;+\; 
@@ -288,7 +288,7 @@ The frequency of $A$ among parents (i.e. after selection) follows a similar dyna
 \end{equation}
 where fitness values are taken from \autoref{fig:illustration}a and \autoref{table:interactions}, and the population mean fitness is
 $\bar{w} =  1 + \hat{p}(b-c)$.
-Starting from \autoref{eq:horizontal} with $\hat{p}'=v\tilde{p}'+(1-v)p'$, we substitute $p'$ from \autoref{eq:nextgen_adults} and $\tilde{p}'$ from \autoref{eq:nextgen_parents} and obtain
+Starting from \autoref{eq:horizontal} with $\hat{p}'=v\dot{p}'+(1-v)p'$, we substitute $p'$ from \autoref{eq:nextgen_adults} and $\dot{p}'$ from \autoref{eq:nextgen_parents} and obtain
 \begin{equation} \label{eq:nextgen_juveniles}
 \begin{aligned}
 \hat{p}' =
@@ -333,7 +333,7 @@ Symbol & Description & Values \\ \cmidrule(r){1-3}
 $A$ & Cooperator phenotype & \\
 $B$ & Defector phenotype & \\
 $p$ & Frequency of phenotype $A$ among adults & $[0,1]$ \\
-$\tilde p$ & Frequency of phenotype $A$ among parents & $[0,1]$ \\
+$\dot p$ & Frequency of phenotype $A$ among parents & $[0,1]$ \\
 $\hat p$ & Frequency of phenotype $A$ among juveniles & $[0,1]$ \\
 $v$ & Vertical transmission rate & $[0,1]$ \\
 $c$ & Cost of cooperation & $(0,1)$ \\
@@ -449,7 +449,7 @@ Further, inequality~\ref{eq:unequal_transmission_from_rarity_general_case} shows
 c < \frac{b v T_A + (T_A - T_B)}{v(1-T_B)} \;.
 \end{equation}
 
-In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\tilde{p}=0$ and $\tilde{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\tilde{p}'>\tilde{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
+In the absence of oblique transmission, $v=1$, the only equilibria are the fixation states, $\dot{p}=0$ and $\dot{p}=1$, and cooperation will evolve from any initial frequency (i.e., $\dot{p}'>\dot{p}$) if inequality~\ref{eq:vert_hori_alpha1} applies (\autoref{fig:equilibria_v1}).
 This is similar to case of microbe-induced cooperation studied by \citet{lewin2017microbes}; therefore when $v=1$, this remark is equivalent to their eq.~1.
 
 It is interesting to examine the general effect of interaction-transmission association $\alpha$ on the evolution of cooperation.
@@ -924,57 +924,57 @@ Thus, the population mean fitness increases as interaction-transmission associat
 \newpage
 \section{Reduction principle} \label{sec:appendixD}
 
-We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\tilde{p}$.
-Denote the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ by $\vec{\tilde{p}}= (\tilde{p}_1$, $\tilde{p}_2$, $\tilde{p}_3$, $\tilde{p}_4)$. 
+We assume here that $v=1$, i.e. no oblique transmission, and therefore $\hat{p}=\dot{p}$.
+Denote the frequencies of the pheno-genotypes $AM$, $BM$, $Am$, and $Bm$ by $\vec{\dot{p}}= (\dot{p}_1$, $\dot{p}_2$, $\dot{p}_3$, $\dot{p}_4)$. 
 The frequencies of the pheno-genotypes in the next generation are defined by the recursion system, 
 \begin{equation} \label{eq:next_gen_p_1}
   \begin{aligned}
 	% p1
-  \bar{w}\tilde{p}_1' = 
-  & \tilde{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) \;+ \\
-  & \tilde{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) \;+ \\
-  & \tilde{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) \;+ \\
-  & \tilde{p}_2(1-x)x(1-\alpha_1)T_A \;,
+  \bar{w}\dot{p}_1' = 
+  & \dot{p}_1 x (1+b-c)(1 - (1-\alpha_1)(1-x)T_B) \;+ \\
+  & \dot{p}_1(1-x)(1-c)(1-\alpha_1T_B x - T_B(1-x)) \;+ \\
+  & \dot{p}_2 x (1+b)T_A(x + \alpha_1(1-x)) \;+ \\
+  & \dot{p}_2(1-x)x(1-\alpha_1)T_A \;,
 \\
 	% p2
-  \bar{w}\tilde{p}_2' = 
-  & \tilde{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \;+ \\
-  & \tilde{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) \;+ \\
-  & \tilde{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) \;+ \\
-& \tilde{p}_2(1-x)(1 - (1-\alpha_1) x T_A) \;, 
+  \bar{w}\dot{p}_2' = 
+  & \dot{p}_1 x (1+b-c)(1-\alpha_1)(1-x)T_B \;+ \\
+  & \dot{p}_1(1-x)(1-c)(\alpha_1 T_B + (1-\alpha_1)(1-x)T_B) \;+ \\
+  & \dot{p}_2 x (1+b)(1-\alpha_1 T_A(1-x) - T_A x) \;+ \\
+& \dot{p}_2(1-x)(1 - (1-\alpha_1) x T_A) \;, 
 \\
 	% p3
-  \bar{w}\tilde{p}_3' =
-  & \tilde{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) \;+ \\
-  & \tilde{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) \;+ \\
-  & \tilde{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) \;+ \\
-  & \tilde{p}_4(1-x) x (1-\alpha_2)T_A \;, 
+  \bar{w}\dot{p}_3' =
+  & \dot{p}_3 x (1+b-c)(1 - (1-\alpha_2)(1-x)T_B) \;+ \\
+  & \dot{p}_3(1-x)(1-c)(1-\alpha_2 T_B x - T_B(1-x)) \;+ \\
+  & \dot{p}_4 x (1+b)T_A(x + \alpha_2 (1-x)) \;+ \\
+  & \dot{p}_4(1-x) x (1-\alpha_2)T_A \;, 
 \\
 	% p4
-  \bar{w}\tilde{p}_4' =
-  & \tilde{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B \;+ \\
-  & \tilde{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) \;+ \\
-  & \tilde{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) \;+ \\
-  & \tilde{p}_4(1-x)(1 - (1-\alpha_2) x T_A) \;,
+  \bar{w}\dot{p}_4' =
+  & \dot{p}_3 x (1+b-c)(1-\alpha_2)(1-x)T_B \;+ \\
+  & \dot{p}_3(1-x)(1-c)(\alpha_2 T_B + (1-\alpha_2)(1-x)T_B) \;+ \\
+  & \dot{p}_4 x (1+b)(1-\alpha_2T_A(1-x)-T_A x ) \;+ \\
+  & \dot{p}_4(1-x)(1 - (1-\alpha_2) x T_A) \;,
   \end{aligned}
 \end{equation}
 %which we can write as 
 %\begin{equation}
-%\bar{w} \vec{\tilde{p}} = F(\vec{\tilde{p}}),
+%\bar{w} \vec{\dot{p}} = F(\vec{\dot{p}}),
 %\end{equation}
-where $x=\tilde{p}_1+\tilde{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\tilde{p}} = (\tilde{p}_1,\tilde{p}_2,\tilde{p}_3,\tilde{p}_4)$.
+where $x=\dot{p}_1+\dot{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\dot{p}} = (\dot{p}_1,\dot{p}_2,\dot{p}_3,\dot{p}_4)$.
 
-The equilibrium where only allele $M$ is present is  $\vec{\tilde{p}^*} = (\tilde{p}^*, 1-\tilde{p}^*, 0, 0)$, where
+The equilibrium where only allele $M$ is present is  $\vec{\dot{p}^*} = (\dot{p}^*, 1-\dot{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
-\tilde{p}^*=
+\dot{p}^*=
 \frac{c(1-T_B) - b \alpha_1 T_A - (T_A - T_B)}{b(1-\alpha_1)(T_A-T_B)} \;,
 \end{equation}
 setting $\alpha=\alpha_1$ and $v=1$ in \autoref{eq:general_equilibrium}.
-When $v=1$, $\tilde p^*$ is a feasible polymorphism ($0 < \tilde{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
+When $v=1$, $\dot p^*$ is a feasible polymorphism ($0 < \dot{p}^* < 1$) if $T_A<T_B$ and $\gamma_2<c<\gamma_1$ (Result~\ref{result:vert_obli_hori}).
 
-The local stability of $\vec{\tilde{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\tilde{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
+The local stability of $\vec{\dot{p}^*}$ to the introduction of allele $m$ is determined by the linear approximation $\cl^*$ of the transformation in \autoref{eq:next_gen_p_1} near $\vec{\dot{p}^*}$ (i.e., the Jacobian of the transformation at the equilibrium).
 $\cl^*$ is known to have a block structure, with the diagonal blocks occupied by the matrices $\cl^*_{in}$ and $\cl^*_{ex}$ \citep{Liberman1986modifiers,Altenberg2017} .
-The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\tilde{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1}, with $\bar{w}^*=1+(b-c)\tilde{p}^*$ as the stable population mean fitness,
+The latter is the external stability matrix: the linear approximation to the transformation near $\vec{\dot{p}^*}$ involving only the pheno-genotypes $Am$ and $Bm$, derived from \autoref{eq:next_gen_p_1}, with $\bar{w}^*=1+(b-c)\dot{p}^*$ as the stable population mean fitness,
 \begin{equation} \label{eq:external_stability_matrix}
 \begin{aligned}
 &\cl^*_{ex} = 
@@ -985,24 +985,24 @@ The latter is the external stability matrix: the linear approximation to the tra
 	 l_{2 2} 
 \end{bmatrix} = 
 \frac{1}{\bar{w}^*} \begin{bmatrix}
-\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-\frac{\partial\bar{w}\tilde{p}_3'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) \\
-\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_3}(\vec{\tilde{p}}^*) &
-\frac{\partial\bar{w}\tilde{p}_4'}{\partial \tilde{p}_4}(\vec{\tilde{p}}^*) 
+\frac{\partial\bar{w}\dot{p}_3'}{\partial \dot{p}_3}(\vec{\dot{p}}^*) &
+\frac{\partial\bar{w}\dot{p}_3'}{\partial \dot{p}_4}(\vec{\dot{p}}^*) \\
+\frac{\partial\bar{w}\dot{p}_4'}{\partial \dot{p}_3}(\vec{\dot{p}}^*) &
+\frac{\partial\bar{w}\dot{p}_4'}{\partial \dot{p}_4}(\vec{\dot{p}}^*) 
 \end{bmatrix} \;= \\
 & \frac{1}{\bar{w}^*} \begin{bmatrix}
-		(1+b \tilde{p}^* -c)(1-T_B(1-\tilde{p}^*)) + b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) & 
-		(1+b \tilde{p}^*) T_A \tilde{p}^* + b \tilde{p}^* \alpha_2 T_A(1-\tilde{p}^*) \\
-		(1+b \tilde{p}^* - c) T_B(1-\tilde{p}^*) - b \tilde{p}^* \alpha_2 T_B (1-\tilde{p}^*) &
-		(1+b \tilde{p}^*) (1-T_A \tilde{p}^*) - b \tilde{p}^* \alpha_2 T_A (1-\tilde{p}^*) \\
+		(1+b \dot{p}^* -c)(1-T_B(1-\dot{p}^*)) + b \dot{p}^* \alpha_2 T_B (1-\dot{p}^*) & 
+		(1+b \dot{p}^*) T_A \dot{p}^* + b \dot{p}^* \alpha_2 T_A(1-\dot{p}^*) \\
+		(1+b \dot{p}^* - c) T_B(1-\dot{p}^*) - b \dot{p}^* \alpha_2 T_B (1-\dot{p}^*) &
+		(1+b \dot{p}^*) (1-T_A \dot{p}^*) - b \dot{p}^* \alpha_2 T_A (1-\dot{p}^*) \\
   	\end{bmatrix} \;.
 \end{aligned}
 \end{equation}
 
-Because we assume that $\vec{\tilde{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
-$\vec{\tilde{p}^*}$ is determined by the eigenvalues of the external stability matrix $\cl^*_{ex}$.
+Because we assume that $\vec{\dot{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+$\vec{\dot{p}^*}$ is determined by the eigenvalues of the external stability matrix $\cl^*_{ex}$.
 This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\cl^*_{ex}$ is real and positive.
-Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\tilde{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
+Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\dot{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
 The eigenvalues of $\cl^*_{ex}$ are the roots of the characteristic polynomial, $R(\lambda)$,
 %\begin{equation}\label{char_poly}
 %R(\lambda) = 
@@ -1010,7 +1010,7 @@ The eigenvalues of $\cl^*_{ex}$ are the roots of the characteristic polynomial, 
 %\end{equation}
 %where $X$, $Y$, $Z$, and $Q$ are defined in \autoref{eq:external_stability_matrix}.
 which is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
-Thus, a sufficient condition for external instability of $\vec{\tilde{p}^*}$ is $R(1) < 0$.
+Thus, a sufficient condition for external instability of $\vec{\dot{p}^*}$ is $R(1) < 0$.
 %\begin{equation} \label{eq:R1_negative}
 %\begin{aligned}
 %R(1) < 0 \Leftrightarrow 
@@ -1031,43 +1031,43 @@ Since multiplication by a positive factor doesn't change the sign, and using the
 \end{aligned}
 \end{equation}
 where $l_{i j}$ are defined in \autoref{eq:external_stability_matrix}.
-Adding the second row in \autoref{eq:signR1} to the first row,  which does not change the determinant, and substituting $\bar{w}^*=1+(b-c)\tilde{p}^*$, we get
+Adding the second row in \autoref{eq:signR1} to the first row,  which does not change the determinant, and substituting $\bar{w}^*=1+(b-c)\dot{p}^*$, we get
 \begin{equation} 
 \begin{aligned}
 \sign R(1) =
 & \sign\det\begin{bmatrix}
-	 -c(1-\tilde{p}^*) &&
-	 c \tilde{p}^* \\
-	 (1-\tilde{p}^*)\big[(1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* \big] &&
-	 \tilde{p}^*\big[-(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c\big]
+	 -c(1-\dot{p}^*) &&
+	 c \dot{p}^* \\
+	 (1-\dot{p}^*)\big[(1+b\dot{p}^*-c)T_B - b \alpha_2 T_B \dot{p}^* \big] &&
+	 \dot{p}^*\big[-(1+b\dot{p}^*)T_A - b \alpha_2 T_A (1-\dot{p}^*) + c\big]
 \end{bmatrix} = \\
-& \sign \Bigg[c \tilde{p}^* (1-\tilde{p}^*) \cdot \det\begin{bmatrix}
+& \sign \Bigg[c \dot{p}^* (1-\dot{p}^*) \cdot \det\begin{bmatrix}
 	 -1 &&
 	 1 \\
-	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
-	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
+	 (1+b\dot{p}^*-c)T_B - b \alpha_2 T_B \dot{p}^* &&
+	 -(1+b\dot{p}^*)T_A - b \alpha_2 T_A (1-\dot{p}^*) + c
 \end{bmatrix}\Bigg] = \\
 & \sign\det\begin{bmatrix}
 	 -1 &&
 	 1 \\
-	 (1+b\tilde{p}^*-c)T_B - b \alpha_2 T_B \tilde{p}^* &&
-	 -(1+b\tilde{p}^*)T_A - b \alpha_2 T_A (1-\tilde{p}^*) + c
+	 (1+b\dot{p}^*-c)T_B - b \alpha_2 T_B \dot{p}^* &&
+	 -(1+b\dot{p}^*)T_A - b \alpha_2 T_A (1-\dot{p}^*) + c
 \end{bmatrix} \;,
 \end{aligned}
 \end{equation}
-since $c>0$, $0<\tilde{p}^*<1$.
+since $c>0$, $0<\dot{p}^*<1$.
 That is, 
 \begin{equation}
 \begin{aligned}
 \sign R(1) = 
 &\sign\Big[
-(1+b\tilde{p}^*)T_A + b\alpha_2 T_A (1-\tilde{p}^*) - c - 
-(1+b\tilde{p}^*-c)T_B + b\tilde{p}^* \alpha_2 T_B \Big]
+(1+b\dot{p}^*)T_A + b\alpha_2 T_A (1-\dot{p}^*) - c - 
+(1+b\dot{p}^*-c)T_B + b\dot{p}^* \alpha_2 T_B \Big]
 = \\
-&\sign\Big[(1+b(1-\alpha_2)\tilde{p}^*)(T_A-T_B) + b\alpha_2 T_A - c (1-T_B) \Big]\;.
+&\sign\Big[(1+b(1-\alpha_2)\dot{p}^*)(T_A-T_B) + b\alpha_2 T_A - c (1-T_B) \Big]\;.
 \end{aligned}
 \end{equation}
-Substituting $\tilde{p}^*$ from \autoref{eq:p_tilde_star_alpha_1}, we get
+Substituting $\dot{p}^*$ from \autoref{eq:p_tilde_star_alpha_1}, we get
 \begin{equation} \label{eq:R1_less}
 \begin{aligned}
 R(1)<0 \Leftrightarrow
