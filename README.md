@@ -12,6 +12,9 @@ A preprint was posted on bioRvix, [doi:10.1101/2020.12.08.416560](http://doi.org
 Figures were produced with Python.
 The code is available as an [IPython (Jupyter) notebook](ms/figures.ipynb).
 
+## Spatial-stochastic simulation
+Set the desired parameter values at the bottom of the script and run the file
+
 ### License
 
 All code in this repo is licensed under the CC-BY-SA 4.0 licence.
