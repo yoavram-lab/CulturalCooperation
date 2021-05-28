@@ -348,8 +348,6 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \end{tabular}
 \label{table:vars_params}
 \end{table}
-%\bigskip
-%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -358,7 +356,6 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \section{Results}
 
 We determine the equilibria of the model in \autoref{eq:nextgen_juveniles}
-%namely, solutions of $\hat{p}' = \hat{p}$, 
 and analyze their local stability.
 We then analyze the evolution of a modifier of interaction-transmission association,~$\alpha$.
 Finally, we compare derived conditions to outcomes of stochastic simulations with a structured population.
@@ -366,7 +363,10 @@ Finally, we compare derived conditions to outcomes of stochastic simulations wit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Evolution of cooperation}
 
-The fixed points (equilibria) of  the recursion (\autoref{eq:nextgen_juveniles}) are $\hat p=0$, $\hat p=1$, and (see \autoref{eq:general_equilibrium_appendix})
+To learn about the evolution of cooperation we investigate local stability of the equilibria of the model in \autoref{eq:nextgen_juveniles}.
+The equilibria are the solutions of $\hat{p}'-\hat{p}=0$. Note that \autoref{eq:nextgen_juveniles} is not simple polynomial but a polynomial fraction, therefore the solution is not trivial.
+%% DC: Yoav, I'm trying to write something like solving this is not trivial.
+The fixed points (equilibria) of the recursion (\autoref{eq:nextgen_juveniles}) are $\hat p=0$, $\hat p=1$, and (see Appendix~\ref{sec:appendixB} \autoref{eq:general_equilibrium_appendix})
 \begin{equation} \label{eq:general_equilibrium}
   \hat{p}^* =  
   \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
@@ -817,7 +817,6 @@ $f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
 	f'(1) &=	-\alpha bvT + cv(1-T) \;.
 \end{aligned}
 \end{equation}
-%Therefore with symmetric horizontal transmission ($T_A=T_B$), fixation of the cooperative phenotype ($\hat{p}=1$) occurs under the same condition as Corollary \ref{remark:equal_transmission}, namely inequality~\ref{eq:equal_transmission}.
 
 In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
 Therefore, three equilibria may exist, two of which are
@@ -828,7 +827,7 @@ $\hat{p} = 0 $ and $\hat{p} = 1$, and the third is
   \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
 \end{equation}
 
-Note that the sign of the  cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
+Note that the sign of the cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
 If $T_A>T_B$, then 
 \begin{equation} \label{eq:beta1}
    \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
