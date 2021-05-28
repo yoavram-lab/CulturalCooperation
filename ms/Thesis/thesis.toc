@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {4}Results}{12}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Evolution of cooperation}{12}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Evolution of interaction-transmission association}{18}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Population structure}{19}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Population structure}{20}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Discussion}{23}{section.5}%
 \contentsline {section}{\numberline {A}Local stability criterion}{28}{appendix.1.A}%
 \contentsline {section}{\numberline {B}Equilibria and stability}{29}{appendix.1.B}%

@@ -583,6 +583,39 @@ Furthermore, if we a modifier allele that decreases $\alpha$ appears and invades
 This evolution will proceed as long as there is a stable polymorphism, that is, as long as $a_2 < \alpha < a_1$ (Remark~\ref{remark:intermediate_association_res3}, \autoref{fig:equilibria_v1}c). 
 Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of cooperation to fall to zero, and the population mean fitness to decrease to one (\autoref{fig:invasion}).
 
+We can do similiar analysis for the general case where $0<v<1$ as we did in Appendix~\ref{sec:appendixD}.
+First we found the value of the characteristic polynomial at 1, $R(1)$ using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics.
+\begin{equation} \label{eq:value_at_1}
+  \begin{aligned}
+  R(1) &= \frac{c v \hat{p}^*[T_Ab\hat{p}^{*2}(v\alpha_2-1)-2T_Ab\hat{p}^*v\alpha_2 + T_Ab\hat{p}^*(1+v\alpha_2)]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1} \\
+ & + \frac{c v \hat{p}^*[T_Ac\hat{p}^{*2}(1-v)+T_Ac\hat{p}^*(v-1)-T_A\hat{p}^*(1-c)+T_A]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1} \\
+  &+ \frac{c v \hat{p}^*[T_Bb\hat{p}^{*2}(1-v\alpha_2)+T_Bb\hat{p}^2(v\alpha_2-1)+T_Bc\hat{p}^{*2}(v-1)]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1}\\
+  &+ \frac{c v \hat{p}^*[T_Bc\hat{p}^*(1-v) + T_Bcv(1-\hat{p}^*+T_B(\hat{p}^*-1)+cv(\hat{p}^*-1))]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1}
+  \end{aligned}
+\end{equation}
+Similarly to what we did in Appendix~\ref{sec:appendixD}, we should find when $R(1)<0$. However, when adding the vertical transmission into the system the math is more complicated. 
+Therefore, we will use a different technique. We know that when $\alpha_1 = \alpha_2$, $R(1)=0$. 
+% DC: Yoav should I proof the statement above?
+Now, let's assume that $\alpha_2 = \alpha_1 + \epsilon$. The derivative of $R(1)$ by $\epsilon$ will give us better understand about the sign of $R(1)$ when $\alpha_2<\alpha_1$.
+\begin{equation} \label{eq:value_at_1_derivative}
+  \frac{\partial R(1)}{\partial \epsilon} = \frac{c b  v^2 \hat{p}^*[T_A\hat{p}^{*2}-2T_A\hat{p}^* + T_A-T_B\hat{p}^{*2}+T_B\hat{p}^*]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1} 
+\end{equation}
+We can simplify \autoref{eq:value_at_1_derivative}
+\begin{equation} \label{eq:value_at_1_derivative_simplify}
+  \frac{\partial R(1)}{\partial \epsilon} = \frac{c b v^2 \hat{p}^*[(T_A-T_B)\hat{p}^{*2}+(T_B-2T_A)\hat{p}^* + T_A]}{(b\hat{p}^*-c\hat{p}^*)^2+2\hat{p}^*(b-c)+1} 
+\end{equation}
+Since $b>c$ the denominator is always positive. The numerator is quadratic polynomial of $\hat{p}^*$ with the following roots:
+\begin{equation} \label{eq:numerator_roots}
+  \hat{p}^*_1 = \frac{T_A}{T_A-T_B} \hat{p}^*_2 = 1
+\end{equation}
+$\hat{p}^*_1 < 0$ since $T_B>T_A$ and since the quadratic polynomial has negative leading coefficient then the numerator is positive for every $\hat{p}^*_1<\hat{p}^*<1$ which is always true.
+We found that derivative of $R(1)$ by $\epsilon$ is positive for every $\epsilon$. 
+Therefore, $R(1)$ grows as $\epsilon$ grows, or in other words as $\alpha_2-\alpha_1$ grows.
+Thus, $R(1)<0$ if and only if $\alpha_2<\alpha_1$. Therefore, different value of vertical transmission does not change the evolution of social-interaction association and invasion is possible when $\alpha_2<\alpha_1$.
+% DC: can I say if and only if
+
+
+
 %%% Figure: Invasion
 \begin{figure}[h]
   \centering
@@ -594,7 +627,7 @@ Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of co
   \textbf{(a)}~The frequency of the cooperative phenotype $A$ over time.
   \textbf{(b)}~The frequency of the invading modifier allele $m$ over time. 
   \textbf{(c)}~The population mean fitness ($\bar{w}$) over time.
-  Here, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
+  Here, $v=1$, $c = 0.05$, $b=1.3$, $T_A=0.4<T_B=0.7$, initial interaction-transmission association $\alpha_1=0.7$, lower interaction-transmission association threshold $a_2=0.605$.  
   }
   \label{fig:invasion}
 \end{figure}
