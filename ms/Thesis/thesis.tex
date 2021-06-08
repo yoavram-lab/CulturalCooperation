@@ -180,6 +180,15 @@ For instance, there may be an association between the choice of partner for soci
 or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
 Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because it diminishes the effect of selection (due to non-vertical transmission from non-reproducing individuals~\citep{ram2018evolution}).
 
+To understand the evolution of cooperation we are going to use \emph{replicator dynamics}. The replicator in replicator dynamics has the ability to make one or more copies of itself.
+The replicator can be a gene, a phenotype, a stragey in a game and etc. In cooperation context replicator is a different stragey in the game, whether the individual is a cooperative or a defector.
+In replicator dynamics we assume large population of replicators, which interact with respect to their proportion.
+Those interactions of different replicator affect the fitness acorrding to some payoff matrix. The payoff matrix depands on the game which is played. 
+The most common game to describe cooperation is prisoner's dilemma\citep{nowak1992tit}.
+Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable stragey (ESS)}.
+Such strategies cannot be invaded by any other strategy that is initially rare. 
+One of the main questions in the evolution of cooperation is under what conditions such invasions are possible.
+
 \newpage
 \section{Related Work}
 
@@ -193,7 +202,6 @@ c < b \cdot m \,,
 \end{equation}
 where $b$ and $c$ are the benefit and cost of cooperation\footnote{In an extended model, which allows an individual to encounter $N$ individuals before choosing a partner, the right hand side is multiplied by $E[N]$, the expected number of encounters \citep[eq.~4.6]{Eshel1982}.
 }. 
-%Here $m$ in inequality~\ref{eq:eshel1982} takes the role of the relatedness coefficient $r$ in inequality~\ref{eq:hamilton_rule}.
 
 The role of assortment in the evolution of altruism was emphasized by \citet{Fletcher2009assortment}.
 They found that in a \emph{public-goods} game, altruism will evolve if cooperative individuals experience more cooperation, on average, than defecting individuals, and ``thus, the evolution of altruism requires (positive) assortment between focal \emph{cooperative} players and cooperative acts in their interaction environment.''
@@ -310,7 +318,7 @@ Starting from \autoref{eq:horizontal} with $\hat{p}'=v\dot{p}'+(1-v)p'$, we subs
 
 %%% Table: variables and parameters
 %%%% Table
-\begin{table}[h]
+\begin{table}[p]
   \caption{\textbf{Interaction frequency, fitness, and transmission probabilities.}}
   \begin{tabular}{@{}llllll@{}}
   \toprule
@@ -329,7 +337,7 @@ Starting from \autoref{eq:horizontal} with $\hat{p}'=v\dot{p}'+(1-v)p'$, we subs
 \end{table}
 \bigskip
 
-\begin{table}[h]
+\begin{table}[p]
 \centering
 \caption{\textbf{Model variables and parameters.}
 }
@@ -351,7 +359,7 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \label{table:vars_params}
 \end{table}
 
-
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Results
 \newpage
