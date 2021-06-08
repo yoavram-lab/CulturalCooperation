@@ -773,8 +773,12 @@ environment''~\citep{Fletcher2009assortment} is generated not because the helper
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
-\bibliographystyle{unsrtnat}
-\bibliography{bib}
+\begingroup
+ \bibliographystyle{unsrtnat}
+ \linespread{1}\selectfont
+ \setlength{\bibsep}{2pt}
+ \bibliography{bib}
+\endgroup
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -788,6 +792,7 @@ environment''~\citep{Fletcher2009assortment} is generated not because the helper
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices
 \begin{appendices}
+\linespread{1.25}
 \renewcommand{\theequation}{\thesection\arabic{equation}}
 \counterwithin*{equation}{section}
 
