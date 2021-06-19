@@ -382,18 +382,100 @@ Finally, we compare derived conditions to outcomes of stochastic simulations wit
 To learn about the evolution of cooperation we investigate local stability of the equilibria of the model in \autoref{eq:nextgen_juveniles}.
 The equilibria are the solutions of $\hat{p}'-\hat{p}=0$. Note that \autoref{eq:nextgen_juveniles} may look simple cubic polynomial. However, because $\bar{w}$ is a function of $\hat{p}$, \autoref{eq:nextgen_juveniles} is not simple polynomial but a fractional polynomial. 
 The solution of fractional polynomial is not trivial and that is why it is better to find the equilibria and analyze the stability.
-The fixed points (equilibria) of the recursion (\autoref{eq:nextgen_juveniles}) are $\hat p=0$, $\hat p=1$, and (see Appendix~\ref{sec:appendixB} \autoref{eq:general_equilibrium_appendix})
-\begin{equation} \label{eq:general_equilibrium}
+Let $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
+Then, using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, this simplifies to
+\begin{equation} \label{eq:general_case_polynomial}
+\begin{aligned}
+  f(\hat{p}) &= \bar{w}(\hat{p}'-\hat{p}) =
+  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} \;,
+\end{aligned}
+\end{equation}
+where 
+\begin{equation} \label{eq:polynomial_coefficients}
+\begin{aligned}
+  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \;, \\
+  \beta_2 &= -\beta_1 -\beta_3 \;, \\
+  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \;.
+\end{aligned}
+\end{equation}
+
+If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$, and $f(\hat{p})$ becomes a quadratic polynomial,
+\begin{equation} \label{eq:equal_horizontal_transmission}
+  f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big] \;.
+\end{equation}
+Clearly the only two equilibria are the fixations $\hat{p} =  0$ and $\hat{p} = 1$, which are are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\ref{sec:appendixA}), where
+$f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
+\begin{equation} \label{eq:derivative_of_phattag-phat}
+\begin{aligned}
+	f'(0) &=	\alpha bvT - cv(1-T) \;, \\
+	f'(1) &=	-\alpha bvT + cv(1-T) \;.
+\end{aligned}
+\end{equation}
+
+In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
+Therefore, three equilibria may exist, two of which are
+$\hat{p} = 0 $ and $\hat{p} = 1$, and the third is
+\begin{equation} \label{eq:general_equilibrium_appendix}
   \hat{p}^* =  
+  \frac{\beta_3}{\beta_1} =
   \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
 \end{equation}
 
-Define the following cost thresholds, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$,
-\begin{equation} \label{eq:cost_thresholds_v_threshold} 
-\gamma_1 = \frac{b v \alpha T_A + (T_A - T_B)}{v(1-T_B)}, \quad
-\gamma_2 = \frac{b v \alpha T_B + (1+b) (T_A - T_B)}{v(1-T_B) + (1-v)(T_A-T_B)}, \quad
-\hat v = \frac{T_B - T_A}{1-T_A} \;.
-\end{equation}
+Note that the sign of the cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
+If $T_A>T_B$, then 
+\begin{equation} \label{eq:beta1}
+   \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) < 0 \;,
+ \end{equation}
+since $c<b$ and $\alpha v < 1$. Hence the signs of the cubic at positive and negative infinity are negative and positive, respectively.
+First, if $\beta_3<\beta_1$ then 
+$1<\hat{p}^*$. Also, $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable feasible equilibrium.
+Second, if $\beta_1<\beta_3<0$ then 
+$0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$ so that both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
+Third, if $0<\beta_3$ then 
+$\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$; that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
+
+Similarly, if $T_A<T_B$, then
+\begin{equation} \label{eq:beta1_rev}
+   \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
+   = (1-\alpha v)(c-b)(T_A-T_B) > 0 \;,
+ \end{equation}
+since $c<b$ and $\alpha v < 1$, and the signs of the cubic at positive and negative infinity are positive and negative, respectively. 
+First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $A$ is the only locally stable legitimate equilibrium.
+Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
+Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable feasible equilibrium.
+
+This analysis can be summarized as follows:
+% in beta
+\begin{enumerate}
+\item \emph{Fixation of cooperation}: 
+	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
+	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
+	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
+\item \emph{Fixation of the defection}: 
+	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
+	if \emph{(v)} $T_A>T_B$ and $\beta_3<\beta_1<0$; or 
+	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
+\item \emph{polymorphism of both phenotypes at $\hat{p}^*$}: 
+	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
+\item \emph{Fixation of either phenotype depending on initial frequency}:
+	if \emph{(viii)}  $T_A>T_B$ and $\beta_1<\beta_3<0$.
+\end{enumerate}
+
+We now proceed to use the cost thresholds, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}).
+First, assume $T_A<T_B$.
+$\beta_3<0$ requires $\gamma_1<c$.
+For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
+Note that the expression in the square brackets is positive if and only if $v > \hat v$.
+Thus, for $\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c$ or $v < \hat v$ and $c < \gamma_2$,
+and for $0<\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c < \gamma_1$, or $v < \hat v$ and $c < \min(\gamma_1, \gamma_2)$. For $\beta_1<\beta_3$ we need $v > \hat v$ and $c<\gamma_2$ or $v < \hat v$ and $\gamma_2<c$.
+However, some of these conditions cannot be met, since $v < \hat v$ implies $c<1<\gamma_2$.
+
+Second, assume $T_A>T_B$.
+$\beta_3>0$ requires $\gamma_1 > c$. 
+For $\beta_1<\beta_3$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] < bv\alpha T_B + (1+b)(T_A-T_B)$.
+Thus for $\beta_1<\beta_3$ we need $v > \hat v$ and $c < \gamma_2 $ or $v < \hat v$ and $c > \gamma_2$.
+But $\hat{v}<0$ when $T_A > T_B$, and therefore we have $\beta_1<\beta_3$ if $c < \gamma_2$. Similarly, we have $\beta_3<\beta_1$ if $c > \hat{\gamma_2}$.
 
 Then we have the following result.
 \\
@@ -401,7 +483,7 @@ Then we have the following result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}%[Equilibria and stability]
 \label{result:vert_obli_hori}
-With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperation follows one of the following scenarios in terms of the cost thresholds $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}) :
+With vertical, horizontal, and oblique transmission, the cultural evolution of a cooperation follows one of the following scenarios in terms of the cost thresholds $\gamma_1$ and $\gamma_2$ and the vertical transmission threshold $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}):
 
 % in gamma
 \begin{enumerate}
@@ -423,7 +505,7 @@ Thus, cooperation can take over the population if it has either a horizontal tra
 In either case, the cost of cooperation must be small enough.
 A stable polymorphism can exist between cooperation and defection only if defection has a horizontal transmission advantage.
 In this case, the existence of a stable polymorphism depends on the interplay between the benefit and cost of cooperation and the vertical transmission rate.
-These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b, and the analysis is in Appendix~\ref{sec:appendixB}.
+These conditions are illustrated in Figures~\ref{fig:equilibria}a, \ref{fig:equilibria}b, \ref{fig:equilibria_v1}a, and \ref{fig:equilibria_v1}b.
 Note that \emph{stable} and {unstable polymorphism} are also called, respectively, \emph{coexistence} and \emph{bistable competition}.
 
 Much of the literature on evolution of cooperation focuses on conditions for  an initially rare cooperative phenotype to invade a population of defectors.
@@ -852,108 +934,6 @@ Using a linear approximation for $f(p)$ near $1$, we have
 f'(1) - O(1-p) < 0 \;.
 \end{equation}
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
-\section{Equilibria and stability} \label{sec:appendixB}
-
-Let $f(\hat{p}) = \bar{w}(\hat{p}' - \hat{p})$.
-Then, using \emph{SymPy} \citep{Meurer2017}, a Python library for symbolic mathematics, this simplifies to
-\begin{equation} \label{eq:general_case_polynomial}
-\begin{aligned}
-  f(\hat{p}) &= \bar{w}(\hat{p}'-\hat{p}) =
-  \beta_1 \hat{p}^3 + \beta_2 \hat{p}^2 + \beta_3 \hat{p} \;,
-\end{aligned}
-\end{equation}
-where 
-\begin{equation} \label{eq:polynomial_coefficients}
-\begin{aligned}
-  \beta_1 &= \big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B) \;, \\
-  \beta_2 &= -\beta_1 -\beta_3 \;, \\
-  \beta_3 &= \alpha bvT_A - cv(1-T_B) + (T_A-T_B) \;.
-\end{aligned}
-\end{equation}
-
-If $T=T_A=T_B$ then $\beta_1=0$ and $\beta_3=-\beta_2=\alpha b vT -cv(1-T)$, and $f(\hat{p})$ becomes a quadratic polynomial,
-\begin{equation} \label{eq:equal_horizontal_transmission}
-  f(\hat{p}) = \hat{p}(1-\hat{p})\big[\alpha bvT - cv(1-T)\big] \;.
-\end{equation}
-Clearly the only two equilibria are the fixations $\hat{p} =  0$ and $\hat{p} = 1$, which are are locally stable if $f'(\hat{p})<0$ near the equilibrium (see Appendix~\ref{sec:appendixA}), where
-$f'(\hat{p})=(1-2\hat{p})\big[\alpha bvT - cv(1-T)\big]$, so that
-\begin{equation} \label{eq:derivative_of_phattag-phat}
-\begin{aligned}
-	f'(0) &=	\alpha bvT - cv(1-T) \;, \\
-	f'(1) &=	-\alpha bvT + cv(1-T) \;.
-\end{aligned}
-\end{equation}
-
-In the general case where $T_A \neq T_B$, the coefficient $\beta_1$ is not necessarily zero, and $f(\hat{p})$ is a cubic polynomial.
-Therefore, three equilibria may exist, two of which are
-$\hat{p} = 0 $ and $\hat{p} = 1$, and the third is
-\begin{equation} \label{eq:general_equilibrium_appendix}
-  \hat{p}^* =  
-  \frac{\beta_3}{\beta_1} =
-  \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha v)\big] (T_A-T_B)} \;.
-\end{equation}
-
-Note that the sign of the cubic (Eq.\ \ref{eq:general_case_polynomial}) at positive (negative) infinity is equal (opposite) to the sign of $\beta_1$. 
-If $T_A>T_B$, then 
-\begin{equation} \label{eq:beta1}
-   \beta_1 < [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
-   = (1-\alpha v)(c-b)(T_A-T_B) < 0 \;,
- \end{equation}
-since $c<b$ and $\alpha v < 1$. Hence the signs of the cubic at positive and negative infinity are negative and positive, respectively.
-First, if $\beta_3<\beta_1$ then 
-$1<\hat{p}^*$. Also, $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $B$ is the only locally stable feasible equilibrium.
-Second, if $\beta_1<\beta_3<0$ then 
-$0<\hat{p}^*<1$ and therefore $f'(0)<0$ and $f'(1)<0$ so that both fixations are locally stable and $\hat{p}^*$ separates the domains of attraction.
-Third, if $0<\beta_3$ then 
-$\hat{p}^*<0$ and therefore $f'(0)>0$ and $f'(1)<0$; that is, fixation of the cooperator phenotype $A$ is the only locally stable legitimate equilibrium.
-
-Similarly, if $T_A<T_B$, then
-\begin{equation} \label{eq:beta1_rev}
-   \beta_1 > [c(1-\alpha v) - b(1-\alpha v)] (T_A-T_B) 
-   = (1-\alpha v)(c-b)(T_A-T_B) > 0 \;,
- \end{equation}
-since $c<b$ and $\alpha v < 1$, and the signs of the cubic at positive and negative infinity are positive and negative, respectively. 
-First, if $\beta_3<0$ then $\hat{p}^*<0$ and therefore $f'(0)<0$ and $f'(1)>0$; that is, fixation of the defector phenotype $A$ is the only locally stable legitimate equilibrium.
-Second, if $0<\beta_3<\beta_1$ then $0<\hat{p}^*<1$ and therefore $f'(0)>0$ and $f'(1)>0$; that is, both fixations are locally unstable and $\hat{p}^*$ is a stable polymorphic equilibrium.
-Third, if $\beta_1<\beta_3$ then $\hat{p}^*>1$ and therefore $f'(0)>0$ and $f'(1)<0$, and fixation of the cooperator phenotype $A$ is the only locally stable feasible equilibrium.
-
-This analysis can be summarized as follows:
-% in beta
-\begin{enumerate}
-\item \emph{Fixation of cooperation}: 
-	if \emph{(i)} $T=T_A=T_B$ and $c < b\cdot \frac{\alpha T}{1-T}$; or
-	if \emph{(ii)} $T_A>T_B$ and $0<\beta_3$; or 
-	if \emph{(iii)} $T_A<T_B$ and $\beta_1<\beta_3$.
-\item \emph{Fixation of the defection}: 
-	if \emph{(iv)}  $T=T_A=T_B$ and $c > b\cdot \frac{\alpha T}{1-T}$; or 
-	if \emph{(v)} $T_A>T_B$ and $\beta_3<\beta_1<0$; or 
-	if \emph{(vi)} $T_A<T_B$ and $\beta_3<0$.
-\item \emph{polymorphism of both phenotypes at $\hat{p}^*$}: 
-	if \emph{(vii)} $T_A < T_B$ and $0<\beta_3<\beta_1$.
-\item \emph{Fixation of either phenotype depending on initial frequency}:
-	if \emph{(viii)}  $T_A>T_B$ and $\beta_1<\beta_3<0$.
-\end{enumerate}
-
-We now proceed to use the cost thresholds, $\gamma_1$ and $\gamma_2$, and the vertical transmission threshold, $\hat v$ (\autoref{eq:cost_thresholds_v_threshold}).
-First, assume $T_A<T_B$.
-$\beta_3<0$ requires $\gamma_1<c$.
-For $\beta_3<\beta_1$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] > bv\alpha T_B + (1+b)(T_A-T_B)$.
-Note that the expression in the square brackets is positive if and only if $v > \hat v$.
-Thus, for $\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c$ or $v < \hat v$ and $c < \gamma_2$,
-and for $0<\beta_3<\beta_1$ we need $v > \hat v$ and $\gamma_2 < c < \gamma_1$, or $v < \hat v$ and $c < \min(\gamma_1, \gamma_2)$. For $\beta_1<\beta_3$ we need $v > \hat v$ and $c<\gamma_2$ or $v < \hat v$ and $\gamma_2<c$.
-However, some of these conditions cannot be met, since $v < \hat v$ implies $c<1<\gamma_2$.
-
-Second, assume $T_A>T_B$.
-$\beta_3>0$ requires $\gamma_1 > c$. 
-For $\beta_1<\beta_3$ we need $c\big[v(1-T_B) + (1-v)(T_A-T_B)\big] < bv\alpha T_B + (1+b)(T_A-T_B)$.
-Thus for $\beta_1<\beta_3$ we need $v > \hat v$ and $c < \gamma_2 $ or $v < \hat v$ and $c > \gamma_2$.
-But $\hat{v}<0$ when $T_A > T_B$, and therefore we have $\beta_1<\beta_3$ if $c < \gamma_2$. Similarly, we have $\beta_3<\beta_1$ if $c > \hat{\gamma_2}$.
-
-This analysis is summarized in Result~\ref{result:vert_obli_hori}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
