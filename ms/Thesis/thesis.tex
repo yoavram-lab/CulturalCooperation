@@ -104,7 +104,7 @@ headheight=12pt
 
 
 \pagebreak
-{\large This work was carried out under the supervision of \textbf{Dr. Yoav Ram} from the Efi Arazi School of Computer Science, The Interdisciplinary Center, Herzliya.}
+{\large This work was carried out under the supervision of \textbf{Dr. Yoav Ram} from the School of Zoology, Faculty of Life Sciences, Tel Aviv University.}
 \pagebreak
 
 {\huge \begin{center} \textbf{Abstract} \end{center}}
@@ -174,7 +174,6 @@ Cultural transmission may be  modeled as vertical, horizontal, or oblique:  vert
 Evolution under either of these transmission models can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,lycett2008questions,ram2018evolution}.
 
 Here, we study models for the cultural evolution of cooperation that include both vertical and non-vertical transmission. 
-%We investigate these models using mathematical analysis and simulations.  
 In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
 For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
 or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
@@ -185,12 +184,15 @@ The replicator can be a gene, a phenotype, a stragey in a game and etc. In coope
 In replicator dynamics we assume large population of replicators, which interact with respect to their proportion.
 Those interactions of different replicator affect the fitness acorrding to some payoff matrix. The payoff matrix depands on the game which is played. 
 The most common game to describe cooperation is prisoner's dilemma\citep{nowak1992tit}.
-Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable stragey (ESS)}.
-Such strategies cannot be invaded by any other strategy that is initially rare. 
-One of the main questions in the evolution of cooperation is under what conditions such invasions are possible.
+Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable Stragey (ESS)}.
+Such strategies cannot be invaded by any other strategy that is initially rare. Evolutionarily stable stragey maximizes the expected fitness of its chooser and therefore, causing maximum mean fitness.
+An interesting and fundamental question is to verify whether natural selection, operating within the framework of known genetical models leads to ESS.
+Note that usually natural selection does not lead to an increase in the average mean fitness of the population. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an optimal population strategy.
+%DC: I need reference for the statement above
+Instead of searching evolutionarily stable stragey, we focus on \emph{Evolutionary Genetic Stblility (EGS)}\citep{lessard1990evolutionary}. EGS is when the frequency of types (geneotype, phenotype etc.) stays the same.
+Here, we study both local stability and external stability. Equilibrium is consider \emph{Local stability} when a system near the equilibrium approaches it.
+\emph{External stability} is a  local stability of the equilibrium to invasion by the modifier allele m. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is external unstable.
 
-\newpage
-\section{Related Work}
 
 \citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
 Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact specifically with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  

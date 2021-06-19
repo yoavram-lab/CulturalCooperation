@@ -1,12 +1,11 @@
 \contentsline {section}{\numberline {1}Introduction}{5}{section.1}%
-\contentsline {section}{\numberline {2}Related Work}{8}{section.2}%
-\contentsline {section}{\numberline {3}Models}{10}{section.3}%
-\contentsline {section}{\numberline {4}Results}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Evolution of cooperation}{14}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Evolution of interaction-transmission association}{20}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Population structure}{22}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{25}{section.5}%
-\contentsline {section}{\numberline {A}Local stability criterion}{31}{appendix.1.A}%
-\contentsline {section}{\numberline {B}Equilibria and stability}{32}{appendix.1.B}%
-\contentsline {section}{\numberline {C}Effect of interaction-transmission association on mean fitness}{34}{appendix.1.C}%
-\contentsline {section}{\numberline {D}Reduction principle}{35}{appendix.1.D}%
+\contentsline {section}{\numberline {2}Models}{9}{section.2}%
+\contentsline {section}{\numberline {3}Results}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Evolution of cooperation}{13}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Evolution of interaction-transmission association}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Population structure}{21}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{24}{section.4}%
+\contentsline {section}{\numberline {A}Local stability criterion}{30}{appendix.1.A}%
+\contentsline {section}{\numberline {B}Equilibria and stability}{31}{appendix.1.B}%
+\contentsline {section}{\numberline {C}Effect of interaction-transmission association on mean fitness}{33}{appendix.1.C}%
+\contentsline {section}{\numberline {D}Reduction principle}{34}{appendix.1.D}%
