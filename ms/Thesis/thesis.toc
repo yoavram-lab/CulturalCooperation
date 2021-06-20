@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {3}Results}{13}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Evolution of cooperation}{13}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Evolution of interaction-transmission association}{20}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Population structure}{22}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Discussion}{26}{section.4}%
-\contentsline {section}{\numberline {A}Local stability criterion}{32}{appendix.1.A}%
-\contentsline {section}{\numberline {B}Effect of interaction-transmission association on mean fitness}{33}{appendix.1.B}%
-\contentsline {section}{\numberline {C}Reduction principle}{34}{appendix.1.C}%
+\contentsline {subsection}{\numberline {3.3}Population structure}{24}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{27}{section.4}%
+\contentsline {section}{\numberline {A}Local stability criterion}{33}{appendix.1.A}%
+\contentsline {section}{\numberline {B}Effect of interaction-transmission association on mean fitness}{34}{appendix.1.B}%
+\contentsline {section}{\numberline {C}Reduction principle}{35}{appendix.1.C}%
