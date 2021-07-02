@@ -679,9 +679,9 @@ We now focus on the evolution of interaction-transmission association, assuming 
 Note that for a stable polymorphism, there must be horizontal bias for defection, $T_A < T_B$, and an intermediate cost of cooperation, $\gamma_2 < c < \gamma_1$ (\autoref{eq:cost_thresholds_v_threshold}), see \autoref{fig:equilibria_v1}b.
 The equilibrium population mean fitness is $\bar{w}^* = 1 + \hat{p}^*(b-c)$, which is increasing in $\hat{p}^*$, and $\hat{p}^*$ is increasing in $\alpha$ (Appendix~\ref{sec:appendixB}).
 Therefore, $\bar{w}^*$ increases as $\alpha$ increases.
-But can this population-level advantage lead to the evolution of $\alpha$? 
+But can this population-level advantage lead to the evolution of increased $\alpha$? 
 
-To answer this question, we add a ``modifier locus''~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines the value of $alpha$ but has no direct effect on fitness.
+To answer this question, we add a ``modifier locus''~\citep{Feldman1972,Liberman1986general,Liberman1986modifiers,Liberman1988} that determines the value of $\alpha$ but has no direct effect on fitness.
 This locus has two alleles, $M$ and $m$, which induce interaction-transmission associations $\alpha_1$ and $\alpha_2$, respectively.
 Suppose that the population has evolved to a stable equilibrium $\hat{p}^*$  when only allele $M$ is present.
 We study the local stability of this equilibrium to invasion by the modifier allele $m$; this is called ``external stability'' \citep{Liberman1986modifiers,Altenberg2017}.
@@ -733,7 +733,7 @@ The frequencies of the pheno-genotypes in the next generation are defined by the
 %\end{equation}
 where $x=\hat{p}_1+\hat{p}_3$ is the total frequency of the cooperative phenotype $A$, and $\bar{w} = 1 + (b-c) x$ is the population mean fitness.% and $\vec{\dot{p}} = (\dot{p}_1,\dot{p}_2,\dot{p}_3,\dot{p}_4)$.
 
-The equilibrium where only allele $M$ is present is  $\vec{\hat{p}^*} = (\hat{p}^*, 1-\hat{p}^*, 0, 0)$, where
+The stable equilibrium where only allele $M$ is present is  $\vec{\hat{p}^*} = (\hat{p}^*, 1-\hat{p}^*, 0, 0)$, where
 \begin{equation} \label{eq:p_tilde_star_alpha_1}
 \hat{p}^*=
 \frac{\alpha bvT_A - cv(1-T_B) + (T_A-T_B)}{\big[c(1-v) - b (1-\alpha_1 v)\big] (T_A-T_B)} \;,
@@ -762,7 +762,7 @@ The latter is the external stability matrix: the linear approximation to the tra
 \end{aligned}
 \end{equation}
 
-Because we assume that $\vec{\dot{p}^*}$ is internally stable (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
+Because we already assumed that $\vec{\dot{p}^*}$ is internally stable at the beginning of the analysis (i.e. locally stable to small perturbations in the frequencies of $AM$ and $BM$), the stability of 
 $\vec{\dot{p}^*}$ is determined by the eigenvalues of the external stability matrix $\cl^*_{ex}$.
 This is a positive matrix, and due to the Perron-Frobenius theorem, the leading eigenvalue of $\cl^*_{ex}$ is real and positive.
 Thus, if the leading eigenvalue is less (greater) than one, then the equilibrium $\vec{\dot{p}^*}$ is externally stable (unstable) and allele $m$ cannot (can) invade the population of allele $M$. 
@@ -770,8 +770,7 @@ The eigenvalues of $\cl^*_{ex}$ are the roots of the characteristic polynomial, 
 which is a quadratic with a positive leading coefficient. Therefore, $\lim_{\lambda \to \pm \infty} R(\lambda) = \infty$, and the leading eigenvalue is less than one (implying stability) if and only if $R(1)>0$ and $R'(1)>0$.
 Thus, a sufficient condition for external instability of $\vec{\dot{p}^*}$ is $R(1) < 0$.
 $R(\lambda)$ is defined as a determinant, $R(\lambda)=\det(\cl^*_{ex} - \lambda \ci)$, where $\ci$ is the 2-by-2 identity matrix. 
-We did a full analysis without SymPy for the special case when $v=1$ (see Appendix~\ref{sec:appendixC}).
-We will use SymPy\citep{Meurer2017}, a Python library for symbolic mathematics to simplify $R(1)$ in the general case when $0<v\leq 1$. 
+We will use SymPy \citep{Meurer2017}, a Python library for symbolic mathematics to simplify $R(1)$ in the general case when $0<v\leq 1$ (We did a full analysis without SymPy for the special case when $v=1$ in Appendix~\ref{sec:appendixC}),
 \begin{equation} \label{eq:value_at_1}
   \begin{aligned}
   R(1) &= \frac{c v \hat{p}^*[T_Ab\hat{p}^{*2}(v\alpha_2-1)-2T_Ab\hat{p}^*v\alpha_2 + T_Ab\hat{p}^*(1+v\alpha_2)]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1} \\
@@ -780,23 +779,18 @@ We will use SymPy\citep{Meurer2017}, a Python library for symbolic mathematics t
   &+ \frac{c v \hat{p}^*[T_Bc\hat{p}^*(1-v) + T_Bcv(1-\hat{p}^*+T_B(\hat{p}^*-1)+cv(\hat{p}^*-1))]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1}
   \end{aligned}
 \end{equation}
-As explained, we should find when $R(1)<0$. We know that when $\alpha_1 = \alpha_2$, $R(1)=0$. 
-Now, let's assume that $\alpha_2 = \alpha_1 + \epsilon$. The derivative of $R(1)$ by $\epsilon$ will give us better understand about the sign of $R(1)$ when $\alpha_2<\alpha_1$.
-\begin{equation} \label{eq:value_at_1_derivative}
-  \frac{\partial R(1)}{\partial \epsilon} = \frac{c b  v^2 \hat{p}^*[T_A\hat{p}^{*2}-2T_A\hat{p}^* + T_A-T_B\hat{p}^{*2}+T_B\hat{p}^*]}{b\hat{p}(b\hat{p}^*-2\hat{p}^*+2)+c\hat{p}^*(c\hat{p}^*-2)+1} 
-\end{equation}
-We can simplify \autoref{eq:value_at_1_derivative}
+We should find when $R(1)<0$. Using SymPy we saw that when $\alpha_1=\alpha_2$, $R(1)=0$ which means that there is an eigenvalue that is equal to 1.
+Now, assume that $\epsilon = \alpha_2 - \alpha_1$. Using the derivative of $R(1)$ with respect to $\epsilon$ we will find the sign of $R(1)$ when $\alpha_2<\alpha_1$.
 \begin{equation} \label{eq:value_at_1_derivative_simplify}
-  \frac{\partial R(1)}{\partial \epsilon} = \frac{c b v^2 \hat{p}^*[(T_A-T_B)\hat{p}^{*2}+(T_B-2T_A)\hat{p}^* + T_A]}{(b\hat{p}^*-c\hat{p}^*)^2+2\hat{p}^*(b-c)+1} 
+  \frac{\partial R(1)}{\partial \epsilon} = \frac{c b v^2 \hat{p}^*[(T_A-T_B)\hat{p}^{*2}+(T_B-2T_A)\hat{p}^* + T_A]}{(\hat{p}^*(b-c)+1)^2} 
 \end{equation}
-Since $b>c$ the denominator is always positive. The numerator is quadratic polynomial of $\hat{p}^*$ with the following roots:
+The denominator is always positive. The numerator is quadratic polynomial of $\hat{p}^*$ with the following roots:
 \begin{equation} \label{eq:numerator_roots}
-  \hat{p}^*_1 = \frac{T_A}{T_A-T_B} \hat{p}^*_2 = 1
+  \hat{p}^*_1 = \frac{T_A}{T_A-T_B} \,\,\,\, \hat{p}^*_2 = 1
 \end{equation}
-$\hat{p}^*_1 < 0$ since $T_B>T_A$ and since the quadratic polynomial has negative leading coefficient then the numerator is positive for every $\hat{p}^*_1<\hat{p}^*<1$ which is always true.
-We found that derivative of $R(1)$ by $\epsilon$ is positive for every $\epsilon$. 
-Therefore, $R(1)$ grows as $\epsilon$ grows, or in other words as $\alpha_2-\alpha_1$ grows.
-Thus, $R(1)<0$ if and only if $\alpha_2<\alpha_1$. This is a sufficient condition  for external instability.
+We assumed $T_B > T_A$ thus, $\hat{p}^*_1<0$. The quadratic polynomial has negative leading coefficient ($T_A-T_B$), and therefore,the numerator is positive for any $\hat{p}^*_1<\hat{p}^*<1$.
+Thus, the derivative of $R(1)$ with respect to $\epsilon$ is positive for any $\epsilon$ and R(1) grows as $\alpha_2-\alpha_1$ grows. 
+Therefore, because $R(1)$ grows as $\alpha_2-\alpha_1$ grows and $R(1)=0$ when $\alpha_2-\alpha_1=0$, we get that $R(1)<0$ if and only if $\alpha_2<\alpha_1$. This is a sufficient condition  for external instability.
 In addition, we also saw that $\frac{\partial R(1)}{\partial \epsilon} > 0$ for every $\epsilon$ which makes $\alpha_2<\alpha_1$ necessary and sufficient condition for successful invasion (external instability).
 
 
