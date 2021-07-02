@@ -180,18 +180,18 @@ or when an individual interacts with an individual of a different phenotype,  ex
 Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because it diminishes the effect of selection (due to non-vertical transmission from non-reproducing individuals~\citep{ram2018evolution}).
 
 To understand the evolution of cooperation we are going to use \emph{replicator dynamics}. The replicator in replicator dynamics has the ability to make one or more copies of itself.
-The replicator can be a gene, a phenotype, a stragey in a game and etc. In cooperation context replicator is a different stragey in the game, whether the individual is a cooperative or a defector.
+The replicator can be a gene, a phenotype, a strategy in a game and etc. In evolutionary game theory context replicator is a different strategy in the game. For example, in the case of cooperation whether the individual is a cooperative or a defector.
 In replicator dynamics we assume large population of replicators, which interact with respect to their proportion.
 Those interactions of different replicator affect the fitness acorrding to some payoff matrix. The payoff matrix depands on the game which is played. 
 The most common game to describe cooperation is prisoner's dilemma\citep{nowak1992tit}.
-Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable Stragey (ESS)}.
-Such strategies cannot be invaded by any other strategy that is initially rare. Evolutionarily stable stragey maximizes the expected fitness of its chooser and therefore, causing maximum mean fitness.
+Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable strategy (ESS)}.
+Such strategies cannot be invaded by any other strategy that is initially rare. Evolutionarily stable strategy maximizes the expected fitness of its chooser and therefore, causing maximum mean fitness.
 An interesting and fundamental question is to verify whether natural selection, operating within the framework of known genetical models leads to ESS.
-Note that usually natural selection does not lead to an increase in the average mean fitness of the population. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an optimal population strategy.
-%DC: I need reference for the statement above
-Instead of searching evolutionarily stable stragey, we focus on \emph{Evolutionary Genetic Stblility (EGS)}\citep{lessard1990evolutionary}. EGS is when the frequency of types (geneotype, phenotype etc.) stays the same.
+The answer to the question above is that natural selection usually does not lead to an increase in the average mean fitness of the population. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an ESS.
+\citet{sacks1967stable} even showed that natural selection at a diploid locus model when relative fitnesses of the different genotypes are functions of gene frequency leads to stable equilibrium gene frequency that corresponds to minimum mean fitness.
+Instead of searching evolutionarily stable strategy, we focus on \emph{Evolutionary Genetic Stblility (EGS)}\citep{lessard1990evolutionary}. EGS is when the frequency of types (genotype, phenotype etc.) stays the same.
 Here, we study both local stability and external stability. Equilibrium is consider \emph{Local stability} when a system near the equilibrium approaches it.
-\emph{External stability} is a  local stability of the equilibrium to invasion by the modifier allele m. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is external unstable.
+\emph{External stability}\citep{Liberman1986modifiers,Altenberg2017} is a local stability of the equilibrium to invasion by the modifier allele m. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is external unstable.
 
 
 \citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
@@ -615,9 +615,9 @@ With no bias in horizontal transmission, $T_A = T_B$, phenotype frequencies do n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 Cooperation and defection can coexist at frequencies $\hat{p}^*$ and $1-\hat{p}^*$ (\autoref{eq:general_equilibrium}). 
 When it is feasible, this equilibrium is stable or unstable under the conditions of Result \ref{result:vert_obli_hori}, parts 3 and 4, respectively. The yellow and blue areas in Figures~\ref{fig:equilibria_v1} and \ref{fig:equilibria} show cases of stable and unstable polymorphism, respectively.
-When $\hat{p}^*$ is unstable, cooperation will fix if its initial frequency is $\hat{p}>\hat{p}^*$, and defection will fix if $\hat{p}<\hat{p}^*$.
+When $\hat{p}^*$ is unstable, cooperation will fix if its initial frequency is $\hat{p}>\hat{p}^*$, and defection will fix if $\hat{p}<\hat{p}^*$ as shown in \autoref{fig:time_series}a.
 $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperation, $T_A>T_B$, and the cost is intermediate, $\gamma_1 < c < \gamma_2$.
-\autoref{fig:equilibria_v1}d shows $\hat{p}'-\hat{p}$ as a function of $\hat{p}$.
+\autoref{fig:equilibria_v1}d shows $\hat{p}'-\hat{p}$ as a function of $\hat{p}$ and \autoref{fig:time_series} shows the frequency of cooperation over time in both stable and unstable equilibrium regimes.
 
 \begin{figure}[p]
   \centering       
@@ -668,7 +668,7 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
     The figure shows the frequency of cooperation over time (generations) starting from different initial frequencies.
     In \textbf{(a)} the system has unstable equilibrium and therefore, all the curves are moving away from it.
     In \textbf{(b)} the system has stable equilibrium and therefore, all the curves moves towards it. 
-    Here, $T_A = 0.5$, $c = 0.5$,  $v=0.59$ and \textbf{(a)} $T_B = 0.4$, $\alpha=0.1$ and $b=1.2$. \textbf{(b) $T_B=0.7$, $\alpha=0.6$ and $b=2.3$}.}
+    Here, $T_A = 0.5$, $c = 0.5$,  $v=0.59$ and \textbf{(a)} $T_B = 0.4$, $\alpha=0.1$ and $b=1.2$. \textbf{(b)} $T_B=0.7$, $\alpha=0.6$ and $b=2.3$.}
     \label{fig:time_series}
 \end{figure}
 
