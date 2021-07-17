@@ -263,10 +263,10 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 v \dot{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
-Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
+Individuals are assumed to interact according to a \emph{Prisoner's Dilemma}.
 Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}a shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
-The choise of prisoner's dilemma as the interaction model was motividated by the fact that prisoner's dilemma is a common game used to study evolution of cooperation\citep{axelrod1981evolution}, \citep{milinski1987tit}, \citep{nowak1992tit}.
-Although we decided to focus on prisoner's dilemma, other games such as stag hunt\citep{skyrms2004stag} may be a better explaination of cooperation behavior in humman\citep{tomasello2012two}.
+The choise of Prisoner's Dilemma as the interaction model was motividated by the fact that prisoner's dilemma is a common game used to study evolution of cooperation\citep{axelrod1981evolution}, \citep{milinski1987tit}, \citep{nowak1992tit}.
+Although we decided to focus on Prisoner's Dilemma, other games such as stag hunt\citep{skyrms2004stag} may be a better explaination of cooperation behavior in humman\citep{tomasello2012two}.
 
 %%% Figure: model illustration - basic model
 \begin{figure}[pt]
@@ -274,8 +274,8 @@ Although we decided to focus on prisoner's dilemma, other games such as stag hun
   \includegraphics[width=0.7\textwidth]{../PRSB_figures/fig_1.pdf}
   \caption{\textbf{Model illustration.} 
   \textbf{(a)}~First, offspring inherit their parent's phenotype via vertical cultural transmission with probability $v$, or the phenotype of a random non-parental adult via oblique cultural transmission with probability $1-v$.
-  \textbf{(b)}~Second, adults socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
-  \textbf{(c)}~The prisoner's dilemma payoff matrix shows the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
+  \textbf{(b)}~Second, adults socially interact in pairs in a Prisoner's Dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
+  \textbf{(c)}~The Prisoner's Dilemma payoff matrix shows the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
     \textbf{(d)}~The probabilities of successful horizontal cultural transmission of phenotypes $A$ (cooperator) and $B$ (defector) are $T_A$ and $T_B$, respectively.
     }
   \label{fig:illustration}
@@ -396,7 +396,7 @@ Consider a  population colonizing a two-dimensional grid of size 100-by-100, whe
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
-initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{fig:illustration}c) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
+initiators interact with a random neighbor (i.e. individual in a neighboring site) in a Prisoner's Dilemma game (\autoref{fig:illustration}c) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
 The expected number of each of these interactions per individual per generation is one, but the realized number of interactions can be zero, one, or even more than one, and in every interaction both individuals are affected, not just the initiator.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
 On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in neighbourhoods close to the grid border.
@@ -930,7 +930,7 @@ Moreover, this structured population model demonstrates that our parameter for i
 % Discussion
 \newpage
 \section{Discussion}
-Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of a prisoner's dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}, Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
+Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of a Prisoner's Dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}, Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
 Importantly, cooperation can increase when initially rare (i.e. invade a population of defectors) if and only if, rewriting inequality~\ref{eq:unequal_transmission_from_rarity_general_case},
 $
 c \cdot v (1-T_B) < b \cdot v \alpha T_A + (T_A - T_B) \;,
@@ -960,7 +960,7 @@ Unlike \emph{conditional cooperation}, interaction-transmission association can 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to incorporate such genetic modification of cultural transmission into our model. %DC: let's discuss it maybe we can do it.
 \citet{woodcock2006significance} stressed the significance of non-vertical transmission for the evolution of cooperation and
-carried out simulations with prisoner's dilemma payoffs but without horizontal transmission or interaction-transmission association ($\alpha=0$).
+carried out simulations with Prisoner's Dilemma payoffs but without horizontal transmission or interaction-transmission association ($\alpha=0$).
 Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
 He further hypothesized that horizontal transmission can play an important role in the evolution of cooperation, and our results provide strong evidence for this hypothesis. 
 
@@ -987,7 +987,7 @@ Thus, with horizontal transmission, ``assortment between focal cooperative playe
 environment''~\citep{Fletcher2009assortment} is generated not because the helper is likely to be helped, but rather because the helped is likely to become a helper.
 
 
-In this work, we have studied a cultural evolution model in which interactions are modeled as a prisoner's dilemma game.
+In this work, we have studied a cultural evolution model in which interactions are modeled as a Prisoner's Dilemma game.
 We also assumed that in each generation individuals have only one meaningful interaction.
 It would be interesting to investigate a model in which multiple games are played in each generation. 
 This would make the model more realistic and more complicated to solve. To overcome the math complication, a numerical simulations can be used. 
@@ -995,6 +995,10 @@ The model can be further expand by changing the game to Stag Hunt game. \citet{t
 Humans often collobrate in Stag Hunt type situations in which all participants had alternatives but anticipated an even greater benefit from
 successful capturing of the stag\citep{mitani2012evolution}. 
 
+In our model we assumed that the model variables such as vertical transmission($v$), horizontal transmission ($T_A \,, T_B$), benfit from cooperartion ($b$) and etc. do not change over time.
+However, in reality things are changing. For example, during different time of the year, behavior can be changed due to weather \citep{azcarate2007microclimatic}, predator abundance \citep{briffa2008comparing} and food abundance \citep{johnson2001foraging}.
+This could lead to changes in the model's parameters.
+Further investigation is needed to learn about the effect of this change in behavior.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
