@@ -29,6 +29,10 @@ headheight=12pt
 \usepackage[title,page]{appendix}
 \usepackage{chngcntr}
 %\usepackage{endfloat}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
       
 %SetFonts
 % newtxtext+newtxmath
@@ -100,12 +104,37 @@ headheight=12pt
 \date{\today}
 
 \begin{document}
-\maketitle
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.4\textwidth]{IDC_logo}\par\vspace{1cm}
+	{\huge Interdisciplinary Center Herzliya \par}
+	{\Large Efi Arazi School of Computer Science \par}
+	{\Large M.Sc. Program - Research Track \par}
 
+	\vspace{1.5cm}
+	{\Huge Non-Vertical Cultural 
+  Transmission, 
+  Assortment, and the 
+  Evolution of 
+  Cooperation \par}
+	\vspace{1.5cm}
+	{\large by\par}
+	{\Large\bfseries Dor Cohen\par}
+	\vspace{1cm}
+	{\large Supervised by Dr. Yoav Ram\par}
+	{School of Zoology, Faculty of Life Sciences, Tel Aviv University\par}
 
-\pagebreak
-{\large This work was carried out under the supervision of \textbf{Dr. Yoav Ram} from the School of Zoology, Faculty of Life Sciences, Tel Aviv University.}
-\pagebreak
+	\vspace{1cm}
+	{M.Sc. dissertation, submitted in partial fulfillment of the requirements\par}
+	{for the M.Sc. degree, research track, School of Computer Science\par}
+	{Interdisciplinary Center Herzliya}
+
+	\vspace{1cm}
+	% Bottom of the page
+	{\large \monthyeardate\today \par}
+
+\end{titlepage}
+
 
 {\huge \begin{center} \textbf{Abstract} \end{center}}
 
@@ -959,7 +988,7 @@ This would make the model more realistic and more complicated to solve. To overc
 The model can be further expanded by changing the game to Stag Hunt game. \citet{tomasello2012two} claim that Stag Hunt game can better explain evolution of cooperation in humans,
 because humans often collobrate in Stag Hunt type situations in which all participants had alternatives but anticipated an even greater benefit from
 successful capturing of the stag \citep{mitani2012evolution}. Therefore, changing the model so each interaction would be model as Stag Hunt game could help us better understand cooperartion in humans.
-
+e
 In our model we assumed that the model parameters such as vertical transmission($v$), horizontal transmission ($T_A \,, T_B$), benfit from cooperartion ($b$), cost of cooperartion ($c$) and interaction-transmission association ($\alpha$) do not change over time.
 However, in reality things are changing. For example, during different time of the year, behavior can be changed due to weather \citep{azcarate2007microclimatic}, predator abundance \citep{briffa2008comparing} and food abundance \citep{johnson2001foraging}.
 This could lead to changes in the model parameters.

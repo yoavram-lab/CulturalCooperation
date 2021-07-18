@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={130mm,205mm},
+    left=2.54cm,
+    right=2.54cm,
+    top=2.54cm,
+    bottom=2.54cm,
+    headheight=12pt
+}
+\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[unicode=true,colorlinks=true,urlcolor=CadetBlue,citecolor=black,linkcolor=black]{hyperref}
+\usepackage[dvipsnames,table,xcdraw]{xcolor}
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.6\textwidth}
+\usepackage[toc,page]{appendix}
+\usepackage{pdfpages}
+\usepackage{multirow}
+\setlength\epigraphrule{0pt}
+\usepackage[labelfont=bf,labelsep=period]{caption}
+\usepackage{float}
+\usepackage{mathptmx}
+
+% TOC depth
+\setcounter{tocdepth}{2}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+
+
+\renewcommand{\lstlistingname}{Source Code}% Listing -> Source code
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.4,0}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    language=Python, 
+    basicstyle=\fontsize{10}{15}\ttfamily,
+    numbers=left,
+    escapeinside={(*}{*)},
+    keywordstyle=\ttfamily
+}
+\lstset{style=mystyle}
+
+\renewcommand{\ttdefault}{pcr}
+
+\newcommand{\insilico}{\textit{in-silico} }
+\newcommand{\loss}{\mathcal{L}}
+
+% Two lines from genres
+\def\@cite#1#2{(#1\if@tempswa , #2\fi)}
+\def\@biblabel#1{}
+
+% Species names
+%% Meta-Command for defining new species macros
+\usepackage{xspace}
+
+\newcommand{\species}[3]{%
+  \newcommand{#1}{\gdef#1{\textit{#3}\xspace}\textit{#2}\xspace}}
+  
+\species{\yeast}{Saccharomyces cerevisiae}{S.~cerevisiae}
+\species{\ecoli}{Escherichia coli}{E.~coli}
+
+% Natbib
+\usepackage[round,colon,authoryear]{natbib}
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+% !TeX spellcheck = en_US
+%Interdiciplinary spelling
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.4\textwidth]{IDC_logo}\par\vspace{1cm}
+	{\huge Interdisciplinary Center Herzliya \par}
+	{\Large Efi Arazi School of Computer Science \par}
+	{\Large M.Sc. Program - Research Track \par}
+
+	\vspace{1.5cm}
+	{\Huge TITLE \par}
+	\vspace{1.5cm}
+	{\large by\par}
+	{\Large\bfseries Dor Cohen\par}
+	\vspace{1cm}
+	{\large Supervised by Dr. Yoav Ram\par}
+	{School of Zoology, Faculty of Life Sciences, Tel Aviv University\par}
+
+	\vspace{1cm}
+	{M.Sc. dissertation, submitted in partial fulfillment of the requirements\par}
+	{for the M.Sc. degree, research track, School of Computer Science\par}
+	{Interdisciplinary Center Herzliya}
+
+	\vspace{1cm}
+	% Bottom of the page
+	{\large \monthyeardate\today \par}
+
+\end{titlepage}
+
+\pagebreak
+
+\section*{Abstract}
+Abstract-goes-here
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\end{document}
