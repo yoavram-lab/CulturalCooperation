@@ -9,5 +9,5 @@
 \contentsline {subsection}{\numberline {3.3}Population structure}{25}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Discussion}{28}{section.4}%
 \contentsline {section}{\numberline {A}Local stability criterion}{34}{appendix.1.A}%
-\contentsline {section}{\numberline {B}Effect of interaction-transmission association on mean fitness}{35}{appendix.1.B}%
-\contentsline {section}{\numberline {C}Reduction principle}{36}{appendix.1.C}%
+\contentsline {section}{\numberline {B}Effect of interaction-transmission association on mean fitness}{34}{appendix.1.B}%
+\contentsline {section}{\numberline {C}Reduction principle}{35}{appendix.1.C}%

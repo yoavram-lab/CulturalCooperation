@@ -131,7 +131,7 @@ Nevertheless, cooperative behavior appears to occur in many animals~\citep{dugat
 Evolution of cooperative behavior has been an important focus of research in evolutionary theory since at least the 1930s~\citep{Haldane1932book}.
 Since the work of  \citet{hamilton1964genetical} and \citet{axelrod1981evolution}, theories for the evolution of cooperative and altruistic behaviors have been intertwined often under the rubric of \emph{kin selection}.
 Kin selection theory posits that natural selection is more likely to favor cooperation between more closely related individuals.
-The importance of \emph{relatedness} to the evolution of cooperation and altruism was demonstrated by \citet{hamilton1964genetical}, who showed that an allele that determines cooperative behavior will increase in frequency if the reproductive cost to the actor that cooperates, $c$, is less than the benefit to the recipient, $b$, times the relatedness, $r$, between the recipient and the actor.
+The importance of \emph{relatedness} to the evolution of cooperation and altruism was demonstrated by \citet{hamilton1964genetical}, who showed that an allele that determines cooperative behavior will increase in frequency if the reproductive cost to the actor that cooperates, $c$, is less than the benfit to the recipient, $b$, times the relatedness, $r$, between the recipient and the actor.
 This condition is  known as \emph{Hamilton's rule}:
 \begin{equation} \label{eq:hamilton_rule}
 c < b \cdot r,
@@ -952,7 +952,20 @@ Our deterministic model provides a good approximation to outcomes of simulations
 In these structured populations interaction-transmission association arises due to both social interactions and horizontal cultural transmission being local (\autoref{fig:spatial} and \autoref{fig:spatial_local_selection}).
 We did not find any significant difference between local and global selection. 
 
-Another mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community – provided that cooperation is already at a high frequency.
+In this work, we have studied a cultural evolution model in which interactions are modeled as a Prisoner's Dilemma game.
+We also assumed that in each generation individuals have only one meaningful interaction.
+It would be interesting to investigate a model in which multiple games are played in each generation. 
+This would make the model more realistic and more complicated to solve. To overcome the math complication, numerical simulations can be used. 
+The model can be further expanded by changing the game to Stag Hunt game. \citet{tomasello2012two} claim that Stag Hunt game can better explain evolution of cooperation in humans,
+because humans often collobrate in Stag Hunt type situations in which all participants had alternatives but anticipated an even greater benefit from
+successful capturing of the stag \citep{mitani2012evolution}. Therefore, changing the model so each interaction would be model as Stag Hunt game could help us better understand cooperartion in humans.
+
+In our model we assumed that the model parameters such as vertical transmission($v$), horizontal transmission ($T_A \,, T_B$), benfit from cooperartion ($b$), cost of cooperartion ($c$) and interaction-transmission association ($\alpha$) do not change over time.
+However, in reality things are changing. For example, during different time of the year, behavior can be changed due to weather \citep{azcarate2007microclimatic}, predator abundance \citep{briffa2008comparing} and food abundance \citep{johnson2001foraging}.
+This could lead to changes in the model parameters.
+Further investigation is needed to learn about the effect of such changes in behavior.
+
+Mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community – provided that cooperation is already at a high frequency.
 Unlike \emph{conditional cooperation}, interaction-transmission association can sustain cooperation in a community even if cooperation is initially rare. 
 \citet{morsky2020false} suggested that false beliefs on the frequencies of the cooperator can affect the individual decision whether to cooperate or not. If the individual over-estimates the number of cooperators it will be more likely to cooperate. This false belief can help sustain cooperation even if cooperartion is initially rare. 
 
@@ -985,20 +998,6 @@ infection by behavior-determining microbes during interactions effectively gener
 Cultural horizontal transmission can similarly generate assortment between cooperators and enhance the benefit of cooperation if cultural transmission and helping interactions occur between the same individuals, i.e. when there is interaction-transmission association, so that the recipient of help may also be the recipient of the cultural trait for cooperation. 
 Thus, with horizontal transmission, ``assortment between focal cooperative players and cooperative acts in their interaction
 environment''~\citep{Fletcher2009assortment} is generated not because the helper is likely to be helped, but rather because the helped is likely to become a helper.
-
-
-In this work, we have studied a cultural evolution model in which interactions are modeled as a Prisoner's Dilemma game.
-We also assumed that in each generation individuals have only one meaningful interaction.
-It would be interesting to investigate a model in which multiple games are played in each generation. 
-This would make the model more realistic and more complicated to solve. To overcome the math complication, a numerical simulations can be used. 
-The model can be further expand by changing the game to Stag Hunt game. \citet{tomasello2012two} claim that Stag Hunt game can better explain evolution of cooperation in humans. 
-Humans often collobrate in Stag Hunt type situations in which all participants had alternatives but anticipated an even greater benefit from
-successful capturing of the stag\citep{mitani2012evolution}. 
-
-In our model we assumed that the model variables such as vertical transmission($v$), horizontal transmission ($T_A \,, T_B$), benfit from cooperartion ($b$) and etc. do not change over time.
-However, in reality things are changing. For example, during different time of the year, behavior can be changed due to weather \citep{azcarate2007microclimatic}, predator abundance \citep{briffa2008comparing} and food abundance \citep{johnson2001foraging}.
-This could lead to changes in the model's parameters.
-Further investigation is needed to learn about the effect of this change in behavior.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1054,7 +1053,7 @@ f'(1) - O(1-p) < 0 \;.
 Therefore, if $f'(1)<0$ then there exists $\epsilon>0$ such that for any $1-\epsilon<1-p<1$ we have $1-p'<1-p$; that is, $p'$ is closer to one than $p$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+
 \section{Effect of interaction-transmission association on mean fitness} \label{sec:appendixB}
 
 To determine the effect of increasing $\alpha$ on the stable population mean fitness, $\bar{w}^*=1+(b-c)\hat{p}^*$, we must analyze its effect on $\hat{p}^*$, 
@@ -1075,7 +1074,7 @@ Thus, the population mean fitness increases as interaction-transmission associat
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage
+\
 \section{Reduction principle} \label{sec:appendixC}
 Here, we assume perfect vertical transmission $v=1$. We start from \autoref{eq:external_stability_matrix} and we substitute $v=1$ and we get
 \begin{equation} \label{eq:external_stability_matrix_v1}
@@ -1176,7 +1175,7 @@ Combining inequalities~\ref{eq:R1_less} and~\ref{eq:c_gamma1_utility}, we find t
 Therefore, if $\alpha_2$, the interaction-transmission association of the invading modifier allele $m$, is less than $\alpha_1$, the interaction-transmission association of the resident allele $M$, then invasion will be successful.
 
 Determining a necessary and sufficient condition for successful invasion is more complicated, requiring analysis of the sign of $R'(1)$.
-We did it in the general case (starting from \autoref{eq:value_at_1_derivative}).
+We did it in the general case (starting from \autoref{eq:value_at_1_derivative_simplify}).
   
 \end{appendices}
 \end{document}
