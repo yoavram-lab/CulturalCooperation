@@ -145,53 +145,35 @@ They argue that altruism without relatedness can not evolve. They refer us to Ha
 Wilson also criticises kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, Foster et al. \cite{foster2006kin} argue that kin selection does not ignore ecology. 
 Hamilton’s rule shows that environmental factors causing a high benefit: cost ratio will favour cooperation.
 
-Beside kin selection, two more major theroies were suggested to explain to evolution of cooperation.
+Beside kin selection, two other major theroies were suggested to explain to evolution of cooperation.
 
 \textbf{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. 
 In \textit{direct reciprocity} there are a repeated encounters between the same two individuals. In every encounter, each player has a choice between cooperation and defection. If I cooperate now, you may cooperate later. Hence, it may pay off to cooperate.
-This game-theoretic framework is known as the repeated Prisoner's Dilemma. 
-Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit. 
+This game-theoretic framework is known as the \emph{repeated Prisoner's Dilemma}. 
+Direct reciprocity can only lead to the evolution of cooperation if the cost is smaller than $w$ the probability for another encounter between the same two individuals multiplied by the benefit, 
 \begin{equation} \label{reciprocity}
-c<bw
+c<b\cdot w \,.
 \end{equation}
-Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions. In humans, such interactions happen often, for example humans often donate money. 
+Direct reciprocity assumes that both players are in a position to cooperate. Direct reciprocity can not explain cooperation in asymmetric interactions\citep{su2021evolution}. In humans, such interactions happen often, for example, humans donate money. 
 \textit{Indirect reciprocity} has been suggested to explain this behavior. 
-Nowak \cite{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of money. The money that "fuels the engines" of indirect reciprocity is reputation. 
-However, Reciprocity assume repeating interactions and therefore, has difficulty explaining evolution of cooperation if the no repeating interactions occurs. 
+Nowak \cite{nowak2006five} claims that direct reciprocity is like a barter economy based on the immediate exchange of goods, while indirect reciprocity resembles the invention of currercy. The currercy that "fuels the engines" of indirect reciprocity is \emph{reputation}. 
+However, reciprocity assumes repeating interactions and therefore, has difficulty explaining evolution of cooperation if no repeating interactions occurs. 
 
-\textbf{Group Selection} theory posits that cooperation is favoured because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each groups there are cooperators, which help to other group members and defectors which do not help. 
+\textbf{Group Selection} theory posits that cooperation is favoured because of the advantage to the whole group, if selection acts at the group level in addition to the individual level. A common model for group selection work as is: the population is divided into groups. In each group there are cooperators, which help other group members, and defectors, which do not help. 
 Individuals reproduce proportional to their fitness. Offspring are added to the same group.
-If a group reaches a certain size it can split to two groups. A group that grow faster will split more often. Groups of cooperators are growing faster than group of defectors.
-Therefore, cooperation can evolve in this model when the ratio between benefit b and cost c is more than one plus the ratio between the maximum group size n and the number of groups m:
+If a group reaches a certain size it can split to two groups. A group that grows faster will split more often. Groups of cooperators grow faster than groups of defectors.
+Therefore, cooperation can evolve in this model when
 \begin{equation} \label{groupselection}
-\frac{b}{c}>1+\frac{n}{m}
+\frac{b}{c}>1+\frac{n}{m}\, ,
 \end{equation}
+where \emph{n} is the maximum group size and \emph{m} is the number of groups.
+\\
 
 
 All three theories mentioned above assume that cooperation is genetically determined. This raise the question, is it possible that cooperation is determined by environmental or social influences.
-Cooperative behavior can be subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
+Cooperative behavior may be subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
 Cultural transmission may be  modeled as vertical, horizontal, or oblique:  vertical transmission occurs between parents and offspring, horizontal transmission occurs between individuals from the same generation, and oblique transmission occurs  to offspring from the generation to which their parents belong (i.e. from non-parental adults). 
 Evolution under either of these transmission models can be be more rapid than under pure vertical transmission~\citep{cavalli1981cultural,lycett2008questions,ram2018evolution}.
-
-Here, we study models for the cultural evolution of cooperation that include both vertical and non-vertical transmission. 
-In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
-For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
-or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
-Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because it diminishes the effect of selection (due to non-vertical transmission from non-reproducing individuals~\citep{ram2018evolution}).
-
-To understand the evolution of cooperation we are going to use \emph{replicator dynamics}. The replicator in replicator dynamics has the ability to make one or more copies of itself.
-The replicator can be a gene, a phenotype, a strategy in a game and etc. In evolutionary game theory context replicator is a different strategy in the game. For example, in the case of cooperation whether the individual is a cooperative or a defector.
-In replicator dynamics we assume large population of replicators, which interact with respect to their proportion.
-Those interactions of different replicator affect the fitness acorrding to some payoff matrix. The payoff matrix depands on the game which is played. 
-The most common game to describe cooperation is prisoner's dilemma\citep{nowak1992tit}.
-Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{Evolutionarily Stable strategy (ESS)}.
-Such strategies cannot be invaded by any other strategy that is initially rare. Evolutionarily stable strategy maximizes the expected fitness of its chooser and therefore, causing maximum mean fitness.
-An interesting and fundamental question is to verify whether natural selection, operating within the framework of known genetical models leads to ESS.
-The answer to the question above is that natural selection usually does not lead to an increase in the average mean fitness of the population. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an ESS.
-\citet{sacks1967stable} even showed that natural selection at a diploid locus model when relative fitnesses of the different genotypes are functions of gene frequency leads to stable equilibrium gene frequency that corresponds to minimum mean fitness.
-Instead of searching evolutionarily stable strategy, we focus on \emph{Evolutionary Genetic Stblility (EGS)}\citep{lessard1990evolutionary}. EGS is when the frequency of types (genotype, phenotype etc.) stays the same.
-Here, we study both local stability and external stability. Equilibrium is consider \emph{Local stability} when a system near the equilibrium approaches it.
-\emph{External stability}\citep{Liberman1986modifiers,Altenberg2017} is a local stability of the equilibrium to invasion by the modifier allele m. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is external unstable.
 
 
 \citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
@@ -231,8 +213,28 @@ This shows that under a cultural transmission, the condition for the evolutionar
 Both \citet{woodcock2006significance} and \citet{lewin2017microbes} demonstrated that non-vertical transmission can help explain the evolution of cooperative behavior, the former using simulations with cultural transmission, the latter using a model where cooperation is mediated by host-associated microbes.
 Indeed, models in which microbes affect their host's behavior~\citep{lewin2017microbes,lewin2020rockpaperscissors,gurevich2020parental} are mathematically similar to models of cultural transmission, and they also emphasize the role of non-vertical transmission~\citep{cavalli1981cultural}.
 
-\citet{handley2020human} showed the importance of culture on the human behavior. They showed that the probablity of indvidual to cooperate with unrelated strangers from a different group in transient interactions corresponds to the degree of cultural similarity between those groups.
+\citet{handley2020human} studied the importance of culture on human behavior. They showed that the probablity of indvidual to cooperate with unrelated strangers from a different group in transient interactions corresponds to the degree of cultural similarity between those groups.
 Therefore, they have suggested that group-level selection on culturally differentiated populations can explain cooperation between unrelated humans from different groups.
+
+To understand the evolution of cooperation we are going to use \emph{replicator dynamics}. The replicator in replicator dynamics has the ability to make one or more copies of itself.
+The replicator can be a gene, a phenotype, a strategy in a game and etc. In evolutionary game theory context replicator is a different strategy in the game. For example, in the case of cooperation whether the individual is a cooperative or a defector.
+In replicator dynamics we assume large population of replicators, which interact with respect to their frequency.
+Interactions of different replicator affect the fitness acorrding to some payoff matrix. This payoff matrix depands on the game which is played. 
+The most common game to describe cooperation is the \emph{Prisoner's Dilemma}\citep{nowak1992tit}.
+Similar to dominant strategies bringing forth Nash equilibria when games are repeated, strategies in replicator dynamics can become evolutionary stable. Such strategies are called \emph{evolutionarily stable strategies (ESS)}.
+Such strategies cannot be invaded by any other strategy that is initially rare. Evolutionarily stable strategies maximize the expected fitness of its replicators and therefore, maximize the population mean fitness.
+A fundamental question is to test if natural selection, operating within the framework of known genetical models, leads to ESS.
+The answer to the question above is that natural selection in many cases does not lead to an increase in the population mean fitness. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an ESS.
+\citet{sacks1967stable} even showed that natural selection at a diploid locus model, when relative fitnesses of the different genotypes are functions of gene frequency, leads to stable equilibrium gene frequencies that corresponds to not maximum mean fitness.
+Instead of searching for evolutionarily stable strategies, we focus on \emph{evolutionary genetic stblility (EGS)}\citep{lessard1990evolutionary}. EGS occurs when the frequencies of types (genotypes, phenotypes etc.) remains stable.
+Here, we study both \emph{local stability} and \emph{external stability}. \emph{Local stability} occurs when a system near the equilibrium wiil approach it.
+\emph{External stability} \citep{Liberman1986modifiers,Altenberg2017} is local stability of the equilibrium to invasion by a modifier allele \emph{m}. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is externally unstable?
+
+Here, we study models for the cultural evolution of cooperation that include both vertical and non-vertical transmission. 
+In our models behavioral changes are mediated by cultural transmission that can occur specifically during social interactions.
+For instance, there may be an association between the choice of partner for social interaction and the choice of partner for cultural transmission,
+or when an individual interacts with an individual of a different phenotype,  exposure to the latter may lead the former to  convert its phenotype.
+Our results demonstrate that cultural transmission, when associated with social interactions, can enhance the evolution of cooperation even when genetic transmission cannot, partly because it facilitates the generation of assortment \citep{Fletcher2009assortment}, and partly because it diminishes the effect of selection (due to non-vertical transmission from non-reproducing individuals~\citep{ram2018evolution}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Models
@@ -241,7 +243,7 @@ Therefore, they have suggested that group-level selection on culturally differen
 
 \subsection{Basic Model}
 \label{section:basicmodel}
-Consider a large population whose members can be one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
+Consider a large population whose members can have one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}a). 
 Following~\citet{ram2018evolution}, given that the parent's phenotype is $\phi$ and assuming uni-parental inheritance~\citep{Zefferman2016}, the conditional probability that the phenotype $\phi'$ of the offspring is $A$ is 
 \begin{equation} \label{eq:vertical_oblique_transmission}
@@ -261,10 +263,10 @@ Therefore, the frequency $\hat{p}$ of  phenotype $A$ among juveniles (after sele
 v \dot{p} + (1-v) p \;.
 \end{aligned}
 \end{equation}
-Individuals are assumed to interact according to a \emph{prisoner's dilemma}.
+Individuals are assumed to interact according to a \emph{Prisoner's Dilemma}.
 Specifically, individuals interact in pairs; a cooperator suffers a fitness cost $0<c<1$, and its partner gains a fitness benefit $b$, where we assume $c<b$. \autoref{fig:illustration}a shows the payoff matrix, i.e. the fitness of an individual with phenotype $\phi_1$ when interacting with a partner of phenotype $\phi_2$.
-The choise of prisoner's dilemma as the interaction model was motividated by the fact that prisoner's dilemma is a common game used to study evolution of cooperation\citep{axelrod1981evolution}, \citep{milinski1987tit}, \citep{nowak1992tit}.
-Although we decided to focus on prisoner's dilemma, other games such as stag hunt\citep{skyrms2004stag} may be a better explaination of cooperation behavior in humman\citep{tomasello2012two}.
+The choise of Prisoner's Dilemma as the interaction model was motividated by the fact that prisoner's dilemma is a common game used to study evolution of cooperation\citep{axelrod1981evolution}, \citep{milinski1987tit}, \citep{nowak1992tit}.
+Although we decided to focus on Prisoner's Dilemma, other games such as stag hunt\citep{skyrms2004stag} may be a better explaination of cooperation behavior in humman\citep{tomasello2012two}.
 
 %%% Figure: model illustration - basic model
 \begin{figure}[pt]
@@ -272,8 +274,8 @@ Although we decided to focus on prisoner's dilemma, other games such as stag hun
   \includegraphics[width=0.7\textwidth]{../PRSB_figures/fig_1.pdf}
   \caption{\textbf{Model illustration.} 
   \textbf{(a)}~First, offspring inherit their parent's phenotype via vertical cultural transmission with probability $v$, or the phenotype of a random non-parental adult via oblique cultural transmission with probability $1-v$.
-  \textbf{(b)}~Second, adults socially interact in pairs in a prisoner's dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
-  \textbf{(c)}~The prisoner's dilemma payoff matrix shows the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
+  \textbf{(b)}~Second, adults socially interact in pairs in a Prisoner's Dilemma game. Horizontal cultural transmission occurs from a random individual in the population, with probability $1-\alpha$, or from the social partner, with probability $\alpha$, where $\alpha$ is the interaction-transmission association parameter.
+  \textbf{(c)}~The Prisoner's Dilemma payoff matrix shows the fitness of phenotype $\phi_1$ when interacting with phenotype $\phi_2$.
     \textbf{(d)}~The probabilities of successful horizontal cultural transmission of phenotypes $A$ (cooperator) and $B$ (defector) are $T_A$ and $T_B$, respectively.
     }
   \label{fig:illustration}
@@ -368,22 +370,21 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \end{table}
 
 \subsection{Invasion Model}
-In this section, we use the model described in \autoref{section:basicmodel}. 
-Here we assume a coexistence of both phenotypes (cooperators and defectors) and that the frequency of each phenotye stays the same each generation.
-Henece, we assume that the we start from one of the equilibrium.
-In addition, we assume that the equilibria is stable.  Denote the frequency of cooperators in the population in $\hat{p}^*$ and frequency of defectors $1-\hat{p}^*$.
+In this section, we extend the model described in \autoref{section:basicmodel}. 
+We assume coexistence of both phenotypes (cooperators and defectors) and that the frequency of each phenotye stays stable over time.
+Hence, we assume that the we start from a stable equilibrium. Denote the frequency of cooperators in the population as $\hat{p}^*$ and frequency of defectors as $1-\hat{p}^*$.
 
-Starting from the assumption described above we want to investigate the evolution of interaction-transmission association $\alpha$.
+We investigate the evolution of interaction-transmission association $\alpha$.
 We assume that the initial population has interaction-transmission association $\alpha_1$. 
-We want to answer the question what would happen to cooperators frequency if a new mutation would occur and change the interaction-transmission association to a different value $\alpha_2$ without direct effect on fitness.
-We can think of this model as an invasion model where the invadors are the individuals with interaction-transmission association $\alpha_2$. \autoref{fig:invasion_illustration} illustrates the invasion.
+What would happen to cooperators frequency if a new mutation would occur that changed the interaction-transmission association to a different value $\alpha_2$ without direct effect on fitness?
+Here, the invaders are the individuals with interaction-transmission association $\alpha_2$. \autoref{fig:invasion_illustration} illustrates the invasion.
 
 %%% Figure: model illustration - invasion model
 \begin{figure}[pt]
   \centering
   \includegraphics[width=0.7\textwidth]{../PRSB_figures/fig_2.pdf}
   \caption{\textbf{Invasion model illustration.} Starting from stable equilibrium with coexistence of both phenotypes. 
-  A mutation that has effect only the interaction-transmission association tries to invade. }
+  A mutation that affected only the interaction-transmission association $\alpha$ invades the population }
   \label{fig:invasion_illustration}
 \end{figure}
 
@@ -395,7 +396,7 @@ Consider a  population colonizing a two-dimensional grid of size 100-by-100, whe
 Each individual is characterized by its phenotype: either cooperator, $A$, or defector, $B$.
 Initially, each site in the grid is randomly colonized by either a cooperator or a defector, with equal probability.
 In each generation, half of the individuals are randomly chosen to "initiate" interactions, and these
-initiators interact with a random neighbor (i.e. individual in a neighboring site) in a prisoners' dilemma game (\autoref{fig:illustration}c) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
+initiators interact with a random neighbor (i.e. individual in a neighboring site) in a Prisoner's Dilemma game (\autoref{fig:illustration}c) and a random neighbor (with replacement) for horizontal cultural transmission (\autoref{fig:illustration}b).
 The expected number of each of these interactions per individual per generation is one, but the realized number of interactions can be zero, one, or even more than one, and in every interaction both individuals are affected, not just the initiator.
 The effective interaction-transmission association $\alpha$ in this model is the probability that the same neighbor is picked for both interactions, or $\alpha=1/M$, where $M$ is the number of neighbors.
 On an infinite grid, $M=8$ (i.e. Moore neighbourhood~\citep{moore1962machine}), but on a finite grid $M$ can be lower in neighbourhoods close to the grid border.
@@ -929,7 +930,7 @@ Moreover, this structured population model demonstrates that our parameter for i
 % Discussion
 \newpage
 \section{Discussion}
-Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of a prisoner's dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}, Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
+Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of a Prisoner's Dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}, Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
 Importantly, cooperation can increase when initially rare (i.e. invade a population of defectors) if and only if, rewriting inequality~\ref{eq:unequal_transmission_from_rarity_general_case},
 $
 c \cdot v (1-T_B) < b \cdot v \alpha T_A + (T_A - T_B) \;,
@@ -949,13 +950,17 @@ In contrast, when the bias is in favor of defection, $T_A<T_B$, higher rates of 
 
 Our deterministic model provides a good approximation to outcomes of simulations of a complex stochastic model with population structure in which individuals can only interact with and transmit to their neighbors.
 In these structured populations interaction-transmission association arises due to both social interactions and horizontal cultural transmission being local (\autoref{fig:spatial} and \autoref{fig:spatial_local_selection}).
-We did not find any significant difference between local and global selection. %DC: can we disucss why there is not difference?
+We did not find any significant difference between local and global selection. 
+
+Another mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community – provided that cooperation is already at a high frequency.
+Unlike \emph{conditional cooperation}, interaction-transmission association can sustain cooperation in a community even if cooperation is initially rare. 
+\citet{morsky2020false} suggested that false beliefs on the frequencies of the cooperator can affect the individual decision whether to cooperate or not. If the individual over-estimates the number of cooperators it will be more likely to cooperate. This false belief can help sustain cooperation even if cooperartion is initially rare. 
 
 
 \citet{feldman1985gene} studied the dynamics of an altruistic phenotype with vertical cultural transmission and a gene that modifies the transmission of the phenotype. Their results are very sensitive to this genetic modification: without it, the conditions for invasion of the altruistic phenotype reduce to Hamilton's rule.
 Further work is needed to incorporate such genetic modification of cultural transmission into our model. %DC: let's discuss it maybe we can do it.
 \citet{woodcock2006significance} stressed the significance of non-vertical transmission for the evolution of cooperation and
-carried out simulations with prisoner's dilemma payoffs but without horizontal transmission or interaction-transmission association ($\alpha=0$).
+carried out simulations with Prisoner's Dilemma payoffs but without horizontal transmission or interaction-transmission association ($\alpha=0$).
 Nevertheless, his results demonstrated that it is possible to sustain altruistic behavior via cultural transmission for a substantial length of time.
 He further hypothesized that horizontal transmission can play an important role in the evolution of cooperation, and our results provide strong evidence for this hypothesis. 
 
@@ -981,12 +986,19 @@ Cultural horizontal transmission can similarly generate assortment between coope
 Thus, with horizontal transmission, ``assortment between focal cooperative players and cooperative acts in their interaction
 environment''~\citep{Fletcher2009assortment} is generated not because the helper is likely to be helped, but rather because the helped is likely to become a helper.
 
-Another mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community – provided that cooperation is already at a high level.
-Unlike \emph{conditional cooperation}, interaction-transmission association can sustain cooperation in community even if cooperation is initially rare. 
-\citet{morsky2020false} suggested that false beliefs on the frequencies of the cooperator can affect the individual decision whether to cooperate or not. If the individual over estimate the number of cooperators it will be more likely to cooperate. This flase belief can help sustain cooperation even if cooperartion is initially rare. 
-% DC: Let's discuss this paragraph - is it good? 
 
+In this work, we have studied a cultural evolution model in which interactions are modeled as a Prisoner's Dilemma game.
+We also assumed that in each generation individuals have only one meaningful interaction.
+It would be interesting to investigate a model in which multiple games are played in each generation. 
+This would make the model more realistic and more complicated to solve. To overcome the math complication, a numerical simulations can be used. 
+The model can be further expand by changing the game to Stag Hunt game. \citet{tomasello2012two} claim that Stag Hunt game can better explain evolution of cooperation in humans. 
+Humans often collobrate in Stag Hunt type situations in which all participants had alternatives but anticipated an even greater benefit from
+successful capturing of the stag\citep{mitani2012evolution}. 
 
+In our model we assumed that the model variables such as vertical transmission($v$), horizontal transmission ($T_A \,, T_B$), benfit from cooperartion ($b$) and etc. do not change over time.
+However, in reality things are changing. For example, during different time of the year, behavior can be changed due to weather \citep{azcarate2007microclimatic}, predator abundance \citep{briffa2008comparing} and food abundance \citep{johnson2001foraging}.
+This could lead to changes in the model's parameters.
+Further investigation is needed to learn about the effect of this change in behavior.
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
