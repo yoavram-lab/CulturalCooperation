@@ -26,9 +26,10 @@ headheight=12pt
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{lipsum}  
-\usepackage[title,page]{appendix}
+\usepackage[title,page,titletoc]{appendix}
 \usepackage{chngcntr}
 %\usepackage{endfloat}
+\usepackage[nottoc,numbib]{tocbibind} % bibliography in toc
 
 \usepackage{datetime}
 \newdateformat{monthyeardate}{%
@@ -44,24 +45,13 @@ headheight=12pt
 %SetFonts
 
 % Line Spacing 
-\linespread{1.25}
+\linespread{1.5}
     
-% Species names
-%% Meta-Command for defining new species macros
-\usepackage{xspace}
-
-\newcommand{\species}[3]{%
-  \newcommand{#1}{\gdef#1{\textit{#3}\xspace}\textit{#2}\xspace}}
-  
-\species{\yeast}{Saccharomyces cerevisiae}{S.~cerevisiae}
-\species{\calbicans}{Candida albicans}{C.~albicans}
-\species{\cneoformans}{Cryptococcus neoformans}{C.~neoformans}
-
 % line numbers
-\usepackage[displaymath, mathlines]{lineno}
-\renewcommand\linenumberfont{\normalfont\small\sffamily}
-\linenumbers
-\modulolinenumbers[2]
+%\usepackage[displaymath, mathlines]{lineno}
+%\renewcommand\linenumberfont{\normalfont\small\sffamily}
+%\linenumbers
+%\modulolinenumbers[2]
 
 % Yoav & Lee commands
 \newcommand*{\tr}{^\intercal}
@@ -99,7 +89,7 @@ headheight=12pt
 \usepackage[numbers,square,comma,sort]{natbib}
 
 % Title page
-\title{Non-Vertical Cultural Transmission, Assortment, \\and the Evolution of Cooperation}
+\title{Non-Vertical Cultural Transmission, Assortment, and the Evolution of Cooperation}
 
 \date{\today}
 
@@ -117,7 +107,7 @@ headheight=12pt
   Assortment, and the 
   Evolution of 
   Cooperation \par}
-	\vspace{1.5cm}
+%	\vspace{1cm}
 	{\large by\par}
 	{\Large\bfseries Dor Cohen\par}
 	\vspace{1cm}
@@ -131,13 +121,13 @@ headheight=12pt
 
 	\vspace{1cm}
 	% Bottom of the page
-	{\large \monthyeardate\today \par}
+	{\large \today \par}
 
 \end{titlepage}
 
 
-{\huge \begin{center} \textbf{Abstract} \end{center}}
-
+% Abstract
+\begin{abstract}
 Cultural evolution of cooperation under vertical and non-vertical cultural transmission is studied, and conditions are found for fixation and coexistence of cooperation and defection. 
 The evolution of cooperation is facilitated by its horizontal transmission and by an association between social interactions and horizontal transmission.
 The effect of oblique transmission depends on the horizontal transmission bias.
@@ -145,8 +135,9 @@ Stable polymorphism of cooperation and defection can occur, and
 when it does, reduced association between social interactions and horizontal transmission evolves, which leads to a decreased frequency of cooperation and lower population mean fitness.
 The deterministic conditions are compared to outcomes of stochastic simulations of structured populations.
 Parallels are drawn with Hamilton's rule incorporating relatedness and assortment.
+\end{abstract}
 
-\pagebreak
+%\pagebreak
 
 \tableofcontents
 \pagebreak
@@ -172,8 +163,7 @@ It has been suggested that kin selection to explain the cooperative behaviour of
 The most significant argument against kin selection is that cooperation can evolve with zero relatedness \cite{wilson2005kin}. This makes Hamilton's rule incomplete according to Wilson \cite{wilson2005kin}. Foster et al. \cite{foster2006kin} reject this claim. 
 They argue that altruism without relatedness can not evolve. They refer us to Hamilton who claimed that relatedness can arise without recent common ancestry. 
 Wilson also criticises kin selection on the grounds that environmental or ecological factors probably be more important than relatedness in determining social actions. On the other hand, Foster et al. \cite{foster2006kin} argue that kin selection does not ignore ecology. 
-Hamilton’s rule shows that environmental factors causing a high benefit: cost ratio will favour cooperation.
-
+Hamilton's rule shows that environmental factors causing a high benefit: cost ratio will favour cooperation.\\
 Beside kin selection, two other major theroies were suggested to explain to evolution of cooperation.
 
 \textbf{Reciprocity} suggests repeating interactions or individual recognition as key factors for explaining the evolution of cooperation. 
@@ -196,8 +186,6 @@ Therefore, cooperation can evolve in this model when
 \frac{b}{c}>1+\frac{n}{m}\, ,
 \end{equation}
 where \emph{n} is the maximum group size and \emph{m} is the number of groups.
-\\
-
 
 All three theories mentioned above assume that cooperation is genetically determined. This raise the question, is it possible that cooperation is determined by environmental or social influences.
 Cooperative behavior may be subject to \emph{cultural transmission}, which allows an individual to acquire attitudes or behavioral traits from other individuals in its social group through imitation, learning, or other modes of communication \citep{cavalli1981cultural,richerson2008not}.
@@ -208,8 +196,7 @@ Evolution under either of these transmission models can be be more rapid than un
 \citet{Eshel1982} studied a related model for the evolution of cooperative behavior.
 Their model included \emph{assortative meeting}, or non-random encounters, where a fraction $m$ of individuals in the population each interact specifically with an individual of the same phenotype, and a fraction $1-m$ interacts  with a randomly chosen individual.  
 Such assortative meeting may be due, for example, to population structure or active partner choice.
-In their model, cooperative behavior can evolve if
-\citep[eq.~3.2]{Eshel1982}
+In their model, cooperative behavior can evolve if~\citep[eq.~3.2]{Eshel1982}
 \begin{equation} \label{eq:eshel1982}
 c < b \cdot m \,,
 \end{equation}
@@ -230,7 +217,6 @@ Cooperation can also evolve when interactions are determined by population struc
 c < b \cdot \frac{1}{k} \,.
 \end{equation}
 They thus interpret $1/k$ as \emph{social relatedness} or \emph{social viscosity}~\citep{Ohtsuki2006}.
-
 
 \citet{feldman1985gene} introduced the first model for the evolution of altruism by cultural transmission with kin selection and demonstrated that if the fidelity of cultural transmission of altruism is $\varphi$, then the condition for evolution of altruism in the case of sib-to-sib altruism is \citep[Eq.~16]{feldman1985gene}
 \begin{equation} \label{eq:feldman1985}
@@ -255,7 +241,8 @@ Such strategies cannot be invaded by any other strategy that is initially rare. 
 A fundamental question is to test if natural selection, operating within the framework of known genetical models, leads to ESS.
 The answer to the question above is that natural selection in many cases does not lead to an increase in the population mean fitness. Therefore, it is not generally true that natural selection does operate as to maximize the average individual fitness resulting in an ESS.
 \citet{sacks1967stable} even showed that natural selection at a diploid locus model, when relative fitnesses of the different genotypes are functions of gene frequency, leads to stable equilibrium gene frequencies that corresponds to not maximum mean fitness.
-Instead of searching for evolutionarily stable strategies, we focus on \emph{evolutionary genetic stblility (EGS)}\citep{lessard1990evolutionary}. EGS occurs when the frequencies of types (genotypes, phenotypes etc.) remains stable.
+Instead of searching for evolutionarily stable strategies, we focus on \emph{evolutionary genetic stblility (EGS)}~\citep{lessard1990evolutionary}.
+EGS occurs when the frequencies of types (genotypes, phenotypes etc.) remains stable.
 Here, we study both \emph{local stability} and \emph{external stability}. \emph{Local stability} occurs when a system near the equilibrium wiil approach it.
 \emph{External stability} \citep{Liberman1986modifiers,Altenberg2017} is local stability of the equilibrium to invasion by a modifier allele \emph{m}. One of the main questions in the evolution of cooperation is under what conditions such invasions are possible, or in other words under what conditions the system is externally unstable?
 
@@ -267,10 +254,10 @@ Our results demonstrate that cultural transmission, when associated with social 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Models
-\newpage
+%\newpage
 \section{Models}
 
-\subsection{Basic Model}
+\subsection{Basic model}
 \label{section:basicmodel}
 Consider a large population whose members can have one of two phenotypes: $\phi=A$ for cooperators or $\phi=B$ for defectors.
 An offspring inherits its phenotype from its parent via vertical transmission with probability $v$ or from a random individual in the parental population via oblique transmission with probability $(1-v)$ (\autoref{fig:illustration}a). 
@@ -398,9 +385,10 @@ $T_A, T_B$ & Horizontal transmission rates of phenotype $A$ and $B$ & $(0,1)$ \\
 \label{table:vars_params}
 \end{table}
 
-\subsection{Invasion Model}
+
+\subsection{Modifier model}
 In this section, we extend the model described in \autoref{section:basicmodel}. 
-We assume coexistence of both phenotypes (cooperators and defectors) and that the frequency of each phenotye stays stable over time.
+We assume coexistence of both phenotypes (cooperators and defectors) and that the frequency of each phenotype stays stable over time.
 Hence, we assume that the we start from a stable equilibrium. Denote the frequency of cooperators in the population as $\hat{p}^*$ and frequency of defectors as $1-\hat{p}^*$.
 
 We investigate the evolution of interaction-transmission association $\alpha$.
@@ -412,13 +400,14 @@ Here, the invaders are the individuals with interaction-transmission association
 \begin{figure}[pt]
   \centering
   \includegraphics[width=0.7\textwidth]{../PRSB_figures/fig_2.pdf}
-  \caption{\textbf{Invasion model illustration.} Starting from stable equilibrium with coexistence of both phenotypes. 
-  A mutation that affected only the interaction-transmission association $\alpha$ invades the population }
+  \caption{\textbf{Modifier model illustration.} Starting from stable equilibrium with coexistence of both phenotypes (red and green) and the resident modifier allele with interaction-transmission association $\alpha_1$.
+  An invading modifier allele that modifies the interaction-transmission association to $\alpha_2$ invades the population.
+  }
   \label{fig:invasion_illustration}
 \end{figure}
 
 \newpage
-\subsection{Population structure model}
+\subsection{Spatial model}
 \label{sec:spatialModel}
 Interaction-transmission association may also emerge from population structure.
 Consider a  population colonizing a two-dimensional grid of size 100-by-100, where each site is inhabited by one individual, similarly to the model of \citet{lewin2020rockpaperscissors}.
@@ -441,10 +430,10 @@ Selection is global, rather than local, in accordance with our deterministic mod
 The parent is randomly drawn with probability proportional to its fitness, divided by the sum of the fitness values of all potential parents.
 Offspring are assumed to have the same phenotype as their parents (i.e. $v=1$).
 
-\newpage
+%\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Results
-\newpage
+%\newpage
 \section{Results}
 
 We determine the equilibria of the model in \autoref{eq:nextgen_juveniles}
@@ -647,6 +636,7 @@ Define the interaction-transmission association thresholds, $a_1$ and $a_2$, as
   a_1 = \frac{c\cdot v(1-T_A) -(T_A-T_B)(1+b-c)}{b\cdot v \cdot T_B}, \quad
   a_2 = \frac{c\cdot v(1-T_B)-(T_A-T_B)}{b\cdot v\cdot T_A} \;.
 \end{equation}
+\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{remark}%[Condition on interaction-transmission association $\alpha$ for cooperation to increase when it is rare]
@@ -697,7 +687,7 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
 
 \begin{figure}[p]
   \centering       
-    \includegraphics[width=1\textwidth]{../PRSB_figures/fig_3.pdf}
+    \includegraphics[width=0.9\textwidth]{../PRSB_figures/fig_3.pdf}
     \caption{\textbf{Evolution of cooperation under vertical, oblique, and horizontal cultural transmission.} 
     The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
 	In all cases the vertical transmission rate $v$ is on the x-axis.
@@ -717,7 +707,7 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
 
 \begin{figure}[p]
   \centering       
-	\includegraphics[width=1\textwidth]{../PRSB_figures/fig_4.pdf}
+	\includegraphics[width=0.9\textwidth]{../PRSB_figures/fig_4.pdf}
     \caption{\textbf{Evolution of cooperation under vertical and horizontal cultural transmission (v=1).} 
     The figure shows parameter ranges for global fixation of cooperation (green), global fixation of defection (red), fixation of either cooperation or defection depending on the initial conditions, i.e. unstable polymorphism (blue), and stable polymorphism of cooperation and defection (yellow).
     (\textbf{a-c})~The horizontal transmission bias ($T_A-T_B$) is on the x-axis.
@@ -739,11 +729,12 @@ $\hat{p}^*$ is unstable when there is horizontal transmission bias for cooperati
 \begin{figure}[h]
   \centering       
     \includegraphics[scale=0.5]{../PRSB_figures/fig_5.pdf}
-    \caption{\textbf{Unstable and stable equilibrium dynamics} 
+    \caption{\textbf{Unstable and stable equilibrium dynamics.} 
     The figure shows the frequency of cooperation over time (generations) starting from different initial frequencies.
-    In \textbf{(a)} the system has unstable equilibrium and therefore, all the curves are moving away from it.
-    In \textbf{(b)} the system has stable equilibrium and therefore, all the curves moves towards it. 
-    Here, $T_A = 0.5$, $c = 0.5$,  $v=0.59$ and \textbf{(a)} $T_B = 0.4$, $\alpha=0.1$ and $b=1.2$. \textbf{(b)} $T_B=0.7$, $\alpha=0.6$ and $b=2.3$.}
+    \textbf{(a)} The system has an unstable equilibrium and therefore all the curves are moving away from it.
+    \textbf{(b)} The system has a stable equilibrium and therefore all the curves moves towards it. 
+    Here, $T_A = 0.5$, $c = 0.5$,  $v=0.59$ and \textbf{(a)} $T_B = 0.4$, $\alpha=0.1$ and $b=1.2$. \textbf{(b)} $T_B=0.7$, $\alpha=0.6$ and $b=2.3$.
+    }
     \label{fig:time_series}
 \end{figure}
 
@@ -867,7 +858,7 @@ We assumed $T_B > T_A$ thus, $\hat{p}^*_1<0$. The quadratic polynomial has negat
 Thus, the derivative of $R(1)$ with respect to $\epsilon$ is positive for any $\epsilon$ and R(1) grows as $\alpha_2-\alpha_1$ grows. 
 Therefore, because $R(1)$ grows as $\alpha_2-\alpha_1$ grows and $R(1)=0$ when $\alpha_2-\alpha_1=0$, we get that $R(1)<0$ if and only if $\alpha_2<\alpha_1$. This is a sufficient condition  for external instability.
 In addition, we also saw that $\frac{\partial R(1)}{\partial \epsilon} > 0$ for every $\epsilon$ which makes $\alpha_2<\alpha_1$ necessary and sufficient condition for successful invasion (external instability).
-
+\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{result}%[Reduction principle for interaction-transmission association] 
@@ -895,7 +886,7 @@ Thus, we can expect the value of $\alpha$ to approach $a_2$, the frequency of co
   }
   \label{fig:invasion}
 \end{figure}
-\newpage
+%\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Population structure}
 Here, we are going to run stochastic simulations to learn more about evolution of Cooperation when the population is structured. 
@@ -908,10 +899,10 @@ Changing the simulation so that selection is local (i.e. sites can only be settl
 These comparisons between the deterministic unstructured model and the stochastic structured model show that the conditions derived for the deterministic model can be useful for predicting the dynamics under complex scenarios. 
 Moreover, this structured population model demonstrates that our parameter for interaction-transmission association, $\alpha$, can represent local interactions between individuals.
 
-\newpage
+%\newpage
 
 %%% Figure: Spatial model - global selection
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=1\textwidth]{../PRSB_figures/fig_7.pdf}
   \caption{
@@ -933,10 +924,10 @@ Moreover, this structured population model demonstrates that our parameter for i
 \end{figure}
 
 
-\newpage
+%\newpage
 
 %%% Figure: Spatial model - local selection
-\begin{figure}[h]
+\begin{figure}[p]
   \centering
   \includegraphics[width=1\textwidth]{../PRSB_figures/fig_8.pdf}
   \caption{
@@ -957,8 +948,9 @@ Moreover, this structured population model demonstrates that our parameter for i
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Discussion
-\newpage
+%\newpage
 \section{Discussion}
+
 Under a combination of vertical, oblique, and horizontal transmission with payoffs in the form of a Prisoner's Dilemma game, cooperation or defection can either fix or coexist, depending on the relationship between the cost and benefit of cooperation, the horizontal transmission bias, and the association between social interaction and horizontal transmission (Result~\ref{result:vert_obli_hori}, Figures~\ref{fig:equilibria} and~\ref{fig:equilibria_v1}).
 Importantly, cooperation can increase when initially rare (i.e. invade a population of defectors) if and only if, rewriting inequality~\ref{eq:unequal_transmission_from_rarity_general_case},
 $
@@ -994,7 +986,7 @@ However, in reality things are changing. For example, during different time of t
 This could lead to changes in the model parameters.
 Further investigation is needed to learn about the effect of such changes in behavior.
 
-Mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community – provided that cooperation is already at a high frequency.
+Mechanism that was suggested by \citet{traxler2011social} showed that \emph{conditional cooperation} based on norm-dependent relational utilities, i.e. individual will only cooperate if it knows that others will cooperate too, can sustain cooperation in a community|provided that cooperation is already at a high frequency.
 Unlike \emph{conditional cooperation}, interaction-transmission association can sustain cooperation in a community even if cooperation is initially rare. 
 \citet{morsky2020false} suggested that false beliefs on the frequencies of the cooperator can affect the individual decision whether to cooperate or not. If the individual over-estimates the number of cooperators it will be more likely to cooperate. This false belief can help sustain cooperation even if cooperartion is initially rare. 
 
@@ -1028,16 +1020,35 @@ Cultural horizontal transmission can similarly generate assortment between coope
 Thus, with horizontal transmission, ``assortment between focal cooperative players and cooperative acts in their interaction
 environment''~\citep{Fletcher2009assortment} is generated not because the helper is likely to be helped, but rather because the helped is likely to become a helper.
 
-\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pagebreak
+% Acknowledgements
+{\small
+\section*{Acknowledgements}
+We thank Lilach Hadany, Ayelet Shavit, and Kaleda Krebs Denton for discussions and comments.
+This work was supported in part by
+the Clore Foundation Scholars Programme (OLE),
+the Morrison Institute for Population and Resources Studies at Stanford University (MWF),
+Israel Science Foundation (YR 552/19),
+and Minerva Stiftung Center for Lab Evolution (YR).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
+\newpage
+{\small
 \begingroup
  \bibliographystyle{unsrtnat}
  \linespread{1}\selectfont
  \setlength{\bibsep}{2pt}
  \bibliography{bib}
 \endgroup
-
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
