@@ -1,13 +1,14 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
-\contentsline {section}{\numberline {2}Models}{7}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Basic Model}{7}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Invasion Model}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Population structure model}{11}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Results}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Evolution of cooperation}{12}{subsection.3.1}%
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Models}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Basic model}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Modifier model}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Spatial model}{10}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Results}{11}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Evolution of cooperation}{11}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Evolution of interaction-transmission association}{19}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Population structure}{23}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Discussion}{26}{section.4}%
-\contentsline {section}{\numberline {A}Local stability criterion}{32}{appendix.1.A}%
-\contentsline {section}{\numberline {B}Effect of interaction-transmission association on mean fitness}{32}{appendix.1.B}%
-\contentsline {section}{\numberline {C}Reduction principle}{33}{appendix.1.C}%
+\contentsline {subsection}{\numberline {3.3}Population structure}{22}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discussion}{23}{section.4}%
+\contentsline {section}{\numberline {5}References}{29}{section.5}%
+\contentsline {section}{Appendix \numberline {A}Local stability criterion}{32}{appendix.1.A}%
+\contentsline {section}{Appendix \numberline {B}Effect of interaction-transmission association on mean fitness}{32}{appendix.1.B}%
+\contentsline {section}{Appendix \numberline {C}Reduction principle}{33}{appendix.1.C}%
