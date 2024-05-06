@@ -1,9 +1,6 @@
-# Non-Vertical Cultural Transmission, Assortment, and the Evolution of Cooperation
-## Dor Cohen, Ohad Lewin-Epstein, Marcus Feldman, and Yoav Ram
-
 This is the repository for the manuscript:
 
-> Cohen, D., Lewin-epstein, O., Feldman, M. W. & Ram, Y. [Non-Vertical Cultural Transmission , Assortment , and the Evolution of Cooperation](https://doi.org/10.1098/rspb.2020.3162). (2021). Proceedings of the Royal Society B. DOI: 10.1098/rspb.2020.3162.
+> Cohen, Dor, Lewin-epstein, Ohad, Feldman, Marcus W. & Ram, Yoav. [Non-Vertical Cultural Transmission , Assortment , and the Evolution of Cooperation](https://doi.org/10.1098/rspb.2020.3162). (2021). Proceedings of the Royal Society B. DOI: 10.1098/rspb.2020.3162.
 
 A preprint was posted on bioRvix, [doi:10.1101/2020.12.08.416560](http://doi.org/10.1101/2020.12.08.416560)
 
